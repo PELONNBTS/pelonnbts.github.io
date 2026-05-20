@@ -592,28 +592,51 @@ function removeBackground() {
   }, 300);
 }
 
-// Local white background removal fallback
+// Local white background removal
 function removeWhiteBackground() {
   const tmpCanvas = document.createElement('canvas');
-  tmpCanvas.width = tattooImage.width;
-  tmpCanvas.height = tattooImage.height;
+  tmpCanvas.width = tattooImage.naturalWidth || tattooImage.width;
+  tmpCanvas.height = tattooImage.naturalHeight || tattooImage.height;
   const tmpCtx = tmpCanvas.getContext('2d');
   tmpCtx.drawImage(tattooImage, 0, 0);
 
   const imageData = tmpCtx.getImageData(0, 0, tmpCanvas.width, tmpCanvas.height);
   const data = imageData.data;
+  const width = tmpCanvas.width;
+  const height = tmpCanvas.height;
+
+  // Sample corner colors to detect background color
+  const corners = [
+    [data[0], data[1], data[2]],
+    [data[(width-1)*4], data[(width-1)*4+1], data[(width-1)*4+2]],
+    [data[(height-1)*width*4], data[(height-1)*width*4+1], data[(height-1)*width*4+2]],
+    [data[((height-1)*width+(width-1))*4], data[((height-1)*width+(width-1))*4+1], data[((height-1)*width+(width-1))*4+2]]
+  ];
+  // Average background color from corners
+  const bgR = Math.round(corners.reduce((s,c)=>s+c[0],0)/4);
+  const bgG = Math.round(corners.reduce((s,c)=>s+c[1],0)/4);
+  const bgB = Math.round(corners.reduce((s,c)=>s+c[2],0)/4);
+
+  const tolerance = 40; // How similar to background to remove
 
   for(let i = 0; i < data.length; i += 4) {
     const r = data[i];
     const g = data[i+1];
     const b = data[i+2];
-    // Remove white and near-white pixels
-    if(r > 220 && g > 220 && b > 220) {
-      data[i+3] = 0; // Make transparent
-    }
-    // Remove light grey pixels too
-    else if(r > 200 && g > 200 && b > 200 && Math.abs(r-g) < 15 && Math.abs(g-b) < 15) {
-      data[i+3] = Math.round(((255 - r) / 55) * 255);
+
+    // Distance from background color
+    const dist = Math.sqrt(
+      Math.pow(r - bgR, 2) +
+      Math.pow(g - bgG, 2) +
+      Math.pow(b - bgB, 2)
+    );
+
+    if(dist < tolerance) {
+      // Fully transparent
+      data[i+3] = 0;
+    } else if(dist < tolerance * 1.5) {
+      // Partially transparent for smooth edges
+      data[i+3] = Math.round(((dist - tolerance) / (tolerance * 0.5)) * 255);
     }
   }
 
