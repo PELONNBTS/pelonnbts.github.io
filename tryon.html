@@ -617,61 +617,103 @@ function removeBackground() {
   }, 300);
 }
 
-// Local white background removal
+// Local background removal using flood fill from edges
 function removeWhiteBackground() {
   const tmpCanvas = document.createElement('canvas');
-  tmpCanvas.width = tattooImage.naturalWidth || tattooImage.width;
-  tmpCanvas.height = tattooImage.naturalHeight || tattooImage.height;
+  const w = tattooImage.naturalWidth || tattooImage.width;
+  const h = tattooImage.naturalHeight || tattooImage.height;
+  tmpCanvas.width = w;
+  tmpCanvas.height = h;
   const tmpCtx = tmpCanvas.getContext('2d');
   tmpCtx.drawImage(tattooImage, 0, 0);
 
-  const imageData = tmpCtx.getImageData(0, 0, tmpCanvas.width, tmpCanvas.height);
+  const imageData = tmpCtx.getImageData(0, 0, w, h);
   const data = imageData.data;
-  const width = tmpCanvas.width;
-  const height = tmpCanvas.height;
+  const visited = new Uint8Array(w * h);
+  const tolerance = 35;
 
-  // Sample corner colors to detect background color
-  const corners = [
-    [data[0], data[1], data[2]],
-    [data[(width-1)*4], data[(width-1)*4+1], data[(width-1)*4+2]],
-    [data[(height-1)*width*4], data[(height-1)*width*4+1], data[(height-1)*width*4+2]],
-    [data[((height-1)*width+(width-1))*4], data[((height-1)*width+(width-1))*4+1], data[((height-1)*width+(width-1))*4+2]]
-  ];
-  // Average background color from corners
-  const bgR = Math.round(corners.reduce((s,c)=>s+c[0],0)/4);
-  const bgG = Math.round(corners.reduce((s,c)=>s+c[1],0)/4);
-  const bgB = Math.round(corners.reduce((s,c)=>s+c[2],0)/4);
+  // Sample background color from multiple edge points
+  const edgeSamples = [];
+  for(let x = 0; x < w; x += Math.max(1, Math.floor(w/20))) {
+    edgeSamples.push([data[(0*w+x)*4], data[(0*w+x)*4+1], data[(0*w+x)*4+2]]);
+    edgeSamples.push([data[((h-1)*w+x)*4], data[((h-1)*w+x)*4+1], data[((h-1)*w+x)*4+2]]);
+  }
+  for(let y = 0; y < h; y += Math.max(1, Math.floor(h/20))) {
+    edgeSamples.push([data[(y*w+0)*4], data[(y*w+0)*4+1], data[(y*w+0)*4+2]]);
+    edgeSamples.push([data[(y*w+(w-1))*4], data[(y*w+(w-1))*4+1], data[(y*w+(w-1))*4+2]]);
+  }
+  const bgR = Math.round(edgeSamples.reduce((s,c)=>s+c[0],0)/edgeSamples.length);
+  const bgG = Math.round(edgeSamples.reduce((s,c)=>s+c[1],0)/edgeSamples.length);
+  const bgB = Math.round(edgeSamples.reduce((s,c)=>s+c[2],0)/edgeSamples.length);
 
-  const tolerance = 40; // How similar to background to remove
+  function colorDist(r,g,b) {
+    return Math.sqrt((r-bgR)**2 + (g-bgG)**2 + (b-bgB)**2);
+  }
 
+  // Flood fill from all 4 edges
+  const queue = [];
+  for(let x = 0; x < w; x++) {
+    queue.push(x, 0);
+    queue.push(x, h-1);
+  }
+  for(let y = 0; y < h; y++) {
+    queue.push(0, y);
+    queue.push(w-1, y);
+  }
+
+  let qi = 0;
+  while(qi < queue.length) {
+    const x = queue[qi++];
+    const y = queue[qi++];
+    if(x < 0 || x >= w || y < 0 || y >= h) continue;
+    const idx = y * w + x;
+    if(visited[idx]) continue;
+    visited[idx] = 1;
+    const pi = idx * 4;
+    const r = data[pi], g = data[pi+1], b = data[pi+2];
+    const dist = colorDist(r, g, b);
+    if(dist < tolerance * 2) {
+      // Make transparent with smooth falloff
+      const alpha = dist < tolerance ? 0 : Math.round(((dist - tolerance) / tolerance) * 180);
+      data[pi+3] = alpha;
+      // Spread to neighbors
+      queue.push(x+1, y);
+      queue.push(x-1, y);
+      queue.push(x, y+1);
+      queue.push(x, y-1);
+    }
+  }
+
+  // Second pass — clean up remaining light background pixels not caught by flood fill
   for(let i = 0; i < data.length; i += 4) {
-    const r = data[i];
-    const g = data[i+1];
-    const b = data[i+2];
-
-    // Distance from background color
-    const dist = Math.sqrt(
-      Math.pow(r - bgR, 2) +
-      Math.pow(g - bgG, 2) +
-      Math.pow(b - bgB, 2)
-    );
-
-    if(dist < tolerance) {
-      // Fully transparent
+    if(data[i+3] === 0) continue; // Already transparent
+    const dist = colorDist(data[i], data[i+1], data[i+2]);
+    if(dist < tolerance * 0.8) {
       data[i+3] = 0;
-    } else if(dist < tolerance * 1.5) {
-      // Partially transparent for smooth edges
-      data[i+3] = Math.round(((dist - tolerance) / (tolerance * 0.5)) * 255);
+    }
+  }
+
+  // Feather edges — smooth out harsh borders
+  for(let y = 1; y < h-1; y++) {
+    for(let x = 1; x < w-1; x++) {
+      const idx = (y * w + x) * 4;
+      if(data[idx+3] > 0 && data[idx+3] < 255) {
+        // Average with neighbors for smooth edge
+        const neighbors = [
+          data[((y-1)*w+x)*4+3],
+          data[((y+1)*w+x)*4+3],
+          data[(y*w+x-1)*4+3],
+          data[(y*w+x+1)*4+3]
+        ];
+        const avg = neighbors.reduce((s,v)=>s+v,0) / 4;
+        data[idx+3] = Math.round((data[idx+3] + avg) / 2);
+      }
     }
   }
 
   tmpCtx.putImageData(imageData, 0, 0);
-
   const img = new Image();
-  img.onload = function() {
-    tattooImage = img;
-    render();
-  };
+  img.onload = function() { tattooImage = img; render(); };
   img.src = tmpCanvas.toDataURL('image/png');
 }
 
