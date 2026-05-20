@@ -96,16 +96,24 @@ a{text-decoration:none;}
 .ctrl-btn.danger:hover{border-color:#c0392b;color:#c0392b;}
 
 /* Slider controls */
-.slider-row{padding:16px;background:var(--char);border:.5px solid rgba(201,168,76,.1);border-top:none;display:flex;flex-direction:column;gap:12px;}
-.slider-group{display:flex;flex-direction:column;gap:6px;}
-.slider-lbl{font-family:'Cinzel',serif;font-size:7px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;display:flex;justify-content:space-between;}
-.slider-lbl span{color:var(--gold-dim);}
+.slider-row{padding:16px;background:var(--char);border:.5px solid rgba(201,168,76,.1);border-top:none;display:flex;flex-direction:column;gap:16px;}
+.slider-group{display:flex;flex-direction:column;gap:10px;}
+.slider-lbl{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;}
+.slider-lbl span{color:var(--gold);font-size:12px;}
 input[type=range]{
-  width:100%;-webkit-appearance:none;height:2px;
+  width:100%;-webkit-appearance:none;height:6px;border-radius:3px;
   background:linear-gradient(90deg,var(--green-b) 0%,rgba(201,168,76,.2) 0%);
   outline:none;cursor:pointer;
 }
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;background:var(--gold);border-radius:50%;cursor:pointer;}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:28px;height:28px;
+  background:var(--gold);border-radius:50%;cursor:pointer;
+  box-shadow:0 0 6px rgba(201,168,76,.4);
+}
+input[type=range]::-moz-range-thumb{
+  width:28px;height:28px;background:var(--gold);
+  border-radius:50%;cursor:pointer;border:none;
+}
 
 /* Download btn */
 .download-btn{
@@ -249,7 +257,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;heigh
     </div>
 
     <!-- Download -->
-    <button class="download-btn" onclick="downloadResult()">⬇ &nbsp; Download Your Try-On</button>
+    <button class="download-btn" onclick="downloadResult()">⬇ &nbsp; Save Your Try-On Image</button>
   </div>
 
   <!-- SIDEBAR -->
@@ -542,10 +550,23 @@ canvas.addEventListener('wheel', e => {
 // ── DOWNLOAD ──
 function downloadResult() {
   if(!bgImage) { alert('Please upload a photo first!'); return; }
-  const link = document.createElement('a');
-  link.download = 'NBTS-TryOn.png';
-  link.href = canvas.toDataURL('image/png');
-  link.click();
+  const dataUrl = canvas.toDataURL('image/png');
+  // On mobile — open in new tab so user can long press to save to photos
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if(isMobile) {
+    const win = window.open();
+    win.document.write('<html><head><title>NBTS Try-On — Save to Photos</title><style>body{margin:0;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;gap:16px;font-family:sans-serif;color:#fff;} img{max-width:100%;max-height:80vh;} p{font-size:14px;opacity:.7;text-align:center;padding:0 20px;}</style></head><body>');
+    win.document.write('<p>📱 Press and hold the image below to save it to your photos</p>');
+    win.document.write('<img src="' + dataUrl + '" alt="Your NBTS Try-On"/>');
+    win.document.write('</body></html>');
+    win.document.close();
+  } else {
+    // On desktop — download normally
+    const link = document.createElement('a');
+    link.download = 'NBTS-TryOn.png';
+    link.href = dataUrl;
+    link.click();
+  }
 }
 
 // Init sliders
