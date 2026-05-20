@@ -23,7 +23,7 @@ a{text-decoration:none;}
 /* NAV */
 .nav{position:sticky;top:0;z-index:1000;background:rgba(5,6,5,.97);border-bottom:1px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:66px;backdrop-filter:blur(10px);}
 .nav-logo{font-family:'Cinzel Decorative',serif;font-size:15px;color:var(--gold);letter-spacing:2px;font-weight:700;display:flex;align-items:center;gap:10px;}
-.nav-back{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.nav-back{font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;color:var(--bone);text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:color .2s;}
 .nav-back:hover{color:var(--gold);}
 .nav-back::before{content:'←';}
 
@@ -31,7 +31,7 @@ a{text-decoration:none;}
 .page-header{background:var(--char);border-bottom:1px solid rgba(34,168,78,.2);padding:52px 40px 44px;text-align:center;position:relative;overflow:hidden;}
 .page-header::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);}
 .page-header::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(34,168,78,.06) 0%,transparent 70%);pointer-events:none;}
-.sec-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;position:relative;}
+.sec-label{font-family:'Cinzel',serif;font-size:14px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;position:relative;}
 .page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(24px,4vw,40px);color:var(--gold);font-weight:700;line-height:1.2;margin-bottom:12px;position:relative;}
 .page-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--bone);opacity:.75;max-width:500px;margin:0 auto;line-height:1.72;position:relative;}
 
@@ -41,7 +41,7 @@ a{text-decoration:none;}
 
 /* CANVAS AREA */
 .canvas-section{display:flex;flex-direction:column;gap:16px;}
-.canvas-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:5px;color:var(--green-b);text-transform:uppercase;margin-bottom:4px;}
+.canvas-label{font-family:'Cinzel',serif;font-size:14px;letter-spacing:5px;color:var(--green-b);text-transform:uppercase;margin-bottom:4px;}
 
 .canvas-container{
   position:relative;
@@ -56,7 +56,7 @@ a{text-decoration:none;}
   padding:60px 40px;text-align:center;
 }
 .canvas-placeholder-icon{font-size:48px;opacity:.15;}
-.canvas-placeholder h3{font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;}
+.canvas-placeholder h3{font-family:'Cinzel',serif;font-size:15px;letter-spacing:4px;color:var(--bone);text-transform:uppercase;}
 .canvas-placeholder p{font-family:'Crimson Pro',serif;font-style:italic;font-size:15px;color:var(--muted);line-height:1.6;max-width:280px;}
 
 #mainCanvas{
@@ -71,7 +71,7 @@ a{text-decoration:none;}
   display:inline-flex;align-items:center;gap:10px;
   padding:14px 32px;
   background:var(--green);color:var(--gold-pale);
-  font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;
+  font-family:'Cinzel',serif;font-size:14px;letter-spacing:4px;text-transform:uppercase;
   border:1px solid var(--green-b);cursor:pointer;font-weight:600;
   transition:all .3s;width:100%;justify-content:center;
 }
@@ -88,8 +88,8 @@ a{text-decoration:none;}
 .ctrl-btn{
   padding:10px;background:transparent;
   border:.5px solid rgba(201,168,76,.2);
-  font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;
-  color:var(--muted);text-transform:uppercase;cursor:pointer;
+  font-family:'Cinzel',serif;font-size:13px;letter-spacing:2px;
+  color:var(--bone);text-transform:uppercase;cursor:pointer;
   transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px;
 }
 .ctrl-btn:hover{border-color:var(--green-b);color:var(--green-b);}
@@ -98,7 +98,7 @@ a{text-decoration:none;}
 /* Slider controls */
 .slider-row{padding:16px;background:var(--char);border:.5px solid rgba(201,168,76,.1);border-top:none;display:flex;flex-direction:column;gap:16px;}
 .slider-group{display:flex;flex-direction:column;gap:10px;}
-.slider-lbl{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;}
+.slider-lbl{font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;color:var(--bone);text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;}
 .slider-lbl span{color:var(--gold);font-size:12px;}
 input[type=range]{
   width:100%;-webkit-appearance:none;height:6px;border-radius:3px;
@@ -118,7 +118,7 @@ input[type=range]::-moz-range-thumb{
 /* Remove background button */
 .removebg-btn{
   padding:14px;background:rgba(34,168,78,.08);color:var(--green-b);
-  font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  font-family:'Cinzel',serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;
   border:1px solid rgba(34,168,78,.35);cursor:pointer;
   transition:all .3s;width:100%;
 }
@@ -128,7 +128,7 @@ input[type=range]::-moz-range-thumb{
 /* Download btn */
 .download-btn{
   padding:14px;background:transparent;color:var(--gold);
-  font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  font-family:'Cinzel',serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;
   border:1px solid rgba(201,168,76,.35);cursor:pointer;
   transition:all .3s;width:100%;
 }
@@ -137,7 +137,7 @@ input[type=range]::-moz-range-thumb{
 /* SIDEBAR */
 .sidebar{display:flex;flex-direction:column;gap:20px;}
 .sidebar-card{background:var(--dark);border:.5px solid rgba(201,168,76,.1);padding:20px;}
-.sidebar-card h4{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;color:var(--green-b);text-transform:uppercase;margin-bottom:16px;padding-bottom:10px;border-bottom:.5px solid rgba(34,168,78,.15);}
+.sidebar-card h4{font-family:'Cinzel',serif;font-size:14px;letter-spacing:4px;color:var(--green-b);text-transform:uppercase;margin-bottom:16px;padding-bottom:10px;border-bottom:.5px solid rgba(34,168,78,.15);}
 
 /* Flash designs grid */
 .designs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
@@ -158,7 +158,7 @@ input[type=range]::-moz-range-thumb{
   position:absolute;bottom:0;left:0;right:0;
   background:rgba(5,6,5,.8);
   font-family:'Cinzel',serif;font-size:6px;letter-spacing:2px;
-  color:var(--muted);text-transform:uppercase;
+  color:var(--bone);text-transform:uppercase;
   text-align:center;padding:3px;
 }
 
@@ -168,8 +168,8 @@ input[type=range]::-moz-range-thumb{
   border:.5px dashed rgba(34,168,78,.25);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
   cursor:pointer;transition:all .2s;
-  font-family:'Cinzel',serif;font-size:7px;letter-spacing:2px;
-  color:var(--muted);text-transform:uppercase;
+  font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;
+  color:var(--bone);text-transform:uppercase;
 }
 .add-design-btn:hover{border-color:var(--green-b);color:var(--green-b);}
 .add-design-btn input{display:none;}
@@ -194,7 +194,7 @@ input[type=range]::-moz-range-thumb{
 .book-cta a{
   display:block;padding:12px;
   background:var(--green);color:var(--gold-pale);
-  font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;
+  font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;
   border:1px solid var(--green-b);transition:all .3s;font-weight:600;
 }
 .book-cta a:hover{background:var(--green-b);color:#050605;}
@@ -202,9 +202,9 @@ input[type=range]::-moz-range-thumb{
 /* FOOTER */
 .footer{background:var(--green-deep);border-top:1px solid rgba(34,168,78,.2);padding:36px 40px;text-align:center;}
 .f-logo{font-family:'Cinzel Decorative',serif;font-size:13px;color:var(--gold-dim);letter-spacing:2px;margin-bottom:6px;}
-.f-tag{font-family:'Cinzel',serif;font-size:7px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
+.f-tag{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;color:var(--bone);text-transform:uppercase;margin-bottom:16px;}
 .socials{display:flex;gap:8px;justify-content:center;}
-.soc{width:34px;height:34px;border:.5px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:9px;color:var(--muted);cursor:pointer;transition:all .2s;text-decoration:none;}
+.soc{width:34px;height:34px;border:.5px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:14px;color:var(--muted);cursor:pointer;transition:all .2s;text-decoration:none;}
 .soc:hover{border-color:var(--green-b);color:var(--green-b);}
 </style>
 </head>
@@ -258,7 +258,7 @@ input[type=range]::-moz-range-thumb{
     <button class="removebg-btn" id="removeBgBtn" onclick="removeBackground()" style="display:none;">
       ✨ &nbsp; Remove White Background
     </button>
-    <div id="removeBgStatus" style="display:none; font-family:'Cinzel',serif; font-size:8px; letter-spacing:3px; color:var(--green-b); text-transform:uppercase; text-align:center; padding:10px;">
+    <div id="removeBgStatus" style="display:none; font-family:'Cinzel',serif; font-size:13px; letter-spacing:3px; color:var(--green-b); text-transform:uppercase; text-align:center; padding:10px;">
       Processing...
     </div>
 
@@ -347,7 +347,7 @@ input[type=range]::-moz-range-thumb{
         </label>
 
       </div>
-      <p style="font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;color:var(--muted);margin-top:12px;line-height:1.6;">Flash designs coming soon — use "Upload Design" to try your own custom art in the meantime.</p>
+      <p style="font-family:'Crimson Pro',serif;font-style:italic;font-size:16px;color:var(--bone);margin-top:12px;line-height:1.6;">Flash designs coming soon — use "Upload Design" to try your own custom art in the meantime.</p>
     </div>
 
     <!-- Book CTA -->
