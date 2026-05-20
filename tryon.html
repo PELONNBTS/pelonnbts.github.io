@@ -115,6 +115,16 @@ input[type=range]::-moz-range-thumb{
   border-radius:50%;cursor:pointer;border:none;
 }
 
+/* Remove background button */
+.removebg-btn{
+  padding:14px;background:rgba(34,168,78,.08);color:var(--green-b);
+  font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  border:1px solid rgba(34,168,78,.35);cursor:pointer;
+  transition:all .3s;width:100%;
+}
+.removebg-btn:hover{background:rgba(34,168,78,.15);border-color:var(--green-b);}
+.removebg-btn:disabled{opacity:.4;cursor:not-allowed;}
+
 /* Download btn */
 .download-btn{
   padding:14px;background:transparent;color:var(--gold);
@@ -242,6 +252,14 @@ input[type=range]::-moz-range-thumb{
       <button class="ctrl-btn" onclick="rotateTattoo(15)">↻ &nbsp; Rotate Right</button>
       <button class="ctrl-btn" onclick="flipTattoo()">⇄ &nbsp; Flip</button>
       <button class="ctrl-btn danger" onclick="clearTattoo()">✕ &nbsp; Remove</button>
+    </div>
+
+    <!-- Remove Background -->
+    <button class="removebg-btn" id="removeBgBtn" onclick="removeBackground()" style="display:none;">
+      ✨ &nbsp; Remove White Background
+    </button>
+    <div id="removeBgStatus" style="display:none; font-family:'Cinzel',serif; font-size:8px; letter-spacing:3px; color:var(--green-b); text-transform:uppercase; text-align:center; padding:10px;">
+      Processing...
     </div>
 
     <!-- Sliders -->
@@ -420,6 +438,8 @@ function selectDesign(url) {
     document.getElementById('sizeSlider').value = 100;
     document.getElementById('opacSlider').value = 85;
     updateSliderDisplay();
+    document.getElementById('removeBgBtn').style.display = 'block';
+    document.getElementById('removeBgStatus').style.display = 'none';
     render();
   };
   img.src = url;
@@ -444,6 +464,8 @@ function loadCustomDesign(input) {
       document.getElementById('sizeSlider').value = 100;
       document.getElementById('opacSlider').value = 85;
       updateSliderDisplay();
+      document.getElementById('removeBgBtn').style.display = 'block';
+      document.getElementById('removeBgStatus').style.display = 'none';
       render();
     };
     img.src = ev.target.result;
@@ -546,6 +568,103 @@ canvas.addEventListener('wheel', e => {
   updateSliderDisplay();
   render();
 }, {passive:false});
+
+// ── REMOVE BACKGROUND ──
+async function removeBackground() {
+  if(!tattooImage) { alert('Please select a design first!'); return; }
+
+  const btn = document.getElementById('removeBgBtn');
+  const status = document.getElementById('removeBgStatus');
+
+  btn.style.display = 'none';
+  status.style.display = 'block';
+  status.textContent = '✨ Removing background...';
+
+  try {
+    // Draw tattoo image to temp canvas to get blob
+    const tmpCanvas = document.createElement('canvas');
+    tmpCanvas.width = tattooImage.width;
+    tmpCanvas.height = tattooImage.height;
+    const tmpCtx = tmpCanvas.getContext('2d');
+    tmpCtx.drawImage(tattooImage, 0, 0);
+
+    // Convert to blob
+    tmpCanvas.toBlob(async (blob) => {
+      const formData = new FormData();
+      formData.append('image_file', blob, 'design.png');
+      formData.append('size', 'auto');
+
+      const response = await fetch('https://api.remove.bg/v1.0/removebg', {
+        method: 'POST',
+        headers: { 'X-Api-Key': 'REMOVEBG_API_KEY' },
+        body: formData
+      });
+
+      if(response.ok) {
+        const resultBlob = await response.blob();
+        const url = URL.createObjectURL(resultBlob);
+        const img = new Image();
+        img.onload = function() {
+          tattooImage = img;
+          status.textContent = '✅ Background removed!';
+          setTimeout(() => {
+            status.style.display = 'none';
+            btn.style.display = 'block';
+            btn.textContent = '✨ Remove Background Again';
+          }, 2000);
+          render();
+        };
+        img.src = url;
+      } else {
+        throw new Error('API error');
+      }
+    }, 'image/png');
+
+  } catch(err) {
+    // Fallback — manual white background removal using canvas
+    status.textContent = '✨ Processing locally...';
+    removeWhiteBackground();
+    setTimeout(() => {
+      status.style.display = 'none';
+      btn.style.display = 'block';
+    }, 1000);
+  }
+}
+
+// Local white background removal fallback
+function removeWhiteBackground() {
+  const tmpCanvas = document.createElement('canvas');
+  tmpCanvas.width = tattooImage.width;
+  tmpCanvas.height = tattooImage.height;
+  const tmpCtx = tmpCanvas.getContext('2d');
+  tmpCtx.drawImage(tattooImage, 0, 0);
+
+  const imageData = tmpCtx.getImageData(0, 0, tmpCanvas.width, tmpCanvas.height);
+  const data = imageData.data;
+
+  for(let i = 0; i < data.length; i += 4) {
+    const r = data[i];
+    const g = data[i+1];
+    const b = data[i+2];
+    // Remove white and near-white pixels
+    if(r > 220 && g > 220 && b > 220) {
+      data[i+3] = 0; // Make transparent
+    }
+    // Remove light grey pixels too
+    else if(r > 200 && g > 200 && b > 200 && Math.abs(r-g) < 15 && Math.abs(g-b) < 15) {
+      data[i+3] = Math.round(((255 - r) / 55) * 255);
+    }
+  }
+
+  tmpCtx.putImageData(imageData, 0, 0);
+
+  const img = new Image();
+  img.onload = function() {
+    tattooImage = img;
+    render();
+  };
+  img.src = tmpCanvas.toDataURL('image/png');
+}
 
 // ── DOWNLOAD ──
 function downloadResult() {
