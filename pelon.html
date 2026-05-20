@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Pelon — Founder & Master Artist at New Beginnings Family Tattoo Studio, Tucson AZ. 20+ years of black & grey, Chicano, realism, and custom tattoo work."/>
+<title>Pelon — Artist Portfolio | New Beginnings Tattoo Studio Tucson AZ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#050605;color:#D8CFA8;font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{text-decoration:none;}
+img{display:block;max-width:100%;}
+
+:root{
+  --gold:#C9A84C;--gold-lt:#F0D080;--gold-dim:#8B6E2A;--gold-pale:#E8D5A0;
+  --green:#1A7A3A;--green-b:#22A84E;--green-glow:#2ECC6A;--green-deep:#071A0D;
+  --black:#050605;--char:#0C0F0C;--dark:#111411;--smoke:#181C18;
+  --bone:#D8CFA8;--parch:#EDE0BB;--muted:#5A6050;
+}
+
+/* ── NAV ── */
+.nav{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(5,6,5,.97);
+  border-bottom:1px solid rgba(34,168,78,.25);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;height:66px;
+  backdrop-filter:blur(10px);
+}
+.nav-logo{font-family:'Cinzel Decorative',serif;font-size:15px;color:var(--gold);letter-spacing:2px;font-weight:700;display:flex;align-items:center;gap:10px;}
+.nav-back{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.nav-back:hover{color:var(--gold);}
+.nav-back::before{content:'←';}
+.nav-book{padding:9px 20px;border:1px solid var(--green);color:var(--green-b);font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;transition:all .2s;}
+.nav-book:hover{background:var(--green);color:#050605;}
+
+/* ── HERO ── */
+.hero{
+  position:relative;
+  min-height:70vh;
+  display:grid;
+  grid-template-columns:380px 1fr;
+  overflow:hidden;
+  background:var(--char);
+  border-bottom:1px solid rgba(34,168,78,.2);
+}
+@media(max-width:768px){.hero{grid-template-columns:1fr;min-height:auto;}}
+
+/* Photo side */
+.hero-photo{
+  position:relative;
+  overflow:hidden;
+  min-height:500px;
+}
+@media(max-width:768px){.hero-photo{min-height:320px;}}
+.hero-photo img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+  filter:grayscale(10%) contrast(1.08);
+  transition:transform .6s ease;
+}
+.hero-photo:hover img{transform:scale(1.03);}
+.hero-photo::after{
+  content:'';position:absolute;top:0;right:0;bottom:0;width:120px;
+  background:linear-gradient(90deg,transparent,var(--char));
+  pointer-events:none;
+}
+@media(max-width:768px){
+  .hero-photo::after{width:0;}
+  .hero-photo::before{
+    content:'';position:absolute;bottom:0;left:0;right:0;height:120px;
+    background:linear-gradient(to top,var(--char),transparent);
+    pointer-events:none;z-index:1;
+  }
+}
+
+/* Green top bar */
+.hero::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);
+  z-index:10;
+}
+
+/* Content side */
+.hero-content{
+  padding:60px 56px 60px 40px;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;
+}
+@media(max-width:768px){.hero-content{padding:32px 24px 48px;}}
+.hero-content::after{
+  content:'🦁';position:absolute;bottom:-20px;right:-10px;
+  font-size:160px;opacity:.025;line-height:1;pointer-events:none;
+}
+.badge-wrap{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;}
+.badge{
+  display:inline-block;padding:5px 12px;
+  background:rgba(34,168,78,.1);border:.5px solid rgba(34,168,78,.4);
+  font-family:'Cinzel',serif;font-size:7px;letter-spacing:4px;
+  color:var(--green-b);text-transform:uppercase;
+}
+.badge.gold{background:rgba(201,168,76,.08);border-color:rgba(201,168,76,.3);color:var(--gold-dim);}
+.artist-name{
+  font-family:'Cinzel Decorative',serif;
+  font-size:clamp(44px,6vw,72px);
+  color:var(--gold);font-weight:900;line-height:.95;
+  margin-bottom:6px;
+  text-shadow:0 0 80px rgba(201,168,76,.15);
+}
+.artist-title{
+  font-family:'Cinzel',serif;font-size:9px;letter-spacing:6px;
+  color:var(--muted);text-transform:uppercase;margin-bottom:32px;
+}
+.orn{display:flex;align-items:center;gap:14px;margin-bottom:28px;}
+.ol{width:60px;height:.5px;background:linear-gradient(90deg,var(--gold-dim),transparent);}
+.od{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);}
+
+.artist-quote{
+  font-family:'Crimson Pro',serif;font-style:italic;
+  font-size:clamp(17px,2vw,21px);color:var(--parch);
+  line-height:1.68;border-left:2px solid var(--green-b);
+  padding-left:20px;margin-bottom:24px;opacity:.92;
+}
+.artist-bio{
+  font-family:'Crimson Pro',serif;font-size:17px;
+  color:var(--bone);line-height:1.85;opacity:.8;
+  margin-bottom:32px;max-width:560px;
+}
+.style-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:32px;}
+.stag{
+  padding:4px 10px;border:.5px solid rgba(201,168,76,.22);
+  font-family:'Cinzel',serif;font-size:7px;letter-spacing:2px;
+  color:var(--gold-dim);text-transform:uppercase;
+}
+.stats-row{
+  display:flex;gap:32px;flex-wrap:wrap;
+  padding-top:28px;
+  border-top:.5px solid rgba(201,168,76,.12);
+}
+.stat{display:flex;flex-direction:column;gap:3px;}
+.stat-n{font-family:'Cinzel Decorative',serif;font-size:28px;color:var(--gold);line-height:1;}
+.stat-l{font-family:'Cinzel',serif;font-size:7px;letter-spacing:3px;color:var(--green-b);text-transform:uppercase;}
+
+/* ── GALLERY SECTION ── */
+.gallery-sec{
+  padding:72px 40px 80px;
+  background:var(--black);
+  border-top:.5px solid rgba(34,168,78,.12);
+}
+@media(max-width:600px){.gallery-sec{padding:48px 16px 60px;}}
+
+.gallery-hd{text-align:center;margin-bottom:48px;}
+.sec-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:10px;}
+.sec-title{font-family:'Cinzel Decorative',serif;font-size:clamp(22px,3.5vw,34px);color:var(--gold);font-weight:700;line-height:1.25;}
+.gallery-hd p{font-family:'Crimson Pro',serif;font-style:italic;font-size:16px;color:var(--bone);opacity:.55;margin-top:10px;}
+
+/* Filter buttons */
+.filters{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:36px;}
+.fbtn{
+  padding:7px 18px;background:transparent;
+  border:.5px solid rgba(201,168,76,.2);
+  font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;
+  color:var(--muted);text-transform:uppercase;cursor:pointer;transition:all .2s;
+}
+.fbtn:hover,.fbtn.active{border-color:var(--green-b);color:var(--green-b);background:rgba(34,168,78,.06);}
+
+/* Masonry grid */
+.gallery-grid{
+  columns:4 220px;
+  column-gap:4px;
+  max-width:1100px;
+  margin:0 auto;
+}
+@media(max-width:600px){.gallery-grid{columns:2 140px;}}
+
+.g-item{
+  break-inside:avoid;
+  margin-bottom:4px;
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+  background:var(--smoke);
+  border:.5px solid rgba(201,168,76,.06);
+  transition:border-color .3s;
+}
+.g-item:hover{border-color:rgba(34,168,78,.4);}
+.g-item:hover .g-overlay{opacity:1;}
+.g-item:hover img{transform:scale(1.04);}
+
+.g-item img{
+  width:100%;height:auto;display:block;
+  filter:contrast(1.05) brightness(.97);
+  transition:transform .45s ease;
+}
+.g-overlay{
+  position:absolute;inset:0;
+  background:rgba(7,26,13,.78);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:6px;
+  opacity:0;transition:opacity .3s;
+}
+.g-overlay span{
+  font-family:'Cinzel',serif;font-size:8px;
+  letter-spacing:3px;color:var(--green-b);text-transform:uppercase;
+}
+.g-overlay .g-tag{
+  font-family:'Crimson Pro',serif;font-style:italic;
+  font-size:13px;color:var(--parch);opacity:.7;
+}
+
+/* Lightbox */
+.lightbox{
+  position:fixed;inset:0;z-index:9999;
+  background:rgba(5,6,5,.96);
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.lightbox.open{opacity:1;pointer-events:all;}
+.lightbox img{
+  max-width:90vw;max-height:90vh;
+  object-fit:contain;
+  border:.5px solid rgba(34,168,78,.2);
+}
+.lb-close{
+  position:absolute;top:20px;right:28px;
+  font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;
+  color:var(--muted);cursor:pointer;text-transform:uppercase;
+  transition:color .2s;
+}
+.lb-close:hover{color:var(--gold);}
+.lb-prev,.lb-next{
+  position:absolute;top:50%;transform:translateY(-50%);
+  font-size:24px;color:var(--muted);cursor:pointer;
+  padding:16px;transition:color .2s;
+  background:rgba(5,6,5,.5);
+  font-family:'Cinzel',serif;
+}
+.lb-prev{left:10px;}.lb-next{right:10px;}
+.lb-prev:hover,.lb-next:hover{color:var(--gold);}
+
+/* ── BOOKING CTA ── */
+.booking{
+  background:var(--char);
+  border-top:.5px solid rgba(34,168,78,.15);
+  padding:80px 40px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.booking::before{
+  content:'';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:600px;height:400px;
+  background:radial-gradient(ellipse,rgba(26,122,58,.08) 0%,transparent 65%);
+  pointer-events:none;
+}
+.booking-border{
+  border:.5px solid rgba(201,168,76,.18);
+  padding:52px 36px;position:relative;
+  max-width:540px;margin:0 auto;
+}
+.booking-border::before,.booking-border::after{content:'';position:absolute;width:18px;height:18px;border:1px solid var(--gold-dim);}
+.booking-border::before{top:-1px;left:-1px;border-right:none;border-bottom:none;}
+.booking-border::after{bottom:-1px;right:-1px;border-left:none;border-top:none;}
+.booking-title{font-family:'Cinzel Decorative',serif;font-size:clamp(20px,3.5vw,32px);color:var(--gold);font-weight:700;line-height:1.25;margin-bottom:12px;}
+.booking-body{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--bone);opacity:.72;max-width:380px;margin:0 auto 28px;line-height:1.72;}
+.btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-g{padding:14px 34px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;border:1px solid var(--green-b);cursor:pointer;font-weight:600;display:inline-block;transition:all .3s;}
+.btn-g:hover{background:var(--green-b);color:#050605;box-shadow:0 0 24px rgba(34,168,78,.3);}
+.btn-o{padding:14px 34px;background:transparent;color:var(--gold);font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;border:1px solid rgba(201,168,76,.35);cursor:pointer;display:inline-block;transition:all .3s;}
+.btn-o:hover{border-color:var(--gold);background:rgba(201,168,76,.07);}
+
+/* ── FOOTER ── */
+.footer{background:var(--green-deep);border-top:1px solid rgba(34,168,78,.2);padding:36px 40px;text-align:center;}
+.f-logo{font-family:'Cinzel Decorative',serif;font-size:13px;color:var(--gold-dim);letter-spacing:2px;margin-bottom:6px;}
+.f-tag{font-family:'Cinzel',serif;font-size:7px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
+.socials{display:flex;gap:8px;justify-content:center;}
+.soc{width:34px;height:34px;border:.5px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:9px;color:var(--muted);cursor:pointer;transition:all .2s;text-decoration:none;}
+.soc:hover{border-color:var(--green-b);color:var(--green-b);}
+
+/* Fade in */
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.hero-content>*{animation:fadeUp .7s ease both;}
+.badge-wrap{animation-delay:.1s;}
+.artist-name{animation-delay:.2s;}
+.artist-title{animation-delay:.28s;}
+.orn{animation-delay:.35s;}
+.artist-quote{animation-delay:.42s;}
+.artist-bio{animation-delay:.5s;}
+.style-tags{animation-delay:.56s;}
+.stats-row{animation-delay:.62s;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">🦁 NBTS</div>
+  <a href="index.html" class="nav-back">Back to Main Site</a>
+  <a href="http://facebook.com/NewBeginningsTattooStudio" target="_blank" class="nav-book">Book with Pelon</a>
+</nav>
+
+<!-- HERO — BIO -->
+<section class="hero">
+  <div class="hero-photo">
+    <img src="https://images.editor.website/uploads/b/3c94e50e54e6dc67010cc08b18b28487070179001e308c29014385de5d9154db/pelon%20arrtistpage_1725417026.jpg?width=400&optimize=medium"
+      alt="Pelon — Founder, New Beginnings Family Tattoo Studio"/>
+  </div>
+  <div class="hero-content">
+    <div class="badge-wrap">
+      <div class="badge">Founder · Owner</div>
+      <div class="badge">Master Artist</div>
+      <div class="badge gold">20+ Years Experience</div>
+    </div>
+    <div class="artist-name">Pelon</div>
+    <div class="artist-title">New Beginnings Family Tattoo Studio · Tucson, AZ</div>
+    <div class="orn"><div class="ol"></div><div class="od"></div></div>
+    <div class="artist-quote">
+      "I tattoo what God delivered me from — and what He's calling me toward. Every piece is a testimony."
+    </div>
+    <p class="artist-bio">
+      Pelon is the founder of New Beginnings Family Tattoo Studio and has been putting ink on skin for over 20 years. His art is rooted in the Chicano tradition — bold, expressive, deeply personal — but his range goes far beyond. From hyper-realistic black and grey to vibrant color work, from sacred imagery to dark fantasy, Pelon does it all with a master's hand and a servant's heart.
+      <br><br>
+      His faith drives everything. Every client who sits in his chair gets more than a tattoo — they get an artist who genuinely cares about their story, their vision, and the mark they'll carry for life. New Beginnings isn't just a name. It's a promise.
+    </p>
+    <div class="style-tags">
+      <div class="stag">Black & Grey</div>
+      <div class="stag">Chicano</div>
+      <div class="stag">Sacred Heart</div>
+      <div class="stag">Portraits</div>
+      <div class="stag">Realism</div>
+      <div class="stag">Color</div>
+      <div class="stag">Neo-Traditional</div>
+      <div class="stag">Sleeves</div>
+      <div class="stag">Custom</div>
+    </div>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-n">30+</div><div class="stat-l">Years Tattooing</div></div>
+      <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Custom Pieces</div></div>
+      <div class="stat"><div class="stat-n">4</div><div class="stat-l">Family Artists</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-sec" id="gallery">
+  <div class="gallery-hd">
+    <div class="sec-label">Portfolio</div>
+    <div class="sec-title">Pelon's Work</div>
+    <p>Click any piece to view full size</p>
+  </div>
+
+  <div class="filters">
+    <button class="fbtn active" data-filter="all">All</button>
+    <button class="fbtn" data-filter="black-grey">Black & Grey</button>
+    <button class="fbtn" data-filter="color">Color</button>
+    <button class="fbtn" data-filter="realism">Realism</button>
+    <button class="fbtn" data-filter="chicano">Chicano</button>
+  </div>
+
+  <div class="gallery-grid">
+
+    <div class="g-item" data-cat="black-grey realism" data-src="https://pelonnbts.github.io/IMG_1930.JPG">
+      <img src="https://pelonnbts.github.io/IMG_1930.JPG" alt="Phoenix — Black & Grey Realism" loading="lazy"/>
+      <div class="g-overlay"><span>View</span><div class="g-tag">Phoenix · Black & Grey</div></div>
+    </div>
+
+    <div class="g-item" data-cat="color" data-src="https://pelonnbts.github.io/IMG_1909.JPG">
+      <img src="https://pelonnbts.github.io/IMG_1909.JPG" alt="Angler Fish — Color" loading="lazy"/>
+      <div class="g-overlay"><span>View</span><div class="g-tag">Angler Fish · Color</div></div>
+    </div>
+
+    <div class="g-item" data-cat="color" data-src="https://pelonnbts.github.io/IMG_1907.JPG">
+      <img src="https://pelonnbts.github.io/IMG_1907.JPG" alt="Oni Mask Dragon — Color" loading="lazy"/>
+      <div class="g-overlay"><span>View</span><div class="g-tag">Oni & Dragon · Color</div></div>
+    </div>
+
+    <div class="g-item" data-cat="color" data-src="https://pelonnbts.github.io/IMG_1905.JPG">
+      <img src="https://pelonnbts.github.io/IMG_1905.JPG" alt="Hummingbird — Color" loading="lazy"/>
+      <div class="g-overlay"><span>View</span><div class="g-tag">Hummingbird · Color</div></div>
+    </div>
+
+    <div class="g-item" data-cat="black-grey realism" data-src="https://pelonnbts.github.io/IMG_1894.JPG">
+      <img src="https://pelonnbts.github.io/IMG_1894.JPG" alt="Warrior Sleeve — Black & Grey" loading="lazy"/>
+      <div class="g-overlay"><span>View</span><div class="g-tag">Warrior Sleeve · Black & Grey</div></div>
+    </div>
+
+    <div class="g-item" data-cat="color realism" data-src="https://pelonnbts.github.io/IMG_1895.JPG">
+      <img src="https://pelonnbts.github.io/IMG_1895.JPG" alt="Celtic Wolf Back Piece — Color" loading="lazy"/>
+      <div class="g-overlay"><span>View</span><div class="g-tag">Celtic Wolf · Color</div></div>
+    </div>
+
+    <div class="g-item" data-cat="black-grey realism" data-src="https://pelonnbts.github.io/IMG_1897.JPG">
+      <img src="https://pelonnbts.github.io/IMG_1897.JPG" alt="Mountain Sleeve — Black & Grey" loading="lazy"/>
+      <div class="g-overlay"><span>View</span><div class="g-tag">Mountain Sleeve · Black & Grey</div></div>
+    </div>
+
+    <div class="g-item" data-cat="black-grey realism" data-src="https://pelonnbts.github.io/IMG_1898.JPG">
+      <img src="https://pelonnbts.github.io/IMG_1898.JPG" alt="Zombie — Black & Grey Realism" loading="lazy"/>
+      <div class="g-overlay"><span>View</span><div class="g-tag">Zombie · Black & Grey</div></div>
+    </div>
+
+    <div class="g-item" data-cat="black-grey realism" data-src="https://pelonnbts.github.io/IMG_1899.JPG">
+      <img src="https://pelonnbts.github.io/IMG_1899.JPG" alt="Celtic Viking — Black & Grey" loading="lazy"/>
+      <div class="g-overlay"><span>View</span><div class="g-tag">Celtic Viking · Black & Grey</div></div>
+    </div>
+
+    <div class="g-item" data-cat="color realism" data-src="https://pelonnbts.github.io/IMG_1900.JPG">
+      <img src="https://pelonnbts.github.io/IMG_1900.JPG" alt="Bull Skull Florals — Color" loading="lazy"/>
+      <div class="g-overlay"><span>View</span><div class="g-tag">Bull Skull Florals · Color</div></div>
+    </div>
+
+    <div class="g-item" data-cat="black-grey realism" data-src="https://pelonnbts.github.io/IMG_1901.JPG">
+      <img src="https://pelonnbts.github.io/IMG_1901.JPG" alt="Elephant — Black & Grey Realism" loading="lazy"/>
+      <div class="g-overlay"><span>View</span><div class="g-tag">Elephant · Realism</div></div>
+    </div>
+
+    <div class="g-item" data-cat="chicano black-grey" data-src="https://pelonnbts.github.io/IMG_1940.jpg">
+      <img src="https://pelonnbts.github.io/IMG_1940.jpg" alt="Aztec Warrior — Chicano" loading="lazy"/>
+      <div class="g-overlay"><span>View</span><div class="g-tag">Aztec Warrior · Chicano</div></div>
+    </div>
+
+    <div class="g-item" data-cat="chicano color" data-src="https://pelonnbts.github.io/IMG_1937.JPG">
+      <img src="https://pelonnbts.github.io/IMG_1937.JPG" alt="Sanchez Script Roses — Chicano" loading="lazy"/>
+      <div class="g-overlay"><span>View</span><div class="g-tag">Script & Roses · Chicano</div></div>
+    </div>
+
+    <div class="g-item" data-cat="color realism" data-src="https://pelonnbts.github.io/IMG_1938.JPG">
+      <img src="https://pelonnbts.github.io/IMG_1938.JPG" alt="Memorial Hummingbird — Color" loading="lazy"/>
+      <div class="g-overlay"><span>View</span><div class="g-tag">Memorial Piece · Color</div></div>
+    </div>
+
+    <div class="g-item" data-cat="black-grey" data-src="https://pelonnbts.github.io/IMG_1935.JPG">
+      <img src="https://pelonnbts.github.io/IMG_1935.JPG" alt="Snake & Roses — Black & Grey" loading="lazy"/>
+      <div class="g-overlay"><span>View</span><div class="g-tag">Snake & Roses · Black & Grey</div></div>
+    </div>
+
+    <div class="g-item" data-cat="chicano black-grey" data-src="https://pelonnbts.github.io/IMG_1934.JPG">
+      <img src="https://pelonnbts.github.io/IMG_1934.JPG" alt="Quetzalcoatl — Chicano" loading="lazy"/>
+      <div class="g-overlay"><span>View</span><div class="g-tag">Quetzalcoatl · Chicano</div></div>
+    </div>
+
+    <div class="g-item" data-cat="black-grey realism" data-src="https://pelonnbts.github.io/IMG_1933.JPG">
+      <img src="https://pelonnbts.github.io/IMG_1933.JPG" alt="Jason — Black & Grey Realism" loading="lazy"/>
+      <div class="g-overlay"><span>View</span><div class="g-tag">Jason · Black & Grey</div></div>
+    </div>
+
+    <div class="g-item" data-cat="color" data-src="https://pelonnbts.github.io/IMG_1932.JPG">
+      <img src="https://pelonnbts.github.io/IMG_1932.JPG" alt="Sunflower — Color" loading="lazy"/>
+      <div class="g-overlay"><span>View</span><div class="g-tag">Sunflower · Color</div></div>
+    </div>
+
+    <div class="g-item" data-cat="black-grey realism" data-src="https://pelonnbts.github.io/IMG_1931.JPG">
+      <img src="https://pelonnbts.github.io/IMG_1931.JPG" alt="Spider Neck — Black & Grey" loading="lazy"/>
+      <div class="g-overlay"><span>View</span><div class="g-tag">Spider · Black & Grey</div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking">
+  <div class="booking-border">
+    <div class="sec-label" style="text-align:center;margin-bottom:14px;">Book with Pelon</div>
+    <div class="booking-title">Ready to Tell<br>Your Story?</div>
+    <p class="booking-body">Every piece starts with a conversation. Reach out and let's talk about your vision — custom work is Pelon's specialty.</p>
+    <div class="btn-row">
+      <a href="http://facebook.com/NewBeginningsTattooStudio" target="_blank" class="btn-g">Message on Facebook</a>
+      <a href="https://instagram.com/nbtstucson" target="_blank" class="btn-o">DM on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="f-logo">NBTS · New Beginnings Tattoo Studio</div>
+  <div class="f-tag">4343 N Oracle Rd Suite L · Tucson, AZ · Mon–Sat 9am–10pm</div>
+  <div class="socials">
+    <a class="soc" href="https://instagram.com/nbtstucson" target="_blank">IG</a>
+    <a class="soc" href="http://facebook.com/NewBeginningsTattooStudio" target="_blank">FB</a>
+    <a class="soc" href="index.html">🏠</a>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-close" onclick="closeLightbox()">✕ &nbsp; Close</div>
+  <div class="lb-prev" onclick="lbNav(-1)">‹</div>
+  <img id="lb-img" src="" alt=""/>
+  <div class="lb-next" onclick="lbNav(1)">›</div>
+</div>
+
+<script>
+// Gallery filter
+const items = document.querySelectorAll('.g-item');
+document.querySelectorAll('.fbtn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    const filter = this.dataset.filter;
+    items.forEach(item => {
+      const cats = item.dataset.cat || '';
+      if(filter === 'all' || cats.includes(filter)){
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Lightbox
+let currentIndex = 0;
+const visibleItems = () => [...items].filter(i => i.style.display !== 'none');
+
+items.forEach((item, i) => {
+  item.addEventListener('click', () => {
+    const visible = visibleItems();
+    currentIndex = visible.indexOf(item);
+    openLightbox(item.dataset.src);
+  });
+});
+
+function openLightbox(src){
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function lbNav(dir){
+  const visible = visibleItems();
+  currentIndex = (currentIndex + dir + visible.length) % visible.length;
+  document.getElementById('lb-img').src = visible[currentIndex].dataset.src;
+}
+document.getElementById('lightbox').addEventListener('click', function(e){
+  if(e.target === this) closeLightbox();
+});
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape') closeLightbox();
+  if(e.key === 'ArrowRight') lbNav(1);
+  if(e.key === 'ArrowLeft') lbNav(-1);
+});
+</script>
+
+</body>
+</html>
