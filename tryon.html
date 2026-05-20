@@ -35,6 +35,31 @@ a{text-decoration:none;}
 .page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(24px,4vw,40px);color:var(--gold);font-weight:700;line-height:1.2;margin-bottom:12px;position:relative;}
 .page-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--bone);opacity:.75;max-width:500px;margin:0 auto;line-height:1.72;position:relative;}
 
+/* How it works in header */
+.how-it-works{
+  max-width:700px;margin:32px auto 0;
+  padding:24px 28px;
+  background:rgba(34,168,78,.06);
+  border:.5px solid rgba(34,168,78,.2);
+  position:relative;
+}
+.how-title{
+  font-family:'Cinzel',serif;font-size:13px;letter-spacing:5px;
+  color:var(--green-b);text-transform:uppercase;
+  margin-bottom:20px;text-align:center;
+}
+.how-steps{display:flex;flex-direction:column;gap:12px;}
+.how-step{display:flex;align-items:center;gap:14px;}
+.how-num{
+  font-family:'Cinzel Decorative',serif;font-size:20px;
+  color:var(--gold);line-height:1;min-width:28px;text-align:center;
+}
+.how-txt{font-family:'Crimson Pro',serif;font-size:16px;color:var(--parch);opacity:.9;line-height:1.5;}
+@media(max-width:600px){
+  .how-it-works{padding:18px 16px;}
+  .how-txt{font-size:15px;}
+}
+
 /* MAIN LAYOUT */
 .tryon-wrap{max-width:1100px;margin:0 auto;padding:48px 40px 80px;display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start;}
 @media(max-width:900px){.tryon-wrap{grid-template-columns:1fr;padding:32px 20px 60px;}}
@@ -221,6 +246,18 @@ input[type=range]::-moz-range-thumb{
   <div class="sec-label">Visualize Your Ink</div>
   <div class="page-title">Virtual Tattoo Try-On</div>
   <p class="page-sub">Upload a photo, pick a design, and see how it looks on you before you commit. Move, resize and rotate until it's perfect.</p>
+
+  <!-- HOW IT WORKS — moved here so it's visible immediately -->
+  <div class="how-it-works">
+    <div class="how-title">How It Works</div>
+    <div class="how-steps">
+      <div class="how-step"><div class="how-num">1</div><div class="how-txt">Upload a photo of the area you want tattooed</div></div>
+      <div class="how-step"><div class="how-num">2</div><div class="how-txt">Pick a flash design or upload your own</div></div>
+      <div class="how-step"><div class="how-num">3</div><div class="how-txt">Drag to position, resize and rotate to fit</div></div>
+      <div class="how-step"><div class="how-num">4</div><div class="how-txt">Tap Remove Background to clean up the design</div></div>
+      <div class="how-step"><div class="how-num">5</div><div class="how-txt">Save your image and book your appointment!</div></div>
+    </div>
+  </div>
 </div>
 
 <!-- MAIN -->
@@ -280,18 +317,6 @@ input[type=range]::-moz-range-thumb{
 
   <!-- SIDEBAR -->
   <div class="sidebar">
-
-    <!-- Instructions -->
-    <div class="sidebar-card">
-      <h4>How It Works</h4>
-      <div class="instructions">
-        <div class="instr-step"><div class="instr-num">1</div><div class="instr-txt">Upload a photo of the area you want tattooed</div></div>
-        <div class="instr-step"><div class="instr-num">2</div><div class="instr-txt">Pick a flash design from the gallery below</div></div>
-        <div class="instr-step"><div class="instr-num">3</div><div class="instr-txt">Drag the tattoo to position it on your photo</div></div>
-        <div class="instr-step"><div class="instr-num">4</div><div class="instr-txt">Resize, rotate and adjust opacity to your liking</div></div>
-        <div class="instr-step"><div class="instr-num">5</div><div class="instr-txt">Download and share — or book your appointment!</div></div>
-      </div>
-    </div>
 
     <!-- Flash Designs -->
     <div class="sidebar-card">
