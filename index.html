@@ -232,11 +232,19 @@ img{display:block;max-width:100%;}
 .pc-sub{font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--muted);text-transform:uppercase;margin-bottom:22px;}
 .pc-quote{font-family:'Crimson Pro',serif;font-style:italic;font-size:18px;color:var(--parch);line-height:1.65;border-left:2px solid var(--green-b);padding-left:18px;margin-bottom:16px;}
 .pc-body{font-family:'Crimson Pro',serif;font-size:15.5px;color:var(--bone);line-height:1.82;opacity:.82;margin-bottom:20px;}
-.tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:18px;}
-.tag{padding:3px 8px;border:.5px solid rgba(201,168,76,.22);font-family:'Cinzel',serif;font-size:6px;letter-spacing:2px;color:var(--gold-dim);text-transform:uppercase;}
-.alink{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--green-b);text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:color .2s;}
-.alink::after{content:'→';}
-.alink:hover{color:var(--green-glow);}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
+.tag{padding:7px 13px;border:.5px solid rgba(201,168,76,.35);font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--gold-pale);text-transform:uppercase;background:rgba(201,168,76,.06);}
+.alink{
+  font-family:'Cinzel',serif;font-size:13px;letter-spacing:2px;
+  color:var(--black);text-transform:uppercase;
+  cursor:pointer;display:inline-flex;align-items:center;gap:10px;
+  background:var(--green-b);padding:13px 22px;
+  border:1px solid var(--green-b);
+  transition:all .2s;font-weight:700;
+}
+.alink:hover{background:var(--green-glow);border-color:var(--green-glow);}
+.alink .arr{display:inline-block;animation:arrBounce .8s ease-in-out infinite alternate;font-size:18px;}
+@keyframes arrBounce{from{transform:translateX(0);}to{transform:translateX(7px);}}
 
 /* Kids grid */
 .kids{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;max-width:900px;margin:0 auto;}
@@ -422,7 +430,7 @@ img{display:block;max-width:100%;}
         <div class="tag">Sacred Heart</div><div class="tag">Portraits</div>
         <div class="tag">Realism</div><div class="tag">Custom</div>
       </div>
-      <a class="alink" href="pelon.html">View Pelon's Portfolio</a>
+      <a class="alink" href="pelon.html">View Pelon's Portfolio <span class="arr">→</span></a>
     </div>
   </div>
 
@@ -440,7 +448,7 @@ img{display:block;max-width:100%;}
         <div class="kc-sub">Apprentice Artist</div>
         <p class="kc-bio">The firstborn carries the foundation. Eric brings precision and discipline to his craft — both sleeves are proof he lives the life he inks.</p>
         <div class="tags"><div class="tag">Fine Line</div><div class="tag">Black & Grey</div><div class="tag">Script</div></div>
-        <a class="alink" href="eric.html" style="margin-top:10px;">View Eric's Portfolio</a>
+        <a class="alink" href="eric.html" style="margin-top:10px;">View Eric's Portfolio <span class="arr">→</span></a>
       </div>
     </div>
 
@@ -457,7 +465,7 @@ img{display:block;max-width:100%;}
         <div class="kc-sub">Apprentice Artist</div>
         <p class="kc-bio">Her name is heaven spelled backwards — and her art reflects it. Her own style, her own fire, her own way of making a piece speak.</p>
         <div class="tags"><div class="tag">Floral</div><div class="tag">Watercolor</div><div class="tag">Feminine</div></div>
-        <a class="alink" href="nevaeh.html" style="margin-top:10px;">View Mousie's Portfolio</a>
+        <a class="alink" href="nevaeh.html" style="margin-top:10px;">View Mousie's Portfolio <span class="arr">→</span></a>
       </div>
     </div>
 
@@ -474,7 +482,7 @@ img{display:block;max-width:100%;}
         <div class="kc-sub">Apprentice Artist</div>
         <p class="kc-bio">Raw energy, bold vision, complete focus. Roo is locked in every time he picks up the machine — pushing boundaries with every single piece.</p>
         <div class="tags"><div class="tag">Neo-Trad</div><div class="tag">Bold Lines</div><div class="tag">Color</div></div>
-        <a class="alink" href="#booking" style="margin-top:10px;">Book with Roo</a>
+        <a class="alink" href="roo.html" style="margin-top:10px;">View Roo's Portfolio <span class="arr">→</span></a>
       </div>
     </div>
   </div>
