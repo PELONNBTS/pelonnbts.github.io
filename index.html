@@ -67,7 +67,10 @@ img{display:block;max-width:100%;}
 
 /* Mobile nav */
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
-.nav-hamburger span{width:22px;height:1.5px;background:var(--gold);transition:all .3s;}
+.nav-hamburger.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.nav-hamburger.active span:nth-child(2){opacity:0;}
+.nav-hamburger.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
 @media(max-width:768px){
   .nav-links{display:none;position:absolute;top:66px;left:0;right:0;background:rgba(5,6,5,.98);flex-direction:column;padding:20px 40px;gap:0;border-bottom:1px solid rgba(34,168,78,.2);}
   .nav-links.open{display:flex;}
@@ -295,7 +298,7 @@ img{display:block;max-width:100%;}
 <!-- ═══ NAV ═══ -->
 <nav class="nav">
   <div class="nav-logo"><span class="nav-lion">🦁</span> NBTS</div>
-  <div class="nav-hamburger" onclick="this.nextElementSibling.classList.toggle('open')">
+  <div class="nav-hamburger" id="hamburger">
     <span></span><span></span><span></span>
   </div>
   <ul class="nav-links">
@@ -543,11 +546,17 @@ img{display:block;max-width:100%;}
 
 <script>
 // Mobile nav toggle
-const hamburger = document.querySelector('.nav-hamburger');
+const hamburger = document.getElementById('hamburger');
 const navLinks = document.querySelector('.nav-links');
 if(hamburger){
-  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('active');
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    hamburger.classList.remove('active');
+  }));
 }
 // Smooth scroll for all anchor links
 document.querySelectorAll('a[href^="#"]').forEach(a => {
