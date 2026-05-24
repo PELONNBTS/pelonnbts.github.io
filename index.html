@@ -76,28 +76,34 @@ img{display:block;max-width:100%;}
 }
 .nav-dropdown-btn:hover{color:var(--gold);}
 .nav-dropdown-btn .arr{font-size:10px;transition:transform .2s;}
-.nav-dropdown:hover .arr{transform:rotate(180deg);}
+.nav-dropdown.open .arr{transform:rotate(180deg);}
 .nav-dropdown-menu{
-  position:absolute;top:100%;left:50%;transform:translateX(-50%);
-  background:rgba(5,6,5,.98);
+  position:absolute;top:calc(100% + 0px);left:50%;transform:translateX(-50%);
+  background:rgba(5,6,5,.99);
   border:.5px solid rgba(34,168,78,.25);
-  min-width:180px;
+  min-width:200px;
   display:none;
   flex-direction:column;
-  padding:8px 0;
-  margin-top:8px;
+  padding:0;
   z-index:200;
 }
-.nav-dropdown:hover .nav-dropdown-menu{display:flex;}
+/* Invisible bridge to prevent gap */
+.nav-dropdown-menu::before{
+  content:'';
+  position:absolute;
+  top:-10px;left:0;right:0;
+  height:10px;
+}
+.nav-dropdown-menu.open{display:flex;}
 .nav-dropdown-menu a{
   font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;
   color:var(--bone);text-transform:uppercase;
-  padding:12px 20px;display:block;
+  padding:14px 20px;display:block;
   transition:all .2s;
-  border-bottom:.5px solid rgba(201,168,76,.06);
+  border-bottom:.5px solid rgba(201,168,76,.08);
 }
 .nav-dropdown-menu a:last-child{border-bottom:none;}
-.nav-dropdown-menu a:hover{color:var(--gold);background:rgba(34,168,78,.05);padding-left:26px;}
+.nav-dropdown-menu a:hover{color:var(--gold);background:rgba(34,168,78,.08);}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
 .nav-hamburger span{width:22px;height:1.5px;background:var(--gold);transition:all .3s;display:block;}
 .nav-hamburger.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
@@ -378,9 +384,9 @@ img{display:block;max-width:100%;}
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About Us</a></li>
     <li><a href="#artists">Artists</a></li>
-    <li class="nav-dropdown">
-      <button class="nav-dropdown-btn">Info <span class="arr">▾</span></button>
-      <div class="nav-dropdown-menu">
+    <li class="nav-dropdown" id="infoDropdown">
+      <button class="nav-dropdown-btn" onclick="toggleDropdown()">Info <span class="arr" id="dropArr">▾</span></button>
+      <div class="nav-dropdown-menu" id="dropMenu">
         <a href="aftercare.html">Aftercare</a>
         <a href="faq.html">FAQ</a>
         <a href="flash.html">Flash Designs</a>
@@ -639,6 +645,22 @@ img{display:block;max-width:100%;}
 </footer>
 
 <script>
+// Dropdown toggle
+function toggleDropdown() {
+  const menu = document.getElementById('dropMenu');
+  const dropdown = document.getElementById('infoDropdown');
+  menu.classList.toggle('open');
+  dropdown.classList.toggle('open');
+}
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  const dropdown = document.getElementById('infoDropdown');
+  if(dropdown && !dropdown.contains(e.target)) {
+    document.getElementById('dropMenu').classList.remove('open');
+    dropdown.classList.remove('open');
+  }
+});
+
 // Mobile nav toggle
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.querySelector('.nav-links');
