@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="New Beginnings Family Tattoo Studio — Tattoo Aftercare Instructions for Black & Grey and Color Tattoos. Keep your ink looking great for life."/>
+<title>Tattoo Aftercare | New Beginnings Tattoo Studio Tucson AZ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#050605;color:#D8CFA8;font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{text-decoration:none;}
+
+:root{
+  --gold:#C9A84C;--gold-lt:#F0D080;--gold-dim:#8B6E2A;--gold-pale:#E8D5A0;
+  --green:#1A7A3A;--green-b:#22A84E;--green-glow:#2ECC6A;--green-deep:#071A0D;
+  --black:#050605;--char:#0C0F0C;--dark:#111411;--smoke:#181C18;
+  --bone:#D8CFA8;--parch:#EDE0BB;--muted:#5A6050;
+}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:1000;background:rgba(5,6,5,.97);border-bottom:1px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:66px;backdrop-filter:blur(10px);}
+.nav-logo{font-family:'Cinzel Decorative',serif;font-size:15px;color:var(--gold);letter-spacing:2px;font-weight:700;display:flex;align-items:center;gap:10px;}
+.nav-back{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.nav-back:hover{color:var(--gold);}
+.nav-back::before{content:'←';}
+.nav-book{padding:9px 20px;border:1px solid var(--green);color:var(--green-b);font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all .2s;}
+.nav-book:hover{background:var(--green);color:#050605;}
+
+/* HEADER */
+.page-header{background:var(--char);border-bottom:1px solid rgba(34,168,78,.2);padding:56px 40px 48px;text-align:center;position:relative;overflow:hidden;}
+.page-header::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);}
+.page-header::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(34,168,78,.06) 0%,transparent 70%);pointer-events:none;}
+.sec-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;position:relative;}
+.page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(26px,4vw,44px);color:var(--gold);font-weight:700;line-height:1.2;margin-bottom:14px;position:relative;}
+.page-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:18px;color:var(--parch);opacity:.88;max-width:580px;margin:0 auto;line-height:1.72;position:relative;}
+
+/* TAB SWITCHER */
+.tab-wrap{max-width:700px;margin:0 auto;}
+.tabs{display:flex;border-bottom:1px solid rgba(201,168,76,.15);}
+.tab-btn{
+  flex:1;padding:18px 20px;
+  background:transparent;
+  font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;
+  color:var(--muted);text-transform:uppercase;
+  border:none;cursor:pointer;transition:all .3s;
+  border-bottom:2px solid transparent;
+  margin-bottom:-1px;
+}
+.tab-btn.active{color:var(--gold);border-bottom-color:var(--gold);background:rgba(201,168,76,.04);}
+.tab-btn:hover{color:var(--bone);}
+.tab-btn .tab-icon{font-size:18px;display:block;margin-bottom:6px;}
+
+/* CONTENT */
+.main-wrap{max-width:900px;margin:0 auto;padding:56px 40px 80px;}
+@media(max-width:600px){.main-wrap{padding:36px 20px 60px;}}
+
+.tab-content{display:none;}
+.tab-content.active{display:block;}
+
+/* Section headers */
+.content-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:10px;}
+.content-title{font-family:'Cinzel Decorative',serif;font-size:clamp(20px,3vw,30px);color:var(--gold);font-weight:700;line-height:1.25;margin-bottom:8px;}
+.content-intro{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--parch);opacity:.85;line-height:1.72;margin-bottom:40px;}
+
+/* Timeline steps */
+.timeline{display:flex;flex-direction:column;gap:4px;margin-bottom:48px;}
+.timeline-item{
+  background:var(--dark);
+  border:.5px solid rgba(201,168,76,.1);
+  padding:28px 28px 28px 24px;
+  display:grid;
+  grid-template-columns:80px 1fr;
+  gap:20px;
+  align-items:start;
+  position:relative;
+  transition:border-color .3s;
+}
+.timeline-item:hover{border-color:rgba(34,168,78,.3);}
+.timeline-item::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--green-b);opacity:0;transition:opacity .3s;}
+.timeline-item:hover::before{opacity:1;}
+
+.t-day{
+  text-align:center;
+  padding:12px 8px;
+  background:rgba(34,168,78,.08);
+  border:.5px solid rgba(34,168,78,.2);
+}
+.t-day-num{font-family:'Cinzel Decorative',serif;font-size:22px;color:var(--gold);line-height:1;}
+.t-day-lbl{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--green-b);text-transform:uppercase;margin-top:4px;}
+
+.t-content h3{font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
+.t-content p{font-family:'Crimson Pro',serif;font-size:16px;color:var(--bone);opacity:.82;line-height:1.78;}
+.t-content ul{margin-top:10px;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:7px;}
+.t-content ul li{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.78;line-height:1.6;display:flex;align-items:flex-start;gap:10px;}
+.t-content ul li::before{content:'✦';color:var(--green-b);font-size:9px;flex-shrink:0;margin-top:4px;}
+
+/* Do and Don't grid */
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:48px;}
+@media(max-width:600px){.do-dont{grid-template-columns:1fr;}}
+
+.do-card{background:rgba(26,122,58,.08);border:.5px solid rgba(34,168,78,.25);padding:24px;}
+.dont-card{background:rgba(184,74,26,.06);border:.5px solid rgba(184,74,26,.25);padding:24px;}
+
+.do-card h3{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;color:var(--green-b);text-transform:uppercase;margin-bottom:16px;padding-bottom:10px;border-bottom:.5px solid rgba(34,168,78,.2);}
+.dont-card h3{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;color:#E05A20;text-transform:uppercase;margin-bottom:16px;padding-bottom:10px;border-bottom:.5px solid rgba(184,74,26,.2);}
+
+.do-list,.dont-list{display:flex;flex-direction:column;gap:10px;list-style:none;}
+.do-list li{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.82;line-height:1.6;display:flex;align-items:flex-start;gap:10px;}
+.do-list li::before{content:'✓';color:var(--green-b);font-weight:bold;flex-shrink:0;}
+.dont-list li{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.82;line-height:1.6;display:flex;align-items:flex-start;gap:10px;}
+.dont-list li::before{content:'✗';color:#E05A20;font-weight:bold;flex-shrink:0;}
+
+/* Products section */
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-bottom:48px;}
+@media(max-width:600px){.products-grid{grid-template-columns:1fr;}}
+.product-card{background:var(--dark);border:.5px solid rgba(201,168,76,.1);padding:22px;}
+.product-icon{font-size:28px;margin-bottom:10px;}
+.product-name{font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;}
+.product-desc{font-family:'Crimson Pro',serif;font-size:14px;color:var(--bone);opacity:.72;line-height:1.65;}
+
+/* Warning box */
+.warning-box{
+  background:rgba(184,74,26,.06);
+  border:.5px solid rgba(184,74,26,.3);
+  border-left:3px solid #E05A20;
+  padding:20px 24px;
+  margin-bottom:32px;
+}
+.warning-box h4{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:#E05A20;text-transform:uppercase;margin-bottom:10px;}
+.warning-box p{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.8;line-height:1.7;}
+
+/* Info box */
+.info-box{
+  background:rgba(34,168,78,.06);
+  border:.5px solid rgba(34,168,78,.25);
+  border-left:3px solid var(--green-b);
+  padding:20px 24px;
+  margin-bottom:32px;
+}
+.info-box h4{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--green-b);text-transform:uppercase;margin-bottom:10px;}
+.info-box p{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.8;line-height:1.7;}
+
+/* Long term care */
+.longterm{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:48px;}
+@media(max-width:600px){.longterm{grid-template-columns:1fr;}}
+.lt-item{background:var(--dark);border:.5px solid rgba(201,168,76,.1);padding:22px;display:flex;align-items:flex-start;gap:14px;}
+.lt-icon{font-size:22px;flex-shrink:0;}
+.lt-txt h4{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;}
+.lt-txt p{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.72;line-height:1.65;}
+
+/* Book CTA */
+.book-cta{background:var(--green-deep);border:.5px solid rgba(34,168,78,.25);padding:40px;text-align:center;margin-top:48px;}
+.book-cta p{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--parch);opacity:.85;line-height:1.7;margin-bottom:20px;}
+.btn-g{padding:15px 36px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid var(--green-b);cursor:pointer;font-weight:700;display:inline-block;transition:all .3s;}
+.btn-g:hover{background:var(--green-b);color:#050605;}
+
+/* FOOTER */
+.footer{background:var(--green-deep);border-top:1px solid rgba(34,168,78,.2);padding:36px 40px;text-align:center;}
+.f-logo{font-family:'Cinzel Decorative',serif;font-size:13px;color:var(--gold-dim);letter-spacing:2px;margin-bottom:6px;}
+.f-tag{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
+.socials{display:flex;gap:8px;justify-content:center;}
+.soc{width:34px;height:34px;border:.5px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:9px;color:var(--muted);cursor:pointer;transition:all .2s;text-decoration:none;}
+.soc:hover{border-color:var(--green-b);color:var(--green-b);}
+
+@media(max-width:600px){
+  .timeline-item{grid-template-columns:60px 1fr;gap:14px;}
+  .t-day-num{font-size:18px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">🦁 NBTS</div>
+  <a href="index.html" class="nav-back">Back to Main Site</a>
+  <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="nav-book">Book Now</a>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div class="sec-label">New Beginnings Tattoo Studio</div>
+  <div class="page-title">Tattoo Aftercare</div>
+  <p class="page-sub">Your tattoo is a piece of art — and how you care for it determines how it looks for the rest of your life. Follow these instructions carefully for the best healing results.</p>
+</div>
+
+<!-- TABS -->
+<div style="background:var(--char);border-bottom:1px solid rgba(34,168,78,.15);padding:0 40px;">
+  <div class="tab-wrap">
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('bg', this)">
+        <span class="tab-icon">🖤</span>
+        Black & Grey
+      </button>
+      <button class="tab-btn" onclick="switchTab('color', this)">
+        <span class="tab-icon">🎨</span>
+        Color Tattoos
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-wrap">
+
+  <!-- ═══ BLACK & GREY TAB ═══ -->
+  <div class="tab-content active" id="tab-bg">
+
+    <div class="content-label">Black & Grey Aftercare</div>
+    <div class="content-title">Protecting Your Lines & Shading</div>
+    <p class="content-intro">Black and grey tattoos rely on precise shading and fine detail. Proper aftercare keeps those gradients crisp, the lines sharp, and prevents blurring as the tattoo ages.</p>
+
+    <div class="info-box">
+      <h4>🦁 Pelon's Note</h4>
+      <p>Black and grey work is my specialty. The shading and grey wash techniques I use heal beautifully when you follow these steps. Don't rush the process — good ink deserves good healing.</p>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="content-label">Day-by-Day Healing Guide</div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="t-day"><div class="t-day-num">1–3</div><div class="t-day-lbl">Days</div></div>
+        <div class="t-content">
+          <h3>Initial Care — The Most Critical Phase</h3>
+          <p>Your tattoo is an open wound. Treat it like one.</p>
+          <ul>
+            <li>Leave the wrap or second skin your artist applied on for 2–5 hours (or as instructed)</li>
+            <li>Remove wrap with clean hands and gently wash with lukewarm water and fragrance-free antibacterial soap</li>
+            <li>Use small circular motions to remove plasma, blood, and excess ink</li>
+            <li>Pat dry with a clean paper towel — never rub</li>
+            <li>Apply a very thin layer of Aquaphor or unscented healing ointment — less is more</li>
+            <li>Repeat washing 2–3 times daily</li>
+            <li>Sleep on clean sheets — change them daily if possible</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="t-day"><div class="t-day-num">4–7</div><div class="t-day-lbl">Days</div></div>
+        <div class="t-content">
+          <h3>Peeling Begins — Do Not Pick</h3>
+          <ul>
+            <li>The tattoo will start to peel — this is completely normal</li>
+            <li>Switch from ointment to a fragrance-free lotion (Lubriderm, Aveeno, Curel)</li>
+            <li>Apply lotion 2–3 times daily — just enough to keep it from drying out</li>
+            <li>Never pick or scratch at peeling skin — this pulls ink out and causes scarring</li>
+            <li>If itching occurs tap gently — do not scratch</li>
+            <li>Continue washing gently twice a day</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="t-day"><div class="t-day-num">8–14</div><div class="t-day-lbl">Days</div></div>
+        <div class="t-content">
+          <h3>Surface Healing — Stay Consistent</h3>
+          <ul>
+            <li>The outer skin is healing — keep moisturizing daily</li>
+            <li>The tattoo may look dull or cloudy — this is normal, it will clear up</li>
+            <li>Avoid direct sunlight on the tattoo</li>
+            <li>No swimming, soaking in tubs, saunas or hot tubs</li>
+            <li>Avoid gym workouts that cause excessive sweating on the tattooed area</li>
+            <li>Continue fragrance-free lotion 2x daily</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="t-day"><div class="t-day-num">15–30</div><div class="t-day-lbl">Days</div></div>
+        <div class="t-content">
+          <h3>Deep Healing — Almost There</h3>
+          <ul>
+            <li>Surface looks healed but deeper layers are still recovering</li>
+            <li>Continue daily moisturizing</li>
+            <li>Start applying SPF 30+ sunscreen before any sun exposure</li>
+            <li>Avoid prolonged sun exposure — UV rays fade black ink over time</li>
+            <li>No exfoliation on or near the tattoo</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="t-day"><div class="t-day-num">30+</div><div class="t-day-lbl">Days</div></div>
+        <div class="t-content">
+          <h3>Fully Healed — Long Term Care</h3>
+          <ul>
+            <li>Tattoo is fully healed on the surface</li>
+            <li>Moisturize daily to keep skin healthy and ink looking fresh</li>
+            <li>Always apply SPF 50+ before sun exposure — this is the #1 thing that keeps black ink crisp</li>
+            <li>Stay hydrated — healthy skin keeps tattoos looking sharp for decades</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DO AND DONT -->
+    <div class="content-label">Quick Reference</div>
+    <div class="do-dont">
+      <div class="do-card">
+        <h3>✓ &nbsp; Do</h3>
+        <ul class="do-list">
+          <li>Wash with fragrance-free antibacterial soap</li>
+          <li>Pat dry with clean paper towels</li>
+          <li>Apply thin layer of Aquaphor first 3 days</li>
+          <li>Switch to unscented lotion after day 3</li>
+          <li>Keep it moisturized but not greasy</li>
+          <li>Wear loose clothing over the tattoo</li>
+          <li>Apply SPF 30+ after healing</li>
+          <li>Stay hydrated and eat well</li>
+          <li>Contact your artist with any concerns</li>
+        </ul>
+      </div>
+      <div class="dont-card">
+        <h3>✗ &nbsp; Don't</h3>
+        <ul class="dont-list">
+          <li>Pick, scratch or peel the skin</li>
+          <li>Use scented soaps or lotions</li>
+          <li>Soak in pools, oceans, or baths</li>
+          <li>Expose to direct sunlight while healing</li>
+          <li>Apply sunscreen while still healing</li>
+          <li>Use petroleum or alcohol-based products</li>
+          <li>Over-moisturize — less is more</li>
+          <li>Wear tight clothing over the tattoo</li>
+          <li>Shave over the tattooed area while healing</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="content-label">Recommended Products</div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-icon">💊</div>
+        <div class="product-name">Aquaphor</div>
+        <p class="product-desc">The gold standard for days 1–3. Creates a breathable barrier while locking in moisture. Apply a very thin layer.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">🧴</div>
+        <div class="product-name">Lubriderm / Aveeno</div>
+        <p class="product-desc">Unscented, fragrance-free lotions perfect for days 4 onwards. Keep skin hydrated without clogging pores.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">🌿</div>
+        <div class="product-name">Hustle Butter</div>
+        <p class="product-desc">A vegan tattoo-specific balm loved by artists. Soothes irritation and keeps ink looking fresh during healing.</p>
+      </div>
+    </div>
+
+    <!-- LONG TERM -->
+    <div class="content-label">Long Term Care</div>
+    <div class="longterm">
+      <div class="lt-item"><div class="lt-icon">☀️</div><div class="lt-txt"><h4>Sun Protection</h4><p>UV rays are the #1 enemy of black ink. Always apply SPF 50+ before sun exposure — even years after healing.</p></div></div>
+      <div class="lt-item"><div class="lt-icon">💧</div><div class="lt-txt"><h4>Stay Hydrated</h4><p>Drink water daily. Hydrated skin keeps ink looking sharper and lines crisper for decades.</p></div></div>
+      <div class="lt-item"><div class="lt-icon">🧴</div><div class="lt-txt"><h4>Daily Moisturizing</h4><p>Even after healing, moisturize daily. Dry skin makes tattoos look dull and aged faster.</p></div></div>
+      <div class="lt-item"><div class="lt-icon">🔄</div><div class="lt-txt"><h4>Touch Ups</h4><p>Black and grey tattoos may need a touch up after full healing. Come see us if any spots look uneven.</p></div></div>
+    </div>
+
+    <div class="warning-box">
+      <h4>⚠️ Signs of Infection — Contact Us Immediately</h4>
+      <p>If you experience excessive redness beyond day 3, unusual swelling, pus or discharge, extreme pain, or fever — contact your artist immediately or seek medical attention. Infections are rare when aftercare is followed properly but must be treated quickly.</p>
+    </div>
+
+  </div><!-- end black & grey tab -->
+
+  <!-- ═══ COLOR TAB ═══ -->
+  <div class="tab-content" id="tab-color">
+
+    <div class="content-label">Color Tattoo Aftercare</div>
+    <div class="content-title">Keeping Your Colors Vibrant</div>
+    <p class="content-intro">Color tattoos require extra attention — the pigments are more sensitive to sun, heat, and improper care. Follow these steps to keep your colors bold and vibrant for years to come.</p>
+
+    <div class="info-box">
+      <h4>🎨 Important Note</h4>
+      <p>Color tattoos — especially reds, pastels and watercolor styles — are more susceptible to fading than black and grey. Diligent aftercare from day one makes the biggest difference in how your colors hold up long term.</p>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="content-label">Day-by-Day Healing Guide</div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="t-day"><div class="t-day-num">1–3</div><div class="t-day-lbl">Days</div></div>
+        <div class="t-content">
+          <h3>Initial Care — Protect the Pigments</h3>
+          <ul>
+            <li>Leave your wrap or second skin on for 2–5 hours as instructed by your artist</li>
+            <li>Remove with clean hands and wash gently with lukewarm — never hot — water</li>
+            <li>Use a mild fragrance-free antibacterial soap in small circular motions</li>
+            <li>Pat completely dry with clean paper towels</li>
+            <li>Apply a very thin layer of Aquaphor or tattoo-specific healing ointment</li>
+            <li>Wash 2–3 times daily — consistency is key for color retention</li>
+            <li>Keep out of direct sunlight completely — colors fade extremely fast when exposed to UV while healing</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="t-day"><div class="t-day-num">4–7</div><div class="t-day-lbl">Days</div></div>
+        <div class="t-content">
+          <h3>Peeling Phase — Extra Caution Needed</h3>
+          <ul>
+            <li>Color tattoos peel more than black and grey — do not pick under any circumstances</li>
+            <li>Picking peeling skin on a color tattoo pulls pigment out and creates uneven patches</li>
+            <li>Switch from ointment to a fragrance-free lotion with natural ingredients</li>
+            <li>Look for lotions with aloe vera or vitamin E — great for color preservation</li>
+            <li>Apply lotion 2–3 times daily — do not over-moisturize as this can push pigment out</li>
+            <li>Avoid tight clothing rubbing against the tattoo</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="t-day"><div class="t-day-num">8–14</div><div class="t-day-lbl">Days</div></div>
+        <div class="t-content">
+          <h3>Milky Phase — Don't Panic</h3>
+          <ul>
+            <li>Colors may look dull, milky or faded — this is completely normal during healing</li>
+            <li>The vibrancy WILL return once the skin fully heals — be patient</li>
+            <li>Continue moisturizing 2x daily with fragrance-free lotion</li>
+            <li>No swimming, soaking, or hot tubs — chlorine destroys color pigments</li>
+            <li>No sun exposure whatsoever — even 10 minutes can dull reds and pastels permanently</li>
+            <li>Avoid sweating heavily on the tattooed area</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="t-day"><div class="t-day-num">15–30</div><div class="t-day-lbl">Days</div></div>
+        <div class="t-content">
+          <h3>Color Returns — Protect It</h3>
+          <ul>
+            <li>Colors start looking vibrant again as the milky layer sheds</li>
+            <li>Continue daily moisturizing — do not stop</li>
+            <li>Still no sunscreen on healing skin — wait until fully healed</li>
+            <li>Avoid exfoliation on or near the tattoo</li>
+            <li>Avoid saunas and steam rooms for the full month</li>
+            <li>Eat well and stay hydrated — your body heals from the inside out</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="t-day"><div class="t-day-num">30+</div><div class="t-day-lbl">Days</div></div>
+        <div class="t-content">
+          <h3>Fully Healed — Color Preservation For Life</h3>
+          <ul>
+            <li>Start applying SPF 50+ sunscreen every time you go outside — non-negotiable for color tattoos</li>
+            <li>Moisturize daily with a tattoo-friendly lotion</li>
+            <li>Avoid prolonged sun exposure even with sunscreen</li>
+            <li>Stay hydrated — the single best thing you can do for long term color vibrancy</li>
+            <li>Some colors (especially white and pastels) may need a touch up — this is normal</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DO AND DONT -->
+    <div class="content-label">Quick Reference</div>
+    <div class="do-dont">
+      <div class="do-card">
+        <h3>✓ &nbsp; Do</h3>
+        <ul class="do-list">
+          <li>Wash gently with fragrance-free soap</li>
+          <li>Use lukewarm water only — never hot</li>
+          <li>Apply thin Aquaphor for first 3 days</li>
+          <li>Switch to lotion with aloe vera or vitamin E</li>
+          <li>Let peeling skin fall off naturally</li>
+          <li>Moisturize consistently 2–3x daily</li>
+          <li>Apply SPF 50+ after fully healed</li>
+          <li>Stay hydrated inside and out</li>
+          <li>Wear loose, breathable clothing over it</li>
+        </ul>
+      </div>
+      <div class="dont-card">
+        <h3>✗ &nbsp; Don't</h3>
+        <ul class="dont-list">
+          <li>Pick or peel — ruins color instantly</li>
+          <li>Use hot water — fades pigment</li>
+          <li>Over-moisturize — pushes pigment out</li>
+          <li>Expose to any sun while healing</li>
+          <li>Apply sunscreen on healing skin</li>
+          <li>Swim in pools, ocean or soak in tubs</li>
+          <li>Use scented or alcohol-based products</li>
+          <li>Use heavy petroleum-based products</li>
+          <li>Ignore fading — come see us for a touch up</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="content-label">Recommended Products for Color</div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-icon">💊</div>
+        <div class="product-name">Aquaphor</div>
+        <p class="product-desc">First 3 days only. Thin layer creates a breathable seal that protects color pigments while they set into the skin.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">🌿</div>
+        <div class="product-name">Mad Rabbit Balm</div>
+        <p class="product-desc">Clean ingredients designed specifically for tattoos. Contains aloe and vitamin E — excellent for preserving color vibrancy.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">☀️</div>
+        <div class="product-name">SPF 50+ Sunscreen</div>
+        <p class="product-desc">The most important long-term product for color tattoos. Apply every single time you go outside after healing.</p>
+      </div>
+    </div>
+
+    <!-- LONG TERM -->
+    <div class="content-label">Long Term Color Preservation</div>
+    <div class="longterm">
+      <div class="lt-item"><div class="lt-icon">☀️</div><div class="lt-txt"><h4>SPF Every Day</h4><p>UV rays are the #1 killer of color tattoos. SPF 50+ is non-negotiable — even on cloudy days.</p></div></div>
+      <div class="lt-item"><div class="lt-icon">💧</div><div class="lt-txt"><h4>Hydrate Daily</h4><p>Drink water. Moisturize. Hydrated skin holds color pigments far better than dry skin over time.</p></div></div>
+      <div class="lt-item"><div class="lt-icon">🔄</div><div class="lt-txt"><h4>Touch Ups Are Normal</h4><p>White, pastel and watercolor tattoos often need a touch up after healing. Come see us — it's part of the process.</p></div></div>
+      <div class="lt-item"><div class="lt-icon">🏊</div><div class="lt-txt"><h4>Limit Pool Time</h4><p>Even after healing, excessive chlorine exposure fades color tattoos over time. Rinse and moisturize after swimming.</p></div></div>
+    </div>
+
+    <div class="warning-box">
+      <h4>⚠️ Red Ink Sensitivity</h4>
+      <p>Red pigments can occasionally cause mild allergic reactions in some people — minor swelling or itching beyond day 5 is worth monitoring. If swelling doesn't subside contact your artist or a dermatologist. This is rare but worth knowing.</p>
+    </div>
+
+    <div class="warning-box">
+      <h4>⚠️ Signs of Infection — Contact Us Immediately</h4>
+      <p>Excessive redness beyond day 3, unusual swelling, pus, extreme pain, or fever — contact your artist immediately or seek medical attention. Infections are rare with proper aftercare but must be treated quickly.</p>
+    </div>
+
+  </div><!-- end color tab -->
+
+  <!-- SHARED BOOK CTA -->
+  <div class="book-cta">
+    <p>Questions about your healing tattoo? Reach out to your artist directly — we're always here to help.</p>
+    <a href="http://facebook.com/NewBeginningsTattooStudio" target="_blank" class="btn-g">Message Us on Facebook</a>
+  </div>
+
+</div><!-- end main wrap -->
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="f-logo">NBTS · New Beginnings Tattoo Studio</div>
+  <div class="f-tag">4343 N Oracle Rd Suite L · Tucson, AZ · Mon–Sat 9am–10pm</div>
+  <div class="socials">
+    <a class="soc" href="https://instagram.com/nbtstucson" target="_blank">IG</a>
+    <a class="soc" href="http://facebook.com/NewBeginningsTattooStudio" target="_blank">FB</a>
+    <a class="soc" href="index.html">🏠</a>
+  </div>
+</footer>
+
+<script>
+function switchTab(tab, btn) {
+  // Hide all tabs
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  // Show selected
+  document.getElementById('tab-' + tab).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>
