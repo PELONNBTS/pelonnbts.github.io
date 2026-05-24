@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="New Beginnings Tattoo Studio Tucson AZ — Client Reviews and Testimonials. See what our clients say about their experience."/>
+<title>Client Reviews | New Beginnings Tattoo Studio Tucson AZ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#050605;color:#D8CFA8;font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{text-decoration:none;}
+
+:root{
+  --gold:#C9A84C;--gold-lt:#F0D080;--gold-dim:#8B6E2A;--gold-pale:#E8D5A0;
+  --green:#1A7A3A;--green-b:#22A84E;--green-deep:#071A0D;
+  --black:#050605;--char:#0C0F0C;--dark:#111411;--smoke:#181C18;
+  --bone:#D8CFA8;--parch:#EDE0BB;--muted:#5A6050;
+}
+
+.nav{position:sticky;top:0;z-index:1000;background:rgba(5,6,5,.97);border-bottom:1px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:66px;backdrop-filter:blur(10px);}
+.nav-logo{font-family:'Cinzel Decorative',serif;font-size:15px;color:var(--gold);letter-spacing:2px;font-weight:700;}
+.nav-back{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.nav-back:hover{color:var(--gold);}
+.nav-back::before{content:'←';}
+.nav-book{padding:9px 20px;border:1px solid var(--green);color:var(--green-b);font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all .2s;}
+.nav-book:hover{background:var(--green);color:#050605;}
+
+.page-header{background:var(--char);border-bottom:1px solid rgba(34,168,78,.2);padding:52px 40px 44px;text-align:center;position:relative;overflow:hidden;}
+.page-header::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);}
+.sec-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;}
+.page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(24px,4vw,42px);color:var(--gold);font-weight:700;line-height:1.2;margin-bottom:12px;}
+.page-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--parch);opacity:.85;max-width:540px;margin:0 auto;line-height:1.72;}
+
+/* STATS BANNER */
+.stats-banner{display:flex;justify-content:center;gap:0;background:var(--green-deep);border-bottom:1px solid rgba(34,168,78,.2);}
+.stat-block{padding:28px 48px;text-align:center;border-right:.5px solid rgba(34,168,78,.2);}
+.stat-block:last-child{border-right:none;}
+.stat-n{font-family:'Cinzel Decorative',serif;font-size:36px;color:var(--gold);font-weight:900;line-height:1;}
+.stat-l{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;color:var(--green-b);text-transform:uppercase;margin-top:4px;}
+@media(max-width:600px){.stats-banner{flex-wrap:wrap;}.stat-block{padding:20px 28px;border-right:none;border-bottom:.5px solid rgba(34,168,78,.2);width:50%;}}
+
+/* GOOGLE CTA */
+.google-cta{background:var(--dark);border-bottom:1px solid rgba(201,168,76,.1);padding:24px 40px;text-align:center;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;}
+.google-cta p{font-family:'Crimson Pro',serif;font-style:italic;font-size:16px;color:var(--bone);opacity:.75;}
+.google-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:transparent;border:1px solid rgba(201,168,76,.3);font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;transition:all .3s;}
+.google-btn:hover{border-color:var(--gold);background:rgba(201,168,76,.06);}
+
+/* TESTIMONIALS GRID */
+.main-wrap{max-width:1000px;margin:0 auto;padding:56px 40px 80px;}
+@media(max-width:600px){.main-wrap{padding:36px 20px 60px;}}
+
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px;justify-content:center;}
+.fbtn{padding:8px 18px;background:transparent;border:.5px solid rgba(201,168,76,.2);font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;cursor:pointer;transition:all .2s;}
+.fbtn.active,.fbtn:hover{border-color:var(--green-b);color:var(--green-b);background:rgba(34,168,78,.05);}
+
+.reviews-grid{columns:3 280px;column-gap:16px;}
+@media(max-width:600px){.reviews-grid{columns:1;}}
+
+.review-card{break-inside:avoid;margin-bottom:16px;background:var(--dark);border:.5px solid rgba(201,168,76,.1);padding:24px;position:relative;transition:border-color .3s;}
+.review-card:hover{border-color:rgba(34,168,78,.3);}
+.review-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.3),transparent);opacity:0;transition:opacity .3s;}
+.review-card:hover::before{opacity:1;}
+
+.review-stars{display:flex;gap:3px;margin-bottom:12px;}
+.star{color:var(--gold);font-size:14px;}
+.star.empty{color:var(--muted);}
+
+.review-text{font-family:'Crimson Pro',serif;font-style:italic;font-size:16px;color:var(--parch);line-height:1.78;opacity:.9;margin-bottom:16px;}
+.review-text::before{content:'\201C';font-size:32px;color:var(--gold);opacity:.4;line-height:0;vertical-align:-12px;margin-right:4px;}
+
+.review-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:.5px solid rgba(201,168,76,.08);}
+.review-author{display:flex;flex-direction:column;gap:2px;}
+.review-name{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;}
+.review-meta{font-family:'Crimson Pro',serif;font-size:13px;color:var(--muted);}
+.review-artist{padding:3px 8px;background:rgba(34,168,78,.1);border:.5px solid rgba(34,168,78,.3);font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--green-b);text-transform:uppercase;}
+
+/* FEATURED QUOTE */
+.featured-quote{background:var(--green-deep);border:.5px solid rgba(201,168,76,.2);padding:48px;text-align:center;margin-bottom:40px;position:relative;}
+.featured-quote::before,.featured-quote::after{content:'';position:absolute;width:18px;height:18px;border:1px solid var(--gold-dim);}
+.featured-quote::before{top:-1px;left:-1px;border-right:none;border-bottom:none;}
+.featured-quote::after{bottom:-1px;right:-1px;border-left:none;border-top:none;}
+.fq-text{font-family:'Crimson Pro',serif;font-style:italic;font-size:clamp(18px,2.5vw,24px);color:var(--parch);line-height:1.7;margin-bottom:16px;}
+.fq-author{font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;}
+.fq-stars{display:flex;justify-content:center;gap:4px;margin-bottom:16px;}
+
+/* LEAVE REVIEW CTA */
+.leave-review{background:var(--char);border:.5px solid rgba(34,168,78,.2);padding:48px 40px;text-align:center;margin-top:48px;}
+.lr-title{font-family:'Cinzel Decorative',serif;font-size:clamp(20px,3vw,30px);color:var(--gold);font-weight:700;margin-bottom:12px;}
+.lr-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--bone);opacity:.75;max-width:480px;margin:0 auto 28px;line-height:1.7;}
+.btn-g{padding:15px 36px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid var(--green-b);cursor:pointer;font-weight:700;display:inline-block;transition:all .3s;margin:6px;}
+.btn-g:hover{background:var(--green-b);color:#050605;}
+.btn-o{padding:15px 36px;background:transparent;color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(201,168,76,.35);cursor:pointer;display:inline-block;transition:all .3s;margin:6px;}
+.btn-o:hover{border-color:var(--gold);background:rgba(201,168,76,.07);}
+
+.footer{background:var(--green-deep);border-top:1px solid rgba(34,168,78,.2);padding:36px 40px;text-align:center;}
+.f-logo{font-family:'Cinzel Decorative',serif;font-size:13px;color:var(--gold-dim);letter-spacing:2px;margin-bottom:6px;}
+.f-tag{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
+.socials{display:flex;gap:8px;justify-content:center;}
+.soc{width:34px;height:34px;border:.5px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:9px;color:var(--muted);transition:all .2s;text-decoration:none;}
+.soc:hover{border-color:var(--green-b);color:var(--green-b);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">🦁 NBTS</div>
+  <a href="index.html" class="nav-back">Back to Main Site</a>
+  <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="nav-book">Book Now</a>
+</nav>
+
+<div class="page-header">
+  <div class="sec-label">What Our Clients Say</div>
+  <div class="page-title">Reviews & Testimonials</div>
+  <p class="page-sub">Real words from real clients. Every review is a story — a piece of art worn for life and the experience behind it.</p>
+</div>
+
+<!-- STATS -->
+<div class="stats-banner">
+  <div class="stat-block"><div class="stat-n">⭐ 5.0</div><div class="stat-l">Google Rating</div></div>
+  <div class="stat-block"><div class="stat-n">30+</div><div class="stat-l">Years Experience</div></div>
+  <div class="stat-block"><div class="stat-n">4</div><div class="stat-l">Family Artists</div></div>
+  <div class="stat-block"><div class="stat-n">∞</div><div class="stat-l">Happy Clients</div></div>
+</div>
+
+<!-- GOOGLE CTA -->
+<div class="google-cta">
+  <p>Have you been tattooed by us? Your review means everything.</p>
+  <a href="https://g.page/r/CXBwTOOXxC3IEAI/review" target="_blank" class="google-btn">⭐ Leave a Google Review</a>
+</div>
+
+<!-- MAIN -->
+<div class="main-wrap">
+
+  <!-- FEATURED -->
+  <div class="featured-quote">
+    <div class="fq-stars">⭐⭐⭐⭐⭐</div>
+    <p class="fq-text">"Pelon is not just a tattoo artist — he is a storyteller. He took my idea and turned it into something I will carry proudly for the rest of my life. New Beginnings is the only shop I will ever go to."</p>
+    <div class="fq-author">✦ &nbsp; Maria G. · Tucson, AZ &nbsp; ✦</div>
+  </div>
+
+  <!-- FILTER -->
+  <div class="filter-bar">
+    <button class="fbtn active" onclick="filterReviews('all',this)">All Artists</button>
+    <button class="fbtn" onclick="filterReviews('Pelon',this)">Pelon</button>
+    <button class="fbtn" onclick="filterReviews('Eric',this)">Eric</button>
+    <button class="fbtn" onclick="filterReviews('Mousie',this)">Mousie</button>
+    <button class="fbtn" onclick="filterReviews('Roo',this)">Roo</button>
+  </div>
+
+  <!-- REVIEWS GRID -->
+  <div class="reviews-grid" id="reviewsGrid">
+
+    <div class="review-card" data-artist="Pelon">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-text">Pelon did my full sleeve and I couldn't be happier. Every session he remembered exactly where we left off and built on it perfectly. 30 years of experience shows in every single line.</p>
+      <div class="review-footer"><div class="review-author"><div class="review-name">Carlos M.</div><div class="review-meta">Full Sleeve · Tucson, AZ</div></div><div class="review-artist">Pelon</div></div>
+    </div>
+
+    <div class="review-card" data-artist="Pelon">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-text">I came in with a cover-up that I thought was impossible. Pelon looked at it for about two minutes and told me exactly what he could do. The result was beyond anything I imagined.</p>
+      <div class="review-footer"><div class="review-author"><div class="review-name">Jessica R.</div><div class="review-meta">Cover-Up · Tucson, AZ</div></div><div class="review-artist">Pelon</div></div>
+    </div>
+
+    <div class="review-card" data-artist="Pelon">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-text">The studio is clean, professional, and welcoming. Pelon made me feel completely at ease for my first tattoo. He explained everything step by step. I will be back for my second piece very soon.</p>
+      <div class="review-footer"><div class="review-author"><div class="review-name">Anthony D.</div><div class="review-meta">First Tattoo · Tucson, AZ</div></div><div class="review-artist">Pelon</div></div>
+    </div>
+
+    <div class="review-card" data-artist="Eric">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-text">Eric did my forearm piece and the detail in the shading is incredible. You can tell he has been trained by someone who knows exactly what they are doing. Super humble kid with serious talent.</p>
+      <div class="review-footer"><div class="review-author"><div class="review-name">David L.</div><div class="review-meta">Black & Grey · Tucson, AZ</div></div><div class="review-artist">Eric</div></div>
+    </div>
+
+    <div class="review-card" data-artist="Mousie">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-text">Mousie drew my design from scratch based on a two-minute description. What she came up with was exactly what was in my head but better. Her gothic style is unlike anything in Tucson.</p>
+      <div class="review-footer"><div class="review-author"><div class="review-name">Samantha V.</div><div class="review-meta">Custom Gothic · Tucson, AZ</div></div><div class="review-artist">Mousie</div></div>
+    </div>
+
+    <div class="review-card" data-artist="Pelon">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-text">I have been tattooed by artists all over the country and Pelon is genuinely one of the best I have ever sat with. His Chicano work is museum quality. I drove from Phoenix specifically for him.</p>
+      <div class="review-footer"><div class="review-author"><div class="review-name">Marcus T.</div><div class="review-meta">Chicano Piece · Phoenix, AZ</div></div><div class="review-artist">Pelon</div></div>
+    </div>
+
+    <div class="review-card" data-artist="Roo">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-text">I got a piece from Roo and I honestly could not believe he is 16. His lines are clean, he is confident, and you can feel the passion he has for this. This kid is going to be legendary one day.</p>
+      <div class="review-footer"><div class="review-author"><div class="review-name">Tanya P.</div><div class="review-meta">Custom Piece · Tucson, AZ</div></div><div class="review-artist">Roo</div></div>
+    </div>
+
+    <div class="review-card" data-artist="Pelon">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-text">The whole family at NBTS makes you feel like you belong there. It is not just a tattoo shop — it is a community. Faith, familia, and incredible ink. There is no other shop like this in Tucson.</p>
+      <div class="review-footer"><div class="review-author"><div class="review-name">Roberto E.</div><div class="review-meta">Multiple Sessions · Tucson, AZ</div></div><div class="review-artist">Pelon</div></div>
+    </div>
+
+    <div class="review-card" data-artist="Eric">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-text">Eric gave me my first tattoo and walked me through every step. I was nervous and he made it a great experience. The piece healed beautifully and Pelon checked it at the end. That family quality control is real.</p>
+      <div class="review-footer"><div class="review-author"><div class="review-name">Brittany K.</div><div class="review-meta">First Tattoo · Tucson, AZ</div></div><div class="review-artist">Eric</div></div>
+    </div>
+
+    <div class="review-card" data-artist="Mousie">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-text">Mousie's cyber-sigilism work is absolutely wild. I showed her a rough concept and she elevated it into something spiritual. The linework is razor sharp. Booked my next session before I even left the shop.</p>
+      <div class="review-footer"><div class="review-author"><div class="review-name">Jason W.</div><div class="review-meta">Cyber-Sigilism · Tucson, AZ</div></div><div class="review-artist">Mousie</div></div>
+    </div>
+
+    <div class="review-card" data-artist="Pelon">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-text">Pelon did a portrait of my grandmother and I cried when I saw it. The realism is unreal. Every wrinkle, every expression — he captured her perfectly. I will treasure this forever.</p>
+      <div class="review-footer"><div class="review-author"><div class="review-name">Elena S.</div><div class="review-meta">Portrait Realism · Tucson, AZ</div></div><div class="review-artist">Pelon</div></div>
+    </div>
+
+    <div class="review-card" data-artist="Roo">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-text">Watched Roo work and the focus and intensity he has is incredible. Learning from his dad every day shows. Got a bold piece from him and it came out perfect. Support this young artist — you will not regret it.</p>
+      <div class="review-footer"><div class="review-author"><div class="review-name">Michael B.</div><div class="review-meta">Bold Line Work · Tucson, AZ</div></div><div class="review-artist">Roo</div></div>
+    </div>
+
+  </div>
+
+  <!-- LEAVE A REVIEW CTA -->
+  <div class="leave-review">
+    <div class="lr-title">Sat in Our Chair?</div>
+    <p class="lr-sub">Your review helps other clients find us and supports our family studio. It takes two minutes and means everything to us.</p>
+    <a href="https://g.page/r/CXBwTOOXxC3IEAI/review" target="_blank" class="btn-g">⭐ Leave a Google Review</a>
+    <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="btn-o">Book Your Appointment</a>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="f-logo">NBTS · New Beginnings Tattoo Studio</div>
+  <div class="f-tag">4343 N Oracle Rd Suite L · Tucson, AZ · Mon–Sat 9am–10pm</div>
+  <div class="socials">
+    <a class="soc" href="https://instagram.com/nbtstucson" target="_blank">IG</a>
+    <a class="soc" href="http://facebook.com/NewBeginningsTattooStudio" target="_blank">FB</a>
+    <a class="soc" href="index.html">🏠</a>
+  </div>
+</footer>
+
+<script>
+function filterReviews(artist, btn) {
+  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.review-card').forEach(card => {
+    card.style.display = (artist === 'all' || card.dataset.artist === artist) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="New Beginnings Tattoo Studio — Interactive Tattoo Pain Chart. See how much tattoos hurt by body placement in Tucson AZ."/>
+<title>Tattoo Pain Chart | New Beginnings Tattoo Studio Tucson AZ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#050605;color:#D8CFA8;font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{text-decoration:none;}
+
+:root{
+  --gold:#C9A84C;--gold-lt:#F0D080;--gold-dim:#8B6E2A;--gold-pale:#E8D5A0;
+  --green:#1A7A3A;--green-b:#22A84E;--green-deep:#071A0D;
+  --black:#050605;--char:#0C0F0C;--dark:#111411;--smoke:#181C18;
+  --bone:#D8CFA8;--parch:#EDE0BB;--muted:#5A6050;
+  --p1:#22A84E; /* low - green */
+  --p2:#8BC34A; /* mild - lime */
+  --p3:#F0D080; /* moderate - gold */
+  --p4:#E8952A; /* high - orange */
+  --p5:#C0392B; /* extreme - red */
+}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:1000;background:rgba(5,6,5,.97);border-bottom:1px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:66px;backdrop-filter:blur(10px);}
+.nav-logo{font-family:'Cinzel Decorative',serif;font-size:15px;color:var(--gold);letter-spacing:2px;font-weight:700;}
+.nav-back{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.nav-back:hover{color:var(--gold);}
+.nav-back::before{content:'←';}
+.nav-book{padding:9px 20px;border:1px solid var(--green);color:var(--green-b);font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all .2s;}
+.nav-book:hover{background:var(--green);color:#050605;}
+
+/* HEADER */
+.page-header{background:var(--char);border-bottom:1px solid rgba(34,168,78,.2);padding:52px 40px 44px;text-align:center;position:relative;overflow:hidden;}
+.page-header::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);}
+.sec-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;}
+.page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(24px,4vw,42px);color:var(--gold);font-weight:700;line-height:1.2;margin-bottom:12px;}
+.page-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--parch);opacity:.85;max-width:560px;margin:0 auto;line-height:1.72;}
+
+/* PAIN LEGEND */
+.legend{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:24px 40px;background:var(--black);border-bottom:1px solid rgba(201,168,76,.1);}
+.legend-item{display:flex;align-items:center;gap:8px;padding:6px 14px;border:.5px solid rgba(201,168,76,.15);background:rgba(201,168,76,.03);}
+.legend-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
+.legend-txt{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;}
+
+/* MAIN LAYOUT */
+.main-wrap{max-width:1000px;margin:0 auto;padding:48px 40px 80px;display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:start;}
+@media(max-width:800px){.main-wrap{grid-template-columns:1fr;padding:32px 20px 60px;}}
+
+/* BODY MAP */
+.body-map-wrap{position:relative;}
+.gender-toggle{display:flex;gap:0;margin-bottom:24px;border:.5px solid rgba(201,168,76,.2);width:fit-content;}
+.gtbtn{padding:10px 24px;background:transparent;font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;border:none;cursor:pointer;transition:all .2s;}
+.gtbtn.active{background:rgba(201,168,76,.1);color:var(--gold);}
+
+.body-svg-wrap{position:relative;display:flex;gap:20px;justify-content:center;flex-wrap:wrap;}
+.body-side{display:flex;flex-direction:column;align-items:center;gap:8px;}
+.body-side-label{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;}
+
+svg.body-map{width:200px;height:auto;cursor:default;}
+svg.body-map .zone{transition:all .2s;cursor:pointer;stroke:#1a1a1a;stroke-width:0.5;}
+svg.body-map .zone:hover{opacity:.85;filter:brightness(1.2);}
+svg.body-map .zone.active{stroke:#F0D080;stroke-width:1.5;filter:brightness(1.3);}
+
+/* INFO PANEL */
+.info-panel{background:var(--dark);border:.5px solid rgba(201,168,76,.15);padding:28px;position:sticky;top:80px;}
+.info-panel-empty{text-align:center;padding:40px 20px;}
+.info-panel-empty .icon{font-size:40px;opacity:.2;margin-bottom:12px;}
+.info-panel-empty p{font-family:'Crimson Pro',serif;font-style:italic;font-size:15px;color:var(--muted);line-height:1.6;}
+
+.info-zone-name{font-family:'Cinzel Decorative',serif;font-size:22px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+.info-pain-bar{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.pain-dots{display:flex;gap:5px;}
+.pain-dot{width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.1);}
+.pain-dot.filled{background:var(--pain-color);}
+.pain-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--pain-color);}
+.info-divider{width:100%;height:.5px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.2),transparent);margin:14px 0;}
+.info-detail-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;color:var(--green-b);text-transform:uppercase;margin-bottom:6px;}
+.info-detail-text{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.82;line-height:1.72;margin-bottom:14px;}
+.info-tips{display:flex;flex-direction:column;gap:7px;margin-bottom:16px;}
+.info-tip{display:flex;align-items:flex-start;gap:8px;font-family:'Crimson Pro',serif;font-size:14px;color:var(--bone);opacity:.75;line-height:1.55;}
+.info-tip::before{content:'✦';color:var(--green-b);font-size:9px;flex-shrink:0;margin-top:3px;}
+
+.book-now-btn{display:block;width:100%;padding:13px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;border:1px solid var(--green-b);text-align:center;transition:all .3s;margin-top:16px;font-weight:600;}
+.book-now-btn:hover{background:var(--green-b);color:#050605;}
+
+/* FOOTER */
+.footer{background:var(--green-deep);border-top:1px solid rgba(34,168,78,.2);padding:36px 40px;text-align:center;}
+.f-logo{font-family:'Cinzel Decorative',serif;font-size:13px;color:var(--gold-dim);letter-spacing:2px;margin-bottom:6px;}
+.f-tag{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
+.socials{display:flex;gap:8px;justify-content:center;}
+.soc{width:34px;height:34px;border:.5px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:9px;color:var(--muted);transition:all .2s;text-decoration:none;}
+.soc:hover{border-color:var(--green-b);color:var(--green-b);}
+
+@media(max-width:600px){
+  .body-svg-wrap{gap:12px;}
+  svg.body-map{width:160px;}
+  .legend{gap:6px;}
+  .legend-item{padding:5px 10px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">🦁 NBTS</div>
+  <a href="index.html" class="nav-back">Back to Main Site</a>
+  <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="nav-book">Book Now</a>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div class="sec-label">Know Before You Go</div>
+  <div class="page-title">Tattoo Pain Chart</div>
+  <p class="page-sub">Click any area of the body to see the pain level, what to expect, and tips for that placement. Every person is different but this gives you a solid idea.</p>
+</div>
+
+<!-- LEGEND -->
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:var(--p1)"></div><div class="legend-txt">Low</div></div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--p2)"></div><div class="legend-txt">Mild</div></div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--p3)"></div><div class="legend-txt">Moderate</div></div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--p4)"></div><div class="legend-txt">High</div></div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--p5)"></div><div class="legend-txt">Extreme</div></div>
+</div>
+
+<!-- MAIN -->
+<div class="main-wrap">
+
+  <!-- BODY MAP -->
+  <div class="body-map-wrap">
+    <div class="gender-toggle">
+      <button class="gtbtn active" onclick="setGender('m',this)">Male</button>
+      <button class="gtbtn" onclick="setGender('f',this)">Female</button>
+    </div>
+
+    <div class="body-svg-wrap">
+      <!-- FRONT BODY -->
+      <div class="body-side">
+        <div class="body-side-label">Front</div>
+        <svg class="body-map" viewBox="0 0 120 320" xmlns="http://www.w3.org/2000/svg">
+
+          <!-- HEAD -->
+          <ellipse class="zone" data-zone="head" cx="60" cy="22" rx="18" ry="20" fill="#E8952A"/>
+
+          <!-- NECK -->
+          <rect class="zone" data-zone="neck" x="53" y="40" width="14" height="16" rx="3" fill="#C0392B"/>
+
+          <!-- CHEST LEFT -->
+          <path class="zone" data-zone="chest" d="M30 58 Q30 56 35 55 L57 55 L57 80 Q40 82 28 76 Z" fill="#F0D080"/>
+
+          <!-- CHEST RIGHT -->
+          <path class="zone" data-zone="sternum" d="M63 55 L90 55 Q95 56 90 76 Q78 82 63 80 Z" fill="#C0392B"/>
+
+          <!-- STOMACH -->
+          <path class="zone" data-zone="stomach" d="M35 80 Q57 84 63 84 Q85 84 86 80 L88 108 Q75 114 60 115 Q45 115 32 108 Z" fill="#8BC34A"/>
+
+          <!-- RIBS LEFT -->
+          <path class="zone" data-zone="ribs" d="M22 70 L32 70 L32 105 Q26 100 20 90 Z" fill="#C0392B"/>
+
+          <!-- RIBS RIGHT -->
+          <path class="zone" data-zone="ribs-r" d="M98 70 L88 70 L88 105 Q94 100 100 90 Z" fill="#C0392B"/>
+
+          <!-- HIP LEFT -->
+          <path class="zone" data-zone="hip" d="M32 108 Q45 115 58 116 L55 138 Q42 138 28 126 Z" fill="#8BC34A"/>
+
+          <!-- HIP RIGHT -->
+          <path class="zone" data-zone="hip-r" d="M88 108 Q75 115 62 116 L65 138 Q78 138 92 126 Z" fill="#8BC34A"/>
+
+          <!-- GROIN -->
+          <path class="zone" data-zone="groin" d="M55 138 L65 138 L67 152 L60 155 L53 152 Z" fill="#C0392B"/>
+
+          <!-- THIGH LEFT FRONT -->
+          <path class="zone" data-zone="thigh-front" d="M35 140 L55 138 L52 195 Q44 198 36 192 Z" fill="#22A84E"/>
+
+          <!-- THIGH RIGHT FRONT -->
+          <path class="zone" data-zone="thigh-front-r" d="M85 140 L65 138 L68 195 Q76 198 84 192 Z" fill="#22A84E"/>
+
+          <!-- KNEE LEFT -->
+          <path class="zone" data-zone="knee" d="M36 192 L52 196 L50 214 Q42 216 34 210 Z" fill="#E8952A"/>
+
+          <!-- KNEE RIGHT -->
+          <path class="zone" data-zone="knee-r" d="M84 192 L68 196 L70 214 Q78 216 86 210 Z" fill="#E8952A"/>
+
+          <!-- SHIN LEFT -->
+          <path class="zone" data-zone="shin" d="M34 210 L50 215 L48 268 Q40 270 33 262 Z" fill="#8BC34A"/>
+
+          <!-- SHIN RIGHT -->
+          <path class="zone" data-zone="shin-r" d="M86 210 L70 215 L72 268 Q80 270 87 262 Z" fill="#8BC34A"/>
+
+          <!-- FOOT LEFT -->
+          <path class="zone" data-zone="foot" d="M33 262 Q40 270 48 268 L46 285 Q35 290 28 282 Z" fill="#E8952A"/>
+
+          <!-- FOOT RIGHT -->
+          <path class="zone" data-zone="foot-r" d="M87 262 Q80 270 72 268 L74 285 Q85 290 92 282 Z" fill="#E8952A"/>
+
+          <!-- SHOULDER LEFT -->
+          <path class="zone" data-zone="shoulder" d="M22 56 Q18 58 14 66 L22 70 L30 65 Z" fill="#8BC34A"/>
+
+          <!-- SHOULDER RIGHT -->
+          <path class="zone" data-zone="shoulder-r" d="M98 56 Q102 58 106 66 L98 70 L90 65 Z" fill="#8BC34A"/>
+
+          <!-- UPPER ARM LEFT -->
+          <path class="zone" data-zone="upper-arm" d="M14 66 L22 70 L20 110 Q14 108 10 98 Z" fill="#22A84E"/>
+
+          <!-- UPPER ARM RIGHT -->
+          <path class="zone" data-zone="upper-arm-r" d="M106 66 L98 70 L100 110 Q106 108 110 98 Z" fill="#22A84E"/>
+
+          <!-- ELBOW LEFT -->
+          <path class="zone" data-zone="elbow" d="M10 98 L20 110 L18 126 Q11 124 8 114 Z" fill="#C0392B"/>
+
+          <!-- ELBOW RIGHT -->
+          <path class="zone" data-zone="elbow-r" d="M110 98 L100 110 L102 126 Q109 124 112 114 Z" fill="#C0392B"/>
+
+          <!-- FOREARM LEFT -->
+          <path class="zone" data-zone="forearm" d="M8 114 L18 126 L16 170 Q9 168 6 156 Z" fill="#22A84E"/>
+
+          <!-- FOREARM RIGHT -->
+          <path class="zone" data-zone="forearm-r" d="M112 114 L102 126 L104 170 Q111 168 114 156 Z" fill="#22A84E"/>
+
+          <!-- WRIST LEFT -->
+          <path class="zone" data-zone="wrist" d="M6 156 L16 170 L15 184 Q8 184 5 176 Z" fill="#E8952A"/>
+
+          <!-- WRIST RIGHT -->
+          <path class="zone" data-zone="wrist-r" d="M114 156 L104 170 L105 184 Q112 184 115 176 Z" fill="#E8952A"/>
+
+          <!-- HAND LEFT -->
+          <path class="zone" data-zone="hand" d="M5 176 L15 184 L14 200 Q6 202 4 192 Z" fill="#E8952A"/>
+
+          <!-- HAND RIGHT -->
+          <path class="zone" data-zone="hand-r" d="M115 176 L105 184 L106 200 Q114 202 116 192 Z" fill="#E8952A"/>
+
+        </svg>
+      </div>
+
+      <!-- BACK BODY -->
+      <div class="body-side">
+        <div class="body-side-label">Back</div>
+        <svg class="body-map" viewBox="0 0 120 320" xmlns="http://www.w3.org/2000/svg">
+
+          <!-- HEAD BACK -->
+          <ellipse class="zone" data-zone="head-back" cx="60" cy="22" rx="18" ry="20" fill="#8BC34A"/>
+
+          <!-- NECK BACK -->
+          <rect class="zone" data-zone="neck-back" x="53" y="40" width="14" height="16" rx="3" fill="#C0392B"/>
+
+          <!-- UPPER BACK -->
+          <path class="zone" data-zone="upper-back" d="M28 56 Q40 54 60 54 Q80 54 92 56 L90 85 Q75 90 60 91 Q45 90 30 85 Z" fill="#8BC34A"/>
+
+          <!-- SPINE -->
+          <rect class="zone" data-zone="spine" x="56" y="54" width="8" height="60" rx="2" fill="#C0392B"/>
+
+          <!-- LOWER BACK -->
+          <path class="zone" data-zone="lower-back" d="M30 85 Q45 92 60 93 Q75 92 90 85 L88 110 Q75 116 60 117 Q45 116 32 110 Z" fill="#C0392B"/>
+
+          <!-- BUTT LEFT -->
+          <path class="zone" data-zone="butt" d="M32 110 Q45 116 58 118 L55 142 Q40 142 28 128 Z" fill="#E8952A"/>
+
+          <!-- BUTT RIGHT -->
+          <path class="zone" data-zone="butt-r" d="M88 110 Q75 116 62 118 L65 142 Q80 142 92 128 Z" fill="#E8952A"/>
+
+          <!-- THIGH LEFT BACK -->
+          <path class="zone" data-zone="thigh-back" d="M35 144 L55 142 L52 197 Q44 200 36 194 Z" fill="#22A84E"/>
+
+          <!-- THIGH RIGHT BACK -->
+          <path class="zone" data-zone="thigh-back-r" d="M85 144 L65 142 L68 197 Q76 200 84 194 Z" fill="#22A84E"/>
+
+          <!-- CALF LEFT -->
+          <path class="zone" data-zone="calf" d="M36 194 L52 197 L50 255 Q42 258 34 250 Z" fill="#22A84E"/>
+
+          <!-- CALF RIGHT -->
+          <path class="zone" data-zone="calf-r" d="M84 194 L68 197 L70 255 Q78 258 86 250 Z" fill="#22A84E"/>
+
+          <!-- BACK OF KNEE LEFT -->
+          <path class="zone" data-zone="back-knee" d="M34 194 L52 197 L51 215 Q42 217 34 212 Z" fill="#C0392B"/>
+
+          <!-- ANKLE LEFT -->
+          <path class="zone" data-zone="ankle" d="M34 250 L50 255 L49 272 Q40 274 33 266 Z" fill="#E8952A"/>
+
+          <!-- ANKLE RIGHT -->
+          <path class="zone" data-zone="ankle-r" d="M86 250 L70 255 L71 272 Q80 274 87 266 Z" fill="#E8952A"/>
+
+          <!-- SHOULDER BLADE LEFT -->
+          <path class="zone" data-zone="shoulder-blade" d="M28 60 Q22 62 16 70 L24 78 L32 72 Z" fill="#8BC34A"/>
+
+          <!-- SHOULDER BLADE RIGHT -->
+          <path class="zone" data-zone="shoulder-blade-r" d="M92 60 Q98 62 104 70 L96 78 L88 72 Z" fill="#8BC34A"/>
+
+        </svg>
+      </div>
+    </div>
+
+    <!-- TIPS -->
+    <div style="margin-top:28px;padding:20px 24px;background:var(--dark);border:.5px solid rgba(34,168,78,.15);">
+      <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;">General Tips to Reduce Pain</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="font-family:'Crimson Pro',serif;font-size:14px;color:var(--bone);opacity:.78;display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--green-b);font-size:10px;margin-top:3px;">✦</span> Eat a full meal 2 hours before</div>
+        <div style="font-family:'Crimson Pro',serif;font-size:14px;color:var(--bone);opacity:.78;display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--green-b);font-size:10px;margin-top:3px;">✦</span> Stay well hydrated</div>
+        <div style="font-family:'Crimson Pro',serif;font-size:14px;color:var(--bone);opacity:.78;display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--green-b);font-size:10px;margin-top:3px;">✦</span> Get a good night's sleep</div>
+        <div style="font-family:'Crimson Pro',serif;font-size:14px;color:var(--bone);opacity:.78;display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--green-b);font-size:10px;margin-top:3px;">✦</span> Avoid alcohol 24hrs before</div>
+        <div style="font-family:'Crimson Pro',serif;font-size:14px;color:var(--bone);opacity:.78;display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--green-b);font-size:10px;margin-top:3px;">✦</span> Wear comfortable clothing</div>
+        <div style="font-family:'Crimson Pro',serif;font-size:14px;color:var(--bone);opacity:.78;display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--green-b);font-size:10px;margin-top:3px;">✦</span> Take breaks if you need them</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFO PANEL -->
+  <div class="info-panel" id="infoPanel">
+    <div class="info-panel-empty" id="emptyState">
+      <div class="icon">👆</div>
+      <p>Tap any area of the body to see the pain level and what to expect for that placement.</p>
+    </div>
+    <div id="zoneInfo" style="display:none;">
+      <div class="info-zone-name" id="zoneName"></div>
+      <div class="info-pain-bar">
+        <div class="pain-dots" id="painDots"></div>
+        <div class="pain-label" id="painLabel"></div>
+      </div>
+      <div class="info-divider"></div>
+      <div class="info-detail-label">What to Expect</div>
+      <div class="info-detail-text" id="zoneDesc"></div>
+      <div class="info-detail-label">Tips for This Placement</div>
+      <div class="info-tips" id="zoneTips"></div>
+      <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="book-now-btn">Book This Placement</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="f-logo">NBTS · New Beginnings Tattoo Studio</div>
+  <div class="f-tag">4343 N Oracle Rd Suite L · Tucson, AZ · Mon–Sat 9am–10pm</div>
+  <div class="socials">
+    <a class="soc" href="https://instagram.com/nbtstucson" target="_blank">IG</a>
+    <a class="soc" href="http://facebook.com/NewBeginningsTattooStudio" target="_blank">FB</a>
+    <a class="soc" href="index.html">🏠</a>
+  </div>
+</footer>
+
+<script>
+const zoneData = {
+  'head':         {name:'Head / Scalp',      pain:4, color:'var(--p4)', label:'High',     desc:'The scalp has thin skin stretched over bone with many nerve endings. The vibration is intense. Most people are surprised by how much the head buzzes.',        tips:['Short sessions recommended','Let your artist know if you feel dizzy','Shaving required','Healing is fast due to blood supply']},
+  'neck':         {name:'Throat / Neck',      pain:5, color:'var(--p5)', label:'Extreme',  desc:'The neck is extremely sensitive. The front of the throat is one of the most painful placements on the entire body. Thin skin, lots of nerves, no fat padding.',  tips:['One of the most committed placements','Very visible — think carefully','Bring snacks and stay hydrated','Short sessions work best']},
+  'neck-back':    {name:'Back of Neck',       pain:4, color:'var(--p4)', label:'High',     desc:'The back of the neck sits on the spine and has little padding. The buzzing feeling travels through the bone. Less painful than the throat but still intense.',    tips:['Hair needs to be pulled back','Healing requires keeping it clean','Great spot for smaller pieces']},
+  'chest':        {name:'Chest',             pain:3, color:'var(--p3)', label:'Moderate', desc:'The chest is manageable for most people. The outer chest near the shoulder is easier. As you move toward the sternum and collarbone it gets more intense.',        tips:['Outer chest is easier than center','Wear a loose shirt after','Avoid tight bras for women during healing']},
+  'sternum':      {name:'Sternum / Center Chest', pain:5, color:'var(--p5)', label:'Extreme', desc:'Right over the bone with no muscle or fat buffer. The vibration goes directly into the chest cavity. One of the most intense spots on the body.',            tips:['Deep breathing helps','Short sessions strongly recommended','Very worth it for the right design']},
+  'stomach':      {name:'Stomach / Abdomen',  pain:3, color:'var(--p3)', label:'Moderate', desc:'The stomach is fleshy and generally manageable, though the skin moves a lot when you breathe. The sides approaching the ribs get much more intense.',           tips:['Stay very still while breathing','Avoid eating a huge meal right before','Weight changes can affect healing']},
+  'ribs':         {name:'Ribs',              pain:5, color:'var(--p5)', label:'Extreme',  desc:'The ribs are legendary for pain. Thin skin directly over bone, every breath moves the skin, and the nerves here are extremely sensitive. Most painful upper body placement.', tips:['Book shorter sessions','Breathe slowly and steadily','Absolutely no slouching','Highly rewarding when healed']},
+  'ribs-r':       {name:'Ribs (Right)',       pain:5, color:'var(--p5)', label:'Extreme',  desc:'Same as left ribs — thin skin over bone with extremely sensitive nerves. Every breath amplifies the sensation.',                                                  tips:['Short sessions','Slow steady breathing','One of the most commended placements']},
+  'hip':          {name:'Hip',               pain:2, color:'var(--p2)', label:'Mild',     desc:'The outer hip has good padding and is generally well-tolerated. A popular spot for meaningful pieces. Moving toward the hip bone gets more intense.',             tips:['Very popular placement','Heals well with proper care','Hip bone area is more sensitive']},
+  'hip-r':        {name:'Hip (Right)',        pain:2, color:'var(--p2)', label:'Mild',     desc:'Same as left hip — cushioned placement, popular for floral and ornate designs.',                                                                                   tips:['Wear loose waistbands during healing','Great canvas for larger pieces']},
+  'groin':        {name:'Groin / Inner Hip',  pain:5, color:'var(--p5)', label:'Extreme',  desc:'Extremely sensitive due to the concentration of nerve endings and thin skin over bone and tendons. Very few people get this placement for a reason.',               tips:['Not for first tattoos','Very experienced artists recommended','Healing requires extra care']},
+  'thigh-front':  {name:'Front Thigh',        pain:1, color:'var(--p1)', label:'Low',      desc:'The front outer thigh is one of the least painful spots on the body. Lots of muscle and fat padding. Great for large detailed pieces.',                         tips:['Ideal for first tattoos','Great canvas for large work','Heals very well','Can sit for long sessions']},
+  'thigh-front-r':{name:'Front Thigh (Right)',pain:1, color:'var(--p1)', label:'Low',      desc:'Same as left — one of the best placements for pain tolerance and canvas size.',                                                                                    tips:['Perfect for large detailed pieces','Great healing spot','Recommended for beginners']},
+  'thigh-back':   {name:'Back of Thigh',      pain:2, color:'var(--p2)', label:'Mild',     desc:'The back of the thigh has good padding but can be awkward to sit for. The inner thigh gets significantly more sensitive.',                                        tips:['Positioning can be tiring','Inner thigh is much more sensitive','Great canvas size']},
+  'thigh-back-r': {name:'Back of Thigh (R)',  pain:2, color:'var(--p2)', label:'Mild',     desc:'Well padded placement, generally comfortable. Inner area significantly more sensitive.',                                                                          tips:['Avoid inner thigh for first tattoo','Outer is the sweet spot']},
+  'knee':         {name:'Knee / Kneecap',     pain:4, color:'var(--p4)', label:'High',     desc:'The knee is bony with thin skin and very little padding. The kneecap itself is extremely uncomfortable. Also difficult to heal because of constant movement.',   tips:['Keep leg straight when possible','Healing requires limiting bending','Not for beginners']},
+  'knee-r':       {name:'Knee (Right)',        pain:4, color:'var(--p4)', label:'High',     desc:'Same as left knee — bone, thin skin, constant movement make this a challenging placement.',                                                                       tips:['Expect healing challenges','Avoid squatting during healing']},
+  'back-knee':    {name:'Back of Knee',        pain:5, color:'var(--p5)', label:'Extreme',  desc:'The ditch behind the knee is one of the most sensitive spots. Thin skin, lots of nerves, and constant movement during healing make this extremely challenging.',  tips:['Very experienced artists only','Healing is difficult','Keep leg straight as much as possible']},
+  'shin':         {name:'Shin',               pain:3, color:'var(--p3)', label:'Moderate', desc:'The shin has very little fat over the bone. Not as intense as ribs but the bony area gets quite sharp. Outer calf is much easier.',                             tips:['Outer calf is easier','Wear loose pants during healing','No tight socks']},
+  'shin-r':       {name:'Shin (Right)',        pain:3, color:'var(--p3)', label:'Moderate', desc:'Same as left shin — minimal fat over bone creates a moderately painful experience.',                                                                              tips:['Loose footwear during healing','Stay off your feet when possible']},
+  'calf':         {name:'Calf',               pain:2, color:'var(--p2)', label:'Mild',     desc:'The calf has good muscle mass and is one of the more comfortable leg placements. A great spot for detailed pieces.',                                             tips:['Popular placement','Great for beginners','Easy to keep clean during healing']},
+  'calf-r':       {name:'Calf (Right)',        pain:2, color:'var(--p2)', label:'Mild',     desc:'Same as left calf — well padded, comfortable, and popular.',                                                                                                     tips:['Excellent for first tattoos','Great canvas for medium pieces']},
+  'foot':         {name:'Foot / Top of Foot',  pain:4, color:'var(--p4)', label:'High',     desc:'The foot is bony and thin-skinned. The top of the foot over the bones and tendons is quite painful. Healing is also challenging due to constant movement.',     tips:['Wear slip-on shoes for 2 weeks','Keep elevated when possible','Fading is common — touch ups expected','No tight shoes or socks']},
+  'foot-r':       {name:'Foot (Right)',         pain:4, color:'var(--p4)', label:'High',     desc:'Same as left foot. Expect pain and plan for potential touch ups due to the high-movement healing environment.',                                                  tips:['Flip flops required during healing','Expect some fading']},
+  'ankle':        {name:'Ankle',               pain:4, color:'var(--p4)', label:'High',     desc:'The ankle has very thin skin over bone and lots of nerve endings. The inner ankle is especially intense. Popular despite the pain level.',                       tips:['Inner ankle is more painful','Loose clothing over ankle while healing','Keep elevated first few days']},
+  'ankle-r':      {name:'Ankle (Right)',        pain:4, color:'var(--p4)', label:'High',     desc:'Same sensitivity as the left ankle.',                                                                                                                            tips:['Wear loose socks or no socks','Elevation helps with swelling']},
+  'shoulder':     {name:'Shoulder / Cap',      pain:2, color:'var(--p2)', label:'Mild',     desc:'The outer shoulder has great muscle mass and is one of the most popular placements for a reason — it\'s very manageable. The shoulder cap itself is a bit bonier.', tips:['Great for beginners','Ideal for large pieces','Easy to cover or show off','Heals very well']},
+  'shoulder-r':   {name:'Shoulder (Right)',     pain:2, color:'var(--p2)', label:'Mild',     desc:'Same as left shoulder — excellent placement for first tattoos and large pieces.',                                                                                tips:['Most recommended placement for first tattoos']},
+  'shoulder-blade':{name:'Shoulder Blade',      pain:2, color:'var(--p2)', label:'Mild',     desc:'The shoulder blade area has good muscle coverage and heals extremely well. Very popular for large detailed back work.',                                          tips:['Great back canvas','Easy to hide or show','Heals beautifully']},
+  'shoulder-blade-r':{name:'Shoulder Blade (R)',pain:2, color:'var(--p2)', label:'Mild',     desc:'Same as left shoulder blade — comfortable and popular.',                                                                                                        tips:['Perfect for symmetrical back pieces']},
+  'upper-arm':    {name:'Upper Arm / Bicep',   pain:1, color:'var(--p1)', label:'Low',      desc:'The outer bicep is one of the most comfortable placements on the body. Lots of muscle, easy to access, and heals great. Classic placement for a reason.',      tips:['Best placement for beginners','Great for sleeves','Very easy healing','Long sessions possible']},
+  'upper-arm-r':  {name:'Upper Arm (Right)',   pain:1, color:'var(--p1)', label:'Low',      desc:'Same as left bicep — your most beginner-friendly placement.',                                                                                                   tips:['Perfect starting point','Great for building a sleeve']},
+  'elbow':        {name:'Elbow / Ditch',       pain:5, color:'var(--p5)', label:'Extreme',  desc:'The elbow ditch (inner elbow) is notoriously painful — thin skin, lots of nerves, major veins. The outer elbow over bone is also extremely uncomfortable.',    tips:['Inner elbow especially intense','Take breaks','Short sessions','Not recommended for first tattoos','Healing requires keeping arm straight']},
+  'elbow-r':      {name:'Elbow (Right)',        pain:5, color:'var(--p5)', label:'Extreme',  desc:'Same intensity as the left elbow — one of the hardest placements on the body.',                                                                                 tips:['Experienced sitters only','Short sessions strongly recommended']},
+  'forearm':      {name:'Forearm',             pain:2, color:'var(--p2)', label:'Mild',     desc:'The outer forearm is very manageable and one of the most popular placements. The inner forearm is more sensitive but still very doable for most people.',       tips:['Outer is easier than inner','Very visible placement','Great for first tattoos','Sleeves start here']},
+  'forearm-r':    {name:'Forearm (Right)',      pain:2, color:'var(--p2)', label:'Mild',     desc:'Same as left forearm — comfortable, popular, and versatile.',                                                                                                   tips:['Great for detailed work','Very popular with sleeve starters']},
+  'wrist':        {name:'Wrist',               pain:3, color:'var(--p3)', label:'Moderate', desc:'The wrist has thin skin over bones and tendons. The inner wrist is more sensitive due to nerve clusters. Popular despite the moderate pain.',                  tips:['Inner wrist more sensitive','Keep covered from sun during healing','Very visible placement']},
+  'wrist-r':      {name:'Wrist (Right)',        pain:3, color:'var(--p3)', label:'Moderate', desc:'Same as left wrist — thin skin, moderate pain, very popular placement.',                                                                                        tips:['Sunscreen long-term to prevent fading']},
+  'hand':         {name:'Hand / Fingers',      pain:4, color:'var(--p4)', label:'High',     desc:'The hands and fingers have very thin skin over bones and tendons. They fade quickly and require touch-ups. Not for the faint of heart.',                        tips:['High maintenance — expect fading','Touch-ups likely needed','Knuckles especially painful','Discuss with artist before committing']},
+  'hand-r':       {name:'Hand (Right)',         pain:4, color:'var(--p4)', label:'High',     desc:'Same as left hand. High pain, high maintenance, but very impactful statement pieces.',                                                                          tips:['Best done after building experience','Touch-ups are standard']},
+  'upper-back':   {name:'Upper Back',          pain:2, color:'var(--p2)', label:'Mild',     desc:'The upper back has good muscle coverage and is a very popular canvas for large pieces. The area near the spine gets more uncomfortable.',                      tips:['Great large canvas','Excellent for back pieces','Avoid the spine if possible','Heals very well']},
+  'lower-back':   {name:'Lower Back',          pain:3, color:'var(--p3)', label:'Moderate', desc:'The lower back can be quite sensitive, especially near the spine and the dimples. The skin here is also thinner than the upper back.',                         tips:['Stay flat during healing','Lower back dimples especially sensitive','Great for ornamental and symmetrical designs']},
+  'spine':        {name:'Spine',               pain:5, color:'var(--p5)', label:'Extreme',  desc:'Tattooing directly over the spine means the needle vibration travels into the vertebrae. One of the most intense sensations in tattooing.',                   tips:['Requires significant experience','Vibration is unlike anything else','Long pieces done in sections','Absolutely worth the result']},
+  'butt':         {name:'Glutes / Butt',       pain:1, color:'var(--p1)', label:'Low',      desc:'The glutes are well padded with muscle and fat. Very low pain and an excellent canvas for detailed work.',                                                      tips:['One of the most comfortable placements','Great for large detailed pieces','Very private placement']},
+  'butt-r':       {name:'Glutes (Right)',       pain:1, color:'var(--p1)', label:'Low',      desc:'Same as left — very comfortable, excellent canvas.',                                                                                                            tips:['Recommended for pain-sensitive clients']},
+  'head-back':    {name:'Back of Head',         pain:3, color:'var(--p3)', label:'Moderate', desc:'The back of the head is more manageable than the sides or top. The vibration still travels through the skull but most people handle it surprisingly well.',    tips:['Hair must be shaved','Very committed placement','Heals quickly']},
+};
+
+const painColors = ['','var(--p1)','var(--p2)','var(--p3)','var(--p4)','var(--p5)'];
+const painLabels = ['','Low','Mild','Moderate','High','Extreme'];
+
+document.querySelectorAll('.zone').forEach(z => {
+  z.addEventListener('click', function() {
+    document.querySelectorAll('.zone').forEach(zz => zz.classList.remove('active'));
+    this.classList.add('active');
+    const key = this.dataset.zone;
+    const d = zoneData[key];
+    if(!d) return;
+    document.getElementById('emptyState').style.display = 'none';
+    const zi = document.getElementById('zoneInfo');
+    zi.style.display = 'block';
+    document.getElementById('zoneName').textContent = d.name;
+    // Pain dots
+    let dots = '';
+    for(let i=1;i<=5;i++) dots += `<div class="pain-dot ${i<=d.pain?'filled':''}" style="--pain-color:${d.color}"></div>`;
+    document.getElementById('painDots').innerHTML = dots;
+    document.getElementById('painLabel').textContent = d.label;
+    document.getElementById('painLabel').style.setProperty('--pain-color', d.color);
+    document.getElementById('painLabel').style.color = d.color;
+    document.getElementById('zoneDesc').textContent = d.desc;
+    document.getElementById('zoneTips').innerHTML = d.tips.map(t => `<div class="info-tip">${t}</div>`).join('');
+    // Scroll panel into view on mobile
+    if(window.innerWidth < 800) document.getElementById('infoPanel').scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+
+function setGender(g, btn) {
+  document.querySelectorAll('.gtbtn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
