@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="New Beginnings Family Tattoo Studio — Virtual Tattoo Try-On Tool. Upload your photo and see how a tattoo looks on you."/>
-<title>Virtual Try-On | New Beginnings Tattoo Studio Tucson AZ</title>
+<meta name="description" content="New Beginnings Family Tattoo Studio Digital Tattoo Consent Waiver. Sign before your appointment."/>
+<title>Tattoo Consent Waiver | New Beginnings Tattoo Studio Tucson AZ</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap');
 
@@ -15,222 +15,130 @@ a{text-decoration:none;}
 
 :root{
   --gold:#C9A84C;--gold-dim:#8B6E2A;--gold-pale:#E8D5A0;
-  --green:#1A7A3A;--green-b:#22A84E;--green-glow:#2ECC6A;--green-deep:#071A0D;
-  --black:#050605;--char:#0C0F0C;--dark:#111411;--smoke:#181C18;
+  --green:#1A7A3A;--green-b:#22A84E;--green-deep:#071A0D;
+  --black:#050605;--char:#0C0F0C;--dark:#111411;
   --bone:#D8CFA8;--parch:#EDE0BB;--muted:#5A6050;
 }
 
 /* NAV */
-.nav{position:sticky;top:0;z-index:1000;background:rgba(5,6,5,.97);border-bottom:1px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:66px;backdrop-filter:blur(10px);}
+.nav{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(5,6,5,.97);
+  border-bottom:1px solid rgba(34,168,78,.25);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;height:66px;
+  backdrop-filter:blur(10px);
+}
 .nav-logo{font-family:'Cinzel Decorative',serif;font-size:15px;color:var(--gold);letter-spacing:2px;font-weight:700;display:flex;align-items:center;gap:10px;}
-.nav-back{font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;color:var(--bone);text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.nav-back{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:color .2s;}
 .nav-back:hover{color:var(--gold);}
 .nav-back::before{content:'←';}
 
-/* HEADER */
-.page-header{background:var(--char);border-bottom:1px solid rgba(34,168,78,.2);padding:52px 40px 44px;text-align:center;position:relative;overflow:hidden;}
-.page-header::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);}
-.page-header::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(34,168,78,.06) 0%,transparent 70%);pointer-events:none;}
-.sec-label{font-family:'Cinzel',serif;font-size:14px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;position:relative;}
-.page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(24px,4vw,40px);color:var(--gold);font-weight:700;line-height:1.2;margin-bottom:12px;position:relative;}
-.page-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--bone);opacity:.75;max-width:500px;margin:0 auto;line-height:1.72;position:relative;}
-
-/* How it works in header */
-.how-it-works{
-  max-width:700px;margin:32px auto 0;
-  padding:24px 28px;
-  background:rgba(34,168,78,.06);
-  border:.5px solid rgba(34,168,78,.2);
-  position:relative;
-}
-.how-title{
-  font-family:'Cinzel',serif;font-size:13px;letter-spacing:5px;
-  color:var(--green-b);text-transform:uppercase;
-  margin-bottom:20px;text-align:center;
-}
-.how-steps{display:flex;flex-direction:column;gap:12px;}
-.how-step{display:flex;align-items:center;gap:14px;}
-.how-num{
-  font-family:'Cinzel Decorative',serif;font-size:20px;
-  color:var(--gold);line-height:1;min-width:28px;text-align:center;
-}
-.how-txt{font-family:'Crimson Pro',serif;font-size:16px;color:var(--parch);opacity:.9;line-height:1.5;}
-@media(max-width:600px){
-  .how-it-works{padding:18px 16px;}
-  .how-txt{font-size:15px;}
-}
-
-/* MAIN LAYOUT */
-.tryon-wrap{max-width:1100px;margin:0 auto;padding:48px 40px 80px;display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start;}
-@media(max-width:900px){.tryon-wrap{grid-template-columns:1fr;padding:32px 20px 60px;}}
-
-/* CANVAS AREA */
-.canvas-section{display:flex;flex-direction:column;gap:16px;}
-.canvas-label{font-family:'Cinzel',serif;font-size:14px;letter-spacing:5px;color:var(--green-b);text-transform:uppercase;margin-bottom:4px;}
-
-.canvas-container{
-  position:relative;
-  background:var(--dark);
-  border:.5px solid rgba(201,168,76,.15);
-  overflow:hidden;
-  min-height:500px;
-  display:flex;align-items:center;justify-content:center;
-}
-.canvas-placeholder{
-  display:flex;flex-direction:column;align-items:center;gap:16px;
-  padding:60px 40px;text-align:center;
-}
-.canvas-placeholder-icon{font-size:48px;opacity:.15;}
-.canvas-placeholder h3{font-family:'Cinzel',serif;font-size:15px;letter-spacing:4px;color:var(--bone);text-transform:uppercase;}
-.canvas-placeholder p{font-family:'Crimson Pro',serif;font-style:italic;font-size:15px;color:var(--muted);line-height:1.6;max-width:280px;}
-
-#mainCanvas{
-  display:none;
-  max-width:100%;
-  cursor:move;
-  touch-action:none;
-}
-
-/* Upload button */
-.upload-btn{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:14px 32px;
-  background:var(--green);color:var(--gold-pale);
-  font-family:'Cinzel',serif;font-size:14px;letter-spacing:4px;text-transform:uppercase;
-  border:1px solid var(--green-b);cursor:pointer;font-weight:600;
-  transition:all .3s;width:100%;justify-content:center;
-}
-.upload-btn:hover{background:var(--green-b);color:#050605;box-shadow:0 0 24px rgba(34,168,78,.3);}
-.upload-btn input{display:none;}
-
-/* Controls */
-.controls{
-  display:grid;grid-template-columns:1fr 1fr;gap:8px;
-  padding:16px;
+/* HERO HEADER */
+.waiver-header{
   background:var(--char);
-  border:.5px solid rgba(201,168,76,.1);
+  border-bottom:1px solid rgba(34,168,78,.2);
+  padding:56px 40px 48px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
 }
-.ctrl-btn{
-  padding:10px;background:transparent;
+.waiver-header::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);
+}
+.waiver-header::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(34,168,78,.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+.sec-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;position:relative;}
+.waiver-title{font-family:'Cinzel Decorative',serif;font-size:clamp(24px,4vw,42px);color:var(--gold);font-weight:700;line-height:1.2;margin-bottom:14px;position:relative;}
+.waiver-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--bone);opacity:.75;max-width:540px;margin:0 auto 24px;line-height:1.72;position:relative;}
+
+/* Info boxes */
+.info-row{
+  display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
+  max-width:700px;margin:0 auto;position:relative;
+}
+.info-box{
+  display:flex;align-items:center;gap:8px;
+  padding:8px 16px;
   border:.5px solid rgba(201,168,76,.2);
-  font-family:'Cinzel',serif;font-size:13px;letter-spacing:2px;
-  color:var(--bone);text-transform:uppercase;cursor:pointer;
-  transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px;
+  background:rgba(201,168,76,.04);
 }
-.ctrl-btn:hover{border-color:var(--green-b);color:var(--green-b);}
-.ctrl-btn.danger:hover{border-color:#c0392b;color:#c0392b;}
+.info-box span{font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--gold-dim);text-transform:uppercase;}
+.info-icon{font-size:14px;}
 
-/* Slider controls */
-.slider-row{padding:16px;background:var(--char);border:.5px solid rgba(201,168,76,.1);border-top:none;display:flex;flex-direction:column;gap:16px;}
-.slider-group{display:flex;flex-direction:column;gap:10px;}
-.slider-lbl{font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;color:var(--bone);text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;}
-.slider-lbl span{color:var(--gold);font-size:12px;}
-input[type=range]{
-  width:100%;-webkit-appearance:none;height:6px;border-radius:3px;
-  background:linear-gradient(90deg,var(--green-b) 0%,rgba(201,168,76,.2) 0%);
-  outline:none;cursor:pointer;
-}
-input[type=range]::-webkit-slider-thumb{
-  -webkit-appearance:none;width:28px;height:28px;
-  background:var(--gold);border-radius:50%;cursor:pointer;
-  box-shadow:0 0 6px rgba(201,168,76,.4);
-}
-input[type=range]::-moz-range-thumb{
-  width:28px;height:28px;background:var(--gold);
-  border-radius:50%;cursor:pointer;border:none;
-}
-
-/* Remove background button */
-.removebg-btn{
-  padding:14px;background:rgba(34,168,78,.08);color:var(--green-b);
-  font-family:'Cinzel',serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;
-  border:1px solid rgba(34,168,78,.35);cursor:pointer;
-  transition:all .3s;width:100%;
-}
-.removebg-btn:hover{background:rgba(34,168,78,.15);border-color:var(--green-b);}
-.removebg-btn:disabled{opacity:.4;cursor:not-allowed;}
-
-/* Download btn */
-.download-btn{
-  padding:14px;background:transparent;color:var(--gold);
-  font-family:'Cinzel',serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;
-  border:1px solid rgba(201,168,76,.35);cursor:pointer;
-  transition:all .3s;width:100%;
-}
-.download-btn:hover{border-color:var(--gold);background:rgba(201,168,76,.07);}
-
-/* SIDEBAR */
-.sidebar{display:flex;flex-direction:column;gap:20px;}
-.sidebar-card{background:var(--dark);border:.5px solid rgba(201,168,76,.1);padding:20px;}
-.sidebar-card h4{font-family:'Cinzel',serif;font-size:14px;letter-spacing:4px;color:var(--green-b);text-transform:uppercase;margin-bottom:16px;padding-bottom:10px;border-bottom:.5px solid rgba(34,168,78,.15);}
-
-/* Flash designs grid */
-.designs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
-.design-item{
-  aspect-ratio:1;background:var(--smoke);
-  border:.5px solid rgba(201,168,76,.08);
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;transition:all .2s;position:relative;overflow:hidden;
-  font-size:24px;
-}
-.design-item:hover{border-color:rgba(34,168,78,.4);}
-.design-item.selected{border-color:var(--green-b);box-shadow:0 0 12px rgba(34,168,78,.2);}
-.design-item img{width:100%;height:100%;object-fit:contain;padding:4px;}
-.design-item .design-placeholder{opacity:.3;font-size:28px;}
-
-/* Coming soon overlay */
-.coming-tag{
-  position:absolute;bottom:0;left:0;right:0;
-  background:rgba(5,6,5,.8);
-  font-family:'Cinzel',serif;font-size:6px;letter-spacing:2px;
-  color:var(--bone);text-transform:uppercase;
-  text-align:center;padding:3px;
-}
-
-/* Add design upload */
-.add-design-btn{
-  aspect-ratio:1;background:transparent;
-  border:.5px dashed rgba(34,168,78,.25);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
-  cursor:pointer;transition:all .2s;
-  font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;
-  color:var(--bone);text-transform:uppercase;
-}
-.add-design-btn:hover{border-color:var(--green-b);color:var(--green-b);}
-.add-design-btn input{display:none;}
-.add-icon{font-size:20px;opacity:.4;}
-
-/* Instructions */
-.instructions{display:flex;flex-direction:column;gap:10px;}
-.instr-step{display:flex;align-items:flex-start;gap:10px;}
-.instr-num{
-  font-family:'Cinzel Decorative',serif;font-size:16px;
-  color:var(--gold);line-height:1;min-width:24px;
-}
-.instr-txt{font-family:'Crimson Pro',serif;font-size:14px;color:var(--bone);opacity:.7;line-height:1.55;}
-
-/* Book CTA */
-.book-cta{
+/* VERSE BAND */
+.verse{
   background:var(--green-deep);
-  border:.5px solid rgba(34,168,78,.25);
-  padding:20px;text-align:center;
+  border-bottom:1px solid rgba(34,168,78,.25);
+  padding:20px 40px;text-align:center;
 }
-.book-cta p{font-family:'Crimson Pro',serif;font-style:italic;font-size:15px;color:var(--bone);opacity:.7;line-height:1.6;margin-bottom:14px;}
-.book-cta a{
-  display:block;padding:12px;
-  background:var(--green);color:var(--gold-pale);
-  font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;
-  border:1px solid var(--green-b);transition:all .3s;font-weight:600;
+.verse p{font-family:'Crimson Pro',serif;font-style:italic;font-size:16px;color:var(--parch);opacity:.85;line-height:1.65;}
+.verse span{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--green-b);display:block;margin-top:6px;}
+
+/* FORM SECTION */
+.form-section{
+  padding:60px 40px 80px;
+  max-width:860px;
+  margin:0 auto;
 }
-.book-cta a:hover{background:var(--green-b);color:#050605;}
+@media(max-width:600px){.form-section{padding:40px 16px 60px;}}
+
+.form-intro{
+  margin-bottom:40px;
+  padding:28px 32px;
+  border:.5px solid rgba(201,168,76,.15);
+  background:rgba(201,168,76,.03);
+  position:relative;
+}
+.form-intro::before,.form-intro::after{content:'';position:absolute;width:14px;height:14px;border:1px solid var(--gold-dim);}
+.form-intro::before{top:-1px;left:-1px;border-right:none;border-bottom:none;}
+.form-intro::after{bottom:-1px;right:-1px;border-left:none;border-top:none;}
+.form-intro h3{font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;}
+.form-intro p{font-family:'Crimson Pro',serif;font-size:16px;color:var(--bone);line-height:1.8;opacity:.8;}
+.form-intro ul{margin-top:12px;padding-left:20px;}
+.form-intro ul li{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);line-height:1.9;opacity:.72;}
+
+/* Tally embed container */
+.tally-wrap{
+  border:.5px solid rgba(34,168,78,.2);
+  background:var(--dark);
+  overflow:hidden;
+  position:relative;
+}
+.tally-wrap::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--green-b),transparent);
+  z-index:2;
+}
+
+/* Override Tally iframe background */
+.tally-wrap iframe{
+  width:100%;
+  min-height:900px;
+  border:none;
+  display:block;
+  background:#111411;
+  filter:invert(0);
+}
 
 /* FOOTER */
 .footer{background:var(--green-deep);border-top:1px solid rgba(34,168,78,.2);padding:36px 40px;text-align:center;}
 .f-logo{font-family:'Cinzel Decorative',serif;font-size:13px;color:var(--gold-dim);letter-spacing:2px;margin-bottom:6px;}
-.f-tag{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;color:var(--bone);text-transform:uppercase;margin-bottom:16px;}
+.f-tag{font-family:'Cinzel',serif;font-size:7px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
 .socials{display:flex;gap:8px;justify-content:center;}
-.soc{width:34px;height:34px;border:.5px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:14px;color:var(--muted);cursor:pointer;transition:all .2s;text-decoration:none;}
+.soc{width:34px;height:34px;border:.5px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:9px;color:var(--muted);cursor:pointer;transition:all .2s;text-decoration:none;}
 .soc:hover{border-color:var(--green-b);color:var(--green-b);}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.waiver-header>*{animation:fadeUp .7s ease both;}
+.sec-label{animation-delay:.1s;}
+.waiver-title{animation-delay:.2s;}
+.waiver-sub{animation-delay:.3s;}
+.info-row{animation-delay:.4s;}
 </style>
 </head>
 <body>
@@ -242,145 +150,52 @@ input[type=range]::-moz-range-thumb{
 </nav>
 
 <!-- HEADER -->
-<div class="page-header">
-  <div class="sec-label">Visualize Your Ink</div>
-  <div class="page-title">Virtual Tattoo Try-On</div>
-  <p class="page-sub">Upload a photo, pick a design, and see how it looks on you before you commit. Move, resize and rotate until it's perfect.</p>
-
-  <!-- HOW IT WORKS — moved here so it's visible immediately -->
-  <div class="how-it-works">
-    <div class="how-title">How It Works</div>
-    <div class="how-steps">
-      <div class="how-step"><div class="how-num">1</div><div class="how-txt">Upload a photo of the area you want tattooed</div></div>
-      <div class="how-step"><div class="how-num">2</div><div class="how-txt">Pick a flash design or upload your own</div></div>
-      <div class="how-step"><div class="how-num">3</div><div class="how-txt">Drag to position, resize and rotate to fit</div></div>
-      <div class="how-step"><div class="how-num">4</div><div class="how-txt">Tap Remove Background to clean up the design</div></div>
-      <div class="how-step"><div class="how-num">5</div><div class="how-txt">Save your image and book your appointment!</div></div>
-    </div>
+<div class="waiver-header">
+  <div class="sec-label">Before Your Appointment</div>
+  <div class="waiver-title">Tattoo Consent Waiver</div>
+  <p class="waiver-sub">
+    Please complete this form before your tattoo appointment at New Beginnings Family Tattoo Studio. Your signature confirms you understand and agree to all terms.
+  </p>
+  <div class="info-row">
+    <div class="info-box"><span class="info-icon">📍</span><span>4343 N Oracle Rd Suite L · Tucson, AZ</span></div>
+    <div class="info-box"><span class="info-icon">🕐</span><span>Mon–Sat · 9am–10pm</span></div>
+    <div class="info-box"><span class="info-icon">✝</span><span>Family · Faith · Ink</span></div>
   </div>
 </div>
 
-<!-- MAIN -->
-<div class="tryon-wrap">
+<!-- VERSE -->
+<div class="verse">
+  <p>"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here."</p>
+  <span>✦ &nbsp; 2 Corinthians 5:17 &nbsp; ✦</span>
+</div>
 
-  <!-- CANVAS -->
-  <div class="canvas-section">
-    <div class="canvas-label">Your Canvas</div>
-
-    <!-- Upload -->
-    <label class="upload-btn">
-      <input type="file" id="photoUpload" accept="image/*"/>
-      📷 &nbsp; Upload Your Photo
-    </label>
-
-    <!-- Canvas -->
-    <div class="canvas-container" id="canvasContainer">
-      <div class="canvas-placeholder" id="placeholder">
-        <div class="canvas-placeholder-icon">📷</div>
-        <h3>Upload a Photo to Begin</h3>
-        <p>Take a photo of your arm, leg, back or wherever you want the tattoo — then upload it here</p>
-      </div>
-      <canvas id="mainCanvas"></canvas>
-    </div>
-
-    <!-- Controls -->
-    <div class="controls">
-      <button class="ctrl-btn" onclick="rotateTattoo(-15)">↺ &nbsp; Rotate Left</button>
-      <button class="ctrl-btn" onclick="rotateTattoo(15)">↻ &nbsp; Rotate Right</button>
-      <button class="ctrl-btn" onclick="flipTattoo()">⇄ &nbsp; Flip</button>
-      <button class="ctrl-btn danger" onclick="clearTattoo()">✕ &nbsp; Remove</button>
-    </div>
-
-    <!-- Remove Background -->
-    <button class="removebg-btn" id="removeBgBtn" onclick="removeBackground()" style="display:none;">
-      ✨ &nbsp; Remove White Background
-    </button>
-    <div id="removeBgStatus" style="display:none; font-family:'Cinzel',serif; font-size:13px; letter-spacing:3px; color:var(--green-b); text-transform:uppercase; text-align:center; padding:10px;">
-      Processing...
-    </div>
-
-    <!-- Sliders -->
-    <div class="slider-row">
-      <div class="slider-group">
-        <div class="slider-lbl">Size <span id="sizeVal">100%</span></div>
-        <input type="range" id="sizeSlider" min="10" max="300" value="100" oninput="updateTattoo()"/>
-      </div>
-      <div class="slider-group">
-        <div class="slider-lbl">Opacity <span id="opacVal">85%</span></div>
-        <input type="range" id="opacSlider" min="20" max="100" value="85" oninput="updateTattoo()"/>
-      </div>
-    </div>
-
-    <!-- Download -->
-    <button class="download-btn" onclick="downloadResult()">⬇ &nbsp; Save Your Try-On Image</button>
+<!-- FORM -->
+<div class="form-section">
+  <div class="form-intro">
+    <h3>Please Read Before Signing</h3>
+    <p>By completing and signing this waiver you acknowledge the following:</p>
+    <ul>
+      <li>You are 18 years of age or older</li>
+      <li>You are not under the influence of alcohol or drugs</li>
+      <li>You understand tattooing is a permanent body modification</li>
+      <li>You have disclosed any medical conditions that may affect healing</li>
+      <li>You release New Beginnings Family Tattoo Studio from liability</li>
+      <li>You agree to follow all aftercare instructions provided</li>
+    </ul>
   </div>
 
-  <!-- SIDEBAR -->
-  <div class="sidebar">
-
-    <!-- Flash Designs -->
-    <div class="sidebar-card">
-      <h4>Flash Designs</h4>
-      <div class="designs-grid" id="designsGrid">
-
-        <!--
-        ================================================
-        TO ADD YOUR FLASH DESIGNS:
-        Replace the placeholder items below with:
-        <div class="design-item" onclick="selectDesign('YOUR_IMAGE_URL')">
-          <img src="YOUR_IMAGE_URL" alt="Design Name"/>
-        </div>
-
-        Example:
-        <div class="design-item" onclick="selectDesign('https://github.com/PELONNBTS/pelonnbts.github.io/blob/main/flash_1.png?raw=true')">
-          <img src="https://github.com/PELONNBTS/pelonnbts.github.io/blob/main/flash_1.png?raw=true" alt="Flash Design 1"/>
-        </div>
-        ================================================
-        -->
-
-        <!-- PLACEHOLDER DESIGNS — replace with real flash when ready -->
-        <div class="design-item" onclick="selectDesign('placeholder')" title="Coming Soon">
-          <span class="design-placeholder">✝</span>
-          <div class="coming-tag">Coming Soon</div>
-        </div>
-        <div class="design-item" onclick="selectDesign('placeholder')" title="Coming Soon">
-          <span class="design-placeholder">🦁</span>
-          <div class="coming-tag">Coming Soon</div>
-        </div>
-        <div class="design-item" onclick="selectDesign('placeholder')" title="Coming Soon">
-          <span class="design-placeholder">🌹</span>
-          <div class="coming-tag">Coming Soon</div>
-        </div>
-        <div class="design-item" onclick="selectDesign('placeholder')" title="Coming Soon">
-          <span class="design-placeholder">⚔️</span>
-          <div class="coming-tag">Coming Soon</div>
-        </div>
-        <div class="design-item" onclick="selectDesign('placeholder')" title="Coming Soon">
-          <span class="design-placeholder">🐍</span>
-          <div class="coming-tag">Coming Soon</div>
-        </div>
-        <div class="design-item" onclick="selectDesign('placeholder')" title="Coming Soon">
-          <span class="design-placeholder">🔱</span>
-          <div class="coming-tag">Coming Soon</div>
-        </div>
-
-        <!-- Upload your own design to try -->
-        <label class="add-design-btn" title="Upload your own design">
-          <input type="file" id="customDesign" accept="image/*" onchange="loadCustomDesign(this)"/>
-          <span class="add-icon">+</span>
-          <span>Upload Design</span>
-        </label>
-
-      </div>
-      <p style="font-family:'Crimson Pro',serif;font-style:italic;font-size:16px;color:var(--bone);margin-top:12px;line-height:1.6;">Flash designs coming soon — use "Upload Design" to try your own custom art in the meantime.</p>
-    </div>
-
-    <!-- Book CTA -->
-    <div class="book-cta">
-      <p>Love what you see? Come sit with us and let's make it permanent.</p>
-      <a href="http://facebook.com/NewBeginningsTattooStudio" target="_blank">Book Your Appointment</a>
-    </div>
-
+  <!-- TALLY FORM EMBED -->
+  <div class="tally-wrap">
+    <iframe
+      src="https://tally.so/embed/Xx8Z7P?alignLeft=1&hideTitle=1&transparentBackground=0&dynamicHeight=1"
+      loading="lazy"
+      width="100%"
+      height="900"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      title="NBTS Tattoo Consent Waiver"
+    ></iframe>
   </div>
 </div>
 
@@ -396,351 +211,14 @@ input[type=range]::-moz-range-thumb{
 </footer>
 
 <script>
-// ── STATE ──
-let bgImage = null;
-let tattooImage = null;
-let tattooX = 0, tattooY = 0;
-let tattooScale = 1;
-let tattooRotation = 0;
-let tattooFlipped = false;
-let tattooOpacity = 0.85;
-let isDragging = false;
-let dragStartX, dragStartY;
-let selectedDesignEl = null;
-
-const canvas = document.getElementById('mainCanvas');
-const ctx = canvas.getContext('2d');
-
-// ── LOAD PHOTO ──
-document.getElementById('photoUpload').addEventListener('change', function(e) {
-  const file = e.target.files[0];
-  if(!file) return;
-  const reader = new FileReader();
-  reader.onload = function(ev) {
-    const img = new Image();
-    img.onload = function() {
-      bgImage = img;
-      // Size canvas to fit container
-      const container = document.getElementById('canvasContainer');
-      const maxW = container.clientWidth;
-      const maxH = 600;
-      const ratio = Math.min(maxW / img.width, maxH / img.height);
-      canvas.width = img.width * ratio;
-      canvas.height = img.height * ratio;
-      canvas.style.display = 'block';
-      document.getElementById('placeholder').style.display = 'none';
-      // Default tattoo position to center
-      tattooX = canvas.width / 2;
-      tattooY = canvas.height / 2;
-      render();
-    };
-    img.src = ev.target.result;
-  };
-  reader.readAsDataURL(file);
+// Make Tally form auto-resize
+window.addEventListener('message', function(e) {
+  if(e.data && e.data.type === 'tally-form-height') {
+    const iframe = document.querySelector('.tally-wrap iframe');
+    if(iframe) iframe.style.height = e.data.height + 'px';
+  }
 });
-
-// ── SELECT DESIGN ──
-function selectDesign(url) {
-  if(url === 'placeholder') {
-    alert('Flash designs coming soon! Use "Upload Design" to try your own art.');
-    return;
-  }
-  // Deselect previous
-  document.querySelectorAll('.design-item').forEach(el => el.classList.remove('selected'));
-  event.currentTarget.classList.add('selected');
-
-  const img = new Image();
-  img.crossOrigin = 'anonymous';
-  img.onload = function() {
-    tattooImage = img;
-    tattooScale = 1;
-    tattooRotation = 0;
-    tattooFlipped = false;
-    if(bgImage) {
-      tattooX = canvas.width / 2;
-      tattooY = canvas.height / 2;
-    }
-    document.getElementById('sizeSlider').value = 100;
-    document.getElementById('opacSlider').value = 85;
-    updateSliderDisplay();
-    document.getElementById('removeBgBtn').style.display = 'block';
-    document.getElementById('removeBgStatus').style.display = 'none';
-    render();
-  };
-  img.src = url;
-}
-
-// ── LOAD CUSTOM DESIGN ──
-function loadCustomDesign(input) {
-  const file = input.files[0];
-  if(!file) return;
-  const reader = new FileReader();
-  reader.onload = function(ev) {
-    const img = new Image();
-    img.onload = function() {
-      tattooImage = img;
-      tattooScale = 1;
-      tattooRotation = 0;
-      tattooFlipped = false;
-      if(bgImage) {
-        tattooX = canvas.width / 2;
-        tattooY = canvas.height / 2;
-      }
-      document.getElementById('sizeSlider').value = 100;
-      document.getElementById('opacSlider').value = 85;
-      updateSliderDisplay();
-      document.getElementById('removeBgBtn').style.display = 'block';
-      document.getElementById('removeBgStatus').style.display = 'none';
-      render();
-    };
-    img.src = ev.target.result;
-  };
-  reader.readAsDataURL(file);
-}
-
-// ── RENDER ──
-function render() {
-  if(!bgImage) return;
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  // Draw background photo
-  ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
-
-  // Draw tattoo
-  if(tattooImage) {
-    const size = (Math.min(canvas.width, canvas.height) * 0.3) * (tattooScale / 100);
-    const ratio = tattooImage.width / tattooImage.height;
-    const tw = size * ratio;
-    const th = size;
-
-    ctx.save();
-    ctx.globalAlpha = tattooOpacity / 100;
-    ctx.translate(tattooX, tattooY);
-    ctx.rotate((tattooRotation * Math.PI) / 180);
-    if(tattooFlipped) ctx.scale(-1, 1);
-    ctx.drawImage(tattooImage, -tw/2, -th/2, tw, th);
-    ctx.restore();
-  }
-}
-
-// ── CONTROLS ──
-function updateTattoo() {
-  tattooScale = parseInt(document.getElementById('sizeSlider').value);
-  tattooOpacity = parseInt(document.getElementById('opacSlider').value);
-  updateSliderDisplay();
-  render();
-}
-
-function updateSliderDisplay() {
-  document.getElementById('sizeVal').textContent = document.getElementById('sizeSlider').value + '%';
-  document.getElementById('opacVal').textContent = document.getElementById('opacSlider').value + '%';
-  // Update slider gradient
-  const sSlider = document.getElementById('sizeSlider');
-  const sPct = (sSlider.value - sSlider.min) / (sSlider.max - sSlider.min) * 100;
-  sSlider.style.background = `linear-gradient(90deg, var(--green-b) ${sPct}%, rgba(201,168,76,.2) ${sPct}%)`;
-  const oSlider = document.getElementById('opacSlider');
-  const oPct = (oSlider.value - oSlider.min) / (oSlider.max - oSlider.min) * 100;
-  oSlider.style.background = `linear-gradient(90deg, var(--green-b) ${oPct}%, rgba(201,168,76,.2) ${oPct}%)`;
-}
-
-function rotateTattoo(deg) { tattooRotation += deg; render(); }
-function flipTattoo() { tattooFlipped = !tattooFlipped; render(); }
-function clearTattoo() { tattooImage = null; document.querySelectorAll('.design-item').forEach(el => el.classList.remove('selected')); render(); }
-
-// ── DRAG ──
-canvas.addEventListener('mousedown', e => {
-  if(!tattooImage) return;
-  isDragging = true;
-  const rect = canvas.getBoundingClientRect();
-  dragStartX = e.clientX - rect.left - tattooX;
-  dragStartY = e.clientY - rect.top - tattooY;
-});
-canvas.addEventListener('mousemove', e => {
-  if(!isDragging) return;
-  const rect = canvas.getBoundingClientRect();
-  tattooX = e.clientX - rect.left - dragStartX;
-  tattooY = e.clientY - rect.top - dragStartY;
-  render();
-});
-canvas.addEventListener('mouseup', () => isDragging = false);
-canvas.addEventListener('mouseleave', () => isDragging = false);
-
-// Touch drag
-canvas.addEventListener('touchstart', e => {
-  if(!tattooImage) return;
-  e.preventDefault();
-  isDragging = true;
-  const rect = canvas.getBoundingClientRect();
-  dragStartX = e.touches[0].clientX - rect.left - tattooX;
-  dragStartY = e.touches[0].clientY - rect.top - tattooY;
-}, {passive:false});
-canvas.addEventListener('touchmove', e => {
-  if(!isDragging) return;
-  e.preventDefault();
-  const rect = canvas.getBoundingClientRect();
-  tattooX = e.touches[0].clientX - rect.left - dragStartX;
-  tattooY = e.touches[0].clientY - rect.top - dragStartY;
-  render();
-}, {passive:false});
-canvas.addEventListener('touchend', () => isDragging = false);
-
-// Scroll to resize
-canvas.addEventListener('wheel', e => {
-  e.preventDefault();
-  const slider = document.getElementById('sizeSlider');
-  slider.value = Math.max(10, Math.min(300, parseInt(slider.value) - e.deltaY * 0.3));
-  tattooScale = parseInt(slider.value);
-  updateSliderDisplay();
-  render();
-}, {passive:false});
-
-// ── REMOVE BACKGROUND ──
-function removeBackground() {
-  if(!tattooImage) { alert('Please select a design first!'); return; }
-
-  const btn = document.getElementById('removeBgBtn');
-  const status = document.getElementById('removeBgStatus');
-
-  btn.style.display = 'none';
-  status.style.display = 'block';
-  status.textContent = '✨ Removing background...';
-
-  // Small delay so user sees the status message
-  setTimeout(() => {
-    removeWhiteBackground();
-    status.textContent = '✅ Done!';
-    setTimeout(() => {
-      status.style.display = 'none';
-      btn.style.display = 'block';
-      btn.textContent = '✨ Remove Background Again';
-    }, 1500);
-  }, 300);
-}
-
-// Local background removal using flood fill from edges
-function removeWhiteBackground() {
-  const tmpCanvas = document.createElement('canvas');
-  const w = tattooImage.naturalWidth || tattooImage.width;
-  const h = tattooImage.naturalHeight || tattooImage.height;
-  tmpCanvas.width = w;
-  tmpCanvas.height = h;
-  const tmpCtx = tmpCanvas.getContext('2d');
-  tmpCtx.drawImage(tattooImage, 0, 0);
-
-  const imageData = tmpCtx.getImageData(0, 0, w, h);
-  const data = imageData.data;
-  const visited = new Uint8Array(w * h);
-  const tolerance = 35;
-
-  // Sample background color from multiple edge points
-  const edgeSamples = [];
-  for(let x = 0; x < w; x += Math.max(1, Math.floor(w/20))) {
-    edgeSamples.push([data[(0*w+x)*4], data[(0*w+x)*4+1], data[(0*w+x)*4+2]]);
-    edgeSamples.push([data[((h-1)*w+x)*4], data[((h-1)*w+x)*4+1], data[((h-1)*w+x)*4+2]]);
-  }
-  for(let y = 0; y < h; y += Math.max(1, Math.floor(h/20))) {
-    edgeSamples.push([data[(y*w+0)*4], data[(y*w+0)*4+1], data[(y*w+0)*4+2]]);
-    edgeSamples.push([data[(y*w+(w-1))*4], data[(y*w+(w-1))*4+1], data[(y*w+(w-1))*4+2]]);
-  }
-  const bgR = Math.round(edgeSamples.reduce((s,c)=>s+c[0],0)/edgeSamples.length);
-  const bgG = Math.round(edgeSamples.reduce((s,c)=>s+c[1],0)/edgeSamples.length);
-  const bgB = Math.round(edgeSamples.reduce((s,c)=>s+c[2],0)/edgeSamples.length);
-
-  function colorDist(r,g,b) {
-    return Math.sqrt((r-bgR)**2 + (g-bgG)**2 + (b-bgB)**2);
-  }
-
-  // Flood fill from all 4 edges
-  const queue = [];
-  for(let x = 0; x < w; x++) {
-    queue.push(x, 0);
-    queue.push(x, h-1);
-  }
-  for(let y = 0; y < h; y++) {
-    queue.push(0, y);
-    queue.push(w-1, y);
-  }
-
-  let qi = 0;
-  while(qi < queue.length) {
-    const x = queue[qi++];
-    const y = queue[qi++];
-    if(x < 0 || x >= w || y < 0 || y >= h) continue;
-    const idx = y * w + x;
-    if(visited[idx]) continue;
-    visited[idx] = 1;
-    const pi = idx * 4;
-    const r = data[pi], g = data[pi+1], b = data[pi+2];
-    const dist = colorDist(r, g, b);
-    if(dist < tolerance * 2) {
-      // Make transparent with smooth falloff
-      const alpha = dist < tolerance ? 0 : Math.round(((dist - tolerance) / tolerance) * 180);
-      data[pi+3] = alpha;
-      // Spread to neighbors
-      queue.push(x+1, y);
-      queue.push(x-1, y);
-      queue.push(x, y+1);
-      queue.push(x, y-1);
-    }
-  }
-
-  // Second pass — clean up remaining light background pixels not caught by flood fill
-  for(let i = 0; i < data.length; i += 4) {
-    if(data[i+3] === 0) continue; // Already transparent
-    const dist = colorDist(data[i], data[i+1], data[i+2]);
-    if(dist < tolerance * 0.8) {
-      data[i+3] = 0;
-    }
-  }
-
-  // Feather edges — smooth out harsh borders
-  for(let y = 1; y < h-1; y++) {
-    for(let x = 1; x < w-1; x++) {
-      const idx = (y * w + x) * 4;
-      if(data[idx+3] > 0 && data[idx+3] < 255) {
-        // Average with neighbors for smooth edge
-        const neighbors = [
-          data[((y-1)*w+x)*4+3],
-          data[((y+1)*w+x)*4+3],
-          data[(y*w+x-1)*4+3],
-          data[(y*w+x+1)*4+3]
-        ];
-        const avg = neighbors.reduce((s,v)=>s+v,0) / 4;
-        data[idx+3] = Math.round((data[idx+3] + avg) / 2);
-      }
-    }
-  }
-
-  tmpCtx.putImageData(imageData, 0, 0);
-  const img = new Image();
-  img.onload = function() { tattooImage = img; render(); };
-  img.src = tmpCanvas.toDataURL('image/png');
-}
-
-// ── DOWNLOAD ──
-function downloadResult() {
-  if(!bgImage) { alert('Please upload a photo first!'); return; }
-  const dataUrl = canvas.toDataURL('image/png');
-  // On mobile — open in new tab so user can long press to save to photos
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  if(isMobile) {
-    const win = window.open();
-    win.document.write('<html><head><title>NBTS Try-On — Save to Photos</title><style>body{margin:0;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;gap:16px;font-family:sans-serif;color:#fff;} img{max-width:100%;max-height:80vh;} p{font-size:14px;opacity:.7;text-align:center;padding:0 20px;}</style></head><body>');
-    win.document.write('<p>📱 Press and hold the image below to save it to your photos</p>');
-    win.document.write('<img src="' + dataUrl + '" alt="Your NBTS Try-On"/>');
-    win.document.write('</body></html>');
-    win.document.close();
-  } else {
-    // On desktop — download normally
-    const link = document.createElement('a');
-    link.download = 'NBTS-TryOn.png';
-    link.href = dataUrl;
-    link.click();
-  }
-}
-
-// Init sliders
-updateSliderDisplay();
 </script>
+
 </body>
 </html>
