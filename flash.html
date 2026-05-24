@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="New Beginnings Family Tattoo Studio — Flash Tattoo Designs. Browse available flash and book your appointment in Tucson AZ."/>
+<title>Flash Designs | New Beginnings Tattoo Studio Tucson AZ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#050605;color:#D8CFA8;font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{text-decoration:none;}
+img{display:block;max-width:100%;}
+
+:root{
+  --gold:#C9A84C;--gold-lt:#F0D080;--gold-dim:#8B6E2A;--gold-pale:#E8D5A0;
+  --green:#1A7A3A;--green-b:#22A84E;--green-glow:#2ECC6A;--green-deep:#071A0D;
+  --black:#050605;--char:#0C0F0C;--dark:#111411;--smoke:#181C18;
+  --bone:#D8CFA8;--parch:#EDE0BB;--muted:#5A6050;
+}
+
+.nav{position:sticky;top:0;z-index:1000;background:rgba(5,6,5,.97);border-bottom:1px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:66px;backdrop-filter:blur(10px);}
+.nav-logo{font-family:'Cinzel Decorative',serif;font-size:15px;color:var(--gold);letter-spacing:2px;font-weight:700;display:flex;align-items:center;gap:10px;}
+.nav-back{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.nav-back:hover{color:var(--gold);}
+.nav-back::before{content:'←';}
+.nav-book{padding:9px 20px;border:1px solid var(--green);color:var(--green-b);font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all .2s;}
+.nav-book:hover{background:var(--green);color:#050605;}
+
+.page-header{background:var(--char);border-bottom:1px solid rgba(34,168,78,.2);padding:56px 40px 48px;text-align:center;position:relative;overflow:hidden;}
+.page-header::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);}
+.page-header::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(34,168,78,.06) 0%,transparent 70%);pointer-events:none;}
+.sec-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;position:relative;}
+.page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(26px,4vw,44px);color:var(--gold);font-weight:700;line-height:1.2;margin-bottom:14px;position:relative;}
+.page-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:18px;color:var(--parch);opacity:.88;max-width:580px;margin:0 auto;line-height:1.72;position:relative;}
+
+/* What is flash */
+.flash-info{background:var(--green-deep);border-bottom:1px solid rgba(34,168,78,.2);padding:28px 40px;text-align:center;}
+.flash-info p{font-family:'Crimson Pro',serif;font-size:17px;color:var(--parch);opacity:.85;line-height:1.72;max-width:640px;margin:0 auto;}
+
+/* Artist filter */
+.filter-wrap{padding:32px 40px 0;max-width:960px;margin:0 auto;}
+.filter-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--green-b);text-transform:uppercase;margin-bottom:14px;}
+.filters{display:flex;gap:8px;flex-wrap:wrap;}
+.fbtn{padding:9px 20px;background:transparent;border:.5px solid rgba(201,168,76,.2);font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;cursor:pointer;transition:all .2s;}
+.fbtn:hover,.fbtn.active{border-color:var(--green-b);color:var(--green-b);background:rgba(34,168,78,.06);}
+
+/* Coming soon section */
+.main-wrap{max-width:960px;margin:0 auto;padding:48px 40px 80px;}
+@media(max-width:600px){.main-wrap{padding:32px 20px 60px;}}
+
+.coming-soon-wrap{
+  text-align:center;
+  padding:80px 40px;
+  border:.5px solid rgba(201,168,76,.15);
+  background:var(--dark);
+  position:relative;overflow:hidden;
+}
+.coming-soon-wrap::before,.coming-soon-wrap::after{content:'';position:absolute;width:20px;height:20px;border:1px solid var(--gold-dim);}
+.coming-soon-wrap::before{top:-1px;left:-1px;border-right:none;border-bottom:none;}
+.coming-soon-wrap::after{bottom:-1px;right:-1px;border-left:none;border-top:none;}
+
+.cs-icon{font-size:56px;margin-bottom:20px;opacity:.3;}
+.cs-title{font-family:'Cinzel Decorative',serif;font-size:28px;color:var(--gold);font-weight:700;margin-bottom:14px;}
+.cs-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:18px;color:var(--bone);opacity:.7;line-height:1.72;max-width:480px;margin:0 auto 32px;}
+
+/* What is flash explainer */
+.flash-explainer{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:4px;}
+@media(max-width:600px){.flash-explainer{grid-template-columns:1fr;}}
+.fe-card{background:var(--dark);border:.5px solid rgba(201,168,76,.1);padding:24px;text-align:center;}
+.fe-icon{font-size:28px;margin-bottom:12px;}
+.fe-title{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
+.fe-txt{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.72;line-height:1.65;}
+
+/* Notification signup */
+.notify-wrap{
+  margin-top:48px;
+  background:rgba(34,168,78,.06);
+  border:.5px solid rgba(34,168,78,.2);
+  padding:32px;
+  text-align:center;
+}
+.notify-wrap h3{font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;}
+.notify-wrap p{font-family:'Crimson Pro',serif;font-style:italic;font-size:16px;color:var(--bone);opacity:.8;line-height:1.7;margin-bottom:20px;}
+.notify-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-g{padding:14px 32px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid var(--green-b);cursor:pointer;font-weight:700;display:inline-block;transition:all .3s;}
+.btn-g:hover{background:var(--green-b);color:#050605;}
+.btn-o{padding:14px 32px;background:transparent;color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(201,168,76,.35);cursor:pointer;display:inline-block;transition:all .3s;}
+.btn-o:hover{border-color:var(--gold);background:rgba(201,168,76,.07);}
+
+.footer{background:var(--green-deep);border-top:1px solid rgba(34,168,78,.2);padding:36px 40px;text-align:center;}
+.f-logo{font-family:'Cinzel Decorative',serif;font-size:13px;color:var(--gold-dim);letter-spacing:2px;margin-bottom:6px;}
+.f-tag{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
+.socials{display:flex;gap:8px;justify-content:center;}
+.soc{width:34px;height:34px;border:.5px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:9px;color:var(--muted);cursor:pointer;transition:all .2s;text-decoration:none;}
+.soc:hover{border-color:var(--green-b);color:var(--green-b);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">🦁 NBTS</div>
+  <a href="index.html" class="nav-back">Back to Main Site</a>
+  <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="nav-book">Book Now</a>
+</nav>
+
+<div class="page-header">
+  <div class="sec-label">New Beginnings Tattoo Studio</div>
+  <div class="page-title">Flash Designs</div>
+  <p class="page-sub">Browse our available flash designs — pre-drawn pieces ready to tattoo. Pick one, book your appointment, and walk out with fresh ink.</p>
+</div>
+
+<div class="flash-info">
+  <p>Flash tattoos are pre-designed pieces available at a set price. They're a great way to get quality art quickly without the wait for a custom design. Walk-ins welcome for flash — first come first served.</p>
+</div>
+
+<!-- FILTERS -->
+<div class="filter-wrap">
+  <div class="filter-label">Filter by Artist</div>
+  <div class="filters">
+    <button class="fbtn active">All Artists</button>
+    <button class="fbtn">Pelon</button>
+    <button class="fbtn">Eric</button>
+    <button class="fbtn">Mousie</button>
+    <button class="fbtn">Roo</button>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main-wrap">
+
+  <!-- COMING SOON -->
+  <div class="coming-soon-wrap">
+    <div class="cs-icon">🎨</div>
+    <div class="cs-title">Flash Sheets Coming Soon</div>
+    <p class="cs-sub">Our artists are creating exclusive NBTS flash designs. Check back soon — or follow us on Instagram @nbtstucson to see flash drops as they happen.</p>
+    <div class="notify-btns">
+      <a href="https://instagram.com/nbtstucson" target="_blank" class="btn-g">Follow @nbtstucson</a>
+      <a href="http://facebook.com/NewBeginningsTattooStudio" target="_blank" class="btn-o">Follow on Facebook</a>
+    </div>
+  </div>
+
+  <!-- WHAT IS FLASH -->
+  <div class="flash-explainer">
+    <div class="fe-card">
+      <div class="fe-icon">⚡</div>
+      <div class="fe-title">What is Flash?</div>
+      <p class="fe-txt">Flash are pre-designed tattoos drawn by the artist and available at a set price. No wait for custom design — just pick it and book.</p>
+    </div>
+    <div class="fe-card">
+      <div class="fe-icon">💰</div>
+      <div class="fe-title">Flash Pricing</div>
+      <p class="fe-txt">Each flash piece has a set price based on size and complexity. Prices will be listed with each design when they drop.</p>
+    </div>
+    <div class="fe-card">
+      <div class="fe-icon">🚶</div>
+      <div class="fe-title">Walk-Ins Welcome</div>
+      <p class="fe-txt">Flash pieces are perfect for walk-ins. Come in, pick your design, and get tattooed the same day — Mon–Sat 9am–10pm.</p>
+    </div>
+  </div>
+
+  <!-- NOTIFY -->
+  <div class="notify-wrap">
+    <h3>🦁 Don't Miss a Flash Drop</h3>
+    <p>Follow us on Instagram and Facebook — we announce new flash designs there first. Some pieces are one-of-a-kind and go fast.</p>
+    <div class="notify-btns">
+      <a href="https://instagram.com/nbtstucson" target="_blank" class="btn-g">@nbtstucson on Instagram</a>
+      <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="btn-o">Book an Appointment</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="f-logo">NBTS · New Beginnings Tattoo Studio</div>
+  <div class="f-tag">4343 N Oracle Rd Suite L · Tucson, AZ · Mon–Sat 9am–10pm</div>
+  <div class="socials">
+    <a class="soc" href="https://instagram.com/nbtstucson" target="_blank">IG</a>
+    <a class="soc" href="http://facebook.com/NewBeginningsTattooStudio" target="_blank">FB</a>
+    <a class="soc" href="index.html">🏠</a>
+  </div>
+</footer>
+
+</body>
+</html>
