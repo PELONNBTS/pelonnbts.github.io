@@ -66,7 +66,38 @@ img{display:block;max-width:100%;}
 .nav-dot{width:6px;height:6px;background:var(--green-b);border-radius:50%;animation:pulse 2s ease-in-out infinite;}
 @keyframes pulse{0%,100%{opacity:.35;}50%{opacity:1;}}
 
-/* Mobile nav */
+/* Dropdown nav */
+.nav-dropdown{position:relative;}
+.nav-dropdown-btn{
+  font-family:'Cinzel',serif;font-size:13px;letter-spacing:2px;
+  color:var(--bone);text-transform:uppercase;
+  cursor:pointer;display:flex;align-items:center;gap:5px;
+  background:none;border:none;padding:0;transition:color .2s;
+}
+.nav-dropdown-btn:hover{color:var(--gold);}
+.nav-dropdown-btn .arr{font-size:10px;transition:transform .2s;}
+.nav-dropdown:hover .arr{transform:rotate(180deg);}
+.nav-dropdown-menu{
+  position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  background:rgba(5,6,5,.98);
+  border:.5px solid rgba(34,168,78,.25);
+  min-width:180px;
+  display:none;
+  flex-direction:column;
+  padding:8px 0;
+  margin-top:8px;
+  z-index:200;
+}
+.nav-dropdown:hover .nav-dropdown-menu{display:flex;}
+.nav-dropdown-menu a{
+  font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;
+  color:var(--bone);text-transform:uppercase;
+  padding:12px 20px;display:block;
+  transition:all .2s;
+  border-bottom:.5px solid rgba(201,168,76,.06);
+}
+.nav-dropdown-menu a:last-child{border-bottom:none;}
+.nav-dropdown-menu a:hover{color:var(--gold);background:rgba(34,168,78,.05);padding-left:26px;}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
 .nav-hamburger span{width:22px;height:1.5px;background:var(--gold);transition:all .3s;display:block;}
 .nav-hamburger.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
@@ -78,6 +109,9 @@ img{display:block;max-width:100%;}
   .nav-links.open{display:flex;}
   .nav-links li{border-bottom:.5px solid rgba(201,168,76,.08);padding:16px 0;}
   .nav-links a{font-size:15px;letter-spacing:2px;}
+  .nav-dropdown-btn{font-size:15px;letter-spacing:2px;color:var(--bone);}
+  .nav-dropdown-menu{position:static;transform:none;border:none;background:transparent;padding:8px 0 0 16px;margin-top:8px;display:flex !important;border-top:.5px solid rgba(34,168,78,.1);}
+  .nav-dropdown-menu a{font-size:13px;padding:10px 0;border-bottom:none;color:var(--muted);}
   .nav-hamburger{display:flex;}
   .nav-status{display:none;}
   .nav{padding:0 24px;}
@@ -343,8 +377,15 @@ img{display:block;max-width:100%;}
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About Us</a></li>
-    <li><a href="#artists">Meet the Artists</a></li>
-    <li><a href="#showcase">Gallery</a></li>
+    <li><a href="#artists">Artists</a></li>
+    <li class="nav-dropdown">
+      <button class="nav-dropdown-btn">Info <span class="arr">▾</span></button>
+      <div class="nav-dropdown-menu">
+        <a href="aftercare.html">Aftercare</a>
+        <a href="faq.html">FAQ</a>
+        <a href="flash.html">Flash Designs</a>
+      </div>
+    </li>
     <li><a href="booking.html">Pricing</a></li>
     <li><a href="tryon.html">Try It On</a></li>
     <li><a href="waiver.html">Sign Waiver</a></li>
