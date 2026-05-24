@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gift Cards | New Beginnings Tattoo Studio Tucson AZ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#050605;color:#D8CFA8;font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{text-decoration:none;}
+:root{
+  --gold:#C9A84C;--gold-dim:#8B6E2A;--gold-pale:#E8D5A0;
+  --green:#1A7A3A;--green-b:#22A84E;--green-deep:#071A0D;
+  --black:#050605;--char:#0C0F0C;--dark:#111411;
+  --bone:#D8CFA8;--parch:#EDE0BB;--muted:#5A6050;
+}
+.nav{position:sticky;top:0;z-index:1000;background:rgba(5,6,5,.97);border-bottom:1px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:66px;backdrop-filter:blur(10px);}
+.nav-logo{font-family:'Cinzel Decorative',serif;font-size:15px;color:var(--gold);letter-spacing:2px;font-weight:700;}
+.nav-back{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.nav-back:hover{color:var(--gold);}
+.nav-back::before{content:'←';}
+.nav-book{padding:9px 20px;border:1px solid var(--green);color:var(--green-b);font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all .2s;}
+.nav-book:hover{background:var(--green);color:#050605;}
+.page-header{background:var(--char);border-bottom:1px solid rgba(34,168,78,.2);padding:52px 40px 44px;text-align:center;position:relative;}
+.page-header::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);}
+.sec-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;}
+.page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(24px,4vw,42px);color:var(--gold);font-weight:700;line-height:1.2;margin-bottom:12px;}
+.page-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--parch);opacity:.85;max-width:560px;margin:0 auto;line-height:1.72;}
+
+.main-wrap{max-width:860px;margin:0 auto;padding:56px 40px 80px;}
+@media(max-width:600px){.main-wrap{padding:36px 20px 60px;}}
+
+/* GIFT CARD VISUAL */
+.gc-visual{
+  background:linear-gradient(135deg,#0d1a0f 0%,#071A0D 40%,#0a140c 100%);
+  border:1px solid rgba(201,168,76,.4);
+  border-radius:2px;
+  padding:40px;
+  max-width:500px;
+  margin:0 auto 48px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 0 60px rgba(201,168,76,.08);
+}
+.gc-visual::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-dim),var(--gold),var(--green-b),var(--gold),var(--gold-dim));}
+.gc-visual::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.4),transparent);}
+.gc-logo{font-family:'Cinzel Decorative',serif;font-size:28px;color:var(--gold);font-weight:900;margin-bottom:4px;}
+.gc-sub{font-family:'Cinzel',serif;font-size:9px;letter-spacing:5px;color:var(--green-b);text-transform:uppercase;margin-bottom:32px;}
+.gc-amount{font-family:'Cinzel Decorative',serif;font-size:56px;color:var(--gold);font-weight:900;line-height:1;margin-bottom:8px;}
+.gc-amount-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:24px;}
+.gc-tagline{font-family:'Crimson Pro',serif;font-style:italic;font-size:15px;color:var(--bone);opacity:.6;line-height:1.6;}
+.gc-corner-tl,.gc-corner-br{position:absolute;width:40px;height:40px;}
+.gc-corner-tl{top:12px;right:12px;border-top:1px solid rgba(201,168,76,.3);border-right:1px solid rgba(201,168,76,.3);}
+.gc-corner-br{bottom:12px;left:12px;border-bottom:1px solid rgba(201,168,76,.3);border-left:1px solid rgba(201,168,76,.3);}
+.gc-lion{position:absolute;bottom:20px;right:24px;font-size:48px;opacity:.08;}
+
+/* AMOUNT SELECTOR */
+.amount-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:32px;}
+@media(max-width:500px){.amount-grid{grid-template-columns:repeat(2,1fr);}}
+.amt-btn{padding:18px 8px;background:transparent;border:.5px solid rgba(201,168,76,.2);font-family:'Cinzel Decorative',serif;font-size:20px;color:var(--gold);text-align:center;cursor:pointer;transition:all .2s;}
+.amt-btn:hover,.amt-btn.selected{border-color:var(--green-b);background:rgba(34,168,78,.08);color:var(--green-b);}
+.amt-btn .amt-label{font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;display:block;margin-top:4px;}
+
+/* HOW IT WORKS */
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-bottom:48px;}
+@media(max-width:600px){.how-grid{grid-template-columns:1fr;}}
+.how-card{background:var(--dark);border:.5px solid rgba(201,168,76,.1);padding:24px;text-align:center;}
+.how-num{font-family:'Cinzel Decorative',serif;font-size:36px;color:rgba(201,168,76,.15);line-height:1;margin-bottom:4px;}
+.how-icon{font-size:24px;margin-bottom:10px;}
+.how-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;}
+.how-desc{font-family:'Crimson Pro',serif;font-size:14px;color:var(--bone);opacity:.7;line-height:1.6;}
+
+/* OCCASIONS */
+.occasion-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:48px;}
+@media(max-width:500px){.occasion-list{grid-template-columns:1fr;}}
+.occ-item{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--dark);border:.5px solid rgba(201,168,76,.08);}
+.occ-icon{font-size:20px;}
+.occ-txt{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.8;}
+
+/* CTA */
+.cta-box{background:var(--green-deep);border:.5px solid rgba(34,168,78,.2);padding:40px;text-align:center;}
+.cta-title{font-family:'Cinzel Decorative',serif;font-size:clamp(20px,3vw,28px);color:var(--gold);font-weight:700;margin-bottom:12px;}
+.cta-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:16px;color:var(--bone);opacity:.75;max-width:440px;margin:0 auto 24px;line-height:1.7;}
+.btn-g{padding:15px 36px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid var(--green-b);display:inline-block;transition:all .3s;font-weight:700;margin:6px;}
+.btn-g:hover{background:var(--green-b);color:#050605;}
+.btn-o{padding:15px 36px;background:transparent;color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(201,168,76,.35);display:inline-block;transition:all .3s;margin:6px;}
+.btn-o:hover{border-color:var(--gold);background:rgba(201,168,76,.07);}
+
+.footer{background:var(--green-deep);border-top:1px solid rgba(34,168,78,.2);padding:36px 40px;text-align:center;}
+.f-logo{font-family:'Cinzel Decorative',serif;font-size:13px;color:var(--gold-dim);letter-spacing:2px;margin-bottom:6px;}
+.f-tag{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
+.socials{display:flex;gap:8px;justify-content:center;}
+.soc{width:34px;height:34px;border:.5px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:9px;color:var(--muted);transition:all .2s;text-decoration:none;}
+.soc:hover{border-color:var(--green-b);color:var(--green-b);}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-logo">🦁 NBTS</div>
+  <a href="index.html" class="nav-back">Back to Main Site</a>
+  <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="nav-book">Book Now</a>
+</nav>
+<div class="page-header">
+  <div class="sec-label">Give the Gift of Ink</div>
+  <div class="page-title">Gift Cards</div>
+  <p class="page-sub">Give someone a piece of art that lasts a lifetime. NBTS gift cards are available in any amount and never expire.</p>
+</div>
+
+<div class="main-wrap">
+
+  <!-- GIFT CARD VISUAL -->
+  <div class="gc-visual" id="gcVisual">
+    <div class="gc-corner-tl"></div>
+    <div class="gc-corner-br"></div>
+    <div class="gc-lion">🦁</div>
+    <div class="gc-logo">NBTS</div>
+    <div class="gc-sub">New Beginnings Tattoo Studio · Tucson, AZ</div>
+    <div class="gc-amount" id="gcAmount">$100</div>
+    <div class="gc-amount-label">Gift Card</div>
+    <div class="gc-tagline">"A new beginning starts with a single mark."</div>
+  </div>
+
+  <!-- AMOUNT SELECTOR -->
+  <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--green-b);text-transform:uppercase;margin-bottom:14px;">Select an Amount</div>
+  <div class="amount-grid">
+    <div class="amt-btn" onclick="selectAmt(this,'$50')">$50<span class="amt-label">Small Piece</span></div>
+    <div class="amt-btn selected" onclick="selectAmt(this,'$100')">$100<span class="amt-label">Great Start</span></div>
+    <div class="amt-btn" onclick="selectAmt(this,'$150')">$150<span class="amt-label">Medium Piece</span></div>
+    <div class="amt-btn" onclick="selectAmt(this,'$200')">$200<span class="amt-label">Full Session</span></div>
+    <div class="amt-btn" onclick="selectAmt(this,'$300')">$300<span class="amt-label">Large Work</span></div>
+    <div class="amt-btn" onclick="selectAmt(this,'$500')">$500<span class="amt-label">Sleeve Start</span></div>
+    <div class="amt-btn" onclick="selectAmt(this,'$750')">$750<span class="amt-label">Major Piece</span></div>
+    <div class="amt-btn" onclick="selectAmt(this,'Custom')">Custom<span class="amt-label">Any Amount</span></div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--green-b);text-transform:uppercase;margin-bottom:14px;">How It Works</div>
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="how-num">01</div>
+      <div class="how-icon">💬</div>
+      <div class="how-title">Contact Us</div>
+      <p class="how-desc">Message us on Facebook or Instagram to purchase a gift card. We'll process it through Square instantly.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-num">02</div>
+      <div class="how-icon">📧</div>
+      <div class="how-title">Receive Digitally</div>
+      <p class="how-desc">Your gift card is sent via email immediately. Forward it to your recipient or print it out.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-num">03</div>
+      <div class="how-icon">🎨</div>
+      <div class="how-title">Book & Redeem</div>
+      <p class="how-desc">The recipient books their appointment and applies the gift card at checkout. Zero hassle.</p>
+    </div>
+  </div>
+
+  <!-- OCCASIONS -->
+  <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--green-b);text-transform:uppercase;margin-bottom:14px;">Perfect For</div>
+  <div class="occasion-list">
+    <div class="occ-item"><div class="occ-icon">🎂</div><div class="occ-txt">Birthdays</div></div>
+    <div class="occ-item"><div class="occ-icon">🎄</div><div class="occ-txt">Christmas & Holidays</div></div>
+    <div class="occ-item"><div class="occ-icon">🎓</div><div class="occ-txt">Graduations</div></div>
+    <div class="occ-item"><div class="occ-icon">💍</div><div class="occ-txt">Anniversaries</div></div>
+    <div class="occ-item"><div class="occ-icon">💪</div><div class="occ-txt">Achievements & Milestones</div></div>
+    <div class="occ-item"><div class="occ-icon">❤️</div><div class="occ-txt">Just Because</div></div>
+  </div>
+
+  <!-- TERMS -->
+  <div style="background:var(--dark);border:.5px solid rgba(201,168,76,.1);padding:20px 24px;margin-bottom:32px;">
+    <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;">Gift Card Terms</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div style="font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.75;display:flex;gap:8px;"><span style="color:var(--green-b);">✦</span>Gift cards never expire</div>
+      <div style="font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.75;display:flex;gap:8px;"><span style="color:var(--green-b);">✦</span>Valid for any artist at NBTS</div>
+      <div style="font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.75;display:flex;gap:8px;"><span style="color:var(--green-b);">✦</span>Cannot be redeemed for cash</div>
+      <div style="font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.75;display:flex;gap:8px;"><span style="color:var(--green-b);">✦</span>Multiple gift cards can be combined for one session</div>
+      <div style="font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.75;display:flex;gap:8px;"><span style="color:var(--green-b);">✦</span>Deposit of $50 still required at booking — gift card applied to balance</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <div class="cta-title">Ready to Give the Gift of Ink?</div>
+    <p class="cta-sub">Message us directly to purchase your gift card. We'll have it in your inbox within minutes.</p>
+    <a href="http://facebook.com/NewBeginningsTattooStudio" target="_blank" class="btn-g">Message Us on Facebook</a>
+    <a href="https://instagram.com/nbtstucson" target="_blank" class="btn-o">DM on Instagram</a>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="f-logo">NBTS · New Beginnings Tattoo Studio</div>
+  <div class="f-tag">4343 N Oracle Rd Suite L · Tucson, AZ · Mon–Sat 9am–10pm</div>
+  <div class="socials">
+    <a class="soc" href="https://instagram.com/nbtstucson" target="_blank">IG</a>
+    <a class="soc" href="http://facebook.com/NewBeginningsTattooStudio" target="_blank">FB</a>
+    <a class="soc" href="index.html">🏠</a>
+  </div>
+</footer>
+
+<script>
+function selectAmt(btn, amt) {
+  document.querySelectorAll('.amt-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  document.getElementById('gcAmount').textContent = amt;
+}
+</script>
+</body>
+</html>

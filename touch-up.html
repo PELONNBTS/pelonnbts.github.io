@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Touch-Up Policy | New Beginnings Tattoo Studio Tucson AZ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#050605;color:#D8CFA8;font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{text-decoration:none;}
+:root{
+  --gold:#C9A84C;--gold-dim:#8B6E2A;--gold-pale:#E8D5A0;
+  --green:#1A7A3A;--green-b:#22A84E;--green-deep:#071A0D;
+  --black:#050605;--char:#0C0F0C;--dark:#111411;
+  --bone:#D8CFA8;--parch:#EDE0BB;--muted:#5A6050;
+}
+.nav{position:sticky;top:0;z-index:1000;background:rgba(5,6,5,.97);border-bottom:1px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:66px;backdrop-filter:blur(10px);}
+.nav-logo{font-family:'Cinzel Decorative',serif;font-size:15px;color:var(--gold);letter-spacing:2px;font-weight:700;}
+.nav-back{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.nav-back:hover{color:var(--gold);}
+.nav-back::before{content:'←';}
+.nav-book{padding:9px 20px;border:1px solid var(--green);color:var(--green-b);font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all .2s;}
+.nav-book:hover{background:var(--green);color:#050605;}
+.page-header{background:var(--char);border-bottom:1px solid rgba(34,168,78,.2);padding:52px 40px 44px;text-align:center;position:relative;}
+.page-header::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);}
+.sec-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;}
+.page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(24px,4vw,42px);color:var(--gold);font-weight:700;line-height:1.2;margin-bottom:12px;}
+.page-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--parch);opacity:.85;max-width:560px;margin:0 auto;line-height:1.72;}
+
+.main-wrap{max-width:800px;margin:0 auto;padding:56px 40px 80px;}
+@media(max-width:600px){.main-wrap{padding:36px 20px 60px;}}
+
+.section-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--green-b);text-transform:uppercase;margin-bottom:10px;}
+.section-title{font-family:'Cinzel Decorative',serif;font-size:clamp(18px,3vw,26px);color:var(--gold);font-weight:700;margin-bottom:20px;}
+
+.policy-card{background:var(--dark);border:.5px solid rgba(201,168,76,.12);padding:28px;margin-bottom:6px;display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:start;transition:border-color .3s;}
+.policy-card:hover{border-color:rgba(34,168,78,.3);}
+.policy-icon{font-size:26px;margin-top:4px;}
+.policy-title{font-family:'Cinzel',serif;font-size:13px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
+.policy-text{font-family:'Crimson Pro',serif;font-size:16px;color:var(--bone);opacity:.82;line-height:1.78;}
+
+.yes-no{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:48px;}
+@media(max-width:600px){.yes-no{grid-template-columns:1fr;}}
+.yes-card{background:rgba(34,168,78,.06);border:.5px solid rgba(34,168,78,.25);padding:24px;}
+.no-card{background:rgba(184,74,26,.05);border:.5px solid rgba(184,74,26,.25);padding:24px;}
+.yn-title{font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;margin-bottom:14px;padding-bottom:10px;}
+.yes-card .yn-title{color:var(--green-b);border-bottom:.5px solid rgba(34,168,78,.2);}
+.no-card .yn-title{color:#E05A20;border-bottom:.5px solid rgba(184,74,26,.2);}
+.yn-list{display:flex;flex-direction:column;gap:10px;}
+.yn-item{display:flex;gap:10px;font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.82;line-height:1.6;}
+.yes-card .yn-item::before{content:'✓';color:var(--green-b);font-weight:bold;flex-shrink:0;}
+.no-card .yn-item::before{content:'✗';color:#E05A20;font-weight:bold;flex-shrink:0;}
+
+.info-box{background:rgba(34,168,78,.06);border:.5px solid rgba(34,168,78,.2);border-left:3px solid var(--green-b);padding:20px 24px;margin-bottom:32px;}
+.info-box h4{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--green-b);text-transform:uppercase;margin-bottom:10px;}
+.info-box p{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.82;line-height:1.75;}
+
+.book-cta{background:var(--green-deep);border:.5px solid rgba(34,168,78,.2);padding:40px;text-align:center;}
+.book-cta p{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--parch);opacity:.85;margin-bottom:20px;line-height:1.7;}
+.btn-g{padding:15px 36px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid var(--green-b);display:inline-block;transition:all .3s;font-weight:700;margin:6px;}
+.btn-g:hover{background:var(--green-b);color:#050605;}
+.btn-o{padding:15px 36px;background:transparent;color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(201,168,76,.35);display:inline-block;transition:all .3s;margin:6px;}
+.btn-o:hover{border-color:var(--gold);background:rgba(201,168,76,.07);}
+
+.footer{background:var(--green-deep);border-top:1px solid rgba(34,168,78,.2);padding:36px 40px;text-align:center;}
+.f-logo{font-family:'Cinzel Decorative',serif;font-size:13px;color:var(--gold-dim);letter-spacing:2px;margin-bottom:6px;}
+.f-tag{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
+.socials{display:flex;gap:8px;justify-content:center;}
+.soc{width:34px;height:34px;border:.5px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:9px;color:var(--muted);transition:all .2s;text-decoration:none;}
+.soc:hover{border-color:var(--green-b);color:var(--green-b);}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-logo">🦁 NBTS</div>
+  <a href="index.html" class="nav-back">Back to Main Site</a>
+  <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="nav-book">Book Now</a>
+</nav>
+<div class="page-header">
+  <div class="sec-label">We Stand Behind Our Work</div>
+  <div class="page-title">Touch-Up Policy</div>
+  <p class="page-sub">We take pride in every piece that leaves this studio. Here is our clear, honest policy on touch-ups so there are no surprises.</p>
+</div>
+
+<div class="main-wrap">
+
+  <div class="info-box">
+    <h4>Our Promise</h4>
+    <p>We stand behind our work. If a tattoo heals unevenly due to normal variation in skin or an issue with our application, we will make it right at no charge. We are a family studio — your satisfaction matters to us personally.</p>
+  </div>
+
+  <div class="section-label">The Policy</div>
+  <div class="section-title">How Touch-Ups Work</div>
+
+  <div class="policy-card">
+    <div class="policy-icon">⏰</div>
+    <div>
+      <div class="policy-title">Wait Time Required</div>
+      <p class="policy-text">Your tattoo must be <strong>fully healed before a touch-up</strong> — minimum 6 weeks, ideally 8–12 weeks. The tattoo needs to complete the full healing cycle before we can assess what needs to be corrected. Do not contact us about touch-ups before 6 weeks.</p>
+    </div>
+  </div>
+
+  <div class="policy-card">
+    <div class="policy-icon">✅</div>
+    <div>
+      <div class="policy-title">Complimentary Touch-Ups</div>
+      <p class="policy-text">We offer one free touch-up session within 6 months of your original appointment if the tattoo healed with issues that were caused by our application — such as patchy shading, ink fallout in areas where aftercare was followed correctly, or lines that are uneven.</p>
+    </div>
+  </div>
+
+  <div class="policy-card">
+    <div class="policy-icon">💰</div>
+    <div>
+      <div class="policy-title">Paid Touch-Ups</div>
+      <p class="policy-text">Touch-ups required due to improper aftercare, picking or peeling, sun damage, excessive fading from lifestyle factors, or changes in the client's skin are charged at our standard hourly rate. Touch-ups on work done by other studios are treated as new tattoos.</p>
+    </div>
+  </div>
+
+  <div class="policy-card">
+    <div class="policy-icon">📍</div>
+    <div>
+      <div class="policy-title">Placement Exceptions</div>
+      <p class="policy-text">Certain placements are known to fade or require touch-ups by nature — hands, fingers, feet, inner lip, and heavily flexed areas. Fading in these areas is expected and touch-ups are not complimentary. This is discussed during consultation so there are no surprises.</p>
+    </div>
+  </div>
+
+  <div class="policy-card">
+    <div class="policy-icon">🎨</div>
+    <div>
+      <div class="policy-title">Color Tattoos</div>
+      <p class="policy-text">Certain colors — especially white, light pastels, and some reds — may require a touch-up after full healing as they can appear different on different skin tones. One touch-up for color settling is included at no charge within 6 months when aftercare has been followed.</p>
+    </div>
+  </div>
+
+  <div class="policy-card">
+    <div class="policy-icon">🦁</div>
+    <div>
+      <div class="policy-title">Apprentice Work</div>
+      <p class="policy-text">All work by Eric, Mousie, and Roo is supervised and reviewed by Pelon. Touch-up policy for apprentice work follows the same guidelines — one complimentary session within 6 months for application issues. Pelon may personally review and complete touch-ups on apprentice work.</p>
+    </div>
+  </div>
+
+  <!-- YES / NO -->
+  <div class="section-label" style="margin-top:48px;">Quick Reference</div>
+  <div class="section-title">Covered vs Not Covered</div>
+  <div class="yes-no">
+    <div class="yes-card">
+      <div class="yn-title">✓ &nbsp; Covered (Free)</div>
+      <div class="yn-list">
+        <div class="yn-item">Patchy ink from application</div>
+        <div class="yn-item">Uneven lines from tattooing</div>
+        <div class="yn-item">Ink fallout during healing (with proper aftercare)</div>
+        <div class="yn-item">Color settling issues within 6 months</div>
+        <div class="yn-item">Normal skin healing variation</div>
+      </div>
+    </div>
+    <div class="no-card">
+      <div class="yn-title">✗ &nbsp; Not Covered (Paid)</div>
+      <div class="yn-list">
+        <div class="yn-item">Picking or peeling the tattoo</div>
+        <div class="yn-item">Sun damage or tanning on fresh ink</div>
+        <div class="yn-item">Not following aftercare instructions</div>
+        <div class="yn-item">Fading from hands, feet, fingers by nature</div>
+        <div class="yn-item">Requests outside 6-month window</div>
+        <div class="yn-item">Work done at other studios</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="book-cta">
+    <p>Need a touch-up? Message us on Facebook or Instagram to schedule. Please include a photo of your healed tattoo.</p>
+    <a href="http://facebook.com/NewBeginningsTattooStudio" target="_blank" class="btn-g">Message Us on Facebook</a>
+    <a href="https://instagram.com/nbtstucson" target="_blank" class="btn-o">DM on Instagram</a>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="f-logo">NBTS · New Beginnings Tattoo Studio</div>
+  <div class="f-tag">4343 N Oracle Rd Suite L · Tucson, AZ · Mon–Sat 9am–10pm</div>
+  <div class="socials">
+    <a class="soc" href="https://instagram.com/nbtstucson" target="_blank">IG</a>
+    <a class="soc" href="http://facebook.com/NewBeginningsTattooStudio" target="_blank">FB</a>
+    <a class="soc" href="index.html">🏠</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tattoo Age Estimator | New Beginnings Tattoo Studio Tucson AZ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#050605;color:#D8CFA8;font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{text-decoration:none;}
+:root{
+  --gold:#C9A84C;--gold-dim:#8B6E2A;--gold-pale:#E8D5A0;
+  --green:#1A7A3A;--green-b:#22A84E;--green-deep:#071A0D;
+  --black:#050605;--char:#0C0F0C;--dark:#111411;
+  --bone:#D8CFA8;--parch:#EDE0BB;--muted:#5A6050;
+}
+.nav{position:sticky;top:0;z-index:1000;background:rgba(5,6,5,.97);border-bottom:1px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:66px;backdrop-filter:blur(10px);}
+.nav-logo{font-family:'Cinzel Decorative',serif;font-size:15px;color:var(--gold);letter-spacing:2px;font-weight:700;}
+.nav-back{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.nav-back:hover{color:var(--gold);}
+.nav-back::before{content:'←';}
+.nav-book{padding:9px 20px;border:1px solid var(--green);color:var(--green-b);font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all .2s;}
+.nav-book:hover{background:var(--green);color:#050605;}
+.page-header{background:var(--char);border-bottom:1px solid rgba(34,168,78,.2);padding:52px 40px 44px;text-align:center;position:relative;}
+.page-header::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);}
+.sec-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;}
+.page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(24px,4vw,42px);color:var(--gold);font-weight:700;line-height:1.2;margin-bottom:12px;}
+.page-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--parch);opacity:.85;max-width:560px;margin:0 auto;line-height:1.72;}
+
+.est-wrap{max-width:800px;margin:0 auto;padding:56px 40px 80px;}
+@media(max-width:600px){.est-wrap{padding:36px 20px 60px;}}
+
+.est-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px;}
+@media(max-width:600px){.est-grid{grid-template-columns:1fr;}}
+
+.est-group{display:flex;flex-direction:column;gap:10px;}
+.est-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;}
+.est-desc{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;color:var(--muted);}
+
+select{
+  background:var(--dark);border:.5px solid rgba(201,168,76,.25);color:var(--bone);
+  font-family:'Crimson Pro',serif;font-size:16px;padding:12px 16px;outline:none;cursor:pointer;
+  appearance:none;width:100%;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+}
+select:focus{border-color:var(--green-b);}
+
+/* AGING TIMELINE */
+.aging-timeline{display:flex;flex-direction:column;gap:4px;margin:32px 0;}
+.age-row{background:var(--dark);border:.5px solid rgba(201,168,76,.1);padding:20px 24px;display:grid;grid-template-columns:90px 1fr auto;gap:16px;align-items:center;transition:border-color .3s;}
+.age-row:hover{border-color:rgba(34,168,78,.2);}
+.age-year{font-family:'Cinzel Decorative',serif;font-size:20px;color:var(--gold);line-height:1;}
+.age-desc{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.82;line-height:1.6;}
+.age-badge{padding:4px 10px;font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;white-space:nowrap;}
+
+/* RESULT BOX */
+.result-box{background:var(--dark);border:1px solid rgba(201,168,76,.25);padding:32px;margin-bottom:32px;position:relative;}
+.result-box::before,.result-box::after{content:'';position:absolute;width:14px;height:14px;border:1px solid var(--gold-dim);}
+.result-box::before{top:-1px;left:-1px;border-right:none;border-bottom:none;}
+.result-box::after{bottom:-1px;right:-1px;border-left:none;border-top:none;}
+.result-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;}
+.result-score{font-family:'Cinzel Decorative',serif;font-size:clamp(28px,5vw,48px);color:var(--gold);margin-bottom:8px;line-height:1;}
+.result-grade{display:inline-block;padding:6px 16px;margin-bottom:12px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;}
+.result-summary{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.8;line-height:1.75;}
+.result-tips{display:flex;flex-direction:column;gap:8px;margin-top:16px;padding-top:16px;border-top:.5px solid rgba(201,168,76,.1);}
+.result-tip{display:flex;gap:10px;font-family:'Crimson Pro',serif;font-size:14px;color:var(--bone);opacity:.75;line-height:1.6;}
+.result-tip::before{content:'→';color:var(--green-b);flex-shrink:0;}
+
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;}
+.btn-g{padding:15px 32px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid var(--green-b);display:inline-block;transition:all .3s;font-weight:700;}
+.btn-g:hover{background:var(--green-b);color:#050605;}
+.btn-o{padding:15px 32px;background:transparent;color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(201,168,76,.35);display:inline-block;transition:all .3s;}
+.btn-o:hover{border-color:var(--gold);background:rgba(201,168,76,.07);}
+
+.footer{background:var(--green-deep);border-top:1px solid rgba(34,168,78,.2);padding:36px 40px;text-align:center;}
+.f-logo{font-family:'Cinzel Decorative',serif;font-size:13px;color:var(--gold-dim);letter-spacing:2px;margin-bottom:6px;}
+.f-tag{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
+.socials{display:flex;gap:8px;justify-content:center;}
+.soc{width:34px;height:34px;border:.5px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:9px;color:var(--muted);transition:all .2s;text-decoration:none;}
+.soc:hover{border-color:var(--green-b);color:var(--green-b);}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-logo">🦁 NBTS</div>
+  <a href="index.html" class="nav-back">Back to Main Site</a>
+  <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="nav-book">Book Now</a>
+</nav>
+<div class="page-header">
+  <div class="sec-label">Long Term Thinking</div>
+  <div class="page-title">Tattoo Age Estimator</div>
+  <p class="page-sub">How will your tattoo look in 5, 10, or 20 years? The answers depend on placement, style, skin care and lifestyle. Use this tool to plan smart.</p>
+</div>
+
+<div class="est-wrap">
+
+  <div class="est-grid">
+    <div class="est-group">
+      <div class="est-label">Tattoo Style</div>
+      <p class="est-desc">Different styles age very differently</p>
+      <select id="styleAging" onchange="estimate()">
+        <option value="excellent">Black & Grey Realism</option>
+        <option value="excellent">Traditional / Neo-Traditional</option>
+        <option value="good">Chicano Style</option>
+        <option value="good">Bold Black Line Work</option>
+        <option value="moderate">Color Tattoo</option>
+        <option value="moderate">Watercolor Style</option>
+        <option value="poor">Fine Line / Micro Tattoo</option>
+        <option value="poor">White Ink</option>
+        <option value="moderate">Geometric / Dotwork</option>
+      </select>
+    </div>
+
+    <div class="est-group">
+      <div class="est-label">Placement</div>
+      <p class="est-desc">Location is a major aging factor</p>
+      <select id="placementAging" onchange="estimate()">
+        <option value="excellent">Upper Back / Shoulder Blade</option>
+        <option value="excellent">Outer Thigh / Upper Arm</option>
+        <option value="good">Forearm / Calf</option>
+        <option value="good">Chest / Stomach</option>
+        <option value="moderate">Ribs / Spine</option>
+        <option value="poor">Hands / Fingers</option>
+        <option value="poor">Feet / Toes</option>
+        <option value="poor">Inner Elbow / Back of Knee</option>
+        <option value="moderate">Neck / Head</option>
+        <option value="moderate">Wrist / Ankle</option>
+      </select>
+    </div>
+
+    <div class="est-group">
+      <div class="est-label">Sun Exposure</div>
+      <p class="est-desc">UV is the #1 enemy of ink</p>
+      <select id="sunAging" onchange="estimate()">
+        <option value="excellent">Always use SPF 50+</option>
+        <option value="good">Use sunscreen sometimes</option>
+        <option value="moderate">Rarely use sunscreen</option>
+        <option value="poor">Frequent sun / tanning</option>
+      </select>
+    </div>
+
+    <div class="est-group">
+      <div class="est-label">Skin Care</div>
+      <p class="est-desc">Hydration matters for decades</p>
+      <select id="skinAging" onchange="estimate()">
+        <option value="excellent">Moisturize daily</option>
+        <option value="good">Moisturize a few times a week</option>
+        <option value="moderate">Rarely moisturize</option>
+        <option value="poor">Dry skin / no routine</option>
+      </select>
+    </div>
+
+    <div class="est-group">
+      <div class="est-label">Lifestyle</div>
+      <p class="est-desc">Body changes affect tattoos</p>
+      <select id="lifeAging" onchange="estimate()">
+        <option value="excellent">Stable weight, healthy lifestyle</option>
+        <option value="good">Minor weight fluctuations</option>
+        <option value="moderate">Significant weight changes</option>
+        <option value="poor">Extreme weight fluctuations</option>
+      </select>
+    </div>
+
+    <div class="est-group">
+      <div class="est-label">Artist Quality</div>
+      <p class="est-desc">Technique determines longevity</p>
+      <select id="artistAging" onchange="estimate()">
+        <option value="excellent">Experienced master artist (Pelon)</option>
+        <option value="good">Skilled apprentice (Eric, Mousie, Roo)</option>
+        <option value="moderate">Average professional</option>
+        <option value="poor">Scratchers / low quality work</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="result-box" id="resultBox">
+    <div class="result-title">Your Tattoo Longevity Score</div>
+    <div class="result-score" id="resultScore">Loading...</div>
+    <div class="result-grade" id="resultGrade"></div>
+    <div class="result-summary" id="resultSummary"></div>
+    <div class="result-tips" id="resultTips"></div>
+  </div>
+
+  <!-- AGING TIMELINE -->
+  <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--green-b);text-transform:uppercase;margin-bottom:10px;">What to Expect Over Time</div>
+  <div class="aging-timeline" id="agingTimeline"></div>
+
+  <div class="btn-row">
+    <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="btn-g">Book with Pelon for Best Results</a>
+    <a href="aftercare.html" class="btn-o">Full Aftercare Guide</a>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="f-logo">NBTS · New Beginnings Tattoo Studio</div>
+  <div class="f-tag">4343 N Oracle Rd Suite L · Tucson, AZ · Mon–Sat 9am–10pm</div>
+  <div class="socials">
+    <a class="soc" href="https://instagram.com/nbtstucson" target="_blank">IG</a>
+    <a class="soc" href="http://facebook.com/NewBeginningsTattooStudio" target="_blank">FB</a>
+    <a class="soc" href="index.html">🏠</a>
+  </div>
+</footer>
+
+<script>
+const scores = {excellent:4, good:3, moderate:2, poor:1};
+const gradeColors = {
+  'Exceptional':['rgba(34,168,78,.15)','var(--green-b)'],
+  'Very Good':['rgba(139,195,74,.12)','#8BC34A'],
+  'Good':['rgba(240,208,128,.1)','var(--gold)'],
+  'Fair':['rgba(232,149,42,.1)','#E8952A'],
+  'Needs Attention':['rgba(192,57,43,.1)','#C0392B']
+};
+
+function estimate() {
+  const vals = ['styleAging','placementAging','sunAging','skinAging','lifeAging','artistAging'].map(id => scores[document.getElementById(id).value]);
+  const avg = vals.reduce((a,b)=>a+b,0)/vals.length;
+  const pct = Math.round((avg/4)*100);
+
+  let grade, summary, tips, timelineData;
+
+  if(avg >= 3.5) {
+    grade = 'Exceptional';
+    summary = 'Your tattoo is set up for outstanding long-term results. With proper placement, an experienced artist, and diligent skin care, your tattoo should look sharp and vibrant for decades. Black and grey work especially can look incredible even after 30 years with this combination.';
+    tips = ['Keep up the daily SPF — it is the single most important thing','Moisturize every day even after years pass','Schedule a touch-up after 10 years as preventative maintenance'];
+    timelineData = [
+      {yr:'Fresh',desc:'Vibrant, sharp and exactly as intended.',badge:'Perfect',c:'var(--green-b)'},
+      {yr:'5 Years',desc:'Still looks great. Minimal settling. Lines remain crisp.',badge:'Excellent',c:'var(--green-b)'},
+      {yr:'10 Years',desc:'Slight softening of very fine details but overall strong. Color still rich.',badge:'Very Good',c:'#8BC34A'},
+      {yr:'20 Years',desc:'Natural maturing — the mark of a well-lived tattoo. Character and depth.',badge:'Good',c:'var(--gold)'},
+      {yr:'30+ Years',desc:'Like Pelon\'s own work — a testament to great ink and great care.',badge:'Timeless',c:'var(--gold)'},
+    ];
+  } else if(avg >= 2.8) {
+    grade = 'Very Good';
+    summary = 'Your tattoo should age well with a few adjustments. You have solid fundamentals but there are one or two factors that could affect long-term results. Focus on the tips below to maximize your tattoo\'s lifespan.';
+    tips = ['Commit to daily sunscreen on the tattooed area','Start a consistent moisturizing routine','Consider placement for your next piece'];
+    timelineData = [
+      {yr:'Fresh',desc:'Vibrant and beautiful as intended.',badge:'Perfect',c:'var(--green-b)'},
+      {yr:'5 Years',desc:'Still looks great with minor fading in color areas.',badge:'Good',c:'#8BC34A'},
+      {yr:'10 Years',desc:'Noticeable softening but overall solid. Touch-up recommended.',badge:'Fair',c:'var(--gold)'},
+      {yr:'20 Years',desc:'Will show its age but still recognizable and meaningful.',badge:'Aged',c:'#E8952A'},
+    ];
+  } else if(avg >= 2) {
+    grade = 'Good';
+    summary = 'Your tattoo will last but there are real factors working against long-term quality. Making changes to your sun protection and skin care routine now will make a significant difference in how the tattoo looks in 10 years.';
+    tips = ['Start using SPF 50+ every single day — this is critical','Moisturize daily starting now','Budget for a touch-up around the 5-year mark','Consider a shaded or bold style for your next piece'];
+    timelineData = [
+      {yr:'Fresh',desc:'Looks great right after healing.',badge:'Good',c:'#8BC34A'},
+      {yr:'5 Years',desc:'Visible fading and softening. Touch-up strongly recommended.',badge:'Needs Touch-Up',c:'#E8952A'},
+      {yr:'10 Years',desc:'Significant aging. Multiple touch-ups may be needed.',badge:'Faded',c:'#E8952A'},
+    ];
+  } else {
+    grade = 'Needs Attention';
+    summary = 'Several factors are working against your tattoo\'s longevity. We recommend making changes to your aftercare and lifestyle habits. A touch-up sooner rather than later will also help preserve what you have.';
+    tips = ['Start SPF 50+ immediately — every single day','Moisturize twice daily','Book a touch-up consultation as soon as your tattoo is fully healed','Ask about bold black styles that hold up better long-term'];
+    timelineData = [
+      {yr:'Fresh',desc:'Fresh and looking good.',badge:'Good',c:'#8BC34A'},
+      {yr:'2–3 Years',desc:'Early fading visible. Touch-up needed.',badge:'Fading',c:'#E8952A'},
+      {yr:'5 Years',desc:'Significant changes. Major touch-up or rework likely needed.',badge:'Major Fading',c:'#C0392B'},
+    ];
+  }
+
+  const [bgColor, textColor] = gradeColors[grade];
+  document.getElementById('resultScore').textContent = `${pct}% Longevity Score`;
+  const gradeEl = document.getElementById('resultGrade');
+  gradeEl.textContent = grade;
+  gradeEl.style.background = bgColor;
+  gradeEl.style.color = textColor;
+  gradeEl.style.border = `.5px solid ${textColor}`;
+  document.getElementById('resultSummary').textContent = summary;
+  document.getElementById('resultTips').innerHTML = tips.map(t => `<div class="result-tip">${t}</div>`).join('');
+
+  const tl = document.getElementById('agingTimeline');
+  tl.innerHTML = timelineData.map(d => `
+    <div class="age-row">
+      <div class="age-year">${d.yr}</div>
+      <div class="age-desc">${d.desc}</div>
+      <div class="age-badge" style="background:rgba(0,0,0,.3);border:.5px solid ${d.c};color:${d.c}">${d.badge}</div>
+    </div>`).join('');
+}
+estimate();
+</script>
+</body>
+</html>
