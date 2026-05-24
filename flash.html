@@ -3,98 +3,122 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="New Beginnings Family Tattoo Studio — Flash Tattoo Designs. Browse available flash and book your appointment in Tucson AZ."/>
+<meta name="description" content="New Beginnings Tattoo Studio Tucson AZ — Flash Tattoo Designs by Pelon, Eric, Mousie and Roo. Pre-drawn originals at set prices."/>
 <title>Flash Designs | New Beginnings Tattoo Studio Tucson AZ</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
-
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:#050605;color:#D8CFA8;font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
 a{text-decoration:none;}
 img{display:block;max-width:100%;}
-
 :root{
   --gold:#C9A84C;--gold-lt:#F0D080;--gold-dim:#8B6E2A;--gold-pale:#E8D5A0;
-  --green:#1A7A3A;--green-b:#22A84E;--green-glow:#2ECC6A;--green-deep:#071A0D;
+  --green:#1A7A3A;--green-b:#22A84E;--green-deep:#071A0D;
   --black:#050605;--char:#0C0F0C;--dark:#111411;--smoke:#181C18;
   --bone:#D8CFA8;--parch:#EDE0BB;--muted:#5A6050;
 }
-
 .nav{position:sticky;top:0;z-index:1000;background:rgba(5,6,5,.97);border-bottom:1px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:66px;backdrop-filter:blur(10px);}
-.nav-logo{font-family:'Cinzel Decorative',serif;font-size:15px;color:var(--gold);letter-spacing:2px;font-weight:700;display:flex;align-items:center;gap:10px;}
+.nav-logo{font-family:'Cinzel Decorative',serif;font-size:15px;color:var(--gold);letter-spacing:2px;font-weight:700;}
 .nav-back{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:color .2s;}
 .nav-back:hover{color:var(--gold);}
 .nav-back::before{content:'←';}
 .nav-book{padding:9px 20px;border:1px solid var(--green);color:var(--green-b);font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all .2s;}
 .nav-book:hover{background:var(--green);color:#050605;}
-
-.page-header{background:var(--char);border-bottom:1px solid rgba(34,168,78,.2);padding:56px 40px 48px;text-align:center;position:relative;overflow:hidden;}
+.page-header{background:var(--char);border-bottom:1px solid rgba(34,168,78,.2);padding:52px 40px 44px;text-align:center;position:relative;overflow:hidden;}
 .page-header::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);}
-.page-header::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(34,168,78,.06) 0%,transparent 70%);pointer-events:none;}
-.sec-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;position:relative;}
-.page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(26px,4vw,44px);color:var(--gold);font-weight:700;line-height:1.2;margin-bottom:14px;position:relative;}
-.page-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:18px;color:var(--parch);opacity:.88;max-width:580px;margin:0 auto;line-height:1.72;position:relative;}
+.sec-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;}
+.page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(26px,4vw,44px);color:var(--gold);font-weight:700;line-height:1.2;margin-bottom:14px;}
+.page-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:18px;color:var(--parch);opacity:.88;max-width:580px;margin:0 auto 28px;line-height:1.72;}
+.info-band{display:flex;justify-content:center;background:var(--green-deep);border-bottom:1px solid rgba(34,168,78,.2);}
+.ib-item{padding:18px 36px;text-align:center;border-right:.5px solid rgba(34,168,78,.2);display:flex;flex-direction:column;gap:4px;}
+.ib-item:last-child{border-right:none;}
+.ib-val{font-family:'Cinzel Decorative',serif;font-size:20px;color:var(--gold);line-height:1;}
+.ib-lbl{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--green-b);text-transform:uppercase;}
+@media(max-width:600px){.info-band{flex-wrap:wrap;}.ib-item{width:50%;border-bottom:.5px solid rgba(34,168,78,.1);}}
+.flash-explainer{background:var(--black);border-bottom:1px solid rgba(201,168,76,.08);padding:32px 40px;}
+.fe-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:4px;}
+@media(max-width:600px){.fe-inner{grid-template-columns:1fr;}}
+.fe-card{background:var(--dark);border:.5px solid rgba(201,168,76,.1);padding:22px;display:flex;gap:14px;align-items:flex-start;}
+.fe-icon{font-size:22px;flex-shrink:0;}
+.fe-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;}
+.fe-desc{font-family:'Crimson Pro',serif;font-size:14px;color:var(--bone);opacity:.72;line-height:1.6;}
 
-/* What is flash */
-.flash-info{background:var(--green-deep);border-bottom:1px solid rgba(34,168,78,.2);padding:28px 40px;text-align:center;}
-.flash-info p{font-family:'Crimson Pro',serif;font-size:17px;color:var(--parch);opacity:.85;line-height:1.72;max-width:640px;margin:0 auto;}
+/* ARTIST SECTION */
+.artist-section{padding:64px 40px;border-bottom:1px solid rgba(34,168,78,.08);}
+@media(max-width:600px){.artist-section{padding:44px 20px;}}
+.artist-section:nth-child(even){background:var(--char);}
+.artist-header{max-width:960px;margin:0 auto 40px;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;padding-bottom:24px;border-bottom:.5px solid rgba(201,168,76,.12);}
+@media(max-width:700px){.artist-header{grid-template-columns:1fr;gap:14px;}}
+.artist-avatar{width:80px;height:80px;object-fit:cover;border:.5px solid rgba(201,168,76,.3);filter:grayscale(20%);}
+.artist-badge{display:inline-block;padding:4px 10px;background:rgba(34,168,78,.1);border:.5px solid rgba(34,168,78,.3);font-family:'Cinzel',serif;font-size:7px;letter-spacing:4px;color:var(--green-b);text-transform:uppercase;margin-bottom:6px;}
+.artist-name{font-family:'Cinzel Decorative',serif;font-size:28px;color:var(--gold);font-weight:900;line-height:1;margin-bottom:4px;}
+.artist-tagline{font-family:'Crimson Pro',serif;font-style:italic;font-size:15px;color:var(--bone);opacity:.65;}
+.artist-pricing{text-align:right;}
+@media(max-width:700px){.artist-pricing{text-align:left;}}
+.price-big{font-family:'Cinzel Decorative',serif;font-size:32px;color:var(--gold);line-height:1;}
+.price-desc{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--green-b);text-transform:uppercase;margin-top:4px;}
+.price-min{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;color:var(--muted);margin-top:2px;}
 
-/* Artist filter */
-.filter-wrap{padding:32px 40px 0;max-width:960px;margin:0 auto;}
-.filter-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--green-b);text-transform:uppercase;margin-bottom:14px;}
-.filters{display:flex;gap:8px;flex-wrap:wrap;}
-.fbtn{padding:9px 20px;background:transparent;border:.5px solid rgba(201,168,76,.2);font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;cursor:pointer;transition:all .2s;}
-.fbtn:hover,.fbtn.active{border-color:var(--green-b);color:var(--green-b);background:rgba(34,168,78,.06);}
+/* FLASH GRID */
+.flash-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:4px;max-width:960px;margin:0 auto;}
+.flash-card{background:var(--smoke);border:.5px solid rgba(201,168,76,.08);position:relative;overflow:hidden;cursor:pointer;transition:all .3s;}
+.flash-card:hover{border-color:rgba(201,168,76,.4);transform:translateY(-2px);box-shadow:0 8px 32px rgba(201,168,76,.08);}
+.flash-img-wrap{position:relative;width:100%;padding-top:50%;overflow:hidden;background:var(--dark);}
+.flash-img-wrap img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+.flash-card:hover .flash-img-wrap img{transform:scale(1.04);}
+.flash-img-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
+.flash-img-placeholder .pi{font-size:32px;opacity:.15;}
+.flash-img-placeholder .pt{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;}
+.flash-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(7,26,13,.82);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;opacity:0;transition:opacity .3s;}
+.flash-card:hover .flash-overlay{opacity:1;}
+.fo-btn{padding:10px 24px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;border:1px solid var(--green-b);text-decoration:none;transition:all .2s;display:inline-block;}
+.fo-btn:hover{background:var(--green-b);color:#050605;}
+.fo-btn.secondary{background:transparent;color:var(--gold);border-color:rgba(201,168,76,.4);}
+.flash-info{padding:16px 18px;background:var(--dark);}
+.flash-title{font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;}
+.flash-meta{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
+.flash-size{font-family:'Crimson Pro',serif;font-size:13px;color:var(--muted);}
+.flash-price{font-family:'Cinzel Decorative',serif;font-size:20px;color:var(--gold);}
+.flash-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:8px;}
+.flash-tag{padding:2px 8px;background:rgba(34,168,78,.08);border:.5px solid rgba(34,168,78,.2);font-family:'Cinzel',serif;font-size:7px;letter-spacing:2px;color:var(--green-b);text-transform:uppercase;}
+.sold-badge{position:absolute;top:12px;right:12px;background:rgba(192,57,43,.9);color:#fff;font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;padding:4px 10px;z-index:2;}
 
-/* Coming soon section */
-.main-wrap{max-width:960px;margin:0 auto;padding:48px 40px 80px;}
-@media(max-width:600px){.main-wrap{padding:32px 20px 60px;}}
+/* COMING SOON */
+.coming-section{max-width:960px;margin:0 auto;padding:20px 0;}
+.coming-banner{background:rgba(34,168,78,.05);border:.5px solid rgba(34,168,78,.15);padding:28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.cb-icon{font-size:24px;}
+.cb-txt{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--green-b);text-transform:uppercase;margin-bottom:4px;}
+.cb-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:14px;color:var(--bone);opacity:.6;}
 
-.coming-soon-wrap{
-  text-align:center;
-  padding:80px 40px;
-  border:.5px solid rgba(201,168,76,.15);
-  background:var(--dark);
-  position:relative;overflow:hidden;
-}
-.coming-soon-wrap::before,.coming-soon-wrap::after{content:'';position:absolute;width:20px;height:20px;border:1px solid var(--gold-dim);}
-.coming-soon-wrap::before{top:-1px;left:-1px;border-right:none;border-bottom:none;}
-.coming-soon-wrap::after{bottom:-1px;right:-1px;border-left:none;border-top:none;}
-
-.cs-icon{font-size:56px;margin-bottom:20px;opacity:.3;}
-.cs-title{font-family:'Cinzel Decorative',serif;font-size:28px;color:var(--gold);font-weight:700;margin-bottom:14px;}
-.cs-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:18px;color:var(--bone);opacity:.7;line-height:1.72;max-width:480px;margin:0 auto 32px;}
-
-/* What is flash explainer */
-.flash-explainer{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:4px;}
-@media(max-width:600px){.flash-explainer{grid-template-columns:1fr;}}
-.fe-card{background:var(--dark);border:.5px solid rgba(201,168,76,.1);padding:24px;text-align:center;}
-.fe-icon{font-size:28px;margin-bottom:12px;}
-.fe-title{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
-.fe-txt{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.72;line-height:1.65;}
-
-/* Notification signup */
-.notify-wrap{
-  margin-top:48px;
-  background:rgba(34,168,78,.06);
-  border:.5px solid rgba(34,168,78,.2);
-  padding:32px;
-  text-align:center;
-}
-.notify-wrap h3{font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;}
-.notify-wrap p{font-family:'Crimson Pro',serif;font-style:italic;font-size:16px;color:var(--bone);opacity:.8;line-height:1.7;margin-bottom:20px;}
-.notify-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-.btn-g{padding:14px 32px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid var(--green-b);cursor:pointer;font-weight:700;display:inline-block;transition:all .3s;}
+/* BOOK CTA */
+.book-cta{background:var(--green-deep);border-top:.5px solid rgba(34,168,78,.2);padding:60px 40px;text-align:center;}
+.book-cta-title{font-family:'Cinzel Decorative',serif;font-size:clamp(20px,3.5vw,32px);color:var(--gold);font-weight:700;margin-bottom:12px;}
+.book-cta-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--parch);opacity:.8;max-width:460px;margin:0 auto 28px;line-height:1.72;}
+.btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-g{padding:15px 36px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid var(--green-b);display:inline-block;transition:all .3s;font-weight:700;}
 .btn-g:hover{background:var(--green-b);color:#050605;}
-.btn-o{padding:14px 32px;background:transparent;color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(201,168,76,.35);cursor:pointer;display:inline-block;transition:all .3s;}
+.btn-o{padding:15px 36px;background:transparent;color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(201,168,76,.35);display:inline-block;transition:all .3s;}
 .btn-o:hover{border-color:var(--gold);background:rgba(201,168,76,.07);}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;z-index:9999;background:rgba(5,6,5,.96);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;}
+.lightbox.open{opacity:1;pointer-events:all;}
+.lb-inner{max-width:860px;width:100%;position:relative;}
+.lb-close{position:absolute;top:-40px;right:0;font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--muted);cursor:pointer;text-transform:uppercase;transition:color .2s;}
+.lb-close:hover{color:var(--gold);}
+.lb-img{width:100%;height:auto;border:.5px solid rgba(34,168,78,.2);}
+.lb-info{background:var(--dark);padding:20px 24px;border:.5px solid rgba(201,168,76,.12);border-top:none;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+.lb-title{font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;}
+.lb-details{font-family:'Crimson Pro',serif;font-style:italic;font-size:15px;color:var(--muted);}
+.lb-book{padding:12px 28px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;border:1px solid var(--green-b);text-decoration:none;transition:all .3s;}
+.lb-book:hover{background:var(--green-b);color:#050605;}
 
 .footer{background:var(--green-deep);border-top:1px solid rgba(34,168,78,.2);padding:36px 40px;text-align:center;}
 .f-logo{font-family:'Cinzel Decorative',serif;font-size:13px;color:var(--gold-dim);letter-spacing:2px;margin-bottom:6px;}
 .f-tag{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
 .socials{display:flex;gap:8px;justify-content:center;}
-.soc{width:34px;height:34px;border:.5px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:9px;color:var(--muted);cursor:pointer;transition:all .2s;text-decoration:none;}
+.soc{width:34px;height:34px;border:.5px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:9px;color:var(--muted);transition:all .2s;text-decoration:none;}
 .soc:hover{border-color:var(--green-b);color:var(--green-b);}
 </style>
 </head>
@@ -107,70 +131,172 @@ img{display:block;max-width:100%;}
 </nav>
 
 <div class="page-header">
-  <div class="sec-label">New Beginnings Tattoo Studio</div>
+  <div class="sec-label">Ready to Wear</div>
   <div class="page-title">Flash Designs</div>
-  <p class="page-sub">Browse our available flash designs — pre-drawn pieces ready to tattoo. Pick one, book your appointment, and walk out with fresh ink.</p>
+  <p class="page-sub">Pre-drawn original pieces ready to tattoo at a set price. First come first served — once it's gone it's gone. Walk-ins welcome.</p>
 </div>
 
-<div class="flash-info">
-  <p>Flash tattoos are pre-designed pieces available at a set price. They're a great way to get quality art quickly without the wait for a custom design. Walk-ins welcome for flash — first come first served.</p>
+<div class="info-band">
+  <div class="ib-item"><div class="ib-val">8x4"</div><div class="ib-lbl">Pelon Flash Size</div></div>
+  <div class="ib-item"><div class="ib-val">$600</div><div class="ib-lbl">Pelon Flash Price</div></div>
+  <div class="ib-item"><div class="ib-val">1 of 1</div><div class="ib-lbl">Each Design</div></div>
+  <div class="ib-item"><div class="ib-val">Walk-In</div><div class="ib-lbl">Welcome</div></div>
 </div>
 
-<!-- FILTERS -->
-<div class="filter-wrap">
-  <div class="filter-label">Filter by Artist</div>
-  <div class="filters">
-    <button class="fbtn active">All Artists</button>
-    <button class="fbtn">Pelon</button>
-    <button class="fbtn">Eric</button>
-    <button class="fbtn">Mousie</button>
-    <button class="fbtn">Roo</button>
+<div class="flash-explainer">
+  <div class="fe-inner">
+    <div class="fe-card"><div class="fe-icon">⚡</div><div><div class="fe-title">What is Flash?</div><p class="fe-desc">Flash are original pre-drawn designs available at a set price. No design wait — pick it, book it, wear it.</p></div></div>
+    <div class="fe-card"><div class="fe-icon">🔒</div><div><div class="fe-title">One of a Kind</div><p class="fe-desc">Each flash piece is tattooed once and retired. When it's gone it's gone. These are not repeated designs.</p></div></div>
+    <div class="fe-card"><div class="fe-icon">💰</div><div><div class="fe-title">Set Pricing</div><p class="fe-desc">Price is fixed. No hourly calculation. $50 deposit secures your spot and applies to the total.</p></div></div>
   </div>
 </div>
 
-<!-- MAIN -->
-<div class="main-wrap">
-
-  <!-- COMING SOON -->
-  <div class="coming-soon-wrap">
-    <div class="cs-icon">🎨</div>
-    <div class="cs-title">Flash Sheets Coming Soon</div>
-    <p class="cs-sub">Our artists are creating exclusive NBTS flash designs. Check back soon — or follow us on Instagram @nbtstucson to see flash drops as they happen.</p>
-    <div class="notify-btns">
-      <a href="https://instagram.com/nbtstucson" target="_blank" class="btn-g">Follow @nbtstucson</a>
-      <a href="http://facebook.com/NewBeginningsTattooStudio" target="_blank" class="btn-o">Follow on Facebook</a>
+<!-- ═══ PELON SECTION ═══ -->
+<div class="artist-section" id="pelon-flash">
+  <div class="artist-header">
+    <img class="artist-avatar" src="https://github.com/PELONNBTS/pelonnbts.github.io/blob/main/pelon_arrtistpage.jpg?raw=true" alt="Pelon"/>
+    <div class="artist-info">
+      <div class="artist-badge">Master Artist · 30+ Years</div>
+      <div class="artist-name">Pelon</div>
+      <div class="artist-tagline">Black &amp; Grey · Chicano · Realism · Custom</div>
+    </div>
+    <div class="artist-pricing">
+      <div class="price-big">$600</div>
+      <div class="price-desc">Per Flash Piece</div>
+      <div class="price-min">8x4 inches · Black &amp; Grey</div>
     </div>
   </div>
 
-  <!-- WHAT IS FLASH -->
-  <div class="flash-explainer">
-    <div class="fe-card">
-      <div class="fe-icon">⚡</div>
-      <div class="fe-title">What is Flash?</div>
-      <p class="fe-txt">Flash are pre-designed tattoos drawn by the artist and available at a set price. No wait for custom design — just pick it and book.</p>
+  <div class="flash-grid">
+    <!--
+    PELON FLASH INSTRUCTIONS:
+    Upload images to GitHub named: pelon_flash_1.jpg through pelon_flash_10.jpg
+    Then replace each placeholder card below with a real card like this:
+
+    <div class="flash-card" onclick="openLightbox('URL','TITLE','8x4 inches · Black and Grey · $600')">
+      <div class="flash-img-wrap">
+        <img src="URL" alt="TITLE" loading="lazy"/>
+        <div class="flash-overlay">
+          <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="fo-btn">Book This Piece</a>
+          <span class="fo-btn secondary">View Full Size</span>
+        </div>
+      </div>
+      <div class="flash-info">
+        <div class="flash-title">TITLE</div>
+        <div class="flash-meta">
+          <div class="flash-size">8x4" · Black and Grey</div>
+          <div class="flash-price">$600</div>
+        </div>
+        <div class="flash-tags"><div class="flash-tag">Black and Grey</div><div class="flash-tag">GENRE</div></div>
+      </div>
     </div>
-    <div class="fe-card">
-      <div class="fe-icon">💰</div>
-      <div class="fe-title">Flash Pricing</div>
-      <p class="fe-txt">Each flash piece has a set price based on size and complexity. Prices will be listed with each design when they drop.</p>
+    -->
+
+    <div class="flash-card"><div class="flash-img-wrap"><div class="flash-img-placeholder"><div class="pi">🎨</div><div class="pt">Coming Soon</div></div></div><div class="flash-info"><div class="flash-title">Flash Design 1</div><div class="flash-meta"><div class="flash-size">8x4" · Black and Grey</div><div class="flash-price">$600</div></div><div class="flash-tags"><div class="flash-tag">Black and Grey</div><div class="flash-tag">Pelon Original</div></div></div></div>
+    <div class="flash-card"><div class="flash-img-wrap"><div class="flash-img-placeholder"><div class="pi">🎨</div><div class="pt">Coming Soon</div></div></div><div class="flash-info"><div class="flash-title">Flash Design 2</div><div class="flash-meta"><div class="flash-size">8x4" · Black and Grey</div><div class="flash-price">$600</div></div><div class="flash-tags"><div class="flash-tag">Black and Grey</div><div class="flash-tag">Pelon Original</div></div></div></div>
+    <div class="flash-card"><div class="flash-img-wrap"><div class="flash-img-placeholder"><div class="pi">🎨</div><div class="pt">Coming Soon</div></div></div><div class="flash-info"><div class="flash-title">Flash Design 3</div><div class="flash-meta"><div class="flash-size">8x4" · Black and Grey</div><div class="flash-price">$600</div></div><div class="flash-tags"><div class="flash-tag">Black and Grey</div><div class="flash-tag">Pelon Original</div></div></div></div>
+    <div class="flash-card"><div class="flash-img-wrap"><div class="flash-img-placeholder"><div class="pi">🎨</div><div class="pt">Coming Soon</div></div></div><div class="flash-info"><div class="flash-title">Flash Design 4</div><div class="flash-meta"><div class="flash-size">8x4" · Black and Grey</div><div class="flash-price">$600</div></div><div class="flash-tags"><div class="flash-tag">Black and Grey</div><div class="flash-tag">Pelon Original</div></div></div></div>
+    <div class="flash-card"><div class="flash-img-wrap"><div class="flash-img-placeholder"><div class="pi">🎨</div><div class="pt">Coming Soon</div></div></div><div class="flash-info"><div class="flash-title">Flash Design 5</div><div class="flash-meta"><div class="flash-size">8x4" · Black and Grey</div><div class="flash-price">$600</div></div><div class="flash-tags"><div class="flash-tag">Black and Grey</div><div class="flash-tag">Pelon Original</div></div></div></div>
+    <div class="flash-card"><div class="flash-img-wrap"><div class="flash-img-placeholder"><div class="pi">🎨</div><div class="pt">Coming Soon</div></div></div><div class="flash-info"><div class="flash-title">Flash Design 6</div><div class="flash-meta"><div class="flash-size">8x4" · Black and Grey</div><div class="flash-price">$600</div></div><div class="flash-tags"><div class="flash-tag">Black and Grey</div><div class="flash-tag">Pelon Original</div></div></div></div>
+    <div class="flash-card"><div class="flash-img-wrap"><div class="flash-img-placeholder"><div class="pi">🎨</div><div class="pt">Coming Soon</div></div></div><div class="flash-info"><div class="flash-title">Flash Design 7</div><div class="flash-meta"><div class="flash-size">8x4" · Black and Grey</div><div class="flash-price">$600</div></div><div class="flash-tags"><div class="flash-tag">Black and Grey</div><div class="flash-tag">Pelon Original</div></div></div></div>
+    <div class="flash-card"><div class="flash-img-wrap"><div class="flash-img-placeholder"><div class="pi">🎨</div><div class="pt">Coming Soon</div></div></div><div class="flash-info"><div class="flash-title">Flash Design 8</div><div class="flash-meta"><div class="flash-size">8x4" · Black and Grey</div><div class="flash-price">$600</div></div><div class="flash-tags"><div class="flash-tag">Black and Grey</div><div class="flash-tag">Pelon Original</div></div></div></div>
+    <div class="flash-card"><div class="flash-img-wrap"><div class="flash-img-placeholder"><div class="pi">🎨</div><div class="pt">Coming Soon</div></div></div><div class="flash-info"><div class="flash-title">Flash Design 9</div><div class="flash-meta"><div class="flash-size">8x4" · Black and Grey</div><div class="flash-price">$600</div></div><div class="flash-tags"><div class="flash-tag">Black and Grey</div><div class="flash-tag">Pelon Original</div></div></div></div>
+    <div class="flash-card"><div class="flash-img-wrap"><div class="flash-img-placeholder"><div class="pi">🎨</div><div class="pt">Coming Soon</div></div></div><div class="flash-info"><div class="flash-title">Flash Design 10</div><div class="flash-meta"><div class="flash-size">8x4" · Black and Grey</div><div class="flash-price">$600</div></div><div class="flash-tags"><div class="flash-tag">Black and Grey</div><div class="flash-tag">Pelon Original</div></div></div></div>
+  </div>
+</div>
+
+<!-- ═══ ERIC SECTION ═══ -->
+<div class="artist-section" id="eric-flash">
+  <div class="artist-header">
+    <img class="artist-avatar" src="https://github.com/PELONNBTS/pelonnbts.github.io/blob/main/IMG_1880.jpg?raw=true" alt="Eric"/>
+    <div class="artist-info">
+      <div class="artist-badge">Apprentice Artist</div>
+      <div class="artist-name">Eric</div>
+      <div class="artist-tagline">Black and Grey · Fine Line · Realism</div>
     </div>
-    <div class="fe-card">
-      <div class="fe-icon">🚶</div>
-      <div class="fe-title">Walk-Ins Welcome</div>
-      <p class="fe-txt">Flash pieces are perfect for walk-ins. Come in, pick your design, and get tattooed the same day — Mon–Sat 9am–10pm.</p>
+    <div class="artist-pricing">
+      <div class="price-big">TBD</div>
+      <div class="price-desc">Flash Pricing</div>
+      <div class="price-min">Coming Soon</div>
     </div>
   </div>
+  <div class="coming-section">
+    <div class="coming-banner">
+      <div class="cb-icon">🎨</div>
+      <div><div class="cb-txt">Eric's Flash Drops Coming Soon</div><div class="cb-sub">Follow @nbtstucson on Instagram to be notified when Eric drops new flash</div></div>
+    </div>
+    <!-- TO ADD ERIC FLASH: replace this coming-banner with flash-grid. Name files eric_flash_1.jpg etc. -->
+  </div>
+</div>
 
-  <!-- NOTIFY -->
-  <div class="notify-wrap">
-    <h3>🦁 Don't Miss a Flash Drop</h3>
-    <p>Follow us on Instagram and Facebook — we announce new flash designs there first. Some pieces are one-of-a-kind and go fast.</p>
-    <div class="notify-btns">
-      <a href="https://instagram.com/nbtstucson" target="_blank" class="btn-g">@nbtstucson on Instagram</a>
-      <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="btn-o">Book an Appointment</a>
+<!-- ═══ MOUSIE SECTION ═══ -->
+<div class="artist-section" id="mousie-flash">
+  <div class="artist-header">
+    <img class="artist-avatar" src="https://github.com/PELONNBTS/pelonnbts.github.io/blob/main/nevaeh_profile.png?raw=true" alt="Mousie"/>
+    <div class="artist-info">
+      <div class="artist-badge">Apprentice Artist</div>
+      <div class="artist-name">Mousie</div>
+      <div class="artist-tagline">Gothic · Dark Surrealism · Chicano · Cyber-Sigilism</div>
+    </div>
+    <div class="artist-pricing">
+      <div class="price-big">TBD</div>
+      <div class="price-desc">Flash Pricing</div>
+      <div class="price-min">Coming Soon</div>
     </div>
   </div>
+  <div class="coming-section">
+    <div class="coming-banner">
+      <div class="cb-icon">🎨</div>
+      <div><div class="cb-txt">Mousie's Flash Drops Coming Soon</div><div class="cb-sub">Follow @nbtstucson on Instagram to be notified when Mousie drops new flash</div></div>
+    </div>
+    <!-- TO ADD MOUSIE FLASH: replace this coming-banner with flash-grid. Name files mousie_flash_1.jpg etc. -->
+  </div>
+</div>
 
+<!-- ═══ ROO SECTION ═══ -->
+<div class="artist-section" id="roo-flash">
+  <div class="artist-header">
+    <img class="artist-avatar" src="https://github.com/PELONNBTS/pelonnbts.github.io/blob/main/roo_profile.jpg?raw=true" alt="Roo"/>
+    <div class="artist-info">
+      <div class="artist-badge">Apprentice Artist · Tattooing Since Age 8</div>
+      <div class="artist-name">Roo</div>
+      <div class="artist-tagline">All Styles · Bold Lines · The Future of NBTS</div>
+    </div>
+    <div class="artist-pricing">
+      <div class="price-big">TBD</div>
+      <div class="price-desc">Flash Pricing</div>
+      <div class="price-min">Coming Soon</div>
+    </div>
+  </div>
+  <div class="coming-section">
+    <div class="coming-banner">
+      <div class="cb-icon">🦁</div>
+      <div><div class="cb-txt">Roo's Flash Drops Coming Soon</div><div class="cb-sub">Follow @nbtstucson on Instagram to be notified when Roo drops new flash</div></div>
+    </div>
+    <!-- TO ADD ROO FLASH: replace this coming-banner with flash-grid. Name files roo_flash_1.jpg etc. -->
+  </div>
+</div>
+
+<!-- BOOK CTA -->
+<div class="book-cta">
+  <div class="book-cta-title">See Something You Love?</div>
+  <p class="book-cta-sub">Flash goes fast. Book your appointment now with a $50 deposit to lock in your design before someone else grabs it.</p>
+  <div class="btn-row">
+    <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="btn-g">Book Now — $50 Deposit</a>
+    <a href="https://instagram.com/nbtstucson" target="_blank" class="btn-o">Follow for Flash Drops</a>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-inner">
+    <div class="lb-close" onclick="closeLightbox()">Close</div>
+    <img class="lb-img" id="lbImg" src="" alt=""/>
+    <div class="lb-info">
+      <div><div class="lb-title" id="lbTitle"></div><div class="lb-details" id="lbDetails"></div></div>
+      <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="lb-book">Book This Piece</a>
+    </div>
+  </div>
 </div>
 
 <footer class="footer">
@@ -183,5 +309,20 @@ img{display:block;max-width:100%;}
   </div>
 </footer>
 
+<script>
+function openLightbox(src,title,details){
+  document.getElementById('lbImg').src=src;
+  document.getElementById('lbTitle').textContent=title;
+  document.getElementById('lbDetails').textContent=details;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLightbox();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+</script>
 </body>
 </html>
