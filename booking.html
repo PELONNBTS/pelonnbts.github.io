@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Book your tattoo appointment at New Beginnings Family Tattoo Studio in Tucson, AZ. View pricing, artist rates and book online through Square."/>
+<title>Book an Appointment | New Beginnings Tattoo Studio Tucson AZ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#050605;color:#D8CFA8;font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{text-decoration:none;}
+img{display:block;max-width:100%;}
+
+:root{
+  --gold:#C9A84C;--gold-lt:#F0D080;--gold-dim:#8B6E2A;--gold-pale:#E8D5A0;
+  --green:#1A7A3A;--green-b:#22A84E;--green-glow:#2ECC6A;--green-deep:#071A0D;
+  --black:#050605;--char:#0C0F0C;--dark:#111411;--smoke:#181C18;
+  --bone:#D8CFA8;--parch:#EDE0BB;--muted:#5A6050;
+}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:1000;background:rgba(5,6,5,.97);border-bottom:1px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:66px;backdrop-filter:blur(10px);}
+.nav-logo{font-family:'Cinzel Decorative',serif;font-size:15px;color:var(--gold);letter-spacing:2px;font-weight:700;display:flex;align-items:center;gap:10px;}
+.nav-back{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.nav-back:hover{color:var(--gold);}
+.nav-back::before{content:'←';}
+.nav-book{padding:9px 20px;border:1px solid var(--green);color:var(--green-b);font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;transition:all .2s;}
+.nav-book:hover{background:var(--green);color:#050605;}
+
+/* HEADER */
+.page-header{background:var(--char);border-bottom:1px solid rgba(34,168,78,.2);padding:56px 40px 48px;text-align:center;position:relative;overflow:hidden;}
+.page-header::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);}
+.page-header::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(34,168,78,.06) 0%,transparent 70%);pointer-events:none;}
+.sec-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;position:relative;}
+.page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(26px,4vw,44px);color:var(--gold);font-weight:700;line-height:1.2;margin-bottom:14px;position:relative;}
+.page-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:18px;color:var(--parch);opacity:.88;max-width:540px;margin:0 auto 32px;line-height:1.72;position:relative;}
+
+/* Big book button in header */
+.header-book-btn{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:18px 48px;
+  background:var(--green);color:var(--gold-pale);
+  font-family:'Cinzel',serif;font-size:13px;letter-spacing:4px;text-transform:uppercase;
+  border:1px solid var(--green-b);cursor:pointer;font-weight:700;
+  transition:all .3s;position:relative;
+  animation:bookPulse 2s ease-in-out infinite;
+}
+.header-book-btn:hover{background:var(--green-b);color:#050605;box-shadow:0 0 40px rgba(34,168,78,.4);}
+@keyframes bookPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(34,168,78,.4);}
+  50%{box-shadow:0 0 0 12px rgba(34,168,78,.0);}
+}
+.book-arrow{display:inline-block;animation:arrBounce .8s ease-in-out infinite alternate;font-size:18px;}
+@keyframes arrBounce{from{transform:translateX(0);}to{transform:translateX(7px);}}
+
+/* VERSE */
+.verse{background:var(--green-deep);border-bottom:1px solid rgba(34,168,78,.25);padding:24px 40px;text-align:center;}
+.verse p{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--parch);opacity:.88;line-height:1.65;}
+.verse span{font-family:'Cinzel',serif;font-size:9px;letter-spacing:5px;color:var(--green-b);display:block;margin-top:8px;}
+
+/* MAIN WRAP */
+.main-wrap{max-width:960px;margin:0 auto;padding:64px 40px 80px;}
+@media(max-width:600px){.main-wrap{padding:40px 20px 60px;}}
+
+/* Section titles */
+.section-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:10px;}
+.section-title{font-family:'Cinzel Decorative',serif;font-size:clamp(20px,3vw,30px);color:var(--gold);font-weight:700;line-height:1.25;margin-bottom:32px;}
+
+/* ── PRICING SECTION ── */
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:64px;}
+@media(max-width:640px){.pricing-grid{grid-template-columns:1fr;}}
+
+.price-card{
+  background:var(--dark);
+  border:.5px solid rgba(201,168,76,.12);
+  padding:32px 28px;
+  position:relative;overflow:hidden;
+  transition:border-color .3s;
+}
+.price-card:hover{border-color:rgba(34,168,78,.35);}
+.price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),transparent);opacity:0;transition:opacity .3s;}
+.price-card:hover::before{opacity:1;}
+
+/* Featured Pelon card */
+.price-card.featured{
+  border-color:rgba(201,168,76,.25);
+  background:linear-gradient(160deg,#0d140d,#0a0f0a);
+  grid-column:1/-1;
+}
+@media(max-width:640px){.price-card.featured{grid-column:1;}}
+.price-card.featured::before{opacity:1;background:linear-gradient(90deg,transparent,var(--gold),var(--green-b),var(--gold),transparent);}
+
+.price-card-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px;}
+.artist-info{}
+.price-badge{
+  display:inline-block;padding:4px 10px;margin-bottom:10px;
+  background:rgba(34,168,78,.1);border:.5px solid rgba(34,168,78,.4);
+  font-family:'Cinzel',serif;font-size:7px;letter-spacing:4px;
+  color:var(--green-b);text-transform:uppercase;
+}
+.price-badge.master{background:rgba(201,168,76,.08);border-color:rgba(201,168,76,.3);color:var(--gold-dim);}
+.price-name{font-family:'Cinzel Decorative',serif;font-size:26px;color:var(--gold);font-weight:900;line-height:1;margin-bottom:4px;}
+.price-role{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;}
+
+.price-amount{text-align:right;}
+.price-num{font-family:'Cinzel Decorative',serif;font-size:42px;color:var(--gold);line-height:1;font-weight:900;}
+.price-unit{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--green-b);text-transform:uppercase;margin-top:2px;}
+.price-min{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;color:var(--muted);margin-top:4px;}
+
+.price-divider{width:100%;height:.5px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.2),transparent);margin:16px 0;}
+
+.price-details{display:flex;flex-direction:column;gap:8px;}
+.price-detail{display:flex;align-items:center;gap:10px;font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.8;}
+.price-detail::before{content:'✦';color:var(--green-b);font-size:9px;flex-shrink:0;}
+
+.price-styles{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px;}
+.ps-tag{padding:3px 8px;border:.5px solid rgba(201,168,76,.2);font-family:'Cinzel',serif;font-size:7px;letter-spacing:2px;color:var(--gold-dim);text-transform:uppercase;}
+
+/* ── DEPOSIT SECTION ── */
+.deposit-section{
+  background:var(--dark);
+  border:.5px solid rgba(34,168,78,.2);
+  padding:32px;
+  margin-bottom:64px;
+  position:relative;
+}
+.deposit-section::before,.deposit-section::after{content:'';position:absolute;width:16px;height:16px;border:1px solid var(--gold-dim);}
+.deposit-section::before{top:-1px;left:-1px;border-right:none;border-bottom:none;}
+.deposit-section::after{bottom:-1px;right:-1px;border-left:none;border-top:none;}
+.deposit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px;}
+@media(max-width:600px){.deposit-grid{grid-template-columns:1fr;}}
+.deposit-item{display:flex;align-items:flex-start;gap:12px;}
+.deposit-icon{font-size:20px;flex-shrink:0;margin-top:2px;}
+.deposit-txt h4{font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;}
+.deposit-txt p{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.75;line-height:1.65;}
+
+/* ── WHAT TO EXPECT ── */
+.expect-section{margin-bottom:64px;}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:8px;}
+@media(max-width:640px){.steps-grid{grid-template-columns:1fr;}}
+.step-card{background:var(--dark);border:.5px solid rgba(201,168,76,.1);padding:28px 24px;position:relative;}
+.step-num{font-family:'Cinzel Decorative',serif;font-size:48px;color:rgba(201,168,76,.06);line-height:1;margin-bottom:-8px;font-weight:900;}
+.step-icon{font-size:24px;margin-bottom:10px;}
+.step-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
+.step-txt{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.72;line-height:1.7;}
+
+/* ── RULES SECTION ── */
+.rules-section{margin-bottom:64px;}
+.rules-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:8px;}
+@media(max-width:600px){.rules-grid{grid-template-columns:1fr;}}
+.rule-item{
+  background:var(--dark);border:.5px solid rgba(201,168,76,.08);
+  padding:20px 24px;
+  display:flex;align-items:flex-start;gap:12px;
+}
+.rule-icon{font-size:18px;flex-shrink:0;margin-top:2px;}
+.rule-txt{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.78;line-height:1.65;}
+.rule-txt strong{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:4px;}
+
+/* ── BIG BOOK CTA ── */
+.book-cta{
+  background:var(--green-deep);
+  border:.5px solid rgba(34,168,78,.25);
+  padding:56px 40px;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.book-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(34,168,78,.1) 0%,transparent 65%);pointer-events:none;}
+.book-cta-title{font-family:'Cinzel Decorative',serif;font-size:clamp(22px,3.5vw,36px);color:var(--gold);font-weight:700;margin-bottom:14px;position:relative;}
+.book-cta-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--parch);opacity:.8;max-width:460px;margin:0 auto 32px;line-height:1.72;position:relative;}
+.book-btn-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;}
+.btn-g{padding:16px 40px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;border:1px solid var(--green-b);cursor:pointer;font-weight:700;display:inline-block;transition:all .3s;}
+.btn-g:hover{background:var(--green-b);color:#050605;box-shadow:0 0 28px rgba(34,168,78,.35);}
+.btn-o{padding:16px 40px;background:transparent;color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;border:1px solid rgba(201,168,76,.35);cursor:pointer;display:inline-block;transition:all .3s;}
+.btn-o:hover{border-color:var(--gold);background:rgba(201,168,76,.07);}
+
+/* FOOTER */
+.footer{background:var(--green-deep);border-top:1px solid rgba(34,168,78,.2);padding:36px 40px;text-align:center;}
+.f-logo{font-family:'Cinzel Decorative',serif;font-size:13px;color:var(--gold-dim);letter-spacing:2px;margin-bottom:6px;}
+.f-tag{font-family:'Cinzel',serif;font-size:7px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
+.socials{display:flex;gap:8px;justify-content:center;}
+.soc{width:34px;height:34px;border:.5px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:9px;color:var(--muted);cursor:pointer;transition:all .2s;text-decoration:none;}
+.soc:hover{border-color:var(--green-b);color:var(--green-b);}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.page-header>*{animation:fadeUp .7s ease both;}
+.sec-label{animation-delay:.1s;}.page-title{animation-delay:.2s;}.page-sub{animation-delay:.3s;}.header-book-btn{animation-delay:.4s;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">🦁 NBTS</div>
+  <a href="index.html" class="nav-back">Back to Main Site</a>
+  <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="nav-book">Book Now</a>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div class="sec-label">New Beginnings Tattoo Studio</div>
+  <div class="page-title">Book Your Appointment</div>
+  <p class="page-sub">Ready to tell your story in ink? Book directly with your artist through our secure online booking system — powered by Square.</p>
+  <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="header-book-btn">
+    Book Your Appointment Now <span class="book-arrow">→</span>
+  </a>
+</div>
+
+<!-- VERSE -->
+<div class="verse">
+  <p>"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here."</p>
+  <span>✦ &nbsp; 2 Corinthians 5:17 &nbsp; ✦</span>
+</div>
+
+<!-- MAIN -->
+<div class="main-wrap">
+
+  <!-- PRICING -->
+  <div class="section-label">Transparent Pricing</div>
+  <div class="section-title">What We Charge</div>
+
+  <div class="pricing-grid">
+
+    <!-- PELON — FEATURED -->
+    <div class="price-card featured">
+      <div class="price-card-header">
+        <div class="artist-info">
+          <div class="price-badge master">Founder · Master Artist · 30+ Years</div>
+          <div class="price-name">Pelon</div>
+          <div class="price-role">Owner · New Beginnings Family Tattoo Studio</div>
+        </div>
+        <div class="price-amount">
+          <div class="price-num">$180</div>
+          <div class="price-unit">Per Hour</div>
+          <div class="price-min">$100 minimum</div>
+        </div>
+      </div>
+      <div class="price-divider"></div>
+      <div class="price-details">
+        <div class="price-detail">30+ years of professional tattooing experience</div>
+        <div class="price-detail">Master of black & grey, Chicano, realism, color and custom work</div>
+        <div class="price-detail">Free consultation for large or complex pieces</div>
+        <div class="price-detail">All styles welcome — custom pieces are his specialty</div>
+      </div>
+      <div class="price-styles">
+        <div class="ps-tag">Black & Grey</div>
+        <div class="ps-tag">Chicano</div>
+        <div class="ps-tag">Realism</div>
+        <div class="ps-tag">Portraits</div>
+        <div class="ps-tag">Color</div>
+        <div class="ps-tag">Custom</div>
+        <div class="ps-tag">Sleeves</div>
+      </div>
+    </div>
+
+    <!-- ERIC -->
+    <div class="price-card">
+      <div class="price-card-header">
+        <div class="artist-info">
+          <div class="price-badge">Apprentice Artist</div>
+          <div class="price-name">Eric</div>
+          <div class="price-role">The Eldest · Apprentice Under Pelon</div>
+        </div>
+        <div class="price-amount">
+          <div class="price-num">$100</div>
+          <div class="price-unit">Per Hour</div>
+          <div class="price-min">$80 minimum</div>
+        </div>
+      </div>
+      <div class="price-divider"></div>
+      <div class="price-details">
+        <div class="price-detail">Apprenticing under a 30+ year master</div>
+        <div class="price-detail">All work supervised and reviewed by Pelon</div>
+        <div class="price-detail">Specializes in black & grey, fine line and realism</div>
+      </div>
+      <div class="price-styles">
+        <div class="ps-tag">Black & Grey</div>
+        <div class="ps-tag">Fine Line</div>
+        <div class="ps-tag">Realism</div>
+        <div class="ps-tag">Script</div>
+      </div>
+    </div>
+
+    <!-- MOUSIE -->
+    <div class="price-card">
+      <div class="price-card-header">
+        <div class="artist-info">
+          <div class="price-badge">Apprentice Artist</div>
+          <div class="price-name">Mousie</div>
+          <div class="price-role">Heaven's Gift · Apprentice Under Pelon</div>
+        </div>
+        <div class="price-amount">
+          <div class="price-num">$100</div>
+          <div class="price-unit">Per Hour</div>
+          <div class="price-min">$80 minimum</div>
+        </div>
+      </div>
+      <div class="price-divider"></div>
+      <div class="price-details">
+        <div class="price-detail">Apprenticing under a 30+ year master</div>
+        <div class="price-detail">All work supervised and reviewed by Pelon</div>
+        <div class="price-detail">Gothic, dark surrealism, cyber-sigilism & Chicano styles</div>
+      </div>
+      <div class="price-styles">
+        <div class="ps-tag">Gothic</div>
+        <div class="ps-tag">Dark Surrealism</div>
+        <div class="ps-tag">Chicano</div>
+        <div class="ps-tag">Flash</div>
+      </div>
+    </div>
+
+    <!-- ROO -->
+    <div class="price-card" style="grid-column:1/-1;">
+      <div class="price-card-header">
+        <div class="artist-info">
+          <div class="price-badge">Apprentice Artist</div>
+          <div class="price-name">Roo</div>
+          <div class="price-role">The Wildcard · Tattooing Since Age 8 · Apprentice Under Pelon</div>
+        </div>
+        <div class="price-amount">
+          <div class="price-num">$80</div>
+          <div class="price-unit">Per Hour</div>
+          <div class="price-min">$60 minimum</div>
+        </div>
+      </div>
+      <div class="price-divider"></div>
+      <div class="price-details">
+        <div class="price-detail">Started tattooing at age 8 — the future of NBTS</div>
+        <div class="price-detail">All work supervised and reviewed by Pelon</div>
+        <div class="price-detail">Hungry, driven, and ready to tattoo any style</div>
+      </div>
+      <div class="price-styles">
+        <div class="ps-tag">All Styles</div>
+        <div class="ps-tag">Bold Lines</div>
+        <div class="ps-tag">Color</div>
+        <div class="ps-tag">Neo-Trad</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DEPOSIT -->
+  <div class="section-label">Deposit Policy</div>
+  <div class="section-title">Securing Your Appointment</div>
+  <div class="deposit-section">
+    <div class="deposit-grid">
+      <div class="deposit-item">
+        <div class="deposit-icon">💰</div>
+        <div class="deposit-txt">
+          <h4>$50 Deposit Required</h4>
+          <p>A $50 non-refundable deposit is required to secure your appointment. This goes toward the total cost of your tattoo.</p>
+        </div>
+      </div>
+      <div class="deposit-item">
+        <div class="deposit-icon">🚫</div>
+        <div class="deposit-txt">
+          <h4>Non-Refundable</h4>
+          <p>Deposits are non-refundable. If you need to reschedule, give us at least 24 hours notice and your deposit will carry over.</p>
+        </div>
+      </div>
+      <div class="deposit-item">
+        <div class="deposit-icon">✅</div>
+        <div class="deposit-txt">
+          <h4>Applied to Your Tattoo</h4>
+          <p>Your deposit is deducted from the final price of your tattoo at your appointment.</p>
+        </div>
+      </div>
+      <div class="deposit-item">
+        <div class="deposit-icon">📞</div>
+        <div class="deposit-txt">
+          <h4>No-Show Policy</h4>
+          <p>No-call no-shows forfeit their deposit and will be required to pay a new deposit to rebook.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT TO EXPECT -->
+  <div class="section-label">The Process</div>
+  <div class="section-title">What to Expect</div>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <div class="step-icon">📅</div>
+      <div class="step-title">Book Online</div>
+      <p class="step-txt">Select your artist, service, and preferred time through our Square booking system. Pay your $50 deposit to confirm.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <div class="step-icon">💬</div>
+      <div class="step-title">Consultation</div>
+      <p class="step-txt">We'll discuss your design, placement, size and any reference images. Large or complex pieces may require a separate free consultation.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <div class="step-icon">✍️</div>
+      <div class="step-title">Sign Your Waiver</div>
+      <p class="step-txt">Complete your digital tattoo consent waiver before your appointment. You can sign online at nbtsaz.com/waiver.html</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">04</div>
+      <div class="step-icon">🎨</div>
+      <div class="step-title">Get Tattooed</div>
+      <p class="step-txt">Sit back, relax and trust the process. We create a clean, comfortable experience from start to finish.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">05</div>
+      <div class="step-icon">🌿</div>
+      <div class="step-title">Aftercare</div>
+      <p class="step-txt">We'll send you home with full aftercare instructions. Follow them carefully to ensure your tattoo heals beautifully.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">06</div>
+      <div class="step-icon">🦁</div>
+      <div class="step-title">You're Family</div>
+      <p class="step-txt">Once you sit in our chair you're not just a client — you're family. We're here for every piece of your journey.</p>
+    </div>
+  </div>
+
+  <!-- RULES -->
+  <div class="section-label" style="margin-top:64px;">Before You Come In</div>
+  <div class="section-title">Important Reminders</div>
+  <div class="rules-grid">
+    <div class="rule-item">
+      <div class="rule-icon">🪪</div>
+      <div class="rule-txt"><strong>Must Be 18+</strong>Valid government-issued photo ID required. No exceptions.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon">🚫</div>
+      <div class="rule-txt"><strong>No Alcohol or Drugs</strong>Do not come to your appointment under the influence. We will not tattoo you.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon">🍽️</div>
+      <div class="rule-txt"><strong>Eat Before You Come</strong>Have a good meal before your appointment. Low blood sugar makes for a tough session.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon">📸</div>
+      <div class="rule-txt"><strong>Bring Reference Photos</strong>If you have a design in mind bring reference images — the more detail the better.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon">👕</div>
+      <div class="rule-txt"><strong>Wear Comfortable Clothing</strong>Wear clothing that allows easy access to the area being tattooed.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon">☀️</div>
+      <div class="rule-txt"><strong>No Sunburn</strong>Do not come in with a sunburn on the area being tattooed. We'll need to reschedule.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon">💧</div>
+      <div class="rule-txt"><strong>Stay Hydrated</strong>Drink plenty of water in the days leading up to your appointment. Hydrated skin takes ink better.</div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-icon">✝️</div>
+      <div class="rule-txt"><strong>Walk-ins Welcome</strong>No appointment? Come on in Mon–Sat 9am–10pm. We'll do our best to fit you in.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- BOOK CTA -->
+<section class="book-cta">
+  <div class="book-cta-title">Ready to Begin Your Story?</div>
+  <p class="book-cta-sub">Book online in minutes. Select your artist, pick your time, and secure your spot with a $50 deposit.</p>
+  <div class="book-btn-row">
+    <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="btn-g">✦ &nbsp; Book Your Appointment</a>
+    <a href="waiver.html" class="btn-o">Sign Your Waiver</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="f-logo">NBTS · New Beginnings Tattoo Studio</div>
+  <div class="f-tag">4343 N Oracle Rd Suite L · Tucson, AZ · Mon–Sat 9am–10pm</div>
+  <div class="socials">
+    <a class="soc" href="https://instagram.com/nbtstucson" target="_blank">IG</a>
+    <a class="soc" href="http://facebook.com/NewBeginningsTattooStudio" target="_blank">FB</a>
+    <a class="soc" href="index.html">🏠</a>
+  </div>
+</footer>
+
+</body>
+</html>
