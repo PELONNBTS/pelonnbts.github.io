@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="New Beginnings Family Tattoo Studio — Frequently Asked Questions about tattoos, pricing, booking and aftercare in Tucson AZ."/>
+<title>FAQ | New Beginnings Tattoo Studio Tucson AZ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#050605;color:#D8CFA8;font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{text-decoration:none;}
+
+:root{
+  --gold:#C9A84C;--gold-lt:#F0D080;--gold-dim:#8B6E2A;--gold-pale:#E8D5A0;
+  --green:#1A7A3A;--green-b:#22A84E;--green-glow:#2ECC6A;--green-deep:#071A0D;
+  --black:#050605;--char:#0C0F0C;--dark:#111411;--smoke:#181C18;
+  --bone:#D8CFA8;--parch:#EDE0BB;--muted:#5A6050;
+}
+
+.nav{position:sticky;top:0;z-index:1000;background:rgba(5,6,5,.97);border-bottom:1px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:66px;backdrop-filter:blur(10px);}
+.nav-logo{font-family:'Cinzel Decorative',serif;font-size:15px;color:var(--gold);letter-spacing:2px;font-weight:700;display:flex;align-items:center;gap:10px;}
+.nav-back{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.nav-back:hover{color:var(--gold);}
+.nav-back::before{content:'←';}
+.nav-book{padding:9px 20px;border:1px solid var(--green);color:var(--green-b);font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all .2s;}
+.nav-book:hover{background:var(--green);color:#050605;}
+
+.page-header{background:var(--char);border-bottom:1px solid rgba(34,168,78,.2);padding:56px 40px 48px;text-align:center;position:relative;overflow:hidden;}
+.page-header::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);}
+.page-header::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(34,168,78,.06) 0%,transparent 70%);pointer-events:none;}
+.sec-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;position:relative;}
+.page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(26px,4vw,44px);color:var(--gold);font-weight:700;line-height:1.2;margin-bottom:14px;position:relative;}
+.page-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:18px;color:var(--parch);opacity:.88;max-width:580px;margin:0 auto;line-height:1.72;position:relative;}
+
+.main-wrap{max-width:800px;margin:0 auto;padding:60px 40px 80px;}
+@media(max-width:600px){.main-wrap{padding:36px 20px 60px;}}
+
+/* Category label */
+.cat-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin:48px 0 16px;padding-bottom:10px;border-bottom:.5px solid rgba(34,168,78,.15);}
+.cat-label:first-child{margin-top:0;}
+
+/* FAQ Items */
+.faq-item{border:.5px solid rgba(201,168,76,.1);margin-bottom:4px;overflow:hidden;transition:border-color .3s;}
+.faq-item.open{border-color:rgba(34,168,78,.3);}
+.faq-q{
+  width:100%;padding:22px 24px;
+  background:var(--dark);
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  cursor:pointer;transition:background .2s;
+  text-align:left;border:none;
+}
+.faq-q:hover{background:rgba(34,168,78,.04);}
+.faq-q-txt{font-family:'Cinzel',serif;font-size:13px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;line-height:1.4;}
+.faq-icon{
+  font-size:18px;color:var(--green-b);
+  flex-shrink:0;transition:transform .3s;
+  font-family:'Cinzel',serif;
+}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{
+  display:none;
+  padding:0 24px 22px;
+  background:var(--dark);
+  border-top:.5px solid rgba(34,168,78,.1);
+}
+.faq-item.open .faq-a{display:block;}
+.faq-a p{font-family:'Crimson Pro',serif;font-size:17px;color:var(--bone);opacity:.85;line-height:1.82;padding-top:16px;}
+.faq-a a{color:var(--green-b);text-decoration:underline;}
+
+/* Book CTA */
+.book-cta{background:var(--green-deep);border:.5px solid rgba(34,168,78,.25);padding:40px;text-align:center;margin-top:48px;}
+.book-cta p{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--parch);opacity:.85;line-height:1.7;margin-bottom:20px;}
+.btn-g{padding:15px 36px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid var(--green-b);cursor:pointer;font-weight:700;display:inline-block;transition:all .3s;margin:6px;}
+.btn-g:hover{background:var(--green-b);color:#050605;}
+.btn-o{padding:15px 36px;background:transparent;color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(201,168,76,.35);cursor:pointer;display:inline-block;transition:all .3s;margin:6px;}
+.btn-o:hover{border-color:var(--gold);background:rgba(201,168,76,.07);}
+
+.footer{background:var(--green-deep);border-top:1px solid rgba(34,168,78,.2);padding:36px 40px;text-align:center;}
+.f-logo{font-family:'Cinzel Decorative',serif;font-size:13px;color:var(--gold-dim);letter-spacing:2px;margin-bottom:6px;}
+.f-tag{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
+.socials{display:flex;gap:8px;justify-content:center;}
+.soc{width:34px;height:34px;border:.5px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:9px;color:var(--muted);cursor:pointer;transition:all .2s;text-decoration:none;}
+.soc:hover{border-color:var(--green-b);color:var(--green-b);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">🦁 NBTS</div>
+  <a href="index.html" class="nav-back">Back to Main Site</a>
+  <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="nav-book">Book Now</a>
+</nav>
+
+<div class="page-header">
+  <div class="sec-label">New Beginnings Tattoo Studio</div>
+  <div class="page-title">Frequently Asked Questions</div>
+  <p class="page-sub">Everything you want to know before you sit in the chair. If your question isn't here — reach out and ask us directly.</p>
+</div>
+
+<div class="main-wrap">
+
+  <!-- GENERAL -->
+  <div class="cat-label">✦ &nbsp; General Questions</div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">Where are you located?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>We are located at <strong>4343 N Oracle Rd, Suite L, Tucson, AZ</strong>. We are open Monday through Saturday 9am to 10pm. Walk-ins are welcome!</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">Do you take walk-ins?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>Yes! Walk-ins are always welcome Monday through Saturday 9am–10pm. For larger or more complex pieces we recommend booking an appointment so your artist has time to design and prepare. Walk-in spots fill up fast so come in early.</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">What is the minimum age to get tattooed?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>You must be <strong>18 years of age or older</strong> with a valid government-issued photo ID. No exceptions. We take this seriously to protect both you and our studio.</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">Are you a family-owned studio?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>Yes — New Beginnings is a family operation. Pelon is the founder and master artist with 30+ years of experience. His three children — Eric, Mousie and Roo — are all apprenticing under him. When you come in you're not just a client, you're family.</p></div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="cat-label">✦ &nbsp; Pricing & Deposits</div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">How much does a tattoo cost?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>Pricing depends on the artist, size, and complexity of your piece. Our rates are:<br><br>
+    <strong>Pelon</strong> — $180/hr · $100 minimum<br>
+    <strong>Eric & Mousie</strong> — $100/hr · $80 minimum<br>
+    <strong>Roo</strong> — $80/hr · $60 minimum<br><br>
+    Small simple pieces are often priced as a flat rate. Large or complex custom pieces are quoted after a consultation. Visit our <a href="booking.html">Pricing page</a> for full details.</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">Do you require a deposit?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>Yes. A <strong>$50 non-refundable deposit</strong> is required to secure your appointment. This amount is applied toward the total cost of your tattoo. If you need to reschedule give us at least 24 hours notice and your deposit carries over. No-call no-shows forfeit the deposit.</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">Do you give price quotes over the phone or social media?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>For small or simple pieces we can give a general estimate. For custom, large or complex work we prefer to see reference images first before quoting — this ensures you get an accurate price. Book a free consultation and we'll give you an exact quote.</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">What payment methods do you accept?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>We accept cash, all major credit and debit cards through Square. Tipping your artist is always appreciated but never required.</p></div>
+  </div>
+
+  <!-- BOOKING -->
+  <div class="cat-label">✦ &nbsp; Booking & Appointments</div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">How do I book an appointment?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>You can book directly online through our Square booking system — just click the <strong>Book Now</strong> button anywhere on our site. Select your artist, service and preferred time, then pay your $50 deposit to confirm. You can also walk in or message us on Facebook or Instagram.</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">How far in advance should I book?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>For small pieces or flash work, a few days to a week is usually fine. For large custom pieces or full sleeves we recommend booking 2–4 weeks in advance to give your artist time to design and prepare your piece properly.</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">Can I request a specific artist?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>Absolutely. When booking online you can select your preferred artist. Each artist has their own style and specialty — check out their portfolios on our site to find the best fit for your vision.</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">Can I bring someone with me?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>Yes — one support person is welcome. Please keep in mind our space is a working studio so we ask that guests remain respectful and not distract the artist during the session.</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">Do I need to sign a waiver?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>Yes. All clients must complete our digital tattoo consent waiver before their appointment. You can sign it online ahead of time at <a href="waiver.html">nbtsaz.com/waiver.html</a> — saves time when you arrive.</p></div>
+  </div>
+
+  <!-- THE TATTOO -->
+  <div class="cat-label">✦ &nbsp; The Tattoo Process</div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">Does getting a tattoo hurt?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>Honestly — yes, but it's very manageable. Pain level depends on placement, your personal tolerance, and the size of the piece. Bony areas like ribs, spine, feet and hands tend to be more sensitive. Fleshy areas like the outer arm and thigh are easier. Most people describe it as a scratching or burning sensation. Eat a good meal beforehand and stay hydrated — it makes a real difference.</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">How long does a tattoo take?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>It depends on the size and complexity. A small simple piece can take 30 minutes to an hour. A medium piece typically takes 2–4 hours. Large custom pieces and sleeves are multiple sessions. Your artist will give you a time estimate during your consultation.</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">Can I see the design before I get tattooed?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>Yes — for custom pieces your artist will have the design ready for your approval the day of your appointment. Minor adjustments can be made before we start. Major redesigns may require rescheduling so make sure your reference images and ideas are clear when you book.</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">Do you do cover-ups?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>Yes — Pelon specializes in cover-up work. Cover-ups require a consultation so we can assess the existing tattoo and design something that effectively covers it. Not every tattoo can be fully covered in one session — your artist will be honest with you about what's achievable.</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">Do you do touch-ups?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>Touch-ups are handled on a case-by-case basis. If an area healed poorly due to normal skin variation we'll work with you. Touch-ups due to improper aftercare or client neglect may carry a fee. Wait until the tattoo is fully healed (minimum 4–6 weeks) before contacting us about a touch-up.</p></div>
+  </div>
+
+  <!-- AFTERCARE -->
+  <div class="cat-label">✦ &nbsp; Aftercare & Healing</div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">How long does a tattoo take to heal?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>The surface of a tattoo typically heals in 2–4 weeks. The deeper layers of skin take up to 3–6 months to fully heal. During the surface healing phase follow your aftercare instructions carefully. Check out our full <a href="aftercare.html">Aftercare Guide</a> for detailed instructions.</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">My tattoo is peeling — is that normal?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>Completely normal. Peeling usually starts around days 4–7 and can last another week. Do NOT pick at peeling skin — let it fall off naturally. Picking pulls ink out and can cause scarring and uneven healing. Keep it moisturized and be patient.</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">My tattoo looks dull and faded while healing — did something go wrong?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>No — this is completely normal and called the "milky phase." A layer of healing skin forms over the tattoo making it look dull or faded. Once that layer sheds the colors and contrast come back. Give it the full 4–6 weeks before judging how it looks.</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">Can I work out after getting a tattoo?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>We recommend avoiding heavy workouts for at least one week — excessive sweating can irritate and infect a fresh tattoo. Light activity is okay but avoid anything that causes heavy sweating directly on the tattooed area or stretches the skin significantly.</p></div>
+  </div>
+
+  <!-- APPRENTICES -->
+  <div class="cat-label">✦ &nbsp; Our Apprentice Artists</div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">Are the apprentice artists safe to get tattooed by?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>Absolutely. Eric, Mousie and Roo are all apprenticing directly under Pelon — a master artist with 30+ years of experience. All work is supervised and reviewed. Getting tattooed by an apprentice is a great way to get quality work at a lower price while supporting the next generation of artists.</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      <span class="faq-q-txt">Why are apprentice rates lower?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><p>Apprentice rates reflect where they are in their journey — building their portfolios and developing their craft. The quality is still held to NBTS standards and Pelon oversees every piece. Lower rates are a benefit to you for supporting an artist early in their career.</p></div>
+  </div>
+
+  <!-- BOOK CTA -->
+  <div class="book-cta">
+    <p>Still have questions? We're always happy to help. Reach out before you book.</p>
+    <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="btn-g">Book Now</a>
+    <a href="http://facebook.com/NewBeginningsTattooStudio" target="_blank" class="btn-o">Message Us</a>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="f-logo">NBTS · New Beginnings Tattoo Studio</div>
+  <div class="f-tag">4343 N Oracle Rd Suite L · Tucson, AZ · Mon–Sat 9am–10pm</div>
+  <div class="socials">
+    <a class="soc" href="https://instagram.com/nbtstucson" target="_blank">IG</a>
+    <a class="soc" href="http://facebook.com/NewBeginningsTattooStudio" target="_blank">FB</a>
+    <a class="soc" href="index.html">🏠</a>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
