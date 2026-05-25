@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="New Beginnings Tattoo Studio Tucson AZ — News, flash drops, artist updates, tattoo education and studio announcements."/>
+<title>Blog & News | New Beginnings Tattoo Studio Tucson AZ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#050605;color:#D8CFA8;font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{text-decoration:none;}
+img{display:block;max-width:100%;}
+:root{
+  --gold:#C9A84C;--gold-lt:#F0D080;--gold-dim:#8B6E2A;--gold-pale:#E8D5A0;
+  --green:#1A7A3A;--green-b:#22A84E;--green-deep:#071A0D;
+  --black:#050605;--char:#0C0F0C;--dark:#111411;--smoke:#181C18;
+  --bone:#D8CFA8;--parch:#EDE0BB;--muted:#5A6050;
+}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:1000;background:rgba(5,6,5,.97);border-bottom:1px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:66px;backdrop-filter:blur(10px);}
+.nav-logo{font-family:'Cinzel Decorative',serif;font-size:15px;color:var(--gold);letter-spacing:2px;font-weight:700;}
+.nav-back{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.nav-back:hover{color:var(--gold);}
+.nav-back::before{content:'←';}
+.nav-book{padding:9px 20px;border:1px solid var(--green);color:var(--green-b);font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all .2s;}
+.nav-book:hover{background:var(--green);color:#050605;}
+
+/* HEADER */
+.page-header{background:var(--char);border-bottom:1px solid rgba(34,168,78,.2);padding:52px 40px 44px;text-align:center;position:relative;overflow:hidden;}
+.page-header::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);}
+.page-header::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(34,168,78,.05) 0%,transparent 70%);pointer-events:none;}
+.sec-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;position:relative;}
+.page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(26px,4vw,44px);color:var(--gold);font-weight:700;line-height:1.2;margin-bottom:14px;position:relative;}
+.page-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:18px;color:var(--parch);opacity:.88;max-width:540px;margin:0 auto;line-height:1.72;position:relative;}
+
+/* MAIN LAYOUT */
+.main-wrap{max-width:1060px;margin:0 auto;padding:56px 40px 80px;display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:start;}
+@media(max-width:860px){.main-wrap{grid-template-columns:1fr;padding:36px 20px 60px;}}
+
+/* CATEGORY FILTERS */
+.cat-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px;}
+.cat-btn{padding:8px 18px;background:transparent;border:.5px solid rgba(201,168,76,.2);font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;cursor:pointer;transition:all .2s;}
+.cat-btn.active,.cat-btn:hover{border-color:var(--green-b);color:var(--green-b);background:rgba(34,168,78,.05);}
+
+/* FEATURED POST */
+.featured-post{background:var(--dark);border:.5px solid rgba(201,168,76,.2);margin-bottom:24px;overflow:hidden;position:relative;cursor:pointer;transition:all .3s;}
+.featured-post:hover{border-color:rgba(34,168,78,.4);transform:translateY(-2px);box-shadow:0 8px 40px rgba(201,168,76,.06);}
+.featured-post::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--green-b),var(--gold),transparent);}
+.fp-image{width:100%;height:280px;object-fit:cover;filter:brightness(.85) contrast(1.05);}
+.fp-image-placeholder{width:100%;height:280px;background:linear-gradient(135deg,var(--smoke),var(--dark));display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;}
+.fp-image-placeholder .fpi{font-size:48px;opacity:.15;}
+.fp-image-placeholder .fpt{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;}
+.fp-content{padding:28px 32px 32px;}
+.fp-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
+.fp-cat{padding:4px 10px;font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;}
+.fp-date{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+.fp-featured-badge{padding:4px 10px;background:rgba(201,168,76,.1);border:.5px solid rgba(201,168,76,.3);font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;}
+.fp-title{font-family:'Cinzel Decorative',serif;font-size:clamp(20px,3vw,28px);color:var(--gold);font-weight:700;line-height:1.3;margin-bottom:12px;}
+.fp-excerpt{font-family:'Crimson Pro',serif;font-size:17px;color:var(--bone);opacity:.78;line-height:1.78;margin-bottom:18px;}
+.fp-author{display:flex;align-items:center;gap:10px;}
+.fp-author-name{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--green-b);text-transform:uppercase;}
+.fp-read{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;display:flex;align-items:center;gap:6px;}
+.fp-read::after{content:'→';color:var(--gold);}
+
+/* POST GRID */
+.posts-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:600px){.posts-grid{grid-template-columns:1fr;}}
+
+.post-card{background:var(--dark);border:.5px solid rgba(201,168,76,.1);overflow:hidden;cursor:pointer;transition:all .3s;display:flex;flex-direction:column;}
+.post-card:hover{border-color:rgba(34,168,78,.35);transform:translateY(-2px);box-shadow:0 6px 28px rgba(201,168,76,.05);}
+.post-card.hidden{display:none;}
+.pc-image{width:100%;height:160px;object-fit:cover;filter:brightness(.85);}
+.pc-image-placeholder{width:100%;height:160px;background:linear-gradient(135deg,var(--smoke),var(--dark));display:flex;align-items:center;justify-content:center;}
+.pc-image-placeholder span{font-size:32px;opacity:.15;}
+.pc-content{padding:20px;flex:1;display:flex;flex-direction:column;}
+.pc-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.pc-cat{padding:3px 8px;font-family:'Cinzel',serif;font-size:7px;letter-spacing:3px;text-transform:uppercase;}
+.pc-date{font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+.pc-title{font-family:'Cinzel',serif;font-size:13px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;line-height:1.4;margin-bottom:10px;flex:1;}
+.pc-excerpt{font-family:'Crimson Pro',serif;font-size:14px;color:var(--bone);opacity:.7;line-height:1.65;margin-bottom:14px;}
+.pc-footer{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:.5px solid rgba(201,168,76,.08);}
+.pc-author{font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--green-b);text-transform:uppercase;}
+.pc-read{font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+
+/* FULL POST MODAL */
+.post-modal{position:fixed;inset:0;z-index:9999;background:rgba(5,6,5,.97);overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .3s;}
+.post-modal.open{opacity:1;pointer-events:all;}
+.pm-inner{max-width:760px;margin:0 auto;padding:40px 40px 80px;}
+@media(max-width:600px){.pm-inner{padding:24px 20px 60px;}}
+.pm-close{display:inline-flex;align-items:center;gap:8px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;cursor:pointer;margin-bottom:32px;transition:color .2s;}
+.pm-close:hover{color:var(--gold);}
+.pm-close::before{content:'←';}
+.pm-cat{display:inline-block;padding:5px 12px;font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;text-transform:uppercase;margin-bottom:14px;}
+.pm-title{font-family:'Cinzel Decorative',serif;font-size:clamp(22px,4vw,36px);color:var(--gold);font-weight:700;line-height:1.25;margin-bottom:16px;}
+.pm-meta{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding:14px 0;border-top:.5px solid rgba(201,168,76,.1);border-bottom:.5px solid rgba(201,168,76,.1);margin-bottom:32px;}
+.pm-author{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--green-b);text-transform:uppercase;}
+.pm-date{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+.pm-body{font-family:'Crimson Pro',serif;font-size:18px;color:var(--bone);line-height:1.9;opacity:.88;}
+.pm-body p{margin-bottom:20px;}
+.pm-body h2{font-family:'Cinzel',serif;font-size:14px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin:32px 0 14px;padding-bottom:10px;border-bottom:.5px solid rgba(201,168,76,.15);}
+.pm-body h3{font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;color:var(--green-b);text-transform:uppercase;margin:24px 0 10px;}
+.pm-body ul{padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
+.pm-body ul li{display:flex;align-items:flex-start;gap:10px;}
+.pm-body ul li::before{content:'✦';color:var(--green-b);font-size:9px;flex-shrink:0;margin-top:6px;}
+.pm-body blockquote{border-left:3px solid var(--gold);padding:16px 20px;background:rgba(201,168,76,.04);margin:20px 0;font-style:italic;color:var(--parch);}
+.pm-cta{background:var(--green-deep);border:.5px solid rgba(34,168,78,.2);padding:32px;text-align:center;margin-top:40px;}
+.pm-cta p{font-family:'Crimson Pro',serif;font-style:italic;font-size:16px;color:var(--bone);opacity:.78;margin-bottom:16px;}
+.pm-cta a{padding:13px 32px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;border:1px solid var(--green-b);display:inline-block;transition:all .3s;font-weight:700;}
+.pm-cta a:hover{background:var(--green-b);color:#050605;}
+
+/* CATEGORY COLORS */
+.cat-studio{background:rgba(34,168,78,.1);border:.5px solid rgba(34,168,78,.3);color:var(--green-b);}
+.cat-flash{background:rgba(201,168,76,.1);border:.5px solid rgba(201,168,76,.3);color:var(--gold);}
+.cat-education{background:rgba(100,100,200,.1);border:.5px solid rgba(100,100,200,.3);color:#8888ff;}
+.cat-artist{background:rgba(200,100,50,.1);border:.5px solid rgba(200,100,50,.3);color:#E08050;}
+.cat-faith{background:rgba(150,50,150,.1);border:.5px solid rgba(150,50,150,.3);color:#C080C0;}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:80px;}
+.sb-card{background:var(--dark);border:.5px solid rgba(201,168,76,.1);padding:22px;}
+.sb-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;padding-bottom:10px;border-bottom:.5px solid rgba(201,168,76,.1);}
+.sb-post{display:flex;gap:12px;padding:10px 0;border-bottom:.5px solid rgba(201,168,76,.06);cursor:pointer;transition:all .2s;}
+.sb-post:last-child{border-bottom:none;padding-bottom:0;}
+.sb-post:hover .sb-post-title{color:var(--green-b);}
+.sb-post-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:1px;color:var(--gold);text-transform:uppercase;line-height:1.4;margin-bottom:4px;transition:color .2s;}
+.sb-post-date{font-family:'Crimson Pro',serif;font-size:12px;color:var(--muted);}
+.sb-cats{display:flex;flex-direction:column;gap:6px;}
+.sb-cat{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--smoke);cursor:pointer;transition:all .2s;border:.5px solid rgba(201,168,76,.06);}
+.sb-cat:hover{border-color:rgba(34,168,78,.3);}
+.sb-cat-name{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;}
+.sb-cat-count{font-family:'Cinzel Decorative',serif;font-size:14px;color:var(--gold);}
+.sb-follow{display:flex;flex-direction:column;gap:8px;}
+.sb-social{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--smoke);border:.5px solid rgba(201,168,76,.06);transition:all .2s;text-decoration:none;}
+.sb-social:hover{border-color:var(--green-b);}
+.sb-social-icon{font-size:16px;}
+.sb-social-name{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;}
+
+/* FOOTER */
+.footer{background:var(--green-deep);border-top:1px solid rgba(34,168,78,.2);padding:36px 40px;text-align:center;}
+.f-logo{font-family:'Cinzel Decorative',serif;font-size:13px;color:var(--gold-dim);letter-spacing:2px;margin-bottom:6px;}
+.f-tag{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
+.socials{display:flex;gap:8px;justify-content:center;}
+.soc{width:34px;height:34px;border:.5px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:9px;color:var(--muted);transition:all .2s;text-decoration:none;}
+.soc:hover{border-color:var(--green-b);color:var(--green-b);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">🦁 NBTS</div>
+  <a href="index.html" class="nav-back">Back to Main Site</a>
+  <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="nav-book">Book Now</a>
+</nav>
+
+<div class="page-header">
+  <div class="sec-label">From the Studio</div>
+  <div class="page-title">News & Blog</div>
+  <p class="page-sub">Flash drops, artist updates, tattoo education, faith, and everything happening at New Beginnings Tattoo Studio in Tucson.</p>
+</div>
+
+<div class="main-wrap">
+  <div>
+    <!-- FILTERS -->
+    <div class="cat-filters">
+      <button class="cat-btn active" onclick="filterPosts('all',this)">All Posts</button>
+      <button class="cat-btn" onclick="filterPosts('studio',this)">Studio News</button>
+      <button class="cat-btn" onclick="filterPosts('flash',this)">Flash Drops</button>
+      <button class="cat-btn" onclick="filterPosts('education',this)">Education</button>
+      <button class="cat-btn" onclick="filterPosts('artist',this)">Artist Spotlight</button>
+      <button class="cat-btn" onclick="filterPosts('faith',this)">Faith</button>
+    </div>
+
+    <!-- FEATURED POST -->
+    <div class="featured-post" data-cat="studio" onclick="openPost('post1')">
+      <div class="fp-image-placeholder"><div class="fpi">🦁</div><div class="fpt">New Beginnings Tattoo Studio</div></div>
+      <div class="fp-content">
+        <div class="fp-meta">
+          <span class="fp-cat cat-studio">Studio News</span>
+          <span class="fp-date">May 2026</span>
+          <span class="fp-featured-badge">Featured</span>
+        </div>
+        <div class="fp-title">New Beginnings Tattoo Studio is Now Live on the Web</div>
+        <p class="fp-excerpt">After 30+ years of tattooing, Pelon and the New Beginnings family have officially launched their home on the internet. This is more than a website — it is a testament to faith, familia, and the art of transformation. Here is what you can find at nbtsaz.com and what is coming next.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+          <div class="fp-author"><div class="fp-author-name">Pelon · NBTS Founder</div></div>
+          <div class="fp-read">Read Full Post</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- POSTS GRID -->
+    <div class="posts-grid" id="postsGrid">
+
+      <div class="post-card" data-cat="flash" onclick="openPost('post2')">
+        <div class="pc-image-placeholder"><span>⚡</span></div>
+        <div class="pc-content">
+          <div class="pc-meta"><span class="pc-cat cat-flash">Flash Drop</span><span class="pc-date">May 2026</span></div>
+          <div class="pc-title">Pelon's First Flash Drop — 10 Original Black and Grey Pieces</div>
+          <p class="pc-excerpt">10 one-of-a-kind black and grey designs now available at $600 each. Includes Aztec Vision, Quetzalcoatl Serpent, Skull with Hat and Flowers, and more.</p>
+          <div class="pc-footer"><div class="pc-author">Pelon</div><div class="pc-read">Read More</div></div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="artist" onclick="openPost('post3')">
+        <div class="pc-image-placeholder"><span>🦁</span></div>
+        <div class="pc-content">
+          <div class="pc-meta"><span class="pc-cat cat-artist">Artist Spotlight</span><span class="pc-date">May 2026</span></div>
+          <div class="pc-title">Roo — The 16-Year-Old Who Started Tattooing at Age 8</div>
+          <p class="pc-excerpt">Most tattoo artists start in their 20s. Roo started at 8. Here is the story of the youngest artist at NBTS — and why Pelon believes he will one day be the best of all of them.</p>
+          <div class="pc-footer"><div class="pc-author">NBTS Family</div><div class="pc-read">Read More</div></div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="education" onclick="openPost('post4')">
+        <div class="pc-image-placeholder"><span>📖</span></div>
+        <div class="pc-content">
+          <div class="pc-meta"><span class="pc-cat cat-education">Education</span><span class="pc-date">May 2026</span></div>
+          <div class="pc-title">Why Black and Grey Tattoos Age Better Than Color</div>
+          <p class="pc-excerpt">After 30 years of tattooing Pelon has seen thousands of tattoos age. Here is the honest truth about why black and grey work stands the test of time — and what makes color fade.</p>
+          <div class="pc-footer"><div class="pc-author">Pelon</div><div class="pc-read">Read More</div></div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="faith" onclick="openPost('post5')">
+        <div class="pc-image-placeholder"><span>✝️</span></div>
+        <div class="pc-content">
+          <div class="pc-meta"><span class="pc-cat cat-faith">Faith</span><span class="pc-date">May 2026</span></div>
+          <div class="pc-title">Why We Named It New Beginnings — Pelon's Story</div>
+          <p class="pc-excerpt">The name was not random. New Beginnings is rooted in 2 Corinthians 5:17 and the story of a man who walked through fire, came out transformed, and picked up a machine to tell that story on skin.</p>
+          <div class="pc-footer"><div class="pc-author">Pelon</div><div class="pc-read">Read More</div></div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="education" onclick="openPost('post6')">
+        <div class="pc-image-placeholder"><span>🌿</span></div>
+        <div class="pc-content">
+          <div class="pc-meta"><span class="pc-cat cat-education">Education</span><span class="pc-date">May 2026</span></div>
+          <div class="pc-title">The Truth About Tattoo Aftercare — What Actually Matters</div>
+          <p class="pc-excerpt">There is a lot of noise online about tattoo aftercare. Pelon breaks down what 30 years of watching tattoos heal has taught him — and what is actually essential versus what is marketing.</p>
+          <div class="pc-footer"><div class="pc-author">Pelon</div><div class="pc-read">Read More</div></div>
+        </div>
+      </div>
+
+      <div class="post-card" data-cat="artist" onclick="openPost('post7')">
+        <div class="pc-image-placeholder"><span>🖤</span></div>
+        <div class="pc-content">
+          <div class="pc-meta"><span class="pc-cat cat-artist">Artist Spotlight</span><span class="pc-date">May 2026</span></div>
+          <div class="pc-title">Mousie's Gothic World — How Dark Surrealism Found a Home at NBTS</div>
+          <p class="pc-excerpt">Mousie did not choose gothic and dark surrealism — it chose her. Here is how her unique vision of cyber-sigilism and Chicano aesthetics is carving out something brand new in Tucson's tattoo scene.</p>
+          <div class="pc-footer"><div class="pc-author">Mousie</div><div class="pc-read">Read More</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <!-- RECENT POSTS -->
+    <div class="sb-card">
+      <div class="sb-title">Recent Posts</div>
+      <div class="sb-post" onclick="openPost('post1')">
+        <div><div class="sb-post-title">NBTS is Now Live on the Web</div><div class="sb-post-date">May 2026 · Studio News</div></div>
+      </div>
+      <div class="sb-post" onclick="openPost('post2')">
+        <div><div class="sb-post-title">Pelon's First Flash Drop</div><div class="sb-post-date">May 2026 · Flash Drop</div></div>
+      </div>
+      <div class="sb-post" onclick="openPost('post3')">
+        <div><div class="sb-post-title">Roo — Started at Age 8</div><div class="sb-post-date">May 2026 · Artist Spotlight</div></div>
+      </div>
+      <div class="sb-post" onclick="openPost('post4')">
+        <div><div class="sb-post-title">Why Black and Grey Ages Better</div><div class="sb-post-date">May 2026 · Education</div></div>
+      </div>
+      <div class="sb-post" onclick="openPost('post5')">
+        <div><div class="sb-post-title">Why We Named It New Beginnings</div><div class="sb-post-date">May 2026 · Faith</div></div>
+      </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <div class="sb-card">
+      <div class="sb-title">Categories</div>
+      <div class="sb-cats">
+        <div class="sb-cat" onclick="filterPostsFromSidebar('studio')"><span class="sb-cat-name">Studio News</span><span class="sb-cat-count">2</span></div>
+        <div class="sb-cat" onclick="filterPostsFromSidebar('flash')"><span class="sb-cat-name">Flash Drops</span><span class="sb-cat-count">1</span></div>
+        <div class="sb-cat" onclick="filterPostsFromSidebar('education')"><span class="sb-cat-name">Education</span><span class="sb-cat-count">2</span></div>
+        <div class="sb-cat" onclick="filterPostsFromSidebar('artist')"><span class="sb-cat-name">Artist Spotlight</span><span class="sb-cat-count">2</span></div>
+        <div class="sb-cat" onclick="filterPostsFromSidebar('faith')"><span class="sb-cat-name">Faith</span><span class="sb-cat-count">1</span></div>
+      </div>
+    </div>
+
+    <!-- FOLLOW -->
+    <div class="sb-card">
+      <div class="sb-title">Follow NBTS</div>
+      <div class="sb-follow">
+        <a class="sb-social" href="https://instagram.com/nbtstucson" target="_blank">
+          <span class="sb-social-icon">📸</span>
+          <span class="sb-social-name">@nbtstucson</span>
+        </a>
+        <a class="sb-social" href="http://facebook.com/NewBeginningsTattooStudio" target="_blank">
+          <span class="sb-social-icon">💬</span>
+          <span class="sb-social-name">Facebook</span>
+        </a>
+        <a class="sb-social" href="https://g.page/r/CXBwTOOXxC3IEAI/review" target="_blank">
+          <span class="sb-social-icon">⭐</span>
+          <span class="sb-social-name">Leave a Review</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- BOOK CTA -->
+    <div style="background:var(--green-deep);border:.5px solid rgba(34,168,78,.2);padding:22px;text-align:center;">
+      <div style="font-family:'Cinzel Decorative',serif;font-size:18px;color:var(--gold);margin-bottom:10px;">Ready to Book?</div>
+      <p style="font-family:'Crimson Pro',serif;font-style:italic;font-size:14px;color:var(--bone);opacity:.75;margin-bottom:14px;line-height:1.6;">$50 deposit secures your appointment with any NBTS artist.</p>
+      <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" style="display:block;padding:12px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;border:1px solid var(--green-b);transition:all .3s;font-weight:600;">Book Now</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- FULL POST MODAL -->
+<div class="post-modal" id="postModal">
+  <div class="pm-inner">
+    <div class="pm-close" onclick="closePost()">Back to News</div>
+    <div class="pm-cat" id="pmCat"></div>
+    <div class="pm-title" id="pmTitle"></div>
+    <div class="pm-meta">
+      <div class="pm-author" id="pmAuthor"></div>
+      <div class="pm-date" id="pmDate"></div>
+    </div>
+    <div class="pm-body" id="pmBody"></div>
+    <div class="pm-cta">
+      <p>Ready to get tattooed at New Beginnings? Book your appointment online.</p>
+      <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank">Book Your Appointment</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="f-logo">NBTS · New Beginnings Tattoo Studio</div>
+  <div class="f-tag">4343 N Oracle Rd Suite L · Tucson, AZ · Mon–Sat 9am–10pm</div>
+  <div class="socials">
+    <a class="soc" href="https://instagram.com/nbtstucson" target="_blank">IG</a>
+    <a class="soc" href="http://facebook.com/NewBeginningsTattooStudio" target="_blank">FB</a>
+    <a class="soc" href="index.html">🏠</a>
+  </div>
+</footer>
+
+<script>
+// ── POST DATA ──
+const posts = {
+  post1: {
+    cat:'Studio News', catClass:'cat-studio', author:'Pelon · NBTS Founder', date:'May 2026',
+    title:'New Beginnings Tattoo Studio is Now Live on the Web',
+    body:`
+      <p>After more than 30 years of putting ink on skin, of building something from nothing in Tucson, Arizona — New Beginnings Tattoo Studio finally has a home on the internet. And not just any home. A real one. One that reflects who we are, what we believe, and what we create.</p>
+
+      <h2>Why It Took So Long</h2>
+      <p>Honestly? Because tattooing was always enough. The work spoke. The clients came back. Word of mouth built this studio. But the world changed and I knew it was time to meet people where they are — online, on their phones, searching for the right artist at 2am when inspiration hits.</p>
+
+      <h2>What You Will Find at nbtsaz.com</h2>
+      <p>This site is not a brochure. It is a full resource for anyone thinking about getting tattooed — whether it is their first piece or their thirtieth. Here is what we built:</p>
+      <ul>
+        <li>Artist portfolios for all four of us — Pelon, Eric, Mousie, and Roo</li>
+        <li>A price calculator so you can estimate before you book</li>
+        <li>A tattoo pain chart — interactive, honest, and detailed</li>
+        <li>A prep guide so you show up ready</li>
+        <li>A full aftercare guide for black and grey and color</li>
+        <li>A digital waiver so you can sign before you arrive</li>
+        <li>A virtual try-on tool to see placement before you commit</li>
+        <li>Flash designs updated as we create them</li>
+        <li>And this blog — where I will share the stories, the knowledge, and the faith behind every piece</li>
+      </ul>
+
+      <h2>What Is Coming Next</h2>
+      <p>More flash. More blog posts. Before and after galleries. Eric, Mousie, and Roo are all working on their own flash drops. This site will grow as we grow.</p>
+
+      <blockquote>"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here." — 2 Corinthians 5:17</blockquote>
+
+      <p>That verse is the foundation of this studio. Every client who sits in our chair is telling a story — of who they were, who they are, and who they are becoming. We are honored to be part of that story. Welcome to nbtsaz.com. Welcome home.</p>
+    `
+  },
+  post2: {
+    cat:'Flash Drop', catClass:'cat-flash', author:'Pelon', date:'May 2026',
+    title:"Pelon's First Flash Drop — 10 Original Black and Grey Pieces",
+    body:`
+      <p>They are here. Ten original black and grey flash designs — drawn by hand, priced at $600 each, and available to the first person who books them. Once a design is tattooed it is retired. That is the deal with flash — you wear something nobody else will ever have.</p>
+
+      <h2>What Is in This Drop</h2>
+      <ul>
+        <li>Mixed Collage — a layered composition pulling from multiple traditions</li>
+        <li>Aztec Vision — rooted in Mesoamerican iconography and sacred geometry</li>
+        <li>Skull with Hat and Flowers — Chicano tradition meets fine detail</li>
+        <li>Quetzalcoatl Serpent — the feathered serpent deity rendered in black and grey</li>
+        <li>Six more designs dropping as they are completed</li>
+      </ul>
+
+      <h2>Why $600?</h2>
+      <p>At $180 an hour with an average session of 3.5 hours for an 8x4 piece — the math works out to around $630. Flash pricing gives you a slight discount for taking a pre-drawn design versus custom work. You save time, I get to tattoo art I have already poured into. Everyone wins.</p>
+
+      <h2>How to Book Flash</h2>
+      <p>Book online through Square with the $50 deposit. Note the flash design name in the booking comments. First deposit received gets the piece. Walk-ins for flash are always welcome too — come in and if your design is still available we will get you in the chair.</p>
+
+      <p>More drops coming from Eric, Mousie, and Roo. This is just the beginning.</p>
+    `
+  },
+  post3: {
+    cat:'Artist Spotlight', catClass:'cat-artist', author:'NBTS Family', date:'May 2026',
+    title:'Roo — The 16-Year-Old Who Started Tattooing at Age 8',
+    body:`
+      <p>Most artists who are serious about tattooing start somewhere between 18 and 25. They apprentice under someone, make their mistakes, find their style over years. Roo started at 8 years old. Not as a joke. Not playing around. He picked up a machine and started learning — because he had grown up watching a master every single day and absorbing everything.</p>
+
+      <h2>Growing Up in the Shop</h2>
+      <p>From the time Roo was old enough to walk into the shop he was there. While other kids were watching cartoons he was watching Pelon work — studying the way a line is pulled, the way shading builds, the way a piece comes together on skin. By the time he was 8 he was not watching anymore. He was doing.</p>
+
+      <h2>What Makes Roo Different</h2>
+      <p>Talent is one thing. Drive is another. Roo has both in a way that is rare to see at any age. He does not clock in and clock out. Tattooing is not something he does — it is who he is. The same way it is for Pelon. That is not taught. That is passed down through blood and watching and years of being present.</p>
+
+      <blockquote>"The spirit of a lion does not wait. It moves." — Roo</blockquote>
+
+      <h2>The Future of NBTS</h2>
+      <p>One day this studio will belong to Roo. Not because he is the youngest or the most dramatic story — but because he was the first of the kids to fully commit to carrying this legacy forward. He chose this. At 16 he is already more committed than artists twice his age.</p>
+
+      <p>Come get tattooed by him while the price is still $80 an hour. In five years you will tell people you sat with him before everyone knew who he was.</p>
+    `
+  },
+  post4: {
+    cat:'Education', catClass:'cat-education', author:'Pelon', date:'May 2026',
+    title:'Why Black and Grey Tattoos Age Better Than Color',
+    body:`
+      <p>I have been tattooing for over 30 years. I have seen tattoos fresh off the machine and I have seen those same tattoos 20 years later. The pattern is consistent: black and grey work ages with dignity. Color work — without serious care — often does not.</p>
+
+      <h2>The Science of Ink in Skin</h2>
+      <p>When ink is deposited in the dermis it settles into the skin cells. Over time those cells turn over and the ink migrates slightly — causing lines to soften and colors to blend. Black ink is carbon-based and extremely stable. It may soften but it rarely disappears or turns unrecognizable. Color pigments — especially reds, oranges, pastels, and whites — are more complex chemically and far more susceptible to UV breakdown.</p>
+
+      <h2>What UV Actually Does</h2>
+      <p>Ultraviolet radiation from the sun breaks down the molecular chains in color pigments. A bright red tattoo exposed to consistent sun without SPF protection will oxidize — shifting toward a dull orange-brown over years. A black and grey piece exposed to the same sun will soften but remain recognizable and often still beautiful.</p>
+
+      <h2>What This Means for You</h2>
+      <ul>
+        <li>Black and grey is the most forgiving choice for high-sun environments like Arizona</li>
+        <li>If you choose color — commit to SPF 50+ for life on that area</li>
+        <li>Placement matters — hands, feet, and areas with constant friction fade fastest regardless of style</li>
+        <li>Artist technique matters — ink packed correctly at the right depth lasts longer period</li>
+      </ul>
+
+      <p>After 30 years I still reach for black and grey first because I know how it will look in 20 years. That is the mark of work I am proud of — not just how it looks walking out the door but how it looks when your grandkids ask about it.</p>
+    `
+  },
+  post5: {
+    cat:'Faith', catClass:'cat-faith', author:'Pelon', date:'May 2026',
+    title:"Why We Named It New Beginnings — Pelon's Story",
+    body:`
+      <p>The name was not a marketing decision. It was not chosen because it sounded good or tested well. It was chosen because it is the truest thing I know about my own life. And if you know anything about me — you know my life needed a new beginning.</p>
+
+      <h2>Where I Came From</h2>
+      <p>I am not going to lay out every detail here because some things are between a man and God. What I will tell you is that I walked through fire. I made decisions I cannot undo. I went places and did things that should have ended me. And through all of it — through the darkest parts — there was something that would not let me go.</p>
+
+      <h2>The Verse</h2>
+      <p>2 Corinthians 5:17: "Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here."</p>
+
+      <p>I read that verse at a point in my life when I did not know if there was anything left worth building. And something in it cracked me open. The idea that the old could actually be gone. That new was not just possible but promised. That is not a small thing. That is everything.</p>
+
+      <h2>Why Tattooing</h2>
+      <p>I tattoo what God delivered me from and what He is calling me toward. Every piece is a testimony. When someone comes to me with a piece that marks a transformation — surviving something, honoring someone, declaring who they are — I understand that on a level that goes beyond technique. I have lived that.</p>
+
+      <blockquote>"I tattoo what God delivered me from and what He's calling me toward. Every piece is a testimony."</blockquote>
+
+      <h2>What New Beginnings Is</h2>
+      <p>It is a tattoo studio. And it is more than that. It is a place where people come to mark their stories — good and hard and everything in between. It is a family business built on faith and the belief that transformation is real. That the old can go. That new can come.</p>
+
+      <p>That is why we named it New Beginnings. Because that is what we are.</p>
+    `
+  },
+  post6: {
+    cat:'Education', catClass:'cat-education', author:'Pelon', date:'May 2026',
+    title:'The Truth About Tattoo Aftercare — What Actually Matters',
+    body:`
+      <p>I have watched thousands of tattoos heal over 30 years. I have seen perfect work get destroyed by bad aftercare and I have seen average work hold up beautifully because the client took care of it. Aftercare is not optional. It is the second half of the tattoo process.</p>
+
+      <h2>The Two Things That Matter Most</h2>
+      <p>If I could tell you only two things about aftercare it would be these: keep it clean and keep it moisturized. Everything else is secondary. Clean skin does not get infected. Moisturized skin heals evenly. Those two things done consistently will take you most of the way there.</p>
+
+      <h2>What Actually Causes Problems</h2>
+      <ul>
+        <li>Picking and peeling — this is the number one reason tattoos heal poorly. The peeling skin is part of the healing process. Let it fall off naturally.</li>
+        <li>Over-moisturizing — yes this is real. Too much Aquaphor suffocates the skin and can push ink out. Thin layer. Just enough to keep it from cracking.</li>
+        <li>Sun exposure — even one bad sunburn on a fresh tattoo can pull ink out of the skin permanently.</li>
+        <li>Soaking — pools, oceans, baths. No soaking for at least two weeks. Showers are fine.</li>
+        <li>Tight clothing rubbing on fresh ink — friction during healing causes uneven settling.</li>
+      </ul>
+
+      <h2>What the Marketing Gets Wrong</h2>
+      <p>There are a hundred tattoo-specific aftercare products. Some are great. Most are fine. None of them are magic. Plain unscented Lubriderm or Aveeno does the same job as most specialty balms at a fraction of the cost. What matters is consistency — not the brand.</p>
+
+      <p>Take care of your tattoo. It took real work to put it there. Give it the same respect on the way out.</p>
+    `
+  },
+  post7: {
+    cat:'Artist Spotlight', catClass:'cat-artist', author:'Mousie', date:'May 2026',
+    title:"Mousie's Gothic World — How Dark Surrealism Found a Home at NBTS",
+    body:`
+      <p>I did not set out to be a gothic tattoo artist. I set out to make art that felt true. And what feels true to me lives in shadow — in the space between beautiful and unsettling, between sacred and dark. Somewhere in that space is where my work lives.</p>
+
+      <h2>What Cyber-Sigilism Actually Is</h2>
+      <p>People ask me about this a lot. Cyber-sigilism is essentially sacred geometry and sigil work fused with digital and cyberpunk aesthetics. It looks like circuitry that has been grown organically — technical but alive. I love it because it sits outside of every tradition while drawing from all of them.</p>
+
+      <h2>Growing Up at NBTS</h2>
+      <p>I grew up watching my dad tattoo. Pelon's work is rooted in Chicano tradition and realism — completely different from what I do. But the foundation he gave me is the same: care about every line. Respect the permanence. Know that you are putting something on a person that will be there when you are both gone.</p>
+
+      <blockquote>"I turn bold concepts into striking, custom body art. Whether you're looking for a custom piece or wanting to grab some flash — let's collaborate."</blockquote>
+
+      <h2>What I Am Building</h2>
+      <p>My flash drop is coming. Gothic pieces, dark surrealism, some Chicano work with my own edge on it. If you have been sitting on a concept that feels too dark or too weird for other artists — that is exactly the kind of conversation I want to have.</p>
+
+      <p>Come find me at NBTS. The door is open.</p>
+    `
+  }
+};
+
+// ── OPEN POST ──
+function openPost(id) {
+  const p = posts[id];
+  if(!p) return;
+  document.getElementById('pmCat').textContent = p.cat;
+  document.getElementById('pmCat').className = `pm-cat ${p.catClass}`;
+  document.getElementById('pmTitle').textContent = p.title;
+  document.getElementById('pmAuthor').textContent = p.author;
+  document.getElementById('pmDate').textContent = p.date;
+  document.getElementById('pmBody').innerHTML = p.body;
+  document.getElementById('postModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  window.scrollTo(0,0);
+}
+
+function closePost() {
+  document.getElementById('postModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── FILTER ──
+function filterPosts(cat, btn) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilter(cat);
+}
+
+function filterPostsFromSidebar(cat) {
+  document.querySelectorAll('.cat-btn').forEach(b => {
+    b.classList.remove('active');
+    if(b.textContent.toLowerCase().includes(cat.toLowerCase().replace('-',' '))) b.classList.add('active');
+  });
+  applyFilter(cat);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function applyFilter(cat) {
+  const featured = document.querySelector('.featured-post');
+  const cards = document.querySelectorAll('.post-card');
+  if(cat === 'all') {
+    featured.style.display = '';
+    cards.forEach(c => c.classList.remove('hidden'));
+  } else {
+    featured.style.display = featured.dataset.cat === cat ? '' : 'none';
+    cards.forEach(c => c.classList.toggle('hidden', c.dataset.cat !== cat));
+  }
+}
+
+// ESC to close modal
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closePost(); });
+</script>
+</body>
+</html>
