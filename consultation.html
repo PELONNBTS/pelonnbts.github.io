@@ -628,44 +628,37 @@ function showFiles(input, targetId) {
   }
 }
 
-function submitConsult(e) {
+async function submitConsult(e) {
   e.preventDefault();
-  const data = new FormData(document.getElementById('consultForm'));
+  const form = document.getElementById('consultForm');
+  const btn = form.querySelector('.btn-submit');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
 
-  // Build email body
-  const fields = [
-    ['Name', `${data.get('firstName')} ${data.get('lastName')}`],
-    ['Email', data.get('email')],
-    ['Phone', data.get('phone')],
-    ['Artist', data.get('artist')],
-    ['Experience', data.get('experience')],
-    ['Style', data.get('style')],
-    ['Concept', data.get('concept')],
-    ['Cover-Up', data.get('coverup')],
-    ['Creative Freedom', data.get('freedom')],
-    ['Placement', data.get('placement')],
-    ['Size', data.get('size')],
-    ['Placement Notes', data.get('placementNotes')],
-    ['Inspiration', data.get('inspirationNotes')],
-    ['Other Notes', data.get('otherNotes')],
-    ['Timing', data.get('timing')],
-    ['Contact Method', data.get('contactMethod')],
-    ['Budget', data.get('budget')],
-  ];
+  const data = new FormData(form);
 
-  const body = fields.map(([k,v]) => v ? `${k}: ${v}` : '').filter(Boolean).join('%0A');
-  const name = `${data.get('firstName')} ${data.get('lastName')}`;
+  try {
+    const res = await fetch('https://formspree.io/f/xqejyqdz', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
 
-  // Show success
-  document.getElementById('consultForm').style.display = 'none';
-  document.getElementById('successWrap').style.display = 'block';
-  document.querySelector('.form-progress').style.display = 'none';
-  window.scrollTo({top: 0, behavior: 'smooth'});
-
-  // Open email
-  setTimeout(() => {
-    window.location.href = `mailto:nbtstucson@gmail.com?subject=Consultation Request from ${name}&body=${body}`;
-  }, 600);
+    if(res.ok) {
+      form.style.display = 'none';
+      document.getElementById('successWrap').style.display = 'block';
+      document.querySelector('.form-progress').style.display = 'none';
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    } else {
+      btn.textContent = 'Submit Consultation Request →';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or email us at nbtstucson@gmail.com');
+    }
+  } catch(err) {
+    btn.textContent = 'Submit Consultation Request →';
+    btn.disabled = false;
+    alert('Connection error. Please try again or email us at nbtstucson@gmail.com');
+  }
 }
 
 // Checkbox visual on load
