@@ -630,17 +630,53 @@ function showFiles(input, targetId) {
 
 async function submitConsult() {
   const form = document.getElementById('consultForm');
-  const btn = form.querySelector('.btn-submit');
+  const btn = document.querySelector('.btn-submit');
+
+  // Get required fields manually
+  const firstName = form.querySelector('[name="firstName"]').value.trim();
+  const lastName = form.querySelector('[name="lastName"]').value.trim();
+  const email = form.querySelector('[name="email"]').value.trim();
+  const phone = form.querySelector('[name="phone"]').value.trim();
+
+  if(!firstName || !lastName || !email || !phone) {
+    alert('Please go back to Step 1 and fill in your name, email and phone number.');
+    return;
+  }
+
   btn.textContent = 'Sending...';
   btn.disabled = true;
 
-  const data = new FormData(form);
+  // Build plain object from form — avoids file upload issues
+  const payload = {
+    name: `${firstName} ${lastName}`,
+    email: email,
+    phone: phone,
+    artist: form.querySelector('[name="artist"]').value,
+    experience: form.querySelector('input[name="experience"]:checked')?.value || 'Not specified',
+    skinTone: form.querySelector('input[name="skinTone"]:checked')?.value || 'Not specified',
+    style: form.querySelector('input[name="style"]:checked')?.value || 'Not specified',
+    concept: form.querySelector('[name="concept"]').value,
+    coverup: form.querySelector('input[name="coverup"]:checked')?.value || 'Not specified',
+    freedom: form.querySelector('input[name="freedom"]:checked')?.value || 'Not specified',
+    placement: form.querySelector('input[name="placement"]:checked')?.value || 'Not specified',
+    size: form.querySelector('input[name="size"]:checked')?.value || 'Not specified',
+    placementNotes: form.querySelector('[name="placementNotes"]').value,
+    inspirationNotes: form.querySelector('[name="inspirationNotes"]').value,
+    otherNotes: form.querySelector('[name="otherNotes"]').value,
+    timing: form.querySelector('input[name="timing"]:checked')?.value || 'Not specified',
+    contactMethod: form.querySelector('input[name="contactMethod"]:checked')?.value || 'Not specified',
+    budget: form.querySelector('input[name="budget"]:checked')?.value || 'Not specified',
+    _subject: `New Consultation Request from ${firstName} ${lastName}`,
+  };
 
   try {
     const res = await fetch('https://formspree.io/f/xqejyqdz', {
       method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
+      body: JSON.stringify(payload),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
     });
 
     if(res.ok) {
@@ -649,14 +685,17 @@ async function submitConsult() {
       document.querySelector('.form-progress').style.display = 'none';
       window.scrollTo({top: 0, behavior: 'smooth'});
     } else {
+      const errData = await res.json();
+      console.error('Formspree error:', errData);
       btn.textContent = 'Submit Consultation Request →';
       btn.disabled = false;
-      alert('Something went wrong. Please try again or email us at nbtstucson@gmail.com');
+      alert('Submission failed. Please email us directly at nbtstucson@gmail.com with your consultation details.');
     }
   } catch(err) {
+    console.error('Network error:', err);
     btn.textContent = 'Submit Consultation Request →';
     btn.disabled = false;
-    alert('Connection error. Please try again or email us at nbtstucson@gmail.com');
+    alert('Connection error. Please email us at nbtstucson@gmail.com');
   }
 }
 
