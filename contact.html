@@ -354,34 +354,33 @@ function showFileName(input) {
   }
 }
 
-function submitForm(e) {
+async function submitForm(e) {
   e.preventDefault();
   const form = document.getElementById('contactForm');
   const btn = form.querySelector('.submit-btn');
-
-  // Collect form data
-  const data = new FormData(form);
-  const name = data.get('firstName') + ' ' + data.get('lastName');
-  const email = data.get('email');
-  const phone = data.get('phone') || 'Not provided';
-  const subject = data.get('subject');
-  const artist = data.get('artist') || 'No preference';
-  const message = data.get('message');
-  const source = data.get('source') || 'Not specified';
-
-  // Build mailto link as fallback
-  const mailBody = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0ASubject: ${subject}%0APreferred Artist: ${artist}%0AHow they heard: ${source}%0A%0AMessage:%0A${encodeURIComponent(message)}`;
-
   btn.textContent = 'Sending...';
   btn.disabled = true;
 
-  // Simulate send then show success
-  setTimeout(() => {
-    form.style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
-    // Open email client as backup
-    window.location.href = `mailto:nbtstucson@gmail.com?subject=NBTS Contact Form: ${subject}&body=${mailBody}`;
-  }, 800);
+  try {
+    const res = await fetch('https://formspree.io/f/xqejyqdz', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if(res.ok) {
+      form.style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    } else {
+      btn.textContent = 'Send Message →';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or email us directly at nbtstucson@gmail.com');
+    }
+  } catch(err) {
+    btn.textContent = 'Send Message →';
+    btn.disabled = false;
+    alert('Connection error. Please try again or email us directly at nbtstucson@gmail.com');
+  }
 }
 </script>
 </body>
