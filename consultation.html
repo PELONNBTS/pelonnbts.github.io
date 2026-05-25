@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="New Beginnings Tattoo Studio Tucson AZ — Tattoo Consultation Request. Tell us about your custom piece and we will reach out to plan your tattoo."/>
+<title>Consultation Request | New Beginnings Tattoo Studio Tucson AZ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#050605;color:#D8CFA8;font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{text-decoration:none;}
+:root{
+  --gold:#C9A84C;--gold-lt:#F0D080;--gold-dim:#8B6E2A;--gold-pale:#E8D5A0;
+  --green:#1A7A3A;--green-b:#22A84E;--green-deep:#071A0D;
+  --black:#050605;--char:#0C0F0C;--dark:#111411;--smoke:#181C18;
+  --bone:#D8CFA8;--parch:#EDE0BB;--muted:#5A6050;
+}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:1000;background:rgba(5,6,5,.97);border-bottom:1px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:66px;backdrop-filter:blur(10px);}
+.nav-logo{font-family:'Cinzel Decorative',serif;font-size:15px;color:var(--gold);letter-spacing:2px;font-weight:700;}
+.nav-back{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.nav-back:hover{color:var(--gold);}
+.nav-back::before{content:'←';}
+.nav-book{padding:9px 20px;border:1px solid var(--green);color:var(--green-b);font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all .2s;}
+.nav-book:hover{background:var(--green);color:#050605;}
+
+/* HEADER */
+.page-header{background:var(--char);border-bottom:1px solid rgba(34,168,78,.2);padding:52px 40px 44px;text-align:center;position:relative;overflow:hidden;}
+.page-header::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);}
+.page-header::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(34,168,78,.05) 0%,transparent 70%);pointer-events:none;}
+.sec-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;position:relative;}
+.page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(24px,4vw,42px);color:var(--gold);font-weight:700;line-height:1.2;margin-bottom:14px;position:relative;}
+.page-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--parch);opacity:.88;max-width:580px;margin:0 auto;line-height:1.72;position:relative;}
+
+/* STEPS INDICATOR */
+.steps-bar{background:var(--black);border-bottom:1px solid rgba(201,168,76,.08);padding:20px 40px;}
+.steps-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:0;}
+.step{display:flex;align-items:center;gap:10px;flex:1;}
+.step-num{width:32px;height:32px;border-radius:50%;border:.5px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:11px;color:var(--muted);flex-shrink:0;transition:all .3s;}
+.step.active .step-num{background:var(--green);border-color:var(--green-b);color:var(--gold-pale);}
+.step.done .step-num{background:rgba(34,168,78,.15);border-color:var(--green-b);color:var(--green-b);}
+.step.done .step-num::after{content:'✓';}
+.step-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;transition:color .3s;}
+.step.active .step-label{color:var(--gold);}
+.step.done .step-label{color:var(--green-b);}
+.step-line{flex:1;height:.5px;background:rgba(201,168,76,.1);margin:0 8px;max-width:60px;}
+.step-line.done{background:var(--green-b);}
+@media(max-width:600px){.step-label{display:none;}.step-line{max-width:20px;}}
+
+/* MAIN */
+.main-wrap{max-width:760px;margin:0 auto;padding:48px 40px 80px;}
+@media(max-width:600px){.main-wrap{padding:32px 20px 60px;}}
+
+/* FORM SECTIONS */
+.form-section{display:none;}
+.form-section.active{display:block;}
+
+.section-header{margin-bottom:28px;}
+.section-num{font-family:'Cinzel',serif;font-size:9px;letter-spacing:5px;color:var(--green-b);text-transform:uppercase;margin-bottom:6px;}
+.section-title{font-family:'Cinzel Decorative',serif;font-size:clamp(20px,3vw,28px);color:var(--gold);font-weight:700;margin-bottom:8px;}
+.section-desc{font-family:'Crimson Pro',serif;font-style:italic;font-size:16px;color:var(--bone);opacity:.72;line-height:1.7;}
+
+/* FORM ELEMENTS */
+.form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
+.form-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;}
+.form-label span{color:var(--green-b);margin-left:3px;}
+.form-sublabel{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;color:var(--muted);margin-top:-4px;}
+.form-input,.form-select,.form-textarea{
+  background:var(--dark);border:.5px solid rgba(201,168,76,.2);
+  color:var(--bone);font-family:'Crimson Pro',serif;font-size:16px;
+  padding:14px 18px;outline:none;transition:border-color .2s;width:100%;
+}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--green-b);}
+.form-textarea{resize:vertical;min-height:130px;line-height:1.65;}
+.form-select{
+  appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+}
+.form-select option{background:var(--dark);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:500px){.form-row{grid-template-columns:1fr;}}
+
+/* RADIO / CHECKBOX GROUPS */
+.choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+@media(max-width:500px){.choice-grid{grid-template-columns:1fr;}}
+.choice-grid.three{grid-template-columns:1fr 1fr 1fr;}
+@media(max-width:500px){.choice-grid.three{grid-template-columns:1fr 1fr;}}
+
+.choice-item{position:relative;}
+.choice-item input{position:absolute;opacity:0;width:0;height:0;}
+.choice-label{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--dark);border:.5px solid rgba(201,168,76,.12);cursor:pointer;transition:all .2s;line-height:1.4;}
+.choice-label:hover{border-color:rgba(34,168,78,.3);}
+.choice-item input:checked + .choice-label{border-color:var(--green-b);background:rgba(34,168,78,.08);}
+.choice-box{width:18px;height:18px;border:.5px solid rgba(201,168,76,.3);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px;transition:all .2s;}
+.choice-item input:checked + .choice-label .choice-box{background:var(--green-b);border-color:var(--green-b);color:#050605;font-size:11px;}
+.choice-text{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.85;}
+.choice-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:12px;color:var(--muted);display:block;margin-top:2px;}
+
+/* RANGE SLIDER */
+.slider-wrap{display:flex;flex-direction:column;gap:10px;}
+.slider-labels{display:flex;justify-content:space-between;font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+.slider-val{font-family:'Cinzel Decorative',serif;font-size:28px;color:var(--gold);text-align:center;}
+input[type=range]{
+  -webkit-appearance:none;height:6px;border-radius:3px;
+  background:linear-gradient(90deg,var(--green-b) 50%,rgba(201,168,76,.2) 50%);
+  outline:none;cursor:pointer;width:100%;
+}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;background:var(--gold);border-radius:50%;cursor:pointer;box-shadow:0 0 10px rgba(201,168,76,.3);}
+
+/* BODY MAP PLACEMENT */
+.placement-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
+@media(max-width:500px){.placement-grid{grid-template-columns:1fr 1fr;}}
+.placement-item{position:relative;}
+.placement-item input{position:absolute;opacity:0;width:0;height:0;}
+.placement-label{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:var(--dark);border:.5px solid rgba(201,168,76,.12);cursor:pointer;transition:all .2s;text-align:center;}
+.placement-label:hover{border-color:rgba(34,168,78,.3);}
+.placement-item input:checked + .placement-label{border-color:var(--green-b);background:rgba(34,168,78,.08);}
+.placement-icon{font-size:22px;}
+.placement-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;line-height:1.3;}
+
+/* FILE UPLOAD */
+.file-upload{border:.5px dashed rgba(201,168,76,.25);background:rgba(201,168,76,.02);padding:28px;text-align:center;cursor:pointer;transition:all .2s;position:relative;margin-bottom:8px;}
+.file-upload:hover{border-color:var(--green-b);background:rgba(34,168,78,.04);}
+.file-upload input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+.fu-icon{font-size:28px;opacity:.3;margin-bottom:8px;}
+.fu-txt{font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-bottom:4px;}
+.fu-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;color:var(--muted);}
+.fu-files{font-family:'Crimson Pro',serif;font-size:14px;color:var(--green-b);margin-top:8px;display:none;}
+
+/* SKIN TONE SELECTOR */
+.skin-grid{display:flex;gap:8px;flex-wrap:wrap;}
+.skin-item{position:relative;}
+.skin-item input{position:absolute;opacity:0;width:0;height:0;}
+.skin-swatch{width:44px;height:44px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:all .2s;display:flex;align-items:center;justify-content:center;}
+.skin-item input:checked + .skin-swatch{border-color:var(--gold);box-shadow:0 0 14px rgba(201,168,76,.4);}
+.skin-swatch::after{content:'✓';color:rgba(0,0,0,.6);font-size:14px;font-weight:bold;opacity:0;transition:opacity .2s;}
+.skin-item input:checked + .skin-swatch::after{opacity:1;}
+
+/* PROGRESS BAR */
+.form-progress{height:3px;background:rgba(201,168,76,.08);margin-bottom:36px;border-radius:2px;overflow:hidden;}
+.form-progress-fill{height:100%;background:linear-gradient(90deg,var(--green-b),var(--gold));border-radius:2px;transition:width .4s ease;}
+
+/* NAVIGATION BUTTONS */
+.btn-row{display:flex;gap:12px;justify-content:space-between;align-items:center;margin-top:36px;padding-top:24px;border-top:.5px solid rgba(201,168,76,.1);}
+.btn-prev{padding:14px 28px;background:transparent;color:var(--bone);font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;border:.5px solid rgba(201,168,76,.2);cursor:pointer;transition:all .2s;}
+.btn-prev:hover{border-color:var(--gold);color:var(--gold);}
+.btn-next,.btn-submit{padding:14px 36px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;border:1px solid var(--green-b);cursor:pointer;font-weight:700;transition:all .3s;}
+.btn-next:hover,.btn-submit:hover{background:var(--green-b);color:#050605;box-shadow:0 0 24px rgba(34,168,78,.3);}
+.btn-submit{background:var(--green);min-width:200px;}
+
+/* DIVIDER */
+.form-divider{height:.5px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.2),transparent);margin:28px 0;}
+
+/* INFO BOX */
+.info-box{background:rgba(34,168,78,.05);border:.5px solid rgba(34,168,78,.2);border-left:3px solid var(--green-b);padding:16px 20px;margin-bottom:20px;}
+.info-box p{font-family:'Crimson Pro',serif;font-style:italic;font-size:14px;color:var(--bone);opacity:.8;line-height:1.7;}
+
+/* SUCCESS */
+.success-wrap{display:none;text-align:center;padding:60px 40px;}
+.success-icon{font-size:56px;margin-bottom:20px;}
+.success-title{font-family:'Cinzel Decorative',serif;font-size:clamp(22px,4vw,32px);color:var(--gold);font-weight:700;margin-bottom:14px;}
+.success-text{font-family:'Crimson Pro',serif;font-style:italic;font-size:18px;color:var(--parch);opacity:.85;max-width:500px;margin:0 auto 32px;line-height:1.8;}
+.success-next{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:480px;margin:0 auto;}
+@media(max-width:500px){.success-next{grid-template-columns:1fr;}}
+.sn-card{background:var(--dark);border:.5px solid rgba(201,168,76,.15);padding:20px;text-align:center;transition:all .3s;}
+.sn-card:hover{border-color:var(--green-b);}
+.sn-icon{font-size:24px;margin-bottom:8px;}
+.sn-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;}
+.sn-desc{font-family:'Crimson Pro',serif;font-size:13px;color:var(--bone);opacity:.65;}
+
+/* FOOTER */
+.footer{background:var(--green-deep);border-top:1px solid rgba(34,168,78,.2);padding:36px 40px;text-align:center;}
+.f-logo{font-family:'Cinzel Decorative',serif;font-size:13px;color:var(--gold-dim);letter-spacing:2px;margin-bottom:6px;}
+.f-tag{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
+.socials{display:flex;gap:8px;justify-content:center;}
+.soc{width:34px;height:34px;border:.5px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:9px;color:var(--muted);transition:all .2s;text-decoration:none;}
+.soc:hover{border-color:var(--green-b);color:var(--green-b);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">🦁 NBTS</div>
+  <a href="index.html" class="nav-back">Back to Main Site</a>
+  <a href="contact.html" class="nav-book">Quick Contact</a>
+</nav>
+
+<div class="page-header">
+  <div class="sec-label">Plan Your Piece</div>
+  <div class="page-title">Tattoo Consultation Request</div>
+  <p class="page-sub">Tell us everything about your vision. The more detail you give us the better we can prepare for your consultation — so we show up ready to build something great together.</p>
+</div>
+
+<!-- STEPS -->
+<div class="steps-bar">
+  <div class="steps-inner">
+    <div class="step active" id="step-indicator-1">
+      <div class="step-num">1</div>
+      <div class="step-label">About You</div>
+    </div>
+    <div class="step-line" id="line-1"></div>
+    <div class="step" id="step-indicator-2">
+      <div class="step-num">2</div>
+      <div class="step-label">The Tattoo</div>
+    </div>
+    <div class="step-line" id="line-2"></div>
+    <div class="step" id="step-indicator-3">
+      <div class="step-num">3</div>
+      <div class="step-label">Placement</div>
+    </div>
+    <div class="step-line" id="line-3"></div>
+    <div class="step" id="step-indicator-4">
+      <div class="step-num">4</div>
+      <div class="step-label">References</div>
+    </div>
+    <div class="step-line" id="line-4"></div>
+    <div class="step" id="step-indicator-5">
+      <div class="step-num">5</div>
+      <div class="step-label">Scheduling</div>
+    </div>
+  </div>
+</div>
+
+<div class="main-wrap">
+
+  <!-- PROGRESS BAR -->
+  <div class="form-progress"><div class="form-progress-fill" id="progressFill" style="width:20%"></div></div>
+
+  <form id="consultForm" onsubmit="submitConsult(event)">
+
+    <!-- ═══ STEP 1 — ABOUT YOU ═══ -->
+    <div class="form-section active" id="section1">
+      <div class="section-header">
+        <div class="section-num">Step 01 of 05</div>
+        <div class="section-title">Tell Us About Yourself</div>
+        <p class="section-desc">Basic contact info so we can reach you to confirm your consultation.</p>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First Name <span>*</span></label>
+          <input class="form-input" type="text" name="firstName" placeholder="Your first name" required/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last Name <span>*</span></label>
+          <input class="form-input" type="text" name="lastName" placeholder="Your last name" required/>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Email Address <span>*</span></label>
+          <input class="form-input" type="email" name="email" placeholder="your@email.com" required/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number <span>*</span></label>
+          <input class="form-input" type="tel" name="phone" placeholder="(520) 000-0000" required/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Preferred Artist <span>*</span></label>
+        <select class="form-select" name="artist" required>
+          <option value="">Select your preferred artist...</option>
+          <option value="Pelon">Pelon — Master Artist · $180/hr · Black and Grey, Chicano, Realism</option>
+          <option value="Eric">Eric — Apprentice · $100/hr · Black and Grey, Fine Line, Realism</option>
+          <option value="Mousie">Mousie — Apprentice · $100/hr · Gothic, Dark Surrealism, Cyber-Sigilism</option>
+          <option value="Roo">Roo — Apprentice · $80/hr · All Styles, Bold Lines</option>
+          <option value="No preference">No preference — Let NBTS decide who is best for my piece</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Tattoo Experience</label>
+        <p class="form-sublabel">Helps us calibrate the consultation conversation</p>
+        <div class="choice-grid">
+          <div class="choice-item">
+            <input type="radio" name="experience" id="exp1" value="First tattoo"/>
+            <label class="choice-label" for="exp1"><div class="choice-box"></div><div class="choice-text">First Tattoo <span class="choice-sub">Never been tattooed</span></div></label>
+          </div>
+          <div class="choice-item">
+            <input type="radio" name="experience" id="exp2" value="A few tattoos"/>
+            <label class="choice-label" for="exp2"><div class="choice-box"></div><div class="choice-text">A Few Tattoos <span class="choice-sub">1 to 5 pieces</span></div></label>
+          </div>
+          <div class="choice-item">
+            <input type="radio" name="experience" id="exp3" value="Experienced"/>
+            <label class="choice-label" for="exp3"><div class="choice-box"></div><div class="choice-text">Experienced <span class="choice-sub">6 or more pieces</span></div></label>
+          </div>
+          <div class="choice-item">
+            <input type="radio" name="experience" id="exp4" value="Heavily tattooed"/>
+            <label class="choice-label" for="exp4"><div class="choice-box"></div><div class="choice-text">Heavily Tattooed <span class="choice-sub">Working on a sleeve or suit</span></div></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Your Skin Tone</label>
+        <p class="form-sublabel">Helps us choose the right ink saturation and color choices for your skin</p>
+        <div class="skin-grid">
+          <div class="skin-item"><input type="radio" name="skinTone" id="sk1" value="Very Fair"/><label class="skin-swatch" for="sk1" style="background:#FDDCB5;"></label></div>
+          <div class="skin-item"><input type="radio" name="skinTone" id="sk2" value="Fair"/><label class="skin-swatch" for="sk2" style="background:#EFC98E;"></label></div>
+          <div class="skin-item"><input type="radio" name="skinTone" id="sk3" value="Medium"/><label class="skin-swatch" for="sk3" style="background:#C68642;"></label></div>
+          <div class="skin-item"><input type="radio" name="skinTone" id="sk4" value="Olive"/><label class="skin-swatch" for="sk4" style="background:#A0693A;"></label></div>
+          <div class="skin-item"><input type="radio" name="skinTone" id="sk5" value="Dark"/><label class="skin-swatch" for="sk5" style="background:#7C4A1E;"></label></div>
+          <div class="skin-item"><input type="radio" name="skinTone" id="sk6" value="Very Dark"/><label class="skin-swatch" for="sk6" style="background:#4A2508;"></label></div>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <div></div>
+        <button type="button" class="btn-next" onclick="goToStep(2)">Next — The Tattoo →</button>
+      </div>
+    </div>
+
+    <!-- ═══ STEP 2 — THE TATTOO ═══ -->
+    <div class="form-section" id="section2">
+      <div class="section-header">
+        <div class="section-num">Step 02 of 05</div>
+        <div class="section-title">Tell Us About Your Tattoo</div>
+        <p class="section-desc">The more specific you are the better we can prepare. Do not hold back — every detail helps.</p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Tattoo Style <span>*</span></label>
+        <div class="choice-grid three">
+          <div class="choice-item"><input type="radio" name="style" id="st1" value="Black and Grey"/><label class="choice-label" for="st1"><div class="choice-box"></div><div class="choice-text">Black and Grey</div></label></div>
+          <div class="choice-item"><input type="radio" name="style" id="st2" value="Chicano"/><label class="choice-label" for="st2"><div class="choice-box"></div><div class="choice-text">Chicano</div></label></div>
+          <div class="choice-item"><input type="radio" name="style" id="st3" value="Realism"/><label class="choice-label" for="st3"><div class="choice-box"></div><div class="choice-text">Realism</div></label></div>
+          <div class="choice-item"><input type="radio" name="style" id="st4" value="Color"/><label class="choice-label" for="st4"><div class="choice-box"></div><div class="choice-text">Color</div></label></div>
+          <div class="choice-item"><input type="radio" name="style" id="st5" value="Gothic / Dark Surrealism"/><label class="choice-label" for="st5"><div class="choice-box"></div><div class="choice-text">Gothic / Dark Surrealism</div></label></div>
+          <div class="choice-item"><input type="radio" name="style" id="st6" value="Cyber-Sigilism"/><label class="choice-label" for="st6"><div class="choice-box"></div><div class="choice-text">Cyber-Sigilism</div></label></div>
+          <div class="choice-item"><input type="radio" name="style" id="st7" value="Fine Line"/><label class="choice-label" for="st7"><div class="choice-box"></div><div class="choice-text">Fine Line</div></label></div>
+          <div class="choice-item"><input type="radio" name="style" id="st8" value="Traditional"/><label class="choice-label" for="st8"><div class="choice-box"></div><div class="choice-text">Traditional</div></label></div>
+          <div class="choice-item"><input type="radio" name="style" id="st9" value="Not sure yet"/><label class="choice-label" for="st9"><div class="choice-box"></div><div class="choice-text">Not Sure Yet</div></label></div>
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+
+      <div class="form-group">
+        <label class="form-label">Describe Your Concept <span>*</span></label>
+        <p class="form-sublabel">Subject, theme, meaning, mood — tell us everything that is in your head</p>
+        <textarea class="form-textarea" name="concept" placeholder="Example: I want a portrait of my grandmother on my forearm. She passed last year and I want something that captures her warmth — not sad, but strong. She always wore a floral dress. I want black and grey realism with maybe some subtle flowers around her..." required style="min-height:160px;"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Is This a Cover-Up?</label>
+        <div class="choice-grid">
+          <div class="choice-item"><input type="radio" name="coverup" id="cu1" value="No"/><label class="choice-label" for="cu1"><div class="choice-box"></div><div class="choice-text">No — Fresh Skin</div></label></div>
+          <div class="choice-item"><input type="radio" name="coverup" id="cu2" value="Yes — full cover-up"/><label class="choice-label" for="cu2"><div class="choice-box"></div><div class="choice-text">Yes — Full Cover-Up <span class="choice-sub">Need to hide existing tattoo</span></div></label></div>
+          <div class="choice-item"><input type="radio" name="coverup" id="cu3" value="Yes — rework/addition"/><label class="choice-label" for="cu3"><div class="choice-box"></div><div class="choice-text">Rework or Addition <span class="choice-sub">Existing tattoo I want to improve</span></div></label></div>
+          <div class="choice-item"><input type="radio" name="coverup" id="cu4" value="Not sure"/><label class="choice-label" for="cu4"><div class="choice-box"></div><div class="choice-text">Not Sure <span class="choice-sub">Want artist opinion</span></div></label></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Creative Freedom</label>
+        <p class="form-sublabel">How much do you want the artist to interpret and add their own vision?</p>
+        <div class="choice-grid">
+          <div class="choice-item"><input type="radio" name="freedom" id="fr1" value="Very specific — I know exactly what I want"/><label class="choice-label" for="fr1"><div class="choice-box"></div><div class="choice-text">Very Specific <span class="choice-sub">I know exactly what I want</span></div></label></div>
+          <div class="choice-item"><input type="radio" name="freedom" id="fr2" value="General direction — some artist input welcome"/><label class="choice-label" for="fr2"><div class="choice-box"></div><div class="choice-text">General Direction <span class="choice-sub">Some artist input welcome</span></div></label></div>
+          <div class="choice-item"><input type="radio" name="freedom" id="fr3" value="Open — I trust the artist completely"/><label class="choice-label" for="fr3"><div class="choice-box"></div><div class="choice-text">Fully Open <span class="choice-sub">I trust the artist completely</span></div></label></div>
+          <div class="choice-item"><input type="radio" name="freedom" id="fr4" value="Collaborative — lets design together"/><label class="choice-label" for="fr4"><div class="choice-box"></div><div class="choice-text">Collaborative <span class="choice-sub">Let's design it together</span></div></label></div>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button type="button" class="btn-prev" onclick="goToStep(1)">← Back</button>
+        <button type="button" class="btn-next" onclick="goToStep(3)">Next — Placement →</button>
+      </div>
+    </div>
+
+    <!-- ═══ STEP 3 — PLACEMENT ═══ -->
+    <div class="form-section" id="section3">
+      <div class="section-header">
+        <div class="section-num">Step 03 of 05</div>
+        <div class="section-title">Placement and Size</div>
+        <p class="section-desc">Where and how big? These choices affect price, pain level, healing time, and how the design will be laid out.</p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Body Placement <span>*</span></label>
+        <p class="form-sublabel">Select the area you want your tattoo — choose the closest match</p>
+        <div class="placement-grid">
+          <div class="placement-item"><input type="radio" name="placement" id="pl1" value="Upper Arm / Bicep"/><label class="placement-label" for="pl1"><span class="placement-icon">💪</span><span class="placement-name">Upper Arm / Bicep</span></label></div>
+          <div class="placement-item"><input type="radio" name="placement" id="pl2" value="Forearm"/><label class="placement-label" for="pl2"><span class="placement-icon">🦾</span><span class="placement-name">Forearm</span></label></div>
+          <div class="placement-item"><input type="radio" name="placement" id="pl3" value="Full Sleeve"/><label class="placement-label" for="pl3"><span class="placement-icon">✨</span><span class="placement-name">Full Sleeve</span></label></div>
+          <div class="placement-item"><input type="radio" name="placement" id="pl4" value="Chest"/><label class="placement-label" for="pl4"><span class="placement-icon">❤️</span><span class="placement-name">Chest</span></label></div>
+          <div class="placement-item"><input type="radio" name="placement" id="pl5" value="Back / Upper Back"/><label class="placement-label" for="pl5"><span class="placement-icon">🔙</span><span class="placement-name">Back / Upper Back</span></label></div>
+          <div class="placement-item"><input type="radio" name="placement" id="pl6" value="Full Back Piece"/><label class="placement-label" for="pl6"><span class="placement-icon">🗿</span><span class="placement-name">Full Back Piece</span></label></div>
+          <div class="placement-item"><input type="radio" name="placement" id="pl7" value="Ribs / Side"/><label class="placement-label" for="pl7"><span class="placement-icon">🦷</span><span class="placement-name">Ribs / Side</span></label></div>
+          <div class="placement-item"><input type="radio" name="placement" id="pl8" value="Stomach / Abdomen"/><label class="placement-label" for="pl8"><span class="placement-icon">🫃</span><span class="placement-name">Stomach</span></label></div>
+          <div class="placement-item"><input type="radio" name="placement" id="pl9" value="Thigh"/><label class="placement-label" for="pl9"><span class="placement-icon">🦵</span><span class="placement-name">Thigh</span></label></div>
+          <div class="placement-item"><input type="radio" name="placement" id="pl10" value="Calf / Shin"/><label class="placement-label" for="pl10"><span class="placement-icon">🦿</span><span class="placement-name">Calf / Shin</span></label></div>
+          <div class="placement-item"><input type="radio" name="placement" id="pl11" value="Foot / Ankle"/><label class="placement-label" for="pl11"><span class="placement-icon">🦶</span><span class="placement-name">Foot / Ankle</span></label></div>
+          <div class="placement-item"><input type="radio" name="placement" id="pl12" value="Neck / Head"/><label class="placement-label" for="pl12"><span class="placement-icon">💀</span><span class="placement-name">Neck / Head</span></label></div>
+          <div class="placement-item"><input type="radio" name="placement" id="pl13" value="Hand / Fingers"/><label class="placement-label" for="pl13"><span class="placement-icon">✋</span><span class="placement-name">Hand / Fingers</span></label></div>
+          <div class="placement-item"><input type="radio" name="placement" id="pl14" value="Hip / Lower Back"/><label class="placement-label" for="pl14"><span class="placement-icon">🍑</span><span class="placement-name">Hip / Lower Back</span></label></div>
+          <div class="placement-item"><input type="radio" name="placement" id="pl15" value="Other / Multiple Areas"/><label class="placement-label" for="pl15"><span class="placement-icon">📍</span><span class="placement-name">Other / Multiple</span></label></div>
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+
+      <div class="form-group">
+        <label class="form-label">Estimated Size</label>
+        <div class="choice-grid">
+          <div class="choice-item"><input type="radio" name="size" id="sz1" value="Tiny — under 2 inches"/><label class="choice-label" for="sz1"><div class="choice-box"></div><div class="choice-text">Tiny <span class="choice-sub">Under 2 inches</span></div></label></div>
+          <div class="choice-item"><input type="radio" name="size" id="sz2" value="Small — 2 to 4 inches"/><label class="choice-label" for="sz2"><div class="choice-box"></div><div class="choice-text">Small <span class="choice-sub">2 to 4 inches</span></div></label></div>
+          <div class="choice-item"><input type="radio" name="size" id="sz3" value="Medium — 4 to 7 inches"/><label class="choice-label" for="sz3"><div class="choice-box"></div><div class="choice-text">Medium <span class="choice-sub">4 to 7 inches</span></div></label></div>
+          <div class="choice-item"><input type="radio" name="size" id="sz4" value="Large — 7 to 12 inches"/><label class="choice-label" for="sz4"><div class="choice-box"></div><div class="choice-text">Large <span class="choice-sub">7 to 12 inches</span></div></label></div>
+          <div class="choice-item"><input type="radio" name="size" id="sz5" value="Extra Large — full limb or panel"/><label class="choice-label" for="sz5"><div class="choice-box"></div><div class="choice-text">Extra Large <span class="choice-sub">Full limb or panel</span></div></label></div>
+          <div class="choice-item"><input type="radio" name="size" id="sz6" value="Not sure — need artist guidance"/><label class="choice-label" for="sz6"><div class="choice-box"></div><div class="choice-text">Not Sure <span class="choice-sub">Need artist guidance</span></div></label></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Additional Placement Notes</label>
+        <textarea class="form-textarea" name="placementNotes" placeholder="Any specific details about placement — inside of arm vs outside, centered vs off to one side, how it connects with existing tattoos, etc." style="min-height:90px;"></textarea>
+      </div>
+
+      <div class="btn-row">
+        <button type="button" class="btn-prev" onclick="goToStep(2)">← Back</button>
+        <button type="button" class="btn-next" onclick="goToStep(4)">Next — References →</button>
+      </div>
+    </div>
+
+    <!-- ═══ STEP 4 — REFERENCES ═══ -->
+    <div class="form-section" id="section4">
+      <div class="section-header">
+        <div class="section-num">Step 04 of 05</div>
+        <div class="section-title">Reference Images and Inspiration</div>
+        <p class="section-desc">Upload anything that helps communicate your vision — tattoo photos, paintings, photos of the subject, Pinterest screenshots, anything.</p>
+      </div>
+
+      <div class="info-box">
+        <p>You can upload up to 10 images. Include tattoo style references, subject references (portrait photos, animal images etc.), color or mood references — the more context the better. Do not worry if they are imperfect.</p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Reference Images</label>
+        <div class="file-upload">
+          <input type="file" id="refImages" name="refImages" accept="image/*,.pdf" multiple onchange="showFiles(this,'refFilesName')"/>
+          <div class="fu-icon">🖼️</div>
+          <div class="fu-txt">Upload Reference Images</div>
+          <div class="fu-sub">PNG, JPG, HEIC, PDF — up to 10 files, 10MB each</div>
+          <div class="fu-files" id="refFilesName"></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Photo of Placement Area</label>
+        <p class="form-sublabel">A photo of the actual body area helps the artist plan the layout around your anatomy</p>
+        <div class="file-upload">
+          <input type="file" id="bodyPhoto" name="bodyPhoto" accept="image/*" onchange="showFiles(this,'bodyFileName')"/>
+          <div class="fu-icon">📸</div>
+          <div class="fu-txt">Upload Photo of Body Area</div>
+          <div class="fu-sub">Optional but very helpful</div>
+          <div class="fu-files" id="bodyFileName"></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Inspiration Links or Notes</label>
+        <p class="form-sublabel">Any Instagram profiles, Pinterest boards, artist names, or anything else we should look at</p>
+        <textarea class="form-textarea" name="inspirationNotes" placeholder="Example: @artist_name on Instagram, Pinterest board link, or describe the vibe — dark and moody, soft and feminine, bold and Chicano, etc." style="min-height:100px;"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Anything Else We Should Know?</label>
+        <textarea class="form-textarea" name="otherNotes" placeholder="Allergies, skin conditions, upcoming events (wedding, vacation) that affect timing, budget considerations, questions you want answered at the consultation..." style="min-height:100px;"></textarea>
+      </div>
+
+      <div class="btn-row">
+        <button type="button" class="btn-prev" onclick="goToStep(3)">← Back</button>
+        <button type="button" class="btn-next" onclick="goToStep(5)">Next — Scheduling →</button>
+      </div>
+    </div>
+
+    <!-- ═══ STEP 5 — SCHEDULING ═══ -->
+    <div class="form-section" id="section5">
+      <div class="section-header">
+        <div class="section-num">Step 05 of 05</div>
+        <div class="section-title">Scheduling and Budget</div>
+        <p class="section-desc">Almost done. Let us know your availability and budget so we can match you with the right artist and session plan.</p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">When Are You Looking to Get Tattooed?</label>
+        <div class="choice-grid">
+          <div class="choice-item"><input type="radio" name="timing" id="ti1" value="As soon as possible"/><label class="choice-label" for="ti1"><div class="choice-box"></div><div class="choice-text">As Soon As Possible</div></label></div>
+          <div class="choice-item"><input type="radio" name="timing" id="ti2" value="Within the next month"/><label class="choice-label" for="ti2"><div class="choice-box"></div><div class="choice-text">Within the Next Month</div></label></div>
+          <div class="choice-item"><input type="radio" name="timing" id="ti3" value="1 to 3 months"/><label class="choice-label" for="ti3"><div class="choice-box"></div><div class="choice-text">1 to 3 Months Out</div></label></div>
+          <div class="choice-item"><input type="radio" name="timing" id="ti4" value="3 to 6 months — planning ahead"/><label class="choice-label" for="ti4"><div class="choice-box"></div><div class="choice-text">Planning Ahead <span class="choice-sub">3 to 6 months</span></div></label></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Best Days to Reach You</label>
+        <div class="choice-grid three">
+          <div class="choice-item"><input type="checkbox" name="days" id="d1" value="Monday"/><label class="choice-label" for="d1"><div class="choice-box"></div><div class="choice-text">Monday</div></label></div>
+          <div class="choice-item"><input type="checkbox" name="days" id="d2" value="Tuesday"/><label class="choice-label" for="d2"><div class="choice-box"></div><div class="choice-text">Tuesday</div></label></div>
+          <div class="choice-item"><input type="checkbox" name="days" id="d3" value="Wednesday"/><label class="choice-label" for="d3"><div class="choice-box"></div><div class="choice-text">Wednesday</div></label></div>
+          <div class="choice-item"><input type="checkbox" name="days" id="d4" value="Thursday"/><label class="choice-label" for="d4"><div class="choice-box"></div><div class="choice-text">Thursday</div></label></div>
+          <div class="choice-item"><input type="checkbox" name="days" id="d5" value="Friday"/><label class="choice-label" for="d5"><div class="choice-box"></div><div class="choice-text">Friday</div></label></div>
+          <div class="choice-item"><input type="checkbox" name="days" id="d6" value="Saturday"/><label class="choice-label" for="d6"><div class="choice-box"></div><div class="choice-text">Saturday</div></label></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Preferred Contact Method</label>
+        <div class="choice-grid">
+          <div class="choice-item"><input type="radio" name="contactMethod" id="cm1" value="Phone call"/><label class="choice-label" for="cm1"><div class="choice-box"></div><div class="choice-text">Phone Call</div></label></div>
+          <div class="choice-item"><input type="radio" name="contactMethod" id="cm2" value="Text message"/><label class="choice-label" for="cm2"><div class="choice-box"></div><div class="choice-text">Text Message</div></label></div>
+          <div class="choice-item"><input type="radio" name="contactMethod" id="cm3" value="Email"/><label class="choice-label" for="cm3"><div class="choice-box"></div><div class="choice-text">Email</div></label></div>
+          <div class="choice-item"><input type="radio" name="contactMethod" id="cm4" value="Instagram DM"/><label class="choice-label" for="cm4"><div class="choice-box"></div><div class="choice-text">Instagram DM</div></label></div>
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+
+      <div class="form-group">
+        <label class="form-label">Estimated Budget Range</label>
+        <p class="form-sublabel">Helps us plan session length and give honest expectations. All budgets are respected.</p>
+        <div class="choice-grid">
+          <div class="choice-item"><input type="radio" name="budget" id="bu1" value="Under $300"/><label class="choice-label" for="bu1"><div class="choice-box"></div><div class="choice-text">Under $300 <span class="choice-sub">Small piece</span></div></label></div>
+          <div class="choice-item"><input type="radio" name="budget" id="bu2" value="$300 to $600"/><label class="choice-label" for="bu2"><div class="choice-box"></div><div class="choice-text">$300 to $600 <span class="choice-sub">Medium piece</span></div></label></div>
+          <div class="choice-item"><input type="radio" name="budget" id="bu3" value="$600 to $1,000"/><label class="choice-label" for="bu3"><div class="choice-box"></div><div class="choice-text">$600 to $1,000 <span class="choice-sub">Large piece</span></div></label></div>
+          <div class="choice-item"><input type="radio" name="budget" id="bu4" value="$1,000 to $2,000"/><label class="choice-label" for="bu4"><div class="choice-box"></div><div class="choice-text">$1,000 to $2,000 <span class="choice-sub">Multiple sessions</span></div></label></div>
+          <div class="choice-item"><input type="radio" name="budget" id="bu5" value="$2,000 plus"/><label class="choice-label" for="bu5"><div class="choice-box"></div><div class="choice-text">$2,000+ <span class="choice-sub">Sleeve or back piece</span></div></label></div>
+          <div class="choice-item"><input type="radio" name="budget" id="bu6" value="Not sure — want artist quote"/><label class="choice-label" for="bu6"><div class="choice-box"></div><div class="choice-text">Not Sure <span class="choice-sub">Want an artist quote</span></div></label></div>
+        </div>
+      </div>
+
+      <div class="info-box" style="margin-top:8px;">
+        <p>Submitting this form is not a booking. It starts the conversation. We will review everything you have shared and reach out within 48 hours to schedule your consultation. The $50 deposit is only collected when you book your actual appointment.</p>
+      </div>
+
+      <div class="btn-row">
+        <button type="button" class="btn-prev" onclick="goToStep(4)">← Back</button>
+        <button type="submit" class="btn-submit">Submit Consultation Request →</button>
+      </div>
+    </div>
+
+  </form>
+
+  <!-- SUCCESS -->
+  <div class="success-wrap" id="successWrap">
+    <div class="success-icon">✦</div>
+    <div class="success-title">Consultation Request Received</div>
+    <p class="success-text">Thank you for trusting New Beginnings with your vision. We have received everything you shared and will reach out within 48 hours to schedule your consultation. God bless.</p>
+    <div class="success-next">
+      <a href="flash.html" class="sn-card"><div class="sn-icon">⚡</div><div class="sn-title">Browse Flash</div><div class="sn-desc">While you wait — check out our available flash designs</div></a>
+      <a href="prep-guide.html" class="sn-card"><div class="sn-icon">📋</div><div class="sn-title">Prep Guide</div><div class="sn-desc">Start preparing for your appointment now</div></a>
+      <a href="pain-chart.html" class="sn-card"><div class="sn-icon">🗺️</div><div class="sn-title">Pain Chart</div><div class="sn-desc">Learn what to expect for your placement</div></a>
+      <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="sn-card"><div class="sn-icon">📅</div><div class="sn-title">Book Online</div><div class="sn-desc">Ready to commit? Book and pay your deposit now</div></a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="f-logo">NBTS · New Beginnings Tattoo Studio</div>
+  <div class="f-tag">4343 N Oracle Rd Suite L · Tucson, AZ · Mon–Sat 9am–10pm</div>
+  <div class="socials">
+    <a class="soc" href="https://instagram.com/nbtstucson" target="_blank">IG</a>
+    <a class="soc" href="http://facebook.com/NewBeginningsTattooStudio" target="_blank">FB</a>
+    <a class="soc" href="index.html">🏠</a>
+  </div>
+</footer>
+
+<script>
+let currentStep = 1;
+const totalSteps = 5;
+
+function goToStep(step) {
+  // Hide current
+  document.getElementById(`section${currentStep}`).classList.remove('active');
+  document.getElementById(`step-indicator-${currentStep}`).classList.remove('active');
+  document.getElementById(`step-indicator-${currentStep}`).classList.add('done');
+
+  // Show new
+  currentStep = step;
+  document.getElementById(`section${currentStep}`).classList.add('active');
+  document.getElementById(`step-indicator-${currentStep}`).classList.remove('done');
+  document.getElementById(`step-indicator-${currentStep}`).classList.add('active');
+
+  // Update lines
+  for(let i = 1; i < totalSteps; i++) {
+    const line = document.getElementById(`line-${i}`);
+    if(line) line.classList.toggle('done', i < currentStep);
+  }
+
+  // Update previous step indicators
+  for(let i = 1; i < currentStep; i++) {
+    const ind = document.getElementById(`step-indicator-${i}`);
+    ind.classList.remove('active');
+    ind.classList.add('done');
+    ind.querySelector('.step-num').textContent = '';
+  }
+
+  // Progress bar
+  document.getElementById('progressFill').style.width = `${(currentStep / totalSteps) * 100}%`;
+
+  // Scroll to top of form
+  window.scrollTo({top: document.querySelector('.steps-bar').offsetTop - 70, behavior: 'smooth'});
+
+  // Handle checkbox visual
+  document.querySelectorAll('input[type=checkbox]').forEach(cb => {
+    cb.addEventListener('change', function() {
+      const box = this.nextElementSibling.querySelector('.choice-box');
+      if(box) box.textContent = this.checked ? '✓' : '';
+    });
+  });
+}
+
+function showFiles(input, targetId) {
+  const el = document.getElementById(targetId);
+  if(input.files.length > 0) {
+    const names = Array.from(input.files).map(f => f.name).join(', ');
+    el.textContent = `✓ ${input.files.length} file${input.files.length > 1 ? 's' : ''} selected: ${names}`;
+    el.style.display = 'block';
+  }
+}
+
+function submitConsult(e) {
+  e.preventDefault();
+  const data = new FormData(document.getElementById('consultForm'));
+
+  // Build email body
+  const fields = [
+    ['Name', `${data.get('firstName')} ${data.get('lastName')}`],
+    ['Email', data.get('email')],
+    ['Phone', data.get('phone')],
+    ['Artist', data.get('artist')],
+    ['Experience', data.get('experience')],
+    ['Style', data.get('style')],
+    ['Concept', data.get('concept')],
+    ['Cover-Up', data.get('coverup')],
+    ['Creative Freedom', data.get('freedom')],
+    ['Placement', data.get('placement')],
+    ['Size', data.get('size')],
+    ['Placement Notes', data.get('placementNotes')],
+    ['Inspiration', data.get('inspirationNotes')],
+    ['Other Notes', data.get('otherNotes')],
+    ['Timing', data.get('timing')],
+    ['Contact Method', data.get('contactMethod')],
+    ['Budget', data.get('budget')],
+  ];
+
+  const body = fields.map(([k,v]) => v ? `${k}: ${v}` : '').filter(Boolean).join('%0A');
+  const name = `${data.get('firstName')} ${data.get('lastName')}`;
+
+  // Show success
+  document.getElementById('consultForm').style.display = 'none';
+  document.getElementById('successWrap').style.display = 'block';
+  document.querySelector('.form-progress').style.display = 'none';
+  window.scrollTo({top: 0, behavior: 'smooth'});
+
+  // Open email
+  setTimeout(() => {
+    window.location.href = `mailto:nbtstucson@gmail.com?subject=Consultation Request from ${name}&body=${body}`;
+  }, 600);
+}
+
+// Checkbox visual on load
+document.querySelectorAll('input[type=checkbox]').forEach(cb => {
+  cb.addEventListener('change', function() {
+    const box = this.nextElementSibling.querySelector('.choice-box');
+    if(box) box.textContent = this.checked ? '✓' : '';
+  });
+});
+</script>
+</body>
+</html>
