@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Contact New Beginnings Tattoo Studio in Tucson AZ. Send us a message, ask about booking, pricing, or custom work."/>
+<title>Contact Us | New Beginnings Tattoo Studio Tucson AZ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#050605;color:#D8CFA8;font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;}
+a{text-decoration:none;}
+:root{
+  --gold:#C9A84C;--gold-lt:#F0D080;--gold-dim:#8B6E2A;--gold-pale:#E8D5A0;
+  --green:#1A7A3A;--green-b:#22A84E;--green-deep:#071A0D;
+  --black:#050605;--char:#0C0F0C;--dark:#111411;--smoke:#181C18;
+  --bone:#D8CFA8;--parch:#EDE0BB;--muted:#5A6050;
+}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:1000;background:rgba(5,6,5,.97);border-bottom:1px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:66px;backdrop-filter:blur(10px);}
+.nav-logo{font-family:'Cinzel Decorative',serif;font-size:15px;color:var(--gold);letter-spacing:2px;font-weight:700;}
+.nav-back{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.nav-back:hover{color:var(--gold);}
+.nav-back::before{content:'←';}
+.nav-book{padding:9px 20px;border:1px solid var(--green);color:var(--green-b);font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all .2s;}
+.nav-book:hover{background:var(--green);color:#050605;}
+
+/* HEADER */
+.page-header{background:var(--char);border-bottom:1px solid rgba(34,168,78,.2);padding:52px 40px 44px;text-align:center;position:relative;overflow:hidden;}
+.page-header::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);}
+.page-header::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(34,168,78,.05) 0%,transparent 70%);pointer-events:none;}
+.sec-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:6px;color:var(--green-b);text-transform:uppercase;margin-bottom:12px;position:relative;}
+.page-title{font-family:'Cinzel Decorative',serif;font-size:clamp(26px,4vw,44px);color:var(--gold);font-weight:700;line-height:1.2;margin-bottom:14px;position:relative;}
+.page-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:18px;color:var(--parch);opacity:.88;max-width:540px;margin:0 auto;line-height:1.72;position:relative;}
+
+/* MAIN LAYOUT */
+.main-wrap{max-width:960px;margin:0 auto;padding:56px 40px 80px;display:grid;grid-template-columns:1fr 360px;gap:48px;align-items:start;}
+@media(max-width:800px){.main-wrap{grid-template-columns:1fr;padding:36px 20px 60px;}}
+
+/* FORM */
+.form-wrap{display:flex;flex-direction:column;gap:20px;}
+
+.form-group{display:flex;flex-direction:column;gap:8px;}
+.form-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;}
+.form-input,.form-select,.form-textarea{
+  background:var(--dark);
+  border:.5px solid rgba(201,168,76,.2);
+  color:var(--bone);
+  font-family:'Crimson Pro',serif;
+  font-size:16px;
+  padding:14px 18px;
+  outline:none;
+  transition:border-color .2s;
+  width:100%;
+}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--green-b);}
+.form-textarea{resize:vertical;min-height:120px;line-height:1.6;}
+.form-select{
+  appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+}
+.form-select option{background:var(--dark);color:var(--bone);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:500px){.form-row{grid-template-columns:1fr;}}
+
+.form-note{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;color:var(--muted);line-height:1.6;}
+
+/* FILE UPLOAD */
+.file-upload{
+  border:.5px dashed rgba(201,168,76,.25);
+  background:rgba(201,168,76,.02);
+  padding:24px;
+  text-align:center;
+  cursor:pointer;
+  transition:all .2s;
+  position:relative;
+}
+.file-upload:hover{border-color:var(--green-b);background:rgba(34,168,78,.04);}
+.file-upload input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+.file-upload-icon{font-size:24px;margin-bottom:8px;opacity:.4;}
+.file-upload-txt{font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-bottom:4px;}
+.file-upload-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;color:var(--muted);}
+.file-name{font-family:'Crimson Pro',serif;font-size:14px;color:var(--green-b);margin-top:8px;display:none;}
+
+/* SUBMIT BUTTON */
+.submit-btn{
+  padding:18px;
+  background:var(--green);
+  color:var(--gold-pale);
+  font-family:'Cinzel',serif;
+  font-size:13px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  border:1px solid var(--green-b);
+  cursor:pointer;
+  font-weight:700;
+  transition:all .3s;
+  width:100%;
+}
+.submit-btn:hover{background:var(--green-b);color:#050605;box-shadow:0 0 28px rgba(34,168,78,.3);}
+
+/* SUCCESS MESSAGE */
+.success-msg{display:none;background:rgba(34,168,78,.08);border:.5px solid rgba(34,168,78,.3);border-left:3px solid var(--green-b);padding:24px;text-align:center;}
+.success-msg .si{font-size:36px;margin-bottom:12px;}
+.success-msg h3{font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;color:var(--green-b);text-transform:uppercase;margin-bottom:8px;}
+.success-msg p{font-family:'Crimson Pro',serif;font-style:italic;font-size:16px;color:var(--bone);opacity:.8;line-height:1.7;}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:20px;}
+
+/* INFO CARDS */
+.info-card{background:var(--dark);border:.5px solid rgba(201,168,76,.1);padding:24px;position:relative;transition:border-color .3s;}
+.info-card:hover{border-color:rgba(34,168,78,.3);}
+.info-card-icon{font-size:24px;margin-bottom:10px;}
+.info-card-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;padding-bottom:10px;border-bottom:.5px solid rgba(201,168,76,.1);}
+.info-card-body{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.78;line-height:1.7;}
+.info-card-body a{color:var(--green-b);transition:color .2s;}
+.info-card-body a:hover{color:var(--gold);}
+
+/* SOCIAL LINKS */
+.social-links{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+.social-link{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--smoke);border:.5px solid rgba(201,168,76,.08);transition:all .2s;font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;}
+.social-link:hover{border-color:rgba(34,168,78,.3);color:var(--green-b);}
+.social-link .sl-icon{font-size:16px;flex-shrink:0;}
+.social-link .sl-arrow{margin-left:auto;color:var(--muted);}
+
+/* HOURS TABLE */
+.hours-table{width:100%;border-collapse:collapse;margin-top:8px;}
+.hours-table tr{border-bottom:.5px solid rgba(201,168,76,.08);}
+.hours-table tr:last-child{border-bottom:none;}
+.hours-table td{padding:8px 0;font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.78;}
+.hours-table td:first-child{color:var(--muted);width:45%;}
+.hours-table td.open{color:var(--green-b);opacity:1;}
+.hours-table td.closed{color:var(--muted);}
+
+/* VERSE */
+.verse-card{background:var(--green-deep);border:.5px solid rgba(34,168,78,.2);padding:24px;text-align:center;}
+.verse-card p{font-family:'Crimson Pro',serif;font-style:italic;font-size:15px;color:var(--parch);opacity:.85;line-height:1.7;margin-bottom:8px;}
+.verse-card span{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--green-b);text-transform:uppercase;}
+
+/* FOOTER */
+.footer{background:var(--green-deep);border-top:1px solid rgba(34,168,78,.2);padding:36px 40px;text-align:center;}
+.f-logo{font-family:'Cinzel Decorative',serif;font-size:13px;color:var(--gold-dim);letter-spacing:2px;margin-bottom:6px;}
+.f-tag{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
+.socials{display:flex;gap:8px;justify-content:center;}
+.soc{width:34px;height:34px;border:.5px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:9px;color:var(--muted);transition:all .2s;text-decoration:none;}
+.soc:hover{border-color:var(--green-b);color:var(--green-b);}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">🦁 NBTS</div>
+  <a href="index.html" class="nav-back">Back to Main Site</a>
+  <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="nav-book">Book Now</a>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div class="sec-label">Get in Touch</div>
+  <div class="page-title">Contact Us</div>
+  <p class="page-sub">Have a question about a custom piece, pricing, flash or anything else? Send us a message and we'll get back to you as soon as possible.</p>
+</div>
+
+<!-- MAIN -->
+<div class="main-wrap">
+
+  <!-- CONTACT FORM -->
+  <div>
+    <form class="form-wrap" id="contactForm" onsubmit="submitForm(event)">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First Name *</label>
+          <input class="form-input" type="text" name="firstName" placeholder="Your first name" required/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last Name *</label>
+          <input class="form-input" type="text" name="lastName" placeholder="Your last name" required/>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Email *</label>
+          <input class="form-input" type="email" name="email" placeholder="your@email.com" required/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input class="form-input" type="tel" name="phone" placeholder="(520) 000-0000"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">What Are You Reaching Out About? *</label>
+        <select class="form-select" name="subject" required>
+          <option value="">Select a topic...</option>
+          <option value="Custom Tattoo Inquiry">Custom Tattoo Inquiry</option>
+          <option value="Flash Design">Flash Design Interest</option>
+          <option value="Cover-Up Consultation">Cover-Up Consultation</option>
+          <option value="Pricing Question">Pricing Question</option>
+          <option value="Touch-Up Request">Touch-Up Request</option>
+          <option value="Walk-In Availability">Walk-In Availability</option>
+          <option value="Gift Card">Gift Card Purchase</option>
+          <option value="General Question">General Question</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Preferred Artist</label>
+        <select class="form-select" name="artist">
+          <option value="">No preference / Not sure yet</option>
+          <option value="Pelon">Pelon — Master Artist ($180/hr)</option>
+          <option value="Eric">Eric — Apprentice ($100/hr)</option>
+          <option value="Mousie">Mousie — Apprentice ($100/hr)</option>
+          <option value="Roo">Roo — Apprentice ($80/hr)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Tell Us About Your Idea *</label>
+        <textarea class="form-textarea" name="message" placeholder="Describe your tattoo idea — subject, style, size, placement, any reference images you have in mind..." required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Reference Images (Optional)</label>
+        <div class="file-upload" onclick="document.getElementById('refImages').click()">
+          <input type="file" id="refImages" name="refImages" accept="image/*" multiple onchange="showFileName(this)"/>
+          <div class="file-upload-icon">📎</div>
+          <div class="file-upload-txt">Upload Reference Images</div>
+          <div class="file-upload-sub">PNG, JPG, HEIC up to 10MB each</div>
+          <div class="file-name" id="fileName"></div>
+        </div>
+        <p class="form-note">Attach any inspiration photos, design references, or placement examples. The more we know the better we can help.</p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">How Did You Hear About Us?</label>
+        <select class="form-select" name="source">
+          <option value="">Select...</option>
+          <option value="Google Search">Google Search</option>
+          <option value="Instagram">Instagram</option>
+          <option value="Facebook">Facebook</option>
+          <option value="Word of Mouth">Word of Mouth / Friend</option>
+          <option value="Walk-By">Walked By the Shop</option>
+          <option value="Returning Client">Returning Client</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-btn">Send Message →</button>
+
+      <p class="form-note" style="text-align:center;">We typically respond within 24 hours. For faster response message us directly on Facebook or Instagram.</p>
+
+    </form>
+
+    <!-- SUCCESS -->
+    <div class="success-msg" id="successMsg">
+      <div class="si">✦</div>
+      <h3>Message Received</h3>
+      <p>Thank you for reaching out to New Beginnings Tattoo Studio. We will get back to you within 24 hours. In the meantime feel free to browse our flash designs or book your appointment online.</p>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <!-- LOCATION -->
+    <div class="info-card">
+      <div class="info-card-icon">📍</div>
+      <div class="info-card-title">Find Us</div>
+      <div class="info-card-body">
+        4343 N Oracle Rd, Suite L<br>Tucson, Arizona 85705<br><br>
+        <a href="https://maps.google.com/?q=4343+N+Oracle+Rd+Suite+L+Tucson+AZ" target="_blank">Get Directions →</a>
+      </div>
+    </div>
+
+    <!-- HOURS -->
+    <div class="info-card">
+      <div class="info-card-icon">🕐</div>
+      <div class="info-card-title">Studio Hours</div>
+      <table class="hours-table">
+        <tr><td>Monday</td><td class="open">9:00 AM — 10:00 PM</td></tr>
+        <tr><td>Tuesday</td><td class="open">9:00 AM — 10:00 PM</td></tr>
+        <tr><td>Wednesday</td><td class="open">9:00 AM — 10:00 PM</td></tr>
+        <tr><td>Thursday</td><td class="open">9:00 AM — 10:00 PM</td></tr>
+        <tr><td>Friday</td><td class="open">9:00 AM — 10:00 PM</td></tr>
+        <tr><td>Saturday</td><td class="open">9:00 AM — 10:00 PM</td></tr>
+        <tr><td>Sunday</td><td class="closed">Closed</td></tr>
+      </table>
+    </div>
+
+    <!-- CONNECT -->
+    <div class="info-card">
+      <div class="info-card-icon">💬</div>
+      <div class="info-card-title">Connect Directly</div>
+      <div class="info-card-body" style="margin-bottom:12px;">For the fastest response reach us on social media directly.</div>
+      <div class="social-links">
+        <a href="https://instagram.com/nbtstucson" target="_blank" class="social-link">
+          <span class="sl-icon">📸</span>
+          <span>@nbtstucson on Instagram</span>
+          <span class="sl-arrow">→</span>
+        </a>
+        <a href="http://facebook.com/NewBeginningsTattooStudio" target="_blank" class="social-link">
+          <span class="sl-icon">💬</span>
+          <span>Facebook Messenger</span>
+          <span class="sl-arrow">→</span>
+        </a>
+        <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="social-link">
+          <span class="sl-icon">📅</span>
+          <span>Book Online Now</span>
+          <span class="sl-arrow">→</span>
+        </a>
+        <a href="https://g.page/r/CXBwTOOXxC3IEAI/review" target="_blank" class="social-link">
+          <span class="sl-icon">⭐</span>
+          <span>Leave a Google Review</span>
+          <span class="sl-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- VERSE -->
+    <div class="verse-card">
+      <p>"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here."</p>
+      <span>✦ &nbsp; 2 Corinthians 5:17 &nbsp; ✦</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="f-logo">NBTS · New Beginnings Tattoo Studio</div>
+  <div class="f-tag">4343 N Oracle Rd Suite L · Tucson, AZ · Mon–Sat 9am–10pm</div>
+  <div class="socials">
+    <a class="soc" href="https://instagram.com/nbtstucson" target="_blank">IG</a>
+    <a class="soc" href="http://facebook.com/NewBeginningsTattooStudio" target="_blank">FB</a>
+    <a class="soc" href="index.html">🏠</a>
+  </div>
+</footer>
+
+<script>
+function showFileName(input) {
+  const fn = document.getElementById('fileName');
+  if(input.files.length > 0) {
+    const names = Array.from(input.files).map(f => f.name).join(', ');
+    fn.textContent = names;
+    fn.style.display = 'block';
+  }
+}
+
+function submitForm(e) {
+  e.preventDefault();
+  const form = document.getElementById('contactForm');
+  const btn = form.querySelector('.submit-btn');
+
+  // Collect form data
+  const data = new FormData(form);
+  const name = data.get('firstName') + ' ' + data.get('lastName');
+  const email = data.get('email');
+  const phone = data.get('phone') || 'Not provided';
+  const subject = data.get('subject');
+  const artist = data.get('artist') || 'No preference';
+  const message = data.get('message');
+  const source = data.get('source') || 'Not specified';
+
+  // Build mailto link as fallback
+  const mailBody = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0ASubject: ${subject}%0APreferred Artist: ${artist}%0AHow they heard: ${source}%0A%0AMessage:%0A${encodeURIComponent(message)}`;
+
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  // Simulate send then show success
+  setTimeout(() => {
+    form.style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+    // Open email client as backup
+    window.location.href = `mailto:nbtstucson@gmail.com?subject=NBTS Contact Form: ${subject}&body=${mailBody}`;
+  }, 800);
+}
+</script>
+</body>
+</html>
