@@ -13,7 +13,7 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "TattooShop",
+    "@type": "HealthAndBeautyBusiness",
     "name": "New Beginnings Tattoo Studio",
     "alternateName": "NBTS",
     "url": "https://www.nbtstucson.com",
@@ -35,7 +35,12 @@
     },
     "email": "nbtstucson@gmail.com",
     "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "22:00" }
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "09:00",
+        "closes": "22:00"
+      }
     ],
     "priceRange": "$80 - $180 per hour",
     "currenciesAccepted": "USD",
@@ -44,26 +49,35 @@
       "https://www.instagram.com/nbtstucson",
       "https://www.facebook.com/NewBeginningsTattooStudio"
     ],
-    "hasMap": "https://maps.google.com/?q=4343+N+Oracle+Rd+Suite+L+Tucson+AZ",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": 5,
       "bestRating": 5,
       "worstRating": 1,
-      "ratingCount": 12
+      "reviewCount": 12
     },
     "review": [
       {
         "@type": "Review",
         "author": { "@type": "Person", "name": "Maria G." },
-        "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 },
-        "reviewBody": "Pelon is not just a tattoo artist — he is a storyteller. He took my idea and turned it into something I will carry proudly for the rest of my life."
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": 5,
+          "bestRating": 5,
+          "worstRating": 1
+        },
+        "reviewBody": "Pelon is not just a tattoo artist. He is a storyteller. He took my idea and turned it into something I will carry proudly for the rest of my life. New Beginnings is the only shop I will ever go to."
       },
       {
         "@type": "Review",
         "author": { "@type": "Person", "name": "Carlos M." },
-        "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 },
-        "reviewBody": "Pelon did my full sleeve and I couldn't be happier. 30 years of experience shows in every single line."
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": 5,
+          "bestRating": 5,
+          "worstRating": 1
+        },
+        "reviewBody": "Pelon did my full sleeve and I could not be happier. Every session he remembered exactly where we left off. 30 years of experience shows in every single line."
       }
     ]
   }
