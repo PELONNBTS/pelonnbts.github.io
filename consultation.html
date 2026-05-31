@@ -587,7 +587,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;heigh
       <a href="flash.html" class="sn-card"><div class="sn-icon">⚡</div><div class="sn-title">Browse Flash</div><div class="sn-desc">While you wait — check out our available flash designs</div></a>
       <a href="prep-guide.html" class="sn-card"><div class="sn-icon">📋</div><div class="sn-title">Prep Guide</div><div class="sn-desc">Start preparing for your appointment now</div></a>
       <a href="pain-chart.html" class="sn-card"><div class="sn-icon">🗺️</div><div class="sn-title">Pain Chart</div><div class="sn-desc">Learn what to expect for your placement</div></a>
-      <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="sn-card"><div class="sn-icon">📅</div><div class="sn-title">Book Online</div><div class="sn-desc">Ready to commit? Book and pay your deposit now</div></a>
+      <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="sn-card" id="successBookBtn"><div class="sn-icon">📅</div><div class="sn-title">Book Online</div><div class="sn-desc">Ready to commit? Book and pay your deposit now</div></a>
     </div>
   </div>
 
@@ -729,6 +729,17 @@ async function submitConsult() {
   }
 }
 
+// Update book link based on artist selected
+const artistLinks = {
+  "Pelon": "https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start",
+  "Eric": "https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start?staffMemberId=TMKZsMpWbO20fPXC",
+  "Mousie": "https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start?staffMemberId=TMTTRB7aq4zngLeG",
+  "Roo": "https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start?staffMemberId=TMgeZKtzu8WHw5Fh",
+};
+document.querySelector('[name="artist"]').addEventListener('change', function(){
+  const btn = document.getElementById('successBookBtn');
+  if(btn) btn.href = artistLinks[this.value] || "https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start";
+});
 // Checkbox visual on load
 document.querySelectorAll('input[type=checkbox]').forEach(cb => {
   cb.addEventListener('change', function() {
