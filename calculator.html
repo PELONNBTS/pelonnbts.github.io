@@ -161,22 +161,22 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;heigh
   <div style="margin-bottom:28px;">
     <div class="calc-label" style="margin-bottom:12px;">Choose Your Artist</div>
     <div class="artist-cards">
-      <div class="artist-card selected" onclick="selectArtist(this,180,100,'Pelon')">
+      <div class="artist-card selected" onclick="selectArtist(this,180,100,'Pelon','https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start')">
         <div class="ac-name">Pelon</div>
         <div class="ac-rate">$180/hr</div>
         <div class="ac-min">$100 min</div>
       </div>
-      <div class="artist-card" onclick="selectArtist(this,100,80,'Eric')">
+      <div class="artist-card" onclick="selectArtist(this,100,80,'Eric','https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start?staffMemberId=TMKZsMpWbO20fPXC')">
         <div class="ac-name">Eric</div>
         <div class="ac-rate">$100/hr</div>
         <div class="ac-min">$80 min</div>
       </div>
-      <div class="artist-card" onclick="selectArtist(this,100,80,'Mousie')">
+      <div class="artist-card" onclick="selectArtist(this,100,80,'Mousie','https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start?staffMemberId=TMTTRB7aq4zngLeG')">
         <div class="ac-name">Mousie</div>
         <div class="ac-rate">$100/hr</div>
         <div class="ac-min">$80 min</div>
       </div>
-      <div class="artist-card" onclick="selectArtist(this,80,60,'Roo')">
+      <div class="artist-card" onclick="selectArtist(this,80,60,'Roo','https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start?staffMemberId=TMgeZKtzu8WHw5Fh')">
         <div class="ac-name">Roo</div>
         <div class="ac-rate">$80/hr</div>
         <div class="ac-min">$60 min</div>
@@ -288,7 +288,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;heigh
 let artistRate = 180, artistMin = 100, artistName = 'Pelon';
 let complexity = 1.1;
 
-function selectArtist(el, rate, min, name) {
+function selectArtist(el, rate, min, name, bookLink) {
+  document.querySelector(".btn-g").href = bookLink || "https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start";
   document.querySelectorAll('.artist-card').forEach(c => c.classList.remove('selected'));
   el.classList.add('selected');
   artistRate = rate; artistMin = min; artistName = name;
