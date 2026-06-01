@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>Your Appointment | New Beginnings Tattoo Studio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#050605;color:#D8CFA8;font-family:'Crimson Pro',Georgia,serif;overflow-x:hidden;min-height:100vh;}
+a{text-decoration:none;}
+:root{
+  --gold:#C9A84C;--gold-lt:#F0D080;--gold-dim:#8B6E2A;--gold-pale:#E8D5A0;
+  --green:#1A7A3A;--green-b:#22A84E;--green-deep:#071A0D;
+  --black:#050605;--char:#0C0F0C;--dark:#111411;--smoke:#181C18;
+  --bone:#D8CFA8;--parch:#EDE0BB;--muted:#5A6050;
+}
+
+/* ── HEADER ── */
+.header{background:var(--char);border-bottom:1px solid rgba(34,168,78,.2);padding:24px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.header-logo{font-family:'Cinzel Decorative',serif;font-size:16px;color:var(--gold);letter-spacing:2px;font-weight:700;}
+.header-sub{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;color:var(--green-b);text-transform:uppercase;margin-top:4px;}
+.header-badge{padding:8px 16px;background:rgba(34,168,78,.1);border:.5px solid rgba(34,168,78,.3);font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--green-b);text-transform:uppercase;}
+
+/* ── HERO BANNER ── */
+.hero-banner{background:linear-gradient(135deg,var(--green-deep) 0%,#0a1a0d 100%);border-bottom:1px solid rgba(201,168,76,.15);padding:48px 40px;text-align:center;position:relative;overflow:hidden;}
+.hero-banner::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);}
+.client-greeting{font-family:'Cinzel',serif;font-size:11px;letter-spacing:5px;color:var(--green-b);text-transform:uppercase;margin-bottom:10px;}
+.client-name{font-family:'Cinzel Decorative',serif;font-size:clamp(28px,5vw,48px);color:var(--gold);font-weight:900;line-height:1;margin-bottom:8px;}
+.appt-tagline{font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--parch);opacity:.82;line-height:1.7;}
+
+/* ── COUNTDOWN ── */
+.countdown-wrap{background:var(--black);border-bottom:1px solid rgba(201,168,76,.1);padding:32px 40px;text-align:center;}
+.countdown-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
+.countdown-blocks{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+.cd-block{background:var(--dark);border:.5px solid rgba(201,168,76,.15);padding:16px 20px;min-width:80px;text-align:center;}
+.cd-num{font-family:'Cinzel Decorative',serif;font-size:36px;color:var(--gold);line-height:1;}
+.cd-unit{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-top:4px;}
+.appt-date-display{font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;color:var(--green-b);text-transform:uppercase;margin-top:16px;}
+
+/* ── MAIN WRAP ── */
+.main-wrap{max-width:860px;margin:0 auto;padding:48px 40px 80px;display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:700px){.main-wrap{grid-template-columns:1fr;padding:32px 20px 60px;}}
+
+/* ── CARDS ── */
+.card{background:var(--dark);border:.5px solid rgba(201,168,76,.12);overflow:hidden;position:relative;}
+.card.full{grid-column:1/-1;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.3),transparent);}
+.card-header{padding:16px 20px;border-bottom:.5px solid rgba(201,168,76,.08);display:flex;align-items:center;gap:10px;}
+.card-icon{font-size:18px;}
+.card-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;}
+.card-body{padding:20px;}
+
+/* ── APPOINTMENT DETAILS ── */
+.detail-row{display:flex;justify-content:space-between;align-items:flex-start;padding:10px 0;border-bottom:.5px solid rgba(201,168,76,.06);}
+.detail-row:last-child{border-bottom:none;}
+.detail-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;flex-shrink:0;margin-right:16px;padding-top:2px;}
+.detail-value{font-family:'Crimson Pro',serif;font-size:16px;color:var(--bone);text-align:right;line-height:1.5;}
+.detail-value.gold{color:var(--gold);font-family:'Cinzel Decorative',serif;font-size:20px;}
+.detail-value.green{color:var(--green-b);}
+
+/* ── PAYMENT ── */
+.payment-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:.5px solid rgba(201,168,76,.06);}
+.payment-row:last-child{border-bottom:none;padding-top:16px;margin-top:4px;}
+.payment-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;}
+.payment-amount{font-family:'Cinzel Decorative',serif;font-size:22px;color:var(--gold);}
+.payment-status{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;}
+.status-paid{background:rgba(34,168,78,.1);border:.5px solid rgba(34,168,78,.3);color:var(--green-b);}
+.status-due{background:rgba(201,168,76,.1);border:.5px solid rgba(201,168,76,.3);color:var(--gold);}
+.status-pending{background:rgba(100,100,100,.1);border:.5px solid rgba(100,100,100,.3);color:var(--muted);}
+.total-row .payment-label{color:var(--gold);font-size:11px;}
+.total-row .payment-amount{font-size:28px;color:var(--gold-lt);}
+.balance-row .payment-amount{color:var(--green-b);}
+
+/* ── CHECKLIST ── */
+.check-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:.5px solid rgba(201,168,76,.06);}
+.check-item:last-child{border-bottom:none;}
+.check-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
+.check-done{background:rgba(34,168,78,.15);border:.5px solid var(--green-b);}
+.check-pending{background:rgba(100,100,100,.1);border:.5px solid rgba(100,100,100,.2);}
+.check-text{font-family:'Crimson Pro',serif;font-size:16px;color:var(--bone);line-height:1.4;}
+.check-text.done{color:var(--green-b);}
+.check-text.pending{color:var(--muted);}
+.check-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;color:var(--muted);display:block;margin-top:2px;}
+
+/* ── ARTIST CARD ── */
+.artist-wrap{display:flex;gap:16px;align-items:center;margin-bottom:16px;}
+.artist-img{width:64px;height:64px;object-fit:cover;border:.5px solid rgba(201,168,76,.3);flex-shrink:0;}
+.artist-name{font-family:'Cinzel Decorative',serif;font-size:20px;color:var(--gold);margin-bottom:4px;}
+.artist-role{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--green-b);text-transform:uppercase;}
+.artist-rate{font-family:'Crimson Pro',serif;font-style:italic;font-size:14px;color:var(--muted);margin-top:4px;}
+.artist-contact{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+.artist-btn{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--smoke);border:.5px solid rgba(34,168,78,.2);font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--green-b);text-transform:uppercase;text-decoration:none;transition:all .2s;}
+.artist-btn:hover{border-color:var(--green-b);background:rgba(34,168,78,.06);}
+
+/* ── PREP TIPS ── */
+.tip-item{display:flex;gap:10px;padding:10px 0;border-bottom:.5px solid rgba(201,168,76,.06);align-items:flex-start;}
+.tip-item:last-child{border-bottom:none;}
+.tip-dot{width:6px;height:6px;background:var(--green-b);border-radius:50%;flex-shrink:0;margin-top:8px;}
+.tip-text{font-family:'Crimson Pro',serif;font-size:15px;color:var(--bone);opacity:.8;line-height:1.6;}
+
+/* ── NOTES ── */
+.notes-box{background:rgba(34,168,78,.04);border:.5px solid rgba(34,168,78,.15);border-left:3px solid var(--green-b);padding:16px 18px;font-family:'Crimson Pro',serif;font-style:italic;font-size:16px;color:var(--parch);line-height:1.75;}
+
+/* ── ACTIONS ── */
+.actions-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+@media(max-width:500px){.actions-grid{grid-template-columns:1fr;}}
+.action-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:18px;background:var(--smoke);border:.5px solid rgba(201,168,76,.12);text-align:center;transition:all .3s;text-decoration:none;}
+.action-btn:hover{border-color:var(--green-b);background:rgba(34,168,78,.06);transform:translateY(-2px);}
+.action-btn .ab-icon{font-size:24px;}
+.action-btn .ab-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;}
+.action-btn .ab-desc{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;color:var(--muted);}
+
+/* ── VERSE ── */
+.verse-strip{background:var(--green-deep);border-top:.5px solid rgba(34,168,78,.2);border-bottom:.5px solid rgba(34,168,78,.2);padding:28px 40px;text-align:center;}
+.verse-strip p{font-family:'Crimson Pro',serif;font-style:italic;font-size:16px;color:var(--parch);opacity:.85;line-height:1.7;max-width:580px;margin:0 auto 8px;}
+.verse-strip span{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--green-b);text-transform:uppercase;}
+
+/* ── FOOTER ── */
+.footer{background:var(--char);border-top:1px solid rgba(34,168,78,.2);padding:24px 40px;text-align:center;}
+.f-logo{font-family:'Cinzel Decorative',serif;font-size:13px;color:var(--gold-dim);letter-spacing:2px;margin-bottom:4px;}
+.f-tag{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;}
+
+@media(max-width:600px){
+  .header{padding:20px;}
+  .hero-banner{padding:36px 20px;}
+  .countdown-wrap{padding:28px 20px;}
+  .verse-strip{padding:24px 20px;}
+  .footer{padding:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <div class="header-logo">🦁 NBTS</div>
+    <div class="header-sub">New Beginnings Tattoo Studio · Tucson AZ</div>
+  </div>
+  <div class="header-badge">✦ Appointment Tracker</div>
+</div>
+
+<!-- HERO -->
+<div class="hero-banner">
+  <div class="client-greeting">Your Appointment</div>
+  <!-- ✏️ CHANGE CLIENT NAME -->
+  <div class="client-name" id="clientName">CLIENT NAME</div>
+  <p class="appt-tagline">Your piece is being prepared. Here is everything you need to know before your session.</p>
+</div>
+
+<!-- COUNTDOWN -->
+<div class="countdown-wrap">
+  <div class="countdown-label">Time Until Your Appointment</div>
+  <div class="countdown-blocks">
+    <div class="cd-block"><div class="cd-num" id="cdDays">--</div><div class="cd-unit">Days</div></div>
+    <div class="cd-block"><div class="cd-num" id="cdHours">--</div><div class="cd-unit">Hours</div></div>
+    <div class="cd-block"><div class="cd-num" id="cdMins">--</div><div class="cd-unit">Minutes</div></div>
+    <div class="cd-block"><div class="cd-num" id="cdSecs">--</div><div class="cd-unit">Seconds</div></div>
+  </div>
+  <!-- ✏️ CHANGE APPOINTMENT DATE DISPLAY -->
+  <div class="appt-date-display" id="apptDateDisplay">Loading...</div>
+</div>
+
+<!-- MAIN -->
+<div class="main-wrap">
+
+  <!-- APPOINTMENT DETAILS -->
+  <div class="card">
+    <div class="card-header"><div class="card-icon">📋</div><div class="card-title">Appointment Details</div></div>
+    <div class="card-body">
+      <!-- ✏️ EDIT ALL VALUES BELOW -->
+      <div class="detail-row">
+        <div class="detail-label">Client</div>
+        <div class="detail-value" id="detailClient">CLIENT NAME</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Artist</div>
+        <div class="detail-value green" id="detailArtist">Pelon</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Date</div>
+        <div class="detail-value" id="detailDate">June 15, 2026</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Time</div>
+        <div class="detail-value" id="detailTime">2:00 PM</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Style</div>
+        <div class="detail-value" id="detailStyle">Black &amp; Grey</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Placement</div>
+        <div class="detail-value" id="detailPlacement">Outer Forearm</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Est. Duration</div>
+        <div class="detail-value" id="detailDuration">3–4 Hours</div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-label">Location</div>
+        <div class="detail-value">4343 N Oracle Rd<br>Suite L · Tucson, AZ</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAYMENT STATUS -->
+  <div class="card">
+    <div class="card-header"><div class="card-icon">💰</div><div class="card-title">Payment Status</div></div>
+    <div class="card-body">
+      <div class="payment-row">
+        <div class="payment-label">Deposit</div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div class="payment-amount">$50</div>
+          <!-- ✏️ CHANGE TO status-pending IF NOT YET PAID -->
+          <div class="payment-status status-paid">✓ Paid</div>
+        </div>
+      </div>
+      <div class="payment-row">
+        <div class="payment-label">Estimated Total</div>
+        <!-- ✏️ CHANGE TOTAL AMOUNT -->
+        <div class="payment-amount" id="payTotal">$540</div>
+      </div>
+      <div class="payment-row balance-row">
+        <div class="payment-label">Balance Due at Session</div>
+        <!-- ✏️ CHANGE BALANCE AMOUNT -->
+        <div class="payment-amount" id="payBalance">$490</div>
+      </div>
+      <div class="payment-row total-row" style="border-top:.5px solid rgba(201,168,76,.15);margin-top:8px;">
+        <div class="payment-label">Payment Method</div>
+        <div class="detail-value" style="font-family:'Crimson Pro',serif;font-size:15px;color:var(--muted);">Cash or Card at Shop</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKLIST -->
+  <div class="card">
+    <div class="card-header"><div class="card-icon">✅</div><div class="card-title">Your Checklist</div></div>
+    <div class="card-body">
+      <!-- ✏️ TOGGLE done/pending CLASS AND CHECK/EMPTY ICON AS NEEDED -->
+      <div class="check-item">
+        <div class="check-icon check-done">✓</div>
+        <div><div class="check-text done">Deposit Paid</div><div class="check-sub">$50 deposit received</div></div>
+      </div>
+      <div class="check-item">
+        <!-- ✏️ CHANGE TO check-pending AND ⬜ IF NOT DONE -->
+        <div class="check-icon check-done">✓</div>
+        <div><div class="check-text done">Waiver Signed</div><div class="check-sub">Digital waiver completed</div></div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon check-pending">⬜</div>
+        <div><div class="check-text pending">Consultation Complete</div><div class="check-sub">Design confirmed with artist</div></div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon check-pending">⬜</div>
+        <div><div class="check-text pending">Prep Guide Read</div><div class="check-sub"><a href="https://www.nbtstucson.com/prep-guide.html" style="color:var(--green-b);">Read the guide →</a></div></div>
+      </div>
+      <div class="check-item">
+        <div class="check-icon check-pending">⬜</div>
+        <div><div class="check-text pending">Appointment Day Ready</div><div class="check-sub">Eat well, hydrate, rest up</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- YOUR ARTIST -->
+  <div class="card">
+    <div class="card-header"><div class="card-icon">🎨</div><div class="card-title">Your Artist</div></div>
+    <div class="card-body">
+      <!-- ✏️ CHANGE ARTIST PHOTO URL, NAME AND DETAILS -->
+      <div class="artist-wrap">
+        <img class="artist-img"
+          src="https://github.com/PELONNBTS/pelonnbts.github.io/blob/main/pelon_arrtistpage.jpg?raw=true"
+          alt="Pelon"/>
+        <div>
+          <div class="artist-name">Pelon</div>
+          <div class="artist-role">Master Artist · 30+ Years</div>
+          <div class="artist-rate">$180/hr · $100 minimum</div>
+        </div>
+      </div>
+      <div class="artist-contact">
+        <a href="https://www.instagram.com/nbtstucson" target="_blank" class="artist-btn">
+          📸 &nbsp; Message on Instagram
+        </a>
+        <a href="http://facebook.com/NewBeginningsTattooStudio" target="_blank" class="artist-btn">
+          💬 &nbsp; Message on Facebook
+        </a>
+        <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="artist-btn">
+          📅 &nbsp; Manage Appointment
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PREP TIPS -->
+  <div class="card">
+    <div class="card-header"><div class="card-icon">📖</div><div class="card-title">Before Your Session</div></div>
+    <div class="card-body">
+      <div class="tip-item"><div class="tip-dot"></div><div class="tip-text">Eat a full meal 1–2 hours before your appointment</div></div>
+      <div class="tip-item"><div class="tip-dot"></div><div class="tip-text">Drink plenty of water the day before and morning of</div></div>
+      <div class="tip-item"><div class="tip-dot"></div><div class="tip-text">Get a full night of sleep the night before</div></div>
+      <div class="tip-item"><div class="tip-dot"></div><div class="tip-text">No alcohol for at least 24 hours before your session</div></div>
+      <div class="tip-item"><div class="tip-dot"></div><div class="tip-text">Wear loose comfortable clothing that exposes the area</div></div>
+      <div class="tip-item"><div class="tip-dot"></div><div class="tip-text">Bring a valid photo ID — required for all clients</div></div>
+      <div class="tip-item"><div class="tip-dot"></div><div class="tip-text">Bring snacks and water for longer sessions</div></div>
+    </div>
+  </div>
+
+  <!-- ARTIST NOTES -->
+  <div class="card">
+    <div class="card-header"><div class="card-icon">✍️</div><div class="card-title">Notes from Your Artist</div></div>
+    <div class="card-body">
+      <!-- ✏️ CHANGE THIS NOTE FOR EACH CLIENT -->
+      <div class="notes-box" id="artistNotes">
+        Looking forward to bringing your vision to life. Make sure you come in well rested and fed — we have a great session ahead of us. If you have any questions before your appointment do not hesitate to reach out on Instagram or Facebook. See you soon.
+      </div>
+      <div style="margin-top:12px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;">— Pelon</div>
+    </div>
+  </div>
+
+  <!-- QUICK ACTIONS -->
+  <div class="card full">
+    <div class="card-header"><div class="card-icon">⚡</div><div class="card-title">Quick Actions</div></div>
+    <div class="card-body">
+      <div class="actions-grid">
+        <a href="https://maps.google.com/?q=4343+N+Oracle+Rd+Suite+L+Tucson+AZ" target="_blank" class="action-btn">
+          <div class="ab-icon">📍</div>
+          <div class="ab-title">Get Directions</div>
+          <div class="ab-desc">4343 N Oracle Rd Suite L</div>
+        </a>
+        <a href="https://www.nbtstucson.com/prep-guide.html" target="_blank" class="action-btn">
+          <div class="ab-icon">📋</div>
+          <div class="ab-title">Prep Guide</div>
+          <div class="ab-desc">Full day-by-day checklist</div>
+        </a>
+        <a href="https://www.nbtstucson.com/aftercare.html" target="_blank" class="action-btn">
+          <div class="ab-icon">🌿</div>
+          <div class="ab-title">Aftercare Guide</div>
+          <div class="ab-desc">Ready for after your session</div>
+        </a>
+        <a href="https://www.nbtstucson.com/pain-chart.html" target="_blank" class="action-btn">
+          <div class="ab-icon">🗺️</div>
+          <div class="ab-title">Pain Chart</div>
+          <div class="ab-desc">Know what to expect</div>
+        </a>
+        <a href="https://g.page/r/CXBwTOOXxC3IEAI/review" target="_blank" class="action-btn">
+          <div class="ab-icon">⭐</div>
+          <div class="ab-title">Leave a Review</div>
+          <div class="ab-desc">After your session</div>
+        </a>
+        <a href="https://www.nbtstucson.com" target="_blank" class="action-btn">
+          <div class="ab-icon">🦁</div>
+          <div class="ab-title">NBTS Website</div>
+          <div class="ab-desc">nbtstucson.com</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end main-wrap -->
+
+<!-- VERSE -->
+<div class="verse-strip">
+  <p>"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here."</p>
+  <span>✦ &nbsp; 2 Corinthians 5:17 &nbsp; ✦</span>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="f-logo">NBTS · New Beginnings Tattoo Studio</div>
+  <div class="f-tag" style="margin-top:4px;">4343 N Oracle Rd Suite L · Tucson, AZ · Mon–Sat 9am–10pm</div>
+</footer>
+
+<script>
+// ══════════════════════════════════════════
+// ✏️ EDIT THESE VALUES FOR EACH CLIENT
+// ══════════════════════════════════════════
+const CLIENT = {
+  name:        "Carlos M.",           // Client full name
+  artist:      "Pelon",              // Artist name
+  date:        "June 15, 2026",      // Display date
+  time:        "2:00 PM",            // Appointment time
+  style:       "Black & Grey",       // Tattoo style
+  placement:   "Outer Forearm",      // Body placement
+  duration:    "3–4 Hours",          // Estimated duration
+  total:       "$540",               // Estimated total
+  balance:     "$490",               // Balance after deposit
+  // Countdown target — format: "Month Day, Year HH:MM:SS"
+  apptDateTime:"June 15, 2026 14:00:00",
+  // Artist note — customize for each client
+  note: "Looking forward to bringing your vision to life. Make sure you come in well rested and fed — we have a great session ahead of us. If you have any questions before your appointment do not hesitate to reach out on Instagram or Facebook. See you soon.",
+};
+// ══════════════════════════════════════════
+
+// Populate all fields
+document.getElementById('clientName').textContent    = CLIENT.name;
+document.getElementById('detailClient').textContent  = CLIENT.name;
+document.getElementById('detailArtist').textContent  = CLIENT.artist;
+document.getElementById('detailDate').textContent    = CLIENT.date;
+document.getElementById('detailTime').textContent    = CLIENT.time;
+document.getElementById('detailStyle').innerHTML     = CLIENT.style;
+document.getElementById('detailPlacement').textContent = CLIENT.placement;
+document.getElementById('detailDuration').textContent = CLIENT.duration;
+document.getElementById('payTotal').textContent      = CLIENT.total;
+document.getElementById('payBalance').textContent    = CLIENT.balance;
+document.getElementById('artistNotes').textContent   = CLIENT.note;
+document.getElementById('apptDateDisplay').textContent = CLIENT.date + ' at ' + CLIENT.time;
+document.title = CLIENT.name + ' — NBTS Appointment Tracker';
+
+// Countdown timer
+function updateCountdown() {
+  const target = new Date(CLIENT.apptDateTime).getTime();
+  const now    = new Date().getTime();
+  const diff   = target - now;
+
+  if(diff <= 0) {
+    document.getElementById('cdDays').textContent  = '0';
+    document.getElementById('cdHours').textContent = '0';
+    document.getElementById('cdMins').textContent  = '0';
+    document.getElementById('cdSecs').textContent  = '0';
+    document.querySelector('.countdown-label').textContent = '🎨 Your appointment is today!';
+    return;
+  }
+
+  const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const secs  = Math.floor((diff % (1000 * 60)) / 1000);
+
+  document.getElementById('cdDays').textContent  = days;
+  document.getElementById('cdHours').textContent = hours;
+  document.getElementById('cdMins').textContent  = mins;
+  document.getElementById('cdSecs').textContent  = secs;
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a1cca1b26d0321c2b699a8f/1jq07av4f';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>
