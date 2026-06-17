@@ -752,7 +752,7 @@ async function nbtsSend() {
   nbtsShowTyping();
 
   try {
-    const response = await fetch('https://pelons-desk.netlify.app/.netlify/functions/nbts-chat', {
+    const response = await fetch('https://nbts-chat.netlify.app/.netlify/functions/nbts-chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ messages: nbtsHistory })
