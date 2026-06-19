@@ -122,6 +122,10 @@ a{text-decoration:none;}img{display:block;max-width:100%;}
 .btn-g:hover{background:var(--green-b);color:#050605;box-shadow:0 0 28px rgba(34,168,78,.35);}
 .btn-o{padding:15px 38px;background:transparent;color:var(--gold);font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;border:1px solid rgba(201,168,76,.35);cursor:pointer;display:inline-block;transition:all .3s;}
 .btn-o:hover{border-color:var(--gold);background:rgba(201,168,76,.07);}
+.hero-letter-logo{display:none;}
+@media(max-width:600px){
+  .hero-letter-logo{display:block;width:130px;height:auto;margin:28px auto 0;position:relative;z-index:2;border-radius:8px;opacity:.95;filter:drop-shadow(0 0 18px rgba(34,168,78,.2));}
+}
 .scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;opacity:.22;z-index:2;}
 .scroll-line{width:.5px;height:38px;background:var(--green-b);animation:scrollPulse 2s ease-in-out infinite;}
 .scroll-txt{font-family:'Cinzel',serif;font-size:7px;letter-spacing:4px;color:var(--green-b);text-transform:uppercase;}
@@ -584,6 +588,7 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
     <a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="btn-g">&#10022; &nbsp; Book Your Appointment</a>
     <a href="#artists" class="btn-o">Meet the Artists</a>
   </div>
+  <img class="hero-letter-logo" src="https://github.com/PELONNBTS/pelonnbts.github.io/blob/main/letter_logo.jpg?raw=true" alt="NBTS Tucson Arizona"/>
   <div class="scroll-hint"><div class="scroll-line"></div><div class="scroll-txt">Scroll</div></div>
 </section>
 
