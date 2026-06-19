@@ -228,6 +228,14 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
 .tt-follow-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:#000;color:#fff;font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(255,255,255,.2);text-decoration:none;transition:all .3s;}
 .tt-follow-btn:hover{background:#111;border-color:var(--gold);}
 .tt-embed-wrap{width:100%;display:flex;justify-content:center;}
+.tt-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:680px;margin:0 auto;}
+.tt-card{display:flex;flex-direction:column;align-items:center;gap:14px;padding:32px 16px;background:var(--dark);border:.5px solid rgba(201,168,76,.2);text-decoration:none;transition:all .3s;position:relative;overflow:hidden;}
+.tt-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);opacity:0;transition:opacity .3s;}
+.tt-card:hover{border-color:rgba(34,168,78,.4);transform:translateY(-3px);box-shadow:0 8px 24px rgba(201,168,76,.08);}
+.tt-card:hover::before{opacity:1;}
+.tt-card-icon{width:56px;height:56px;border-radius:50%;background:#000;display:flex;align-items:center;justify-content:center;border:.5px solid rgba(201,168,76,.25);}
+.tt-card-label{font-family:'Cinzel',serif;font-size:10px;letter-spacing:1.5px;color:var(--bone);text-transform:uppercase;text-align:center;opacity:.85;}
+@media(max-width:600px){.tt-card-grid{grid-template-columns:1fr;gap:10px;}.tt-card{padding:22px 16px;flex-direction:row;justify-content:flex-start;}}
 @media(max-width:600px){.tiktok-section{padding:44px 20px;}}
 .booking{background:var(--black);border-top:.5px solid rgba(34,168,78,.15);padding:90px 40px;text-align:center;position:relative;overflow:hidden;}
 .booking::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(26,122,58,.08) 0%,transparent 65%);pointer-events:none;}
@@ -702,11 +710,25 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
         Follow @pelon5201 on TikTok
       </a>
     </div>
-    <div class="tt-embed-wrap">
-      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@pelon5201" data-unique-id="pelon5201" data-embed-type="creator" style="max-width:780px;min-width:288px;">
-        <section><a target="_blank" href="https://www.tiktok.com/@pelon5201">@pelon5201</a></section>
-      </blockquote>
-      <script async src="https://www.tiktok.com/embed.js"></script>
+    <div class="tt-card-grid">
+      <a href="https://www.tiktok.com/@pelon5201" target="_blank" class="tt-card">
+        <div class="tt-card-icon">
+          <svg viewBox="0 0 24 24" width="34" height="34" fill="#C9A84C"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+        </div>
+        <div class="tt-card-label">Fresh Ink Reels</div>
+      </a>
+      <a href="https://www.tiktok.com/@pelon5201" target="_blank" class="tt-card">
+        <div class="tt-card-icon">
+          <svg viewBox="0 0 24 24" width="34" height="34" fill="#22A84E"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+        </div>
+        <div class="tt-card-label">Family Moments</div>
+      </a>
+      <a href="https://www.tiktok.com/@pelon5201" target="_blank" class="tt-card">
+        <div class="tt-card-icon">
+          <svg viewBox="0 0 24 24" width="34" height="34" fill="#C9A84C"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+        </div>
+        <div class="tt-card-label">Behind the Chair</div>
+      </a>
     </div>
   </div>
 </div>
