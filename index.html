@@ -57,7 +57,8 @@ body{background:#050605;color:#D8CFA8;font-family:'Crimson Pro',Georgia,serif;ov
 a{text-decoration:none;}img{display:block;max-width:100%;}
 :root{--gold:#C9A84C;--gold-lt:#F0D080;--gold-dim:#8B6E2A;--gold-pale:#E8D5A0;--green:#1A7A3A;--green-b:#22A84E;--green-glow:#2ECC6A;--green-deep:#071A0D;--black:#050605;--char:#0C0F0C;--dark:#111411;--smoke:#181C18;--bone:#D8CFA8;--parch:#EDE0BB;--muted:#5A6050;}
 .nav{position:sticky;top:0;z-index:1000;background:rgba(5,6,5,.97);border-bottom:1px solid rgba(34,168,78,.25);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:66px;backdrop-filter:blur(10px);}
-.nav-logo{font-family:'Cinzel Decorative',serif;font-size:15px;color:var(--gold);letter-spacing:2px;font-weight:700;display:flex;align-items:center;gap:10px;}
+.nav-logo{font-family:'Cinzel Decorative',serif;font-size:13px;color:var(--gold);letter-spacing:1px;font-weight:700;display:flex;align-items:center;gap:10px;white-space:nowrap;}
+.nav-logo-mobile{display:none;}
 .nav-lion{font-size:20px;}
 .nav-links{display:flex;align-items:center;gap:24px;list-style:none;}
 .nav-links a{font-family:'Cinzel',serif;font-size:13px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;transition:color .2s;cursor:pointer;}
@@ -95,7 +96,10 @@ a{text-decoration:none;}img{display:block;max-width:100%;}
   .nav-hamburger{display:flex;}
   .nav-status{display:none;}
   .hide-mobile{display:none;}
-  .nav{padding:0 24px;}
+  .nav{padding:0 16px;}
+  .nav-logo{font-size:11px;letter-spacing:.5px;}
+  .nav-logo-desktop{display:none;}
+  .nav-logo-mobile{display:inline;}
 }
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 40px 100px;overflow:hidden;background:radial-gradient(ellipse 90% 60% at 50% 35%,#061209 0%,#050605 70%);}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(34,168,78,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(34,168,78,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
@@ -258,7 +262,10 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
 </head>
 <body>
 <nav class="nav">
-  <div class="nav-logo"><span class="nav-lion">🦁</span> NBTS</div>
+  <div class="nav-logo">
+    <span class="nav-logo-desktop"><span class="nav-lion">🦁</span> NBTS</span>
+    <span class="nav-logo-mobile">New Beginnings Tattoo Family</span>
+  </div>
   <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
