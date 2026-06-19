@@ -73,7 +73,7 @@ a{text-decoration:none;}img{display:block;max-width:100%;}
 .nav-dropdown-btn:hover{color:var(--gold);}
 .nav-dropdown-btn .arr{font-size:10px;transition:transform .2s;}
 .nav-dropdown.open .arr{transform:rotate(180deg);}
-.nav-dropdown-menu{position:absolute;top:calc(100% + 0px);left:50%;transform:translateX(-50%);background:rgba(5,6,5,.99);border:.5px solid rgba(34,168,78,.25);min-width:200px;display:none;flex-direction:column;padding:0;z-index:200;}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 0px);left:50%;transform:translateX(-50%);background:rgba(5,6,5,.99);border:.5px solid rgba(34,168,78,.25);min-width:200px;display:none;flex-direction:column;padding:0;z-index:200;max-height:calc(100vh - 90px);overflow-y:auto;}
 .nav-dropdown-menu::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px;}
 .nav-dropdown-menu.open{display:flex;}
 .nav-dropdown-menu a{font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;color:var(--bone);text-transform:uppercase;padding:14px 20px;display:block;transition:all .2s;border-bottom:.5px solid rgba(201,168,76,.08);}
@@ -85,7 +85,7 @@ a{text-decoration:none;}img{display:block;max-width:100%;}
 .nav-hamburger.active span:nth-child(2){opacity:0;}
 .nav-hamburger.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
 @media(max-width:768px){
-  .nav-links{display:none;position:absolute;top:66px;left:0;right:0;background:rgba(5,6,5,.98);flex-direction:column;padding:20px 40px;gap:0;border-bottom:1px solid rgba(34,168,78,.2);}
+  .nav-links{display:none;position:absolute;top:66px;left:0;right:0;background:rgba(5,6,5,.98);flex-direction:column;padding:20px 40px;gap:0;border-bottom:1px solid rgba(34,168,78,.2);max-height:calc(100vh - 66px);overflow-y:auto;}
   .nav-links.open{display:flex;}
   .nav-links li{border-bottom:.5px solid rgba(201,168,76,.08);padding:16px 0;}
   .nav-links a{font-size:15px;letter-spacing:2px;}
@@ -293,14 +293,14 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
         <a href="gift-cards.html">Gift Cards</a>
         <a href="tryon.html">Try It On</a>
         <a href="booking.html">Pricing</a>
-        <a href="waiver.html">Sign Waiver</a>
+        <a href="calculator.html">Price Calculator</a>
         <a href="consultation.html">Consultation Request</a>
         <a href="blog.html">Blog &amp; News</a>
         <a href="socials.html">Follow Us</a>
       </div>
     </li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="calculator.html">Price Calculator</a></li>
+    <li><a href="waiver.html">Sign Waiver</a></li>
     <li><a href="https://app.squareup.com/appointments/book/4uyr6lidxp90a2/L6H0XP0YX6C17/start" target="_blank" class="nav-cta">Book Now</a></li>
   </ul>
   <div class="nav-status"><div class="nav-dot"></div>Open Mon&ndash;Sat</div>
