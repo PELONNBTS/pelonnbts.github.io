@@ -134,7 +134,18 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
 .verse-text{font-family:'Crimson Pro',serif;font-style:italic;font-size:clamp(16px,2.2vw,20px);color:var(--parch);opacity:.9;line-height:1.7;position:relative;}
 .verse-ref{font-family:'Cinzel',serif;font-size:9px;letter-spacing:5px;color:var(--green-b);text-transform:uppercase;margin-top:10px;position:relative;}
 
-.socials-cta-strip{background:var(--black);padding:28px 24px;display:flex;justify-content:center;border-bottom:.5px solid rgba(34,168,78,.15);}
+.socials-cta-strip{background:var(--black);padding:28px 24px;display:flex;justify-content:center;border-bottom:.5px solid rgba(34,168,78,.15);position:relative;overflow:hidden;}
+.sparkle{position:absolute;color:var(--gold);font-size:14px;pointer-events:none;animation:sparkleTwinkle 2.2s ease-in-out infinite;text-shadow:0 0 8px rgba(201,168,76,.8);}
+.sparkle.s1{top:18%;left:18%;font-size:12px;animation-delay:0s;color:#22A84E;}
+.sparkle.s2{top:65%;left:12%;font-size:16px;animation-delay:.4s;}
+.sparkle.s3{top:25%;right:16%;font-size:18px;animation-delay:.8s;color:#22A84E;}
+.sparkle.s4{top:70%;right:20%;font-size:11px;animation-delay:1.2s;}
+.sparkle.s5{top:10%;left:42%;font-size:10px;animation-delay:1.6s;color:#22A84E;}
+.sparkle.s6{top:75%;right:42%;font-size:13px;animation-delay:.2s;}
+@keyframes sparkleTwinkle{0%,100%{opacity:0;transform:scale(.4) rotate(0deg);}50%{opacity:1;transform:scale(1.15) rotate(20deg);}}
+@media(max-width:600px){
+  .sparkle.s1{left:6%;}.sparkle.s2{left:4%;}.sparkle.s3{right:6%;}.sparkle.s4{right:5%;}.sparkle.s5{left:22%;}.sparkle.s6{right:22%;}
+}
 .socials-cta-btn{display:inline-flex;align-items:center;gap:16px;padding:16px 36px;background:linear-gradient(135deg,#1A0A2E 0%,#2E0A4E 30%,#C9A84C 70%,#22A84E 100%);background-size:300% 300%;animation:socialsShimmer 6s ease infinite;color:#050605;font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:700;border-radius:50px;box-shadow:0 4px 30px rgba(201,168,76,.35),0 0 0 1px rgba(255,255,255,.1) inset;transition:transform .3s,box-shadow .3s;position:relative;}
 .socials-cta-btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 8px 40px rgba(201,168,76,.5),0 0 0 1px rgba(255,255,255,.15) inset;}
 @keyframes socialsShimmer{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
@@ -582,6 +593,12 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
 </div>
 
 <div class="socials-cta-strip">
+  <div class="sparkle s1">&#10022;</div>
+  <div class="sparkle s2">&#10038;</div>
+  <div class="sparkle s3">&#10022;</div>
+  <div class="sparkle s4">&#10038;</div>
+  <div class="sparkle s5">&#10022;</div>
+  <div class="sparkle s6">&#10038;</div>
   <a href="socials.html" class="socials-cta-btn">
     <span class="socials-cta-icons">
       <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
