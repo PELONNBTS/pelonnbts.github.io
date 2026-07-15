@@ -122,7 +122,22 @@ a{text-decoration:none;}img{display:block;max-width:100%;}
 .btn-g:hover{background:var(--green-b);color:#050605;box-shadow:0 0 28px rgba(34,168,78,.35);}
 .btn-o{padding:15px 38px;background:transparent;color:var(--gold);font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;border:1px solid rgba(201,168,76,.35);cursor:pointer;display:inline-block;transition:all .3s;}
 .btn-o:hover{border-color:var(--gold);background:rgba(201,168,76,.07);}
-.hero-letter-logo{display:none;}
+.announcement-bar{background:linear-gradient(135deg,#071A0D 0%,#0C2A14 40%,#071A0D 100%);border-bottom:2px solid var(--gold);border-top:2px solid var(--gold);padding:24px 32px;position:relative;overflow:hidden;z-index:999;}
+.announcement-bar::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(201,168,76,.06),transparent);animation:announceSweep 3s ease-in-out infinite;}
+@keyframes announceSweep{0%{transform:translateX(-100%);}100%{transform:translateX(100%);}}
+.announcement-pulse{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);animation:announcePulse 2s ease-in-out infinite;}
+@keyframes announcePulse{0%,100%{opacity:.4;}50%{opacity:1;}}
+.announcement-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:20px;justify-content:center;text-align:center;}
+.announcement-icon{font-size:18px;color:var(--gold);flex-shrink:0;animation:announceGlow 2s ease-in-out infinite alternate;}
+@keyframes announceGlow{from{opacity:.4;text-shadow:none;}to{opacity:1;text-shadow:0 0 12px rgba(201,168,76,.8);}}
+.announcement-content{flex:1;}
+.announcement-title{font-family:'Cinzel Decorative',serif;font-size:clamp(16px,2.8vw,26px);color:var(--gold);font-weight:900;line-height:1.25;margin-bottom:8px;letter-spacing:1px;}
+.announcement-body{font-family:'Crimson Pro',serif;font-style:italic;font-size:clamp(14px,1.8vw,17px);color:var(--parch);opacity:.9;line-height:1.6;}
+@media(max-width:600px){
+  .announcement-bar{padding:20px 20px;}
+  .announcement-inner{gap:12px;}
+  .announcement-icon{font-size:14px;}
+}
 @media(max-width:600px){
   .hero-letter-logo{display:block;width:220px;height:auto;margin:24px auto 0;position:relative;z-index:2;border-radius:8px;opacity:.95;filter:drop-shadow(0 0 22px rgba(34,168,78,.25));}
 }
@@ -320,6 +335,18 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
   </ul>
   <div class="nav-status"><div class="nav-dot"></div>Open Mon&ndash;Sat</div>
 </nav>
+
+<div class="announcement-bar">
+  <div class="announcement-pulse"></div>
+  <div class="announcement-inner">
+    <div class="announcement-icon">&#10022;</div>
+    <div class="announcement-content">
+      <div class="announcement-title">New Beginnings Has Found a New Permanent Home</div>
+      <div class="announcement-body">We are still at our current location at 4343 N Oracle Rd, Suite L until further notice. New location details coming soon &mdash; stay tuned!</div>
+    </div>
+    <div class="announcement-icon">&#10022;</div>
+  </div>
+</div>
 
 <section class="hero" id="home">
   <div class="hero-grid"></div>
