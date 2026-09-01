@@ -21,13 +21,13 @@
   "description": "Family-owned tattoo studio in Tucson AZ. Master artist Pelon with 30+ years of experience.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "4343 N Oracle Rd, Suite L",
+    "streetAddress": "952 W. Prince Rd",
     "addressLocality": "Tucson",
     "addressRegion": "AZ",
     "postalCode": "85705",
     "addressCountry": "US"
   },
-  "geo": { "@type": "GeoCoordinates", "latitude": 32.2895, "longitude": -110.9748 },
+  "geo": { "@type": "GeoCoordinates", "latitude": 32.3024, "longitude": -110.9987 },
   "email": "nbtstucson@gmail.com",
   "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "22:00" }],
   "priceRange": "$80 - $180 per hour",
@@ -122,22 +122,37 @@ a{text-decoration:none;}img{display:block;max-width:100%;}
 .btn-g:hover{background:var(--green-b);color:#050605;box-shadow:0 0 28px rgba(34,168,78,.35);}
 .btn-o{padding:15px 38px;background:transparent;color:var(--gold);font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;border:1px solid rgba(201,168,76,.35);cursor:pointer;display:inline-block;transition:all .3s;}
 .btn-o:hover{border-color:var(--gold);background:rgba(201,168,76,.07);}
-.announcement-bar{background:linear-gradient(135deg,#071A0D 0%,#0C2A14 40%,#071A0D 100%);border-bottom:2px solid var(--gold);border-top:2px solid var(--gold);padding:24px 32px;position:relative;overflow:hidden;z-index:999;}
-.announcement-bar::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(201,168,76,.06),transparent);animation:announceSweep 3s ease-in-out infinite;}
-@keyframes announceSweep{0%{transform:translateX(-100%);}100%{transform:translateX(100%);}}
-.announcement-pulse{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);animation:announcePulse 2s ease-in-out infinite;}
-@keyframes announcePulse{0%,100%{opacity:.4;}50%{opacity:1;}}
-.announcement-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:20px;justify-content:center;text-align:center;}
-.announcement-icon{font-size:18px;color:var(--gold);flex-shrink:0;animation:announceGlow 2s ease-in-out infinite alternate;}
-@keyframes announceGlow{from{opacity:.4;text-shadow:none;}to{opacity:1;text-shadow:0 0 12px rgba(201,168,76,.8);}}
-.announcement-content{flex:1;}
-.announcement-title{font-family:'Cinzel Decorative',serif;font-size:clamp(16px,2.8vw,26px);color:var(--gold);font-weight:900;line-height:1.25;margin-bottom:8px;letter-spacing:1px;}
-.announcement-body{font-family:'Crimson Pro',serif;font-style:italic;font-size:clamp(14px,1.8vw,17px);color:var(--parch);opacity:.9;line-height:1.6;}
-@media(max-width:600px){
-  .announcement-bar{padding:20px 20px;}
-  .announcement-inner{gap:12px;}
-  .announcement-icon{font-size:14px;}
-}
+.hero-letter-logo{display:none;}
+
+/* NEW LOCATION SECTION */
+.new-location{background:var(--green-deep);border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);padding:72px 24px;text-align:center;position:relative;overflow:hidden;}
+.nl-bg-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(34,168,78,.18) 0%,rgba(201,168,76,.06) 40%,transparent 70%);pointer-events:none;}
+.new-location::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--green-b),var(--gold),var(--green-b),transparent);animation:nlSweep 4s ease-in-out infinite;}
+.new-location::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),var(--green-b),var(--gold),transparent);animation:nlSweep 4s ease-in-out infinite reverse;}
+@keyframes nlSweep{0%,100%{opacity:.5;}50%{opacity:1;}}
+.nl-inner{max-width:680px;margin:0 auto;position:relative;z-index:2;}
+.nl-badge{font-family:'Cinzel',serif;font-size:11px;letter-spacing:5px;color:var(--green-b);text-transform:uppercase;margin-bottom:16px;animation:nlBadgePulse 2s ease-in-out infinite;}
+@keyframes nlBadgePulse{0%,100%{opacity:.6;}50%{opacity:1;}}
+.nl-title{font-family:'Cinzel Decorative',serif;font-size:clamp(28px,5vw,52px);color:var(--gold);font-weight:900;line-height:1.1;margin-bottom:20px;text-shadow:0 0 40px rgba(201,168,76,.3),0 0 80px rgba(201,168,76,.1);}
+.nl-divider{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:24px;}
+.nl-divider span:not(.nl-lion){flex:1;max-width:120px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.5));}
+.nl-divider span:first-child{background:linear-gradient(90deg,transparent,rgba(201,168,76,.5));}
+.nl-divider span:last-child{background:linear-gradient(90deg,rgba(201,168,76,.5),transparent);}
+.nl-lion{font-size:28px;animation:nlLionPulse 3s ease-in-out infinite;}
+@keyframes nlLionPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.15);}}
+.nl-body{font-family:'Crimson Pro',serif;font-size:clamp(16px,2vw,19px);color:var(--parch);line-height:1.8;opacity:.9;margin-bottom:32px;}
+.nl-body strong{color:var(--gold);font-style:normal;}
+.nl-address-card{display:inline-flex;align-items:center;gap:16px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.35);padding:20px 36px;margin-bottom:24px;position:relative;overflow:hidden;}
+.nl-address-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(34,168,78,.05),transparent);pointer-events:none;}
+.nl-address-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.nl-address-icon{font-size:28px;animation:nlBounce 2s ease-in-out infinite;}
+@keyframes nlBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
+.nl-address-main{font-family:'Cinzel Decorative',serif;font-size:clamp(20px,3.5vw,32px);color:var(--gold);font-weight:900;line-height:1.1;}
+.nl-address-sub{font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;color:var(--green-b);text-transform:uppercase;margin-top:4px;}
+.nl-sub{font-family:'Crimson Pro',serif;font-style:italic;font-size:clamp(15px,1.8vw,18px);color:var(--bone);opacity:.75;margin-bottom:28px;}
+.nl-btn{display:inline-flex;align-items:center;gap:10px;padding:15px 38px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;border:1px solid var(--green-b);font-weight:700;transition:all .3s;text-decoration:none;}
+.nl-btn:hover{background:var(--green-b);color:#050605;box-shadow:0 0 28px rgba(34,168,78,.4);}
+@media(max-width:600px){.new-location{padding:52px 20px;}.nl-address-card{padding:16px 24px;flex-direction:column;gap:10px;text-align:center;}.nl-btn{padding:13px 28px;}}
 @media(max-width:600px){
   .hero-letter-logo{display:block;width:220px;height:auto;margin:24px auto 0;position:relative;z-index:2;border-radius:8px;opacity:.95;filter:drop-shadow(0 0 22px rgba(34,168,78,.25));}
 }
@@ -335,18 +350,6 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
   </ul>
   <div class="nav-status"><div class="nav-dot"></div>Open Mon&ndash;Sat</div>
 </nav>
-
-<div class="announcement-bar">
-  <div class="announcement-pulse"></div>
-  <div class="announcement-inner">
-    <div class="announcement-icon">&#10022;</div>
-    <div class="announcement-content">
-      <div class="announcement-title">New Beginnings Has Found a New Permanent Home</div>
-      <div class="announcement-body">We are still at our current location at 4343 N Oracle Rd, Suite L until further notice. New location details coming soon &mdash; stay tuned!</div>
-    </div>
-    <div class="announcement-icon">&#10022;</div>
-  </div>
-</div>
 
 <section class="hero" id="home">
   <div class="hero-grid"></div>
@@ -624,6 +627,25 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
   <div class="verse-ref">&#10022; &nbsp; 2 Corinthians 5:17 &nbsp; &#10022;</div>
 </div>
 
+<section class="new-location">
+  <div class="nl-bg-glow"></div>
+  <div class="nl-inner">
+    <div class="nl-badge">&#10022; We Moved &#10022;</div>
+    <div class="nl-title">We Have a New Home</div>
+    <div class="nl-divider"><span></span><span class="nl-lion">🦁</span><span></span></div>
+    <p class="nl-body">New Beginnings Tattoo Studio has officially planted roots. After years of building this familia one tattoo at a time, we now have a <strong>permanent home</strong> where we will continue to grow, create, and leave marks that last forever.</p>
+    <div class="nl-address-card">
+      <div class="nl-address-icon">📍</div>
+      <div class="nl-address-text">
+        <div class="nl-address-main">952 W. Prince Rd</div>
+        <div class="nl-address-sub">Tucson, Arizona 85705</div>
+      </div>
+    </div>
+    <p class="nl-sub">Same family. Same faith. Same ink. Brand new chapter.</p>
+    <a href="https://maps.google.com/?q=952+W+Prince+Rd+Tucson+AZ+85705" target="_blank" class="nl-btn">Get Directions &rarr;</a>
+  </div>
+</section>
+
 <div class="socials-cta-strip">
   <div class="sparkle s1">&#10022;</div>
   <div class="sparkle s2">&#10038;</div>
@@ -790,13 +812,13 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
 </div>
 
 <div style="width:100%;height:300px;border-top:1px solid rgba(34,168,78,.2);border-bottom:1px solid rgba(34,168,78,.2);position:relative;overflow:hidden;">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3374.6!2d-110.9774!3d32.2895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86d6696b12345678%3A0x0!2s4343+N+Oracle+Rd+%23L%2C+Tucson%2C+AZ+85705!5e0!3m2!1sen!2sus!4v1234567890!5m2!1sen!2sus" width="100%" height="300" style="border:0;filter:grayscale(100%) invert(92%) contrast(83%);" allowfullscreen="" loading="lazy" title="New Beginnings Tattoo Studio Location"></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3372.8!2d-110.9987!3d32.3024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s952+W+Prince+Rd+Tucson+AZ+85705!5e0!3m2!1sen!2sus!4v1234567890!5m2!1sen!2sus" width="100%" height="300" style="border:0;filter:grayscale(100%) invert(92%) contrast(83%);" allowfullscreen="" loading="lazy" title="New Beginnings Tattoo Studio Location"></iframe>
   <div style="position:absolute;bottom:0;left:0;right:0;padding:14px 24px;background:linear-gradient(to top,rgba(5,6,5,.9),transparent);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
     <div>
-      <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;">4343 N Oracle Rd, Suite L &middot; Tucson, AZ</div>
+      <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;">952 W. Prince Rd &middot; Tucson, AZ</div>
       <div style="font-family:'Crimson Pro',serif;font-style:italic;font-size:14px;color:var(--bone);opacity:.7;margin-top:2px;">Mon&ndash;Sat 9am&ndash;10pm &middot; Walk-ins Welcome</div>
     </div>
-    <a href="https://maps.google.com/?q=New+Beginnings+Tattoo+Studio+4343+N+Oracle+Rd+Suite+L+Tucson+AZ" target="_blank" style="padding:10px 20px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;border:1px solid var(--green-b);text-decoration:none;">Get Directions &rarr;</a>
+    <a href="https://maps.google.com/?q=New+Beginnings+Tattoo+Studio+952+W+Prince+Rd+Tucson+AZ" target="_blank" style="padding:10px 20px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;border:1px solid var(--green-b);text-decoration:none;">Get Directions &rarr;</a>
   </div>
 </div>
 
@@ -805,8 +827,8 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
     <div class="ft-col">
       <h4>New Beginnings</h4>
       <p class="bright">New Beginnings<br>Tattoo Studio</p>
-      <p style="margin-top:12px;line-height:2;">4343 N Oracle Rd<br>Suite L<br>Tucson, AZ 85705</p>
-      <a href="https://maps.google.com/?q=4343+N+Oracle+Rd+Suite+L+Tucson+AZ" target="_blank" style="margin-top:12px;color:var(--green-b);font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;">Get Directions &rarr;</a>
+      <p style="margin-top:12px;line-height:2;">952 W. Prince Rd<br>Tucson, AZ 85705</p>
+      <a href="https://maps.google.com/?q=952+W+Prince+Rd+Tucson+AZ" target="_blank" style="margin-top:12px;color:var(--green-b);font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;">Get Directions &rarr;</a>
     </div>
     <div class="ft-col">
       <h4>Hours</h4>
@@ -844,7 +866,7 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
   <div class="footer-bottom">
     <div>
       <div class="f-logo">NBTS &middot; New Beginnings Tattoo Studio</div>
-      <div class="f-tag">4343 N Oracle Rd Suite L &middot; Tucson, AZ &nbsp;&middot;&nbsp; Family &middot; Faith &middot; Ink</div>
+      <div class="f-tag">952 W. Prince Rd &middot; Tucson, AZ &nbsp;&middot;&nbsp; Family &middot; Faith &middot; Ink</div>
     </div>
     <div class="socials">
       <a class="soc" href="https://www.tiktok.com/@pelon5201" target="_blank" title="TikTok @pelon5201"><svg viewBox="0 0 24 24" fill="none"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" fill="white"/></svg></a>
