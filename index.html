@@ -29,7 +29,10 @@
   },
   "geo": { "@type": "GeoCoordinates", "latitude": 32.3024, "longitude": -110.9987 },
   "email": "nbtstucson@gmail.com",
-  "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "22:00" }],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday"], "opens": "09:00", "closes": "21:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Thursday","Friday","Saturday"], "opens": "10:00", "closes": "23:00" }
+  ],
   "priceRange": "$80 - $180 per hour",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": 5, "bestRating": 5, "worstRating": 1, "reviewCount": 12 }
 }
@@ -816,7 +819,7 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
   <div style="position:absolute;bottom:0;left:0;right:0;padding:14px 24px;background:linear-gradient(to top,rgba(5,6,5,.9),transparent);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
     <div>
       <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;">952 W. Prince Rd &middot; Tucson, AZ</div>
-      <div style="font-family:'Crimson Pro',serif;font-style:italic;font-size:14px;color:var(--bone);opacity:.7;margin-top:2px;">Mon&ndash;Sat 9am&ndash;10pm &middot; Walk-ins Welcome</div>
+      <div style="font-family:'Crimson Pro',serif;font-style:italic;font-size:14px;color:var(--bone);opacity:.7;margin-top:2px;">Mon&ndash;Wed 9am&ndash;9pm &middot; Thu&ndash;Sat 10am&ndash;11pm &middot; Walk-ins Welcome</div>
     </div>
     <a href="https://maps.google.com/?q=New+Beginnings+Tattoo+Studio+952+W+Prince+Rd+Tucson+AZ" target="_blank" style="padding:10px 20px;background:var(--green);color:var(--gold-pale);font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;border:1px solid var(--green-b);text-decoration:none;">Get Directions &rarr;</a>
   </div>
@@ -833,12 +836,12 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
     <div class="ft-col">
       <h4>Hours</h4>
       <div class="hours-g">
-        <span class="hday on">Monday</span><span class="htime on">9am&ndash;10pm</span>
-        <span class="hday on">Tuesday</span><span class="htime on">9am&ndash;10pm</span>
-        <span class="hday on">Wednesday</span><span class="htime on">9am&ndash;10pm</span>
-        <span class="hday on">Thursday</span><span class="htime on">9am&ndash;10pm</span>
-        <span class="hday on">Friday</span><span class="htime on">9am&ndash;10pm</span>
-        <span class="hday on">Saturday</span><span class="htime on">9am&ndash;10pm</span>
+        <span class="hday on">Monday</span><span class="htime on">9am&ndash;9pm</span>
+        <span class="hday on">Tuesday</span><span class="htime on">9am&ndash;9pm</span>
+        <span class="hday on">Wednesday</span><span class="htime on">9am&ndash;9pm</span>
+        <span class="hday on">Thursday</span><span class="htime on">10am&ndash;11pm</span>
+        <span class="hday on">Friday</span><span class="htime on">10am&ndash;11pm</span>
+        <span class="hday on">Saturday</span><span class="htime on">10am&ndash;11pm</span>
         <span class="hday">Sunday</span><span class="htime">Closed</span>
       </div>
     </div>
