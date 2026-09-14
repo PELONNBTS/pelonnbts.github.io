@@ -4,10 +4,33 @@ Allow: /
 # Sitemap location
 Sitemap: https://www.nbtstucson.com/sitemap.xml
 
-# Crawl delay — be kind to the server
-Crawl-delay: 10
-
-# Block access to any backup or temp files
+# Block backup and temp files
 Disallow: /*_backup.html
 Disallow: /nbts_all_sections.html
 Disallow: /nbts_hero_section.html
+Disallow: /tracker-template.html
+Disallow: /flash_backup.html
+
+# Allow all crawlers to access SEO pages
+Allow: /tattoo-shop-tucson-az.html
+Allow: /tattoo-shop-flowing-wells-tucson.html
+Allow: /tattoo-shop-amphi-tucson.html
+Allow: /tattoo-shop-rillito-tucson.html
+Allow: /tattoo-shop-limberlost-tucson.html
+Allow: /tattoo-shop-tucson-mall-area.html
+Allow: /tattoo-shop-northwest-tucson.html
+
+# Google-specific crawlers
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 5
+
+# Safari / Apple search (Applebot)
+User-agent: Applebot
+Allow: /
+Crawl-delay: 5
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
